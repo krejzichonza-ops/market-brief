@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Market Morning Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07090c;--surface:#0f1318;--surface2:#141a21;--border:#1c2530;--border2:#243040;
+  --text:#b8c8d8;--dim:#4a5a6a;--bright:#deeaf6;
+  --green:#00d4aa;--gdim:rgba(0,212,170,.1);
+  --red:#ff4060;--rdim:rgba(255,64,96,.1);
+  --amber:#ffb300;--adim:rgba(255,179,0,.08);
+  --blue:#4da6ff;--bdim:rgba(77,166,255,.1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',sans-serif;font-size:13px;line-height:1.6;min-height:100vh;}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(0,212,170,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,212,170,.025) 1px,transparent 1px);background-size:44px 44px;pointer-events:none;z-index:0;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(7,9,12,.96);border-bottom:1px solid var(--border);backdrop-filter:blur(10px);}
+.nav-inner{max-width:1060px;margin:0 auto;display:flex;align-items:center;padding:0 16px;}
+.nav-logo{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:var(--green);letter-spacing:.15em;padding:13px 18px 13px 0;border-right:1px solid var(--border);margin-right:4px;white-space:nowrap;}
+.tab{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:13px 14px;cursor:pointer;color:var(--dim);border-bottom:2px solid transparent;transition:all .15s;white-space:nowrap;}
+.tab:hover{color:var(--text);}
+.tab.active{color:var(--green);border-bottom-color:var(--green);}
+.nav-right{margin-left:auto;display:flex;align-items:center;gap:10px;}
+#clock{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dim);}
+#sdot{width:6px;height:6px;border-radius:50%;background:var(--dim);flex-shrink:0;}
+#sdot.open{background:var(--green);box-shadow:0 0 6px var(--green);}
+#sdot.pre{background:var(--amber);}
+#sdot.after{background:var(--blue);}
+
+/* PAGES */
+.page{display:none;position:relative;z-index:1;max-width:1060px;margin:0 auto;padding:24px 16px 80px;}
+.page.active{display:block;}
+.page-title{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--bright);margin-bottom:4px;}
+.page-sub{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);letter-spacing:.1em;text-transform:uppercase;}
+
+/* CARD */
+.card{background:var(--surface);border:1px solid var(--border);margin-bottom:16px;}
+.card-hdr{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.015);}
+.card-lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green);}
+.card-body{padding:14px;}
+
+/* BUTTONS */
+.btn{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--border2);background:var(--surface);color:var(--text);cursor:pointer;transition:all .15s;}
+.btn:hover{border-color:var(--green);color:var(--green);}
+.btn.primary{border-color:var(--green);color:var(--bg);background:var(--green);}
+.btn.ghost{border-color:transparent;background:transparent;color:var(--dim);}
+.btn.ghost:hover{color:var(--text);}
+
+/* STATUS */
+.status{display:flex;align-items:center;gap:8px;padding:9px 14px;background:var(--surface);border:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:10px;margin-bottom:16px;}
+.sdot{width:6px;height:6px;border-radius:50%;background:var(--dim);flex-shrink:0;}
+.sdot.loading{background:var(--amber);animation:blink .7s ease-in-out infinite alternate;}
+.sdot.done{background:var(--green);}
+.sdot.error{background:var(--red);}
+@keyframes blink{from{opacity:1}to{opacity:.2}}
+
+/* SNAP */
+.snap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(115px,1fr));gap:1px;background:var(--border);}
+.snap-cell{background:var(--surface);padding:11px 13px;}
+.snap-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px;}
+.snap-val{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;color:var(--bright);}
+.up{color:var(--green);}.down{color:var(--red);}.neu{color:var(--amber);}
+
+/* SECTOR */
+.sec-row{display:flex;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--border);}
+.sec-row:last-child{border:none;}
+.sec-name{font-size:12px;width:170px;flex-shrink:0;}
+.sec-bar{flex:1;height:3px;background:var(--border);}
+.sec-fill{height:100%;transition:width 1s ease;}
+.sec-sig{font-family:'IBM Plex Mono',monospace;font-size:10px;width:75px;text-align:right;font-weight:600;}
+
+/* PICKS TABLE */
+.pt{width:100%;border-collapse:collapse;}
+.pt th{font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);padding:8px 10px;text-align:left;border-bottom:1px solid var(--border);background:rgba(255,255,255,.01);}
+.pt td{padding:9px 10px;font-family:'IBM Plex Mono',monospace;font-size:11px;border-bottom:1px solid var(--border);vertical-align:top;}
+.pt tr:last-child td{border:none;}
+.pt tr:hover td{background:rgba(255,255,255,.015);}
+.ticker{font-size:13px;font-weight:700;color:var(--bright);}
+.co{font-size:9px;color:var(--dim);margin-top:2px;}
+.dl{display:inline-block;padding:2px 6px;font-size:9px;font-weight:700;background:var(--gdim);color:var(--green);border:1px solid rgba(0,212,170,.3);}
+.ds{display:inline-block;padding:2px 6px;font-size:9px;font-weight:700;background:var(--rdim);color:var(--red);border:1px solid rgba(255,64,96,.3);}
+.pe{color:var(--green);}.pt2{color:var(--blue);}.ps{color:var(--red);}
+.rr{display:inline-block;padding:1px 5px;font-size:9px;background:var(--adim);color:var(--amber);border:1px solid rgba(255,179,0,.3);}
+.rat{font-family:'IBM Plex Sans',sans-serif;font-size:11px;color:var(--dim);line-height:1.5;max-width:220px;}
+
+/* CHIPS */
+.chip{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 7px;border:1px solid var(--border2);color:var(--dim);margin:2px;}
+.chip.macro{border-color:rgba(77,166,255,.4);color:var(--blue);background:var(--bdim);}
+.chip.geo{border-color:rgba(255,179,0,.4);color:var(--amber);background:var(--adim);}
+.chip.earn{border-color:rgba(0,212,170,.4);color:var(--green);background:var(--gdim);}
+
+.prose{font-size:13px;color:var(--text);line-height:1.7;}
+.prose p{margin-bottom:8px;}.prose p:last-child{margin:0;}
+.prose ul{list-style:none;padding:0;}
+.prose ul li::before{content:'→ ';color:var(--green);font-family:'IBM Plex Mono',monospace;}
+.prose ul li{margin-bottom:5px;}
+
+/* REVIEW */
+.rev-card{border:1px solid var(--border);margin-bottom:10px;}
+.rev-card-hdr{display:flex;align-items:center;justify-content:space-between;padding:10px 14px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.015);}
+.rev-card-body{padding:11px 14px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--text);line-height:1.6;}
+.outcome{display:inline-block;padding:2px 8px;font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;border:1px solid;}
+.o-hit{color:var(--green);border-color:rgba(0,212,170,.4);background:var(--gdim);}
+.o-stop{color:var(--red);border-color:rgba(255,64,96,.4);background:var(--rdim);}
+.o-held{color:var(--blue);border-color:rgba(77,166,255,.4);background:var(--bdim);}
+.o-miss{color:var(--dim);border-color:var(--border2);}
+.grade{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:2px solid;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;flex-shrink:0;}
+.gA{border-color:var(--green);color:var(--green);}
+.gB{border-color:var(--blue);color:var(--blue);}
+.gC{border-color:var(--amber);color:var(--amber);}
+.gD,.gF{border-color:var(--red);color:var(--red);}
+
+/* ══ PORTFOLIO ══ */
+.equity-hero{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);margin-bottom:16px;}
+.eq-cell{background:var(--surface);padding:20px 22px;}
+.eq-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em;margin-bottom:8px;}
+.eq-val{font-family:'IBM Plex Mono',monospace;font-size:28px;font-weight:700;color:var(--bright);line-height:1;}
+.eq-sub{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);margin-top:5px;}
+.eq-pct{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:600;margin-top:4px;}
+
+.pf-stat-row{display:flex;gap:1px;background:var(--border);margin-bottom:16px;}
+.pf-stat{flex:1;background:var(--surface);padding:14px 16px;text-align:center;}
+.pf-stat-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:5px;}
+.pf-stat-val{font-family:'IBM Plex Mono',monospace;font-size:18px;font-weight:700;color:var(--bright);}
+
+/* equity curve chart */
+.chart-wrap{position:relative;padding:14px;}
+canvas.echart{display:block;width:100%!important;height:200px!important;}
+
+/* open positions */
+.pos-row{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--border);}
+.pos-row:last-child{border:none;}
+.pos-ticker{font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:var(--bright);width:60px;}
+.pos-dir{width:60px;}
+.pos-size{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dim);width:90px;}
+.pos-entry{font-family:'IBM Plex Mono',monospace;font-size:11px;width:80px;}
+.pos-pnl{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;margin-left:auto;}
+.pos-days{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--amber);padding:2px 6px;border:1px solid rgba(255,179,0,.3);background:var(--adim);}
+
+/* trade log */
+.tl-row{display:flex;align-items:center;gap:10px;padding:8px 14px;border-bottom:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:11px;}
+.tl-row:last-child{border:none;}
+
+/* DD bar */
+.dd-bar-wrap{height:4px;background:var(--border);flex:1;}
+.dd-bar-fill{height:100%;background:var(--red);transition:width 1s ease;}
+
+/* HISTORY */
+.hist-row{display:flex;align-items:center;gap:12px;padding:11px 14px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s;}
+.hist-row:hover{background:rgba(255,255,255,.02);}
+.hist-row:last-child{border:none;}
+.hist-date{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bright);width:100px;flex-shrink:0;}
+.hist-sent{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;width:65px;}
+.hist-ticks{display:flex;gap:4px;flex:1;flex-wrap:wrap;}
+.hist-tick{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 6px;border:1px solid var(--border2);color:var(--dim);}
+.hist-tick.rev{border-color:rgba(0,212,170,.3);color:var(--green);}
+
+/* ANALYTICS */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1px;background:var(--border);margin-bottom:16px;}
+.kpi{background:var(--surface);padding:16px 18px;}
+.kpi-lbl{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.12em;margin-bottom:6px;}
+.kpi-val{font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:700;color:var(--bright);line-height:1;}
+.kpi-sub{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:4px;}
+canvas.chart{display:block;width:100%!important;height:150px!important;}
+
+.tp{width:100%;border-collapse:collapse;}
+.tp th{font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;padding:7px 10px;border-bottom:1px solid var(--border);text-align:left;}
+.tp td{font-family:'IBM Plex Mono',monospace;font-size:11px;padding:8px 10px;border-bottom:1px solid var(--border);}
+.tp tr:last-child td{border:none;}
+.tp tr:hover td{background:rgba(255,255,255,.015);}
+
+/* CONFIG */
+.config-box{background:var(--surface);border:1px solid var(--border2);padding:20px;margin-bottom:20px;}
+.config-box h3{font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--bright);margin-bottom:12px;}
+.config-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.config-lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);width:140px;flex-shrink:0;}
+.config-input{flex:1;background:var(--bg);border:1px solid var(--border2);padding:7px 10px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bright);outline:none;}
+.config-input:focus{border-color:var(--green);}
+
+/* OVERLAY */
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:200;backdrop-filter:blur(4px);}
+.overlay.show{display:flex;align-items:flex-start;justify-content:center;padding:40px 16px;}
+.overlay-box{background:var(--surface);border:1px solid var(--border2);width:100%;max-width:720px;max-height:82vh;overflow-y:auto;}
+.overlay-hdr{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid var(--border);position:sticky;top:0;background:var(--surface);}
+
+.disclaimer{padding:10px 14px;border:1px solid var(--border);background:var(--adim);font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);line-height:1.6;margin-top:24px;}
+.empty{padding:48px 16px;text-align:center;font-family:'IBM Plex Mono',monospace;color:var(--dim);font-size:11px;line-height:2;}
+.skel{background:linear-gradient(90deg,var(--surface) 25%,var(--border) 50%,var(--surface) 75%);background-size:400% 100%;animation:shim 1.4s ease infinite;height:12px;margin-bottom:8px;}
+@keyframes shim{0%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.fi{animation:fadeUp .3s ease forwards;}
+.divider{height:1px;background:var(--border);margin:20px 0;}
+
+@media(max-width:680px){
+  .rat,.hist-ticks{display:none;}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
+  .sec-name{width:120px;}
+  .equity-hero{grid-template-columns:1fr;}
+  .pf-stat-row{flex-wrap:wrap;}
+  .pf-stat{min-width:45%;}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">▸ BRIEF</div>
+    <div class="tab active" onclick="showPage('today')">Today</div>
+    <div class="tab" onclick="showPage('portfolio')">Portfolio</div>
+    <div class="tab" onclick="showPage('history')">History</div>
+    <div class="tab" onclick="showPage('analytics')">Analytics</div>
+    <div class="tab" onclick="showPage('setup')">Setup</div>
+    <div class="nav-right">
+      <div id="sdot"></div>
+      <div id="clock"></div>
+    </div>
+  </div>
+</nav>
+
+<!-- ══════════════ TODAY ══════════════ -->
+<div class="page active" id="page-today">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;padding-top:8px;">
+    <div><div class="page-title">Morning Brief</div><div class="page-sub" id="date-sub">Loading…</div></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);text-align:right;" id="session-lbl"></div>
+  </div>
+  <div class="status"><div class="sdot" id="sdot2"></div><span id="stext">Initializing…</span></div>
+  <div id="today-content"></div>
+  <div class="disclaimer">⚠ AI-generated projections for informational purposes only. NOT investment advice. Simulated portfolio does not represent real trading.</div>
+</div>
+
+<!-- ══════════════ PORTFOLIO ══════════════ -->
+<div class="page" id="page-portfolio">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;padding-top:8px;">
+    <div><div class="page-title">Simulated Portfolio</div><div class="page-sub">$100,000 starting capital · AI-managed</div></div>
+    <button class="btn ghost" onclick="renderPortfolio()">↻ Refresh</button>
+  </div>
+  <div id="portfolio-content"></div>
+</div>
+
+<!-- ══════════════ HISTORY ══════════════ -->
+<div class="page" id="page-history">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;padding-top:8px;">
+    <div><div class="page-title">Brief History</div><div class="page-sub">All saved sessions</div></div>
+    <button class="btn ghost" onclick="renderHistory()">↻ Refresh</button>
+  </div>
+  <div id="history-content"></div>
+</div>
+
+<!-- ══════════════ ANALYTICS ══════════════ -->
+<div class="page" id="page-analytics">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:20px;padding-top:8px;">
+    <div><div class="page-title">Projection Analytics</div><div class="page-sub">Long-term accuracy tracking</div></div>
+    <button class="btn ghost" onclick="renderAnalytics()">↻ Refresh</button>
+  </div>
+  <div id="analytics-content"></div>
+</div>
+
+<!-- ══════════════ SETUP ══════════════ -->
+<div class="page" id="page-setup">
+  <div style="padding-top:8px;margin-bottom:20px;"><div class="page-title">Setup</div><div class="page-sub">GitHub repository configuration</div></div>
+  <div class="config-box">
+    <h3>GitHub Data Source</h3>
+    <div class="config-row"><div class="config-lbl">GitHub username</div><input class="config-input" id="cfg-user" placeholder="your-username"></div>
+    <div class="config-row"><div class="config-lbl">Repository name</div><input class="config-input" id="cfg-repo" placeholder="market-brief" value="market-brief"></div>
+    <div class="config-row"><div class="config-lbl">Branch</div><input class="config-input" id="cfg-branch" placeholder="main" value="main"></div>
+    <div style="margin-top:14px;display:flex;gap:8px;">
+      <button class="btn primary" onclick="saveConfig()">Save &amp; Connect</button>
+      <button class="btn ghost" onclick="testConn()">Test Connection</button>
+    </div>
+    <div id="cfg-status" style="margin-top:10px;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim)"></div>
+  </div>
+  <div class="config-box">
+    <h3>Timing (UTC → CZ letní čas)</h3>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);line-height:2.2;">
+      <div><span style="color:var(--green)">13:15 UTC</span> = 09:15 ET = 15:15 CZ → Morning Brief + Portfolio alokace</div>
+      <div><span style="color:var(--green)">20:30 UTC</span> = 16:30 ET = 22:30 CZ → Evening Review + Portfolio update</div>
+      <div style="margin-top:8px;color:var(--amber)">⚠ Zimní čas (EST): +1h → 14:15 UTC a 21:30 UTC</div>
+    </div>
+  </div>
+</div>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeOverlay(event)">
+  <div class="overlay-box">
+    <div class="overlay-hdr">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;color:var(--bright)" id="overlay-title">Detail</div>
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--dim);cursor:pointer;padding:4px 8px;border:1px solid var(--border);" onclick="closeOverlay()">✕ Close</div>
+    </div>
+    <div id="overlay-body" style="padding:16px;"></div>
+  </div>
+</div>
+
+<script>
+/* ═══ CONFIG ═══ */
+const CFG = 'marketbrief_config';
+function loadConfig(){try{return JSON.parse(localStorage.getItem(CFG)||'{}')}catch{return{}}}
+function saveConfig(){
+  const cfg={user:document.getElementById('cfg-user').value.trim(),repo:document.getElementById('cfg-repo').value.trim()||'market-brief',branch:document.getElementById('cfg-branch').value.trim()||'main'};
+  if(!cfg.user){document.getElementById('cfg-status').textContent='⚠ Zadej GitHub username';return;}
+  localStorage.setItem(CFG,JSON.stringify(cfg));
+  document.getElementById('cfg-status').style.color='var(--green)';
+  document.getElementById('cfg-status').textContent='✓ Uloženo — načítám data…';
+  setTimeout(()=>showPage('today'),600);
+}
+function rawUrl(path){const c=loadConfig();if(!c.user)return null;return`https://raw.githubusercontent.com/${c.user}/${c.repo||'market-brief'}/${c.branch||'main'}/${path}`;}
+function apiUrl(path){const c=loadConfig();if(!c.user)return null;return`https://api.github.com/repos/${c.user}/${c.repo||'market-brief'}/contents/${path}`;}
+async function testConn(){
+  const cfg=loadConfig();
+  if(!cfg.user){document.getElementById('cfg-status').textContent='⚠ Ulož nejdřív';return;}
+  document.getElementById('cfg-status').textContent='⏳ Testuji…';
+  try{
+    const r=await fetch(apiUrl('data'));
+    const s=document.getElementById('cfg-status');
+    if(r.ok){const f=await r.json();s.style.color='var(--green)';s.textContent=`✓ OK — ${f.length} souborů v data/`;}
+    else{s.style.color='var(--red)';s.textContent=`⚠ HTTP ${r.status}`;}
+  }catch(e){document.getElementById('cfg-status').textContent='⚠ '+e.message;}
+}
+
+/* ═══ FETCH ═══ */
+async function fetchJSON(path){
+  const url=rawUrl(path);if(!url)return null;
+  const r=await fetch(url+'?t='+Date.now());
+  if(!r.ok)return null;
+  return r.json();
+}
+async function fetchAllDates(){
+  const url=apiUrl('data');if(!url)return[];
+  try{
+    const r=await fetch(url);if(!r.ok)return[];
+    const files=await r.json();
+    return files.filter(f=>f.name.match(/^\d{4}-\d{2}-\d{2}\.json$/)).map(f=>f.name.replace('.json','')).sort((a,b)=>b.localeCompare(a));
+  }catch{return[];}
+}
+function todayKey(){return new Date().toISOString().slice(0,10);}
+
+/* ═══ CLOCK ═══ */
+function tick(){
+  const now=new Date();
+  document.getElementById('clock').textContent=now.toLocaleTimeString('en-US',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});
+  const etH=(now.getUTCHours()-4+24)%24,t=etH*60+now.getUTCMinutes();
+  const dot=document.getElementById('sdot'),lbl=document.getElementById('session-lbl');
+  dot.className='';
+  if(t>=240&&t<570){dot.className='pre';if(lbl)lbl.textContent='🟡 Pre-Market';}
+  else if(t>=570&&t<960){dot.className='open';if(lbl)lbl.textContent='🟢 Market Open';}
+  else if(t>=960&&t<1200){dot.className='after';if(lbl)lbl.textContent='🔵 After-Hours';}
+  else if(lbl)lbl.textContent='⚫ Market Closed';
+  const sub=document.getElementById('date-sub');
+  if(sub)sub.textContent=new Date().toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric'});
+}
+tick();setInterval(tick,1000);
+
+/* ═══ NAV ═══ */
+function showPage(name){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.getElementById('page-'+name).classList.add('active');
+  const idx={today:0,portfolio:1,history:2,analytics:3,setup:4};
+  document.querySelectorAll('.tab')[idx[name]].classList.add('active');
+  if(name==='today')loadToday();
+  if(name==='portfolio')renderPortfolio();
+  if(name==='history')renderHistory();
+  if(name==='analytics')renderAnalytics();
+  if(name==='setup')loadSetupForm();
+}
+function loadSetupForm(){
+  const c=loadConfig();
+  if(c.user)document.getElementById('cfg-user').value=c.user;
+  if(c.repo)document.getElementById('cfg-repo').value=c.repo;
+  if(c.branch)document.getElementById('cfg-branch').value=c.branch;
+}
+function setStatus(msg,state=''){
+  document.getElementById('sdot2').className='sdot'+(state?' '+state:'');
+  document.getElementById('stext').textContent=msg;
+}
+
+/* ═══ HELPERS ═══ */
+function prose(t){if(!t)return'';return t.split('\n').filter(l=>l.trim()).map(l=>`<p>${l.trim()}</p>`).join('');}
+function fmt(n){return Number(n||0).toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function fmtPct(n){const v=parseFloat(n||0);return(v>=0?'+':'')+v.toFixed(2)+'%';}
+function snapCell(l,v){if(!v)return'';const up=/\+/.test(v)&&/%/.test(v),dn=/-/.test(v)&&/%/.test(v);return`<div class="snap-cell"><div class="snap-lbl">${l}</div><div class="snap-val ${up?'up':dn?'down':''}">${v}</div></div>`;}
+function secBar(s){const score=s.score||50,color=s.signal==='bullish'?'var(--green)':s.signal==='bearish'?'var(--red)':'var(--amber)',cls=s.signal==='bullish'?'up':s.signal==='bearish'?'down':'neu';return`<div class="sec-row"><div class="sec-name">${s.name}</div><div class="sec-bar"><div class="sec-fill" style="width:${score}%;background:${color}"></div></div><div class="sec-sig ${cls}">${s.signal==='bullish'?'▲':s.signal==='bearish'?'▼':'◆'} ${(s.signal||'').toUpperCase()}</div></div>`;}
+function gcls(g){return{A:'gA',B:'gB',C:'gC',D:'gD',F:'gF'}[g]||'gC';}
+function olbl(o){if(o==='hit_target')return['TARGET HIT ✓','o-hit'];if(o==='stopped_out')return['STOPPED OUT ✗','o-stop'];if(o==='held_open')return['HELD OPEN →','o-held'];return['MISSED ENTRY','o-miss'];}
+function pickRow(p,i,showSize){
+  return`<tr>
+    <td style="color:var(--dim);font-size:10px">${i+1}</td>
+    <td><div class="ticker">${p.ticker}</div><div class="co">${p.company||''}</div></td>
+    <td>${p.direction==='long'?'<span class="dl">▲ LONG</span>':'<span class="ds">▼ SHORT</span>'}</td>
+    <td class="pe">$${fmt(p.entry_price)}</td>
+    <td class="pt2">$${fmt(p.target_price)}<div style="font-size:9px;color:var(--green);margin-top:1px">${p.target_pct!=null?'+'+parseFloat(p.target_pct||0).toFixed(1)+'%':''}</div></td>
+    <td class="ps">$${fmt(p.stop_loss)}<div style="font-size:9px;color:var(--red);margin-top:1px">${p.stop_pct!=null?'-'+Math.abs(parseFloat(p.stop_pct||0)).toFixed(1)+'%':''}</div></td>
+    ${showSize?`<td style="color:var(--text)">$${fmt(p.position_size_usd)}</td>`:''}
+    <td><span class="rr">${p.risk_reward||'—'}</span></td>
+    <td style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:${p.holding_days>1?'var(--amber)':'var(--dim)'}">${p.holding_days||1}d</td>
+    <td style="color:${p.confidence==='high'?'var(--green)':p.confidence==='low'?'var(--red)':'var(--amber)'};font-size:9px;font-weight:700">${(p.confidence||'').toUpperCase()}</td>
+  </tr>`;
+}
+
+function probColor(pct){
+  if(pct>=70) return 'var(--green)';
+  if(pct>=50) return 'var(--amber)';
+  return 'var(--red)';
+}
+
+function probGauge(pct){
+  if(pct==null) return '';
+  const col=probColor(pct);
+  return`<div style="display:flex;align-items:center;gap:8px;">
+    <div style="flex:1;height:4px;background:var(--border);position:relative;">
+      <div style="position:absolute;left:0;top:0;height:100%;width:${pct}%;background:${col};transition:width 1s ease;"></div>
+    </div>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:${col};min-width:38px;text-align:right">${pct}%</span>
+  </div>`;
+}
+
+function thesisBlock(p){
+  if(!p.thesis_macro&&!p.thesis_technical&&!p.thesis_catalyst) return '';
+  const missColor={'wrong_direction':'var(--red)','catalyst_delayed':'var(--amber)','macro_reversal':'var(--red)','stop_too_tight':'var(--amber)','target_too_aggressive':'var(--amber)','missed_entry':'var(--dim)','broader_market_drag':'var(--blue)','sector_specific_news':'var(--blue)','other':'var(--dim)','n/a':'var(--green)'};
+  const row=(icon,label,text,color)=>text?`<div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:76px;flex-shrink:0;padding-top:1px">${icon} ${label}</div>
+    <div style="font-size:12px;color:${color||'var(--text)'};line-height:1.55;">${text}</div>
+  </div>`:'';
+  const prob=p.probability_pct!=null?p.probability_pct:null;
+  return`<div style="border:1px solid var(--border);margin:12px 0 0 0;">
+    <div style="padding:7px 12px;background:rgba(255,255,255,.02);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--green);text-transform:uppercase;white-space:nowrap">${p.ticker} · Trade Thesis</span>
+      <div style="flex:1;max-width:200px">${prob!=null?probGauge(prob):''}</div>
+      ${p.thesis_miss_reason&&p.thesis_miss_reason!=='n/a'?`<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 7px;border:1px solid;color:${missColor[p.thesis_miss_reason]||'var(--dim)'};border-color:${missColor[p.thesis_miss_reason]||'var(--dim)'};white-space:nowrap">MISS: ${(p.thesis_miss_reason||'').replace(/_/g,' ').toUpperCase()}</span>`:''}
+    </div>
+    ${prob!=null?`<div style="padding:9px 12px;border-bottom:1px solid var(--border);background:rgba(0,0,0,.2);">
+      <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-bottom:5px;text-transform:uppercase;letter-spacing:.08em">🎲 Target probability</div>
+      <div style="font-family:'IBM Plex Sans',sans-serif;font-size:12px;color:var(--text);margin-top:4px">${p.probability_reasoning||''}</div>
+    </div>`:''}
+    <div style="padding:0 12px;">
+      ${row('📊','MACRO',p.thesis_macro)}
+      ${row('📈','TECHNICAL',p.thesis_technical)}
+      ${row('⚡','CATALYST',p.thesis_catalyst)}
+      ${row('🎯','ENTRY',p.entry_logic)}
+      ${row('💰','TARGET',p.exit_logic)}
+      ${row('⚠','RISK',p.thesis_risk,'var(--amber)')}
+    </div>
+  </div>`;
+}
+
+function postMortem(p){
+  if(!p.thesis_macro_verdict&&!p.what_worked) return '';
+  const row=(icon,label,text,color)=>text&&text!=='n/a'?`<div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:76px;flex-shrink:0;padding-top:1px">${icon} ${label}</div>
+    <div style="font-size:12px;color:${color||'var(--text)'};line-height:1.55;">${text}</div>
+  </div>`:'';
+  const verdictColor={'calibrated':'var(--green)','overconfident':'var(--red)','underconfident':'var(--blue)'};
+  const verdictIcon={'calibrated':'🎯','overconfident':'📈','underconfident':'📉'};
+  const prob=p.original_probability_pct;
+  const verdict=p.probability_verdict;
+  const probRow=prob!=null?`<div style="display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--border);align-items:center;">
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);width:76px;flex-shrink:0">🎲 PROB</div>
+    <div style="flex:1">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <div style="flex:1;height:4px;background:var(--border);">
+          <div style="height:100%;width:${prob}%;background:${probColor(prob)};"></div>
+        </div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:${probColor(prob)}">${prob}%</span>
+        ${verdict?`<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;padding:2px 7px;border:1px solid;color:${verdictColor[verdict]||'var(--dim)'};border-color:${verdictColor[verdict]||'var(--dim)'}">${(verdictIcon[verdict]||'')} ${(verdict||'').toUpperCase()}</span>`:''}
+      </div>
+      <div style="font-size:11px;color:var(--dim);font-family:'IBM Plex Sans',sans-serif">${p.probability_comment||''}</div>
+    </div>
+  </div>`:'';
+  return`<div style="margin-top:10px;border:1px solid var(--border);background:rgba(255,255,255,.01);">
+    <div style="padding:7px 12px;background:rgba(255,255,255,.02);border-bottom:1px solid var(--border);">
+      <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;color:var(--amber);text-transform:uppercase">Post-Mortem</span>
+    </div>
+    <div style="padding:0 12px;">
+      ${probRow}
+      ${row('📊','MACRO',p.thesis_macro_verdict)}
+      ${row('📈','TECHNICAL',p.thesis_technical_verdict)}
+      ${row('⚡','CATALYST',p.thesis_catalyst_verdict)}
+      ${row('✅','WORKED',p.what_worked,'var(--green)')}
+      ${row('❌','FAILED',p.what_failed,'var(--red)')}
+    </div>
+  </div>`;
+}
+
+
+function renderSkel(){
+  const b=w=>`<div class="skel" style="width:${w}%"></div>`;
+  const s=n=>`<div class="card"><div class="card-body">${Array(n).fill(0).map((_,i)=>b(60+(i%5)*8)).join('')}</div></div>`;
+  return`<div class="card"><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border)">${Array(8).fill('<div style="background:var(--surface);padding:14px"><div class="skel" style="width:60%"></div><div class="skel" style="width:75%"></div></div>').join('')}</div></div>${s(4)}${s(5)}`;
+}
+
+/* ═══ TODAY ═══ */
+async function loadToday(){
+  const cfg=loadConfig();
+  if(!cfg.user){
+    setStatus('⚙ Nastav GitHub repozitář na záložce Setup','');
+    document.getElementById('today-content').innerHTML=`<div class="card"><div class="card-body" style="text-align:center;padding:32px;"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--dim);margin-bottom:16px">Nejprve nastav GitHub repozitář.</div><button class="btn primary" onclick="showPage('setup')">⚙ Setup</button></div></div>`;
+    return;
+  }
+  setStatus('Načítám dnešní brief…','loading');
+  document.getElementById('today-content').innerHTML=renderSkel();
+  const dk=todayKey();
+  const record=await fetchJSON(`data/${dk}.json`);
+  if(!record){
+    setStatus('Žádná data pro dnešek — GitHub Actions ještě neproběhl','');
+    document.getElementById('today-content').innerHTML=`<div class="card"><div class="card-body prose"><p>Žádný brief pro <strong>${dk}</strong>.</p><p style="color:var(--dim);margin-top:8px">Morning brief se generuje automaticky v 09:15 ET. Manuální spuštění: <span style="color:var(--green)">Actions → Run workflow → morning</span></p></div></div>`;
+    return;
+  }
+  if(record.brief)renderMorning(record.brief);
+  if(record.review)setTimeout(()=>renderEvening(record.review),100);
+  setStatus(`Načteno z GitHub · ${(record.reviewed_at||record.created_at||'').slice(0,16).replace('T',' ')} UTC`,'done');
+}
+
+function renderMorning(d){
+  const snap=d.snapshot||{};
+  const sc=d.overall_sentiment==='bullish'?'var(--green)':d.overall_sentiment==='bearish'?'var(--red)':'var(--amber)';
+  const sl=d.overall_sentiment==='bullish'?'▲ BULLISH':d.overall_sentiment==='bearish'?'▼ BEARISH':'◆ NEUTRAL';
+  const themes=(d.key_themes||[]).map(t=>{const c=/fed|macro|cpi|gdp|pmi|rate/i.test(t)?'macro':/war|geo|china|middle/i.test(t)?'geo':/earn/i.test(t)?'earn':'';return`<span class="chip ${c}">${t}</span>`;}).join('');
+  document.getElementById('today-content').innerHTML=`
+    <div class="card fi">
+      <div class="card-hdr"><div class="card-lbl">Market Snapshot</div><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:${sc}">${sl}</span></div>
+      <div class="snap-grid">${snapCell('S&P Fut',snap.sp500_futures)}${snapCell('NQ Fut',snap.nasdaq_futures)}${snapCell('Dow Fut',snap.dow_futures)}${snapCell('VIX',snap.vix)}${snapCell('10Y',snap.us10y)}${snapCell('DXY',snap.dxy)}${snapCell('Oil',snap.crude_oil)}${snapCell('Gold',snap.gold)}</div>
+      ${themes?`<div style="padding:9px 13px;border-top:1px solid var(--border)">${themes}</div>`:''}
+    </div>
+    <div class="card fi"><div class="card-hdr"><div class="card-lbl">Macro &amp; Economic Data</div><span class="chip macro">MACRO</span></div><div class="card-body prose">${prose(d.macro_summary)}</div></div>
+    <div class="card fi"><div class="card-hdr"><div class="card-lbl">After-Hours / Pre-Market</div><span class="chip earn">EARNINGS</span></div><div class="card-body prose">${prose(d.afterhours_summary)}</div></div>
+    ${d.geopolitical_summary?`<div class="card fi"><div class="card-hdr"><div class="card-lbl">Geopolitical</div><span class="chip geo">GEO</span></div><div class="card-body prose">${prose(d.geopolitical_summary)}</div></div>`:''}
+    <div class="card fi"><div class="card-hdr"><div class="card-lbl">Sector Signals</div></div><div class="card-body" style="padding:8px 14px">${(d.sectors||[]).map(secBar).join('')}</div></div>
+    <div class="card fi">
+      <div class="card-hdr"><div class="card-lbl">Portfolio Picks — ${(d.picks||[]).reduce((s,p)=>s+(+p.position_size_usd||0),0).toLocaleString('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0})} deployed</div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim)">NOT ADVICE</span></div>
+      <div style="overflow-x:auto"><table class="pt">
+        <thead><tr><th>#</th><th>Ticker</th><th>Dir</th><th>Entry</th><th>Target</th><th>Stop</th><th>Size</th><th>R/R</th><th>Hold</th><th>Conf</th></tr></thead>
+        <tbody>${(d.picks||[]).map((p,i)=>pickRow(p,i,true)).join('')}</tbody>
+      </table></div>
+      <div style="padding:12px 14px;border-top:1px solid var(--border)">${(d.picks||[]).map(p=>thesisBlock(p)).join('')}</div>
+      ${d.portfolio_note?`<div style="padding:10px 14px;border-top:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim)">📝 ${d.portfolio_note}</div>`:''}
+    </div>
+    <div class="card fi"><div class="card-hdr"><div class="card-lbl">Key Risks</div></div><div class="card-body prose"><ul>${(d.risks||[]).map(r=>`<li>${r}</li>`).join('')}</ul></div></div>
+    <div id="evening-section"></div>`;
+}
+
+function renderEvening(rev){
+  const pr=rev.picks_review||[];
+  const ps=rev.portfolio_summary||{};
+  const pnlUsd=ps.total_pnl_usd||0;
+  const pnlPct=ps.total_pnl_pct||rev.avg_pnl_pct||0;
+  const gc=gcls(rev.overall_grade);
+  const pnlColor=pnlUsd>=0?'var(--green)':'var(--red)';
+  function pickCard(p){
+    const[lbl,cls]=olbl(p.outcome);
+    const pPos=p.pnl_usd>0,pNeg=p.pnl_usd<0;
+    const pc=pPos?'var(--green)':pNeg?'var(--red)':'var(--dim)';
+    return`<div class="rev-card">
+      <div class="rev-card-hdr">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div class="grade ${gcls(p.grade)}">${p.grade||'?'}</div>
+          <div><div style="font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:13px;color:var(--bright)">${p.ticker}</div>
+          <div style="font-size:9px;color:var(--dim);font-family:'IBM Plex Mono',monospace">${p.direction==='long'?'▲ LONG':'▼ SHORT'} · Entry $${fmt(p.projected_entry)} → Exit $${fmt(p.exit_price||p.actual_close)} · H/L $${fmt(p.actual_high)}/$${fmt(p.actual_low)}</div></div>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <div style="text-align:right">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-weight:700;color:${pc}">${p.pnl_usd>=0?'+':''}$${fmt(p.pnl_usd)}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:${pc}">${fmtPct(p.pnl_pct)}</div>
+          </div>
+          <span class="outcome ${cls}">${lbl}</span>
+        </div>
+      </div>
+      <div class="rev-card-body">${p.commentary||''}</div>
+      ${postMortem(p)}
+    </div>`;
+  }
+  const html=`
+    <div class="divider"></div>
+    <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;letter-spacing:.15em;color:var(--green);margin-bottom:12px;text-transform:uppercase">▸ Evening Review — Session Complete</div>
+    <div class="card fi">
+      <div class="card-hdr">
+        <div class="card-lbl">Session P&amp;L</div>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="text-align:right">
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:16px;font-weight:700;color:${pnlColor}">${pnlUsd>=0?'+':''}$${fmt(pnlUsd)}</div>
+            <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:${pnlColor}">${fmtPct(pnlPct)} on deployed</div>
+          </div>
+          <div class="grade ${gc}" style="width:32px;height:32px;font-size:14px">${rev.overall_grade||'?'}</div>
+        </div>
+      </div>
+      <div class="card-body prose"><p style="color:var(--dim);font-size:11px;margin-bottom:8px">${rev.index_recap||''}</p>${prose(rev.narrative)}</div>
+    </div>
+    <div class="card fi"><div class="card-hdr"><div class="card-lbl">Trade Outcomes</div></div><div class="card-body" style="padding:10px 14px">${pr.map(pickCard).join('')}</div></div>
+    <div class="card fi"><div class="card-hdr"><div class="card-lbl">Lessons</div></div><div class="card-body prose"><ul>${(rev.lessons||[]).map(l=>`<li>${l}</li>`).join('')}</ul></div></div>
+    <div class="card fi"><div class="card-hdr"><div class="card-lbl">Watch for Tomorrow</div></div><div class="card-body prose"><ul>${(rev.tomorrow_watch||[]).map(t=>`<li>${t}</li>`).join('')}</ul></div></div>`;
+  const t=document.getElementById('evening-section');
+  if(t)t.innerHTML=html;
+}
+
+/* ═══ PORTFOLIO PAGE ═══ */
+async function renderPortfolio(){
+  const el=document.getElementById('portfolio-content');
+  el.innerHTML=`<div style="padding:20px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim)">Načítám portfolio data…</div>`;
+  const pf=await fetchJSON('data/portfolio.json');
+  if(!pf){
+    el.innerHTML=`<div class="empty"><div style="font-size:28px;opacity:.2;margin-bottom:8px">💼</div>Portfolio soubor nenalezen.<br>Vznikne automaticky po prvním evening review.<br><span style="color:var(--dim);font-size:10px">data/portfolio.json</span></div>`;
+    return;
+  }
+
+  const start=pf.starting_capital||100000;
+  const current=pf.current_capital||start;
+  const peak=pf.peak_capital||current;
+  const totalPnl=current-start;
+  const totalPct=(totalPnl/start*100);
+  const maxDD=calcMaxDD(pf.equity_curve||[]);
+  const winRate=pf.total_trades>0?Math.round(pf.winning_trades/pf.total_trades*100):0;
+  const openPos=pf.open_positions||[];
+  const closed=pf.closed_trades||[];
+  const curve=pf.equity_curve||[];
+  const pnlColor=totalPnl>=0?'var(--green)':'var(--red)';
+
+  // Recent 10 trades avg pnl
+  const recentPnls=closed.slice(-20).map(t=>t.pnl_pct||0);
+  const avgRecentPnl=recentPnls.length?recentPnls.reduce((a,b)=>a+b,0)/recentPnls.length:0;
+
+  el.innerHTML=`
+    <!-- HERO -->
+    <div class="equity-hero fi">
+      <div class="eq-cell">
+        <div class="eq-lbl">Portfolio Value</div>
+        <div class="eq-val" style="color:var(--bright)">$${fmt(current)}</div>
+        <div class="eq-pct" style="color:${pnlColor}">${totalPnl>=0?'+':''}$${fmt(totalPnl)} (${fmtPct(totalPct)})</div>
+        <div class="eq-sub">Starting: $${fmt(start)}</div>
+      </div>
+      <div class="eq-cell">
+        <div class="eq-lbl">Peak Value</div>
+        <div class="eq-val">$${fmt(peak)}</div>
+        <div class="eq-sub">Max Drawdown</div>
+        <div class="eq-pct" style="color:var(--red)">−${maxDD.toFixed(1)}%</div>
+      </div>
+      <div class="eq-cell">
+        <div class="eq-lbl">Win Rate</div>
+        <div class="eq-val" style="color:${winRate>=50?'var(--green)':'var(--red)'}">${winRate}%</div>
+        <div class="eq-sub">${pf.winning_trades||0}W / ${pf.losing_trades||0}L / ${pf.total_trades||0} total</div>
+        <div class="eq-pct" style="color:${avgRecentPnl>=0?'var(--green)':'var(--red)'}">Avg recent: ${fmtPct(avgRecentPnl)}</div>
+      </div>
+    </div>
+
+    <!-- EQUITY CURVE -->
+    <div class="card fi">
+      <div class="card-hdr"><div class="card-lbl">Equity Curve</div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim)">${curve.length} data points · vs $100k baseline</span></div>
+      <div class="chart-wrap"><canvas id="equityChart" class="echart"></canvas></div>
+    </div>
+
+    <!-- OPEN POSITIONS -->
+    ${openPos.length?`<div class="card fi">
+      <div class="card-hdr"><div class="card-lbl">Open Positions (${openPos.length})</div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--amber)">Carrying to next session</span></div>
+      <div>${openPos.map(p=>{
+        const uc=p.unrealized_pnl_pct||0;const upc=uc>=0?'var(--green)':'var(--red)';
+        return`<div class="pos-row">
+          <div class="pos-ticker">${p.ticker}</div>
+          <div class="pos-dir">${p.direction==='long'?'<span class="dl">▲ LONG</span>':'<span class="ds">▼ SHORT</span>'}</div>
+          <div class="pos-size" style="color:var(--dim)">$${fmt(p.position_size_usd)}</div>
+          <div class="pos-entry">Entry: <span style="color:var(--green)">$${fmt(p.entry_price)}</span></div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim)">→ $${fmt(p.target_price)} | ✕ $${fmt(p.stop_loss)}</div>
+          <div class="pos-pnl" style="color:${upc}">${fmtPct(uc)}</div>
+          <div class="pos-days">${p.holding_days_remaining||1}d left</div>
+        </div>`;
+      }).join('')}</div>
+    </div>`:''}
+
+    <!-- STAT ROW -->
+    <div class="pf-stat-row fi">
+      <div class="pf-stat"><div class="pf-stat-lbl">Total Sessions</div><div class="pf-stat-val">${curve.filter(p=>p.grade).length}</div></div>
+      <div class="pf-stat"><div class="pf-stat-lbl">Total Trades</div><div class="pf-stat-val">${pf.total_trades||0}</div></div>
+      <div class="pf-stat"><div class="pf-stat-lbl">Best Day</div><div class="pf-stat-val" style="color:var(--green)">${bestDay(curve)}</div></div>
+      <div class="pf-stat"><div class="pf-stat-lbl">Worst Day</div><div class="pf-stat-val" style="color:var(--red)">${worstDay(curve)}</div></div>
+    </div>
+
+    <!-- TRADE LOG -->
+    ${closed.length?`<div class="card fi">
+      <div class="card-hdr"><div class="card-lbl">Trade Log</div><span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim)">Last ${Math.min(closed.length,30)} trades</span></div>
+      <div style="overflow-x:auto">
+        ${[...closed].reverse().slice(0,30).map(t=>{
+          const pc=t.pnl_usd>=0?'var(--green)':'var(--red)';
+          const oc=t.outcome==='hit_target'?'var(--green)':t.outcome==='stopped_out'?'var(--red)':t.outcome==='held_open'?'var(--blue)':'var(--dim)';
+          return`<div class="tl-row">
+            <div style="color:var(--dim);width:90px">${t.date}</div>
+            <div style="font-weight:700;color:var(--bright);width:55px">${t.ticker}</div>
+            <div style="width:55px">${t.direction==='long'?'<span class="dl" style="font-size:8px">▲</span>':'<span class="ds" style="font-size:8px">▼</span>'}</div>
+            <div style="color:var(--dim);width:80px">$${fmt(t.position_size_usd)}</div>
+            <div style="color:${oc};width:90px;font-size:9px">${t.outcome?.replace(/_/g,' ').toUpperCase()}</div>
+            <div style="color:${pc};margin-left:auto;font-weight:700">${t.pnl_usd>=0?'+':''}$${fmt(t.pnl_usd)}</div>
+            <div style="color:${pc};width:65px;text-align:right">${fmtPct(t.pnl_pct)}</div>
+          </div>`;
+        }).join('')}
+      </div>
+    </div>`:''}
+  `;
+
+  // Draw equity curve
+  drawEquityCurve(curve, start);
+}
+
+function calcMaxDD(curve){
+  let peak=0,maxDD=0;
+  curve.forEach(p=>{peak=Math.max(peak,p.value);const dd=(peak-p.value)/peak*100;maxDD=Math.max(maxDD,dd);});
+  return maxDD;
+}
+function bestDay(curve){
+  const days=curve.filter(p=>p.pnl_usd!==undefined);
+  if(!days.length)return'—';
+  const b=days.reduce((a,p)=>p.pnl_usd>a.pnl_usd?p:a,days[0]);
+  return b.pnl_usd>=0?`+$${fmt(b.pnl_usd)}`:`-$${fmt(Math.abs(b.pnl_usd))}`;
+}
+function worstDay(curve){
+  const days=curve.filter(p=>p.pnl_usd!==undefined);
+  if(!days.length)return'—';
+  const w=days.reduce((a,p)=>p.pnl_usd<a.pnl_usd?p:a,days[0]);
+  return w.pnl_usd<0?`-$${fmt(Math.abs(w.pnl_usd))}`:'+$0';
+}
+
+function drawEquityCurve(curve, baseline){
+  const canvas=document.getElementById('equityChart');
+  if(!canvas||curve.length<2)return;
+  const ctx=canvas.getContext('2d');
+  const W=canvas.offsetWidth||800,H=200;
+  const dpr=window.devicePixelRatio||1;
+  canvas.width=W*dpr;canvas.height=H*dpr;ctx.scale(dpr,dpr);
+  const values=curve.map(p=>p.value);
+  const minV=Math.min(...values,baseline*0.92);
+  const maxV=Math.max(...values,baseline*1.08);
+  const pad={t:14,r:14,b:28,l:72};
+  const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
+  const xStep=cW/(values.length-1);
+  const yScale=v=>pad.t+cH-((v-minV)/(maxV-minV))*cH;
+
+  // Grid + y-labels
+  const yTicks=[minV,baseline,(minV+maxV)/2,maxV];
+  yTicks.forEach(v=>{
+    const y=yScale(v);
+    ctx.strokeStyle='rgba(255,255,255,.04)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+cW,y);ctx.stroke();
+    ctx.fillStyle='rgba(74,90,106,.8)';ctx.font=`9px IBM Plex Mono,monospace`;ctx.textAlign='right';
+    ctx.fillText('$'+Math.round(v/1000)+'k',pad.l-5,y+3);
+  });
+
+  // Baseline ($100k)
+  const baseY=yScale(baseline);
+  ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+  ctx.beginPath();ctx.moveTo(pad.l,baseY);ctx.lineTo(pad.l+cW,baseY);ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Line: color segment by whether above/below baseline
+  for(let i=1;i<values.length;i++){
+    const x1=pad.l+(i-1)*xStep,y1=yScale(values[i-1]);
+    const x2=pad.l+i*xStep,y2=yScale(values[i]);
+    const above=(values[i-1]+values[i])/2>=baseline;
+    ctx.strokeStyle=above?'rgba(0,212,170,.9)':'rgba(255,64,96,.9)';
+    ctx.lineWidth=2;
+    ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+  }
+
+  // Fill under line
+  const lastVal=values[values.length-1];
+  const isUp=lastVal>=baseline;
+  const grad=ctx.createLinearGradient(0,pad.t,0,pad.t+cH);
+  grad.addColorStop(0,isUp?'rgba(0,212,170,.18)':'rgba(255,64,96,.15)');
+  grad.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.beginPath();
+  values.forEach((v,i)=>{const x=pad.l+i*xStep,y=yScale(v);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
+  ctx.lineTo(pad.l+(values.length-1)*xStep,pad.t+cH);ctx.lineTo(pad.l,pad.t+cH);
+  ctx.closePath();ctx.fillStyle=grad;ctx.fill();
+
+  // Dots + x labels
+  values.forEach((v,i)=>{
+    const x=pad.l+i*xStep,y=yScale(v);
+    ctx.beginPath();ctx.arc(x,y,3,0,Math.PI*2);
+    ctx.fillStyle=v>=baseline?'var(--green)':'var(--red)';ctx.fill();
+    if(i%Math.max(1,Math.floor(values.length/7))===0&&curve[i]){
+      ctx.fillStyle='rgba(74,90,106,.8)';ctx.font='8px IBM Plex Mono,monospace';ctx.textAlign='center';
+      ctx.fillText(curve[i].date.slice(5),x,pad.t+cH+16);
+    }
+  });
+
+  // Grade labels on each point
+  curve.forEach((p,i)=>{
+    if(!p.grade)return;
+    const x=pad.l+i*xStep,y=yScale(values[i]);
+    const gc={A:'#00d4aa',B:'#4da6ff',C:'#ffb300',D:'#ff4060',F:'#ff4060'}[p.grade]||'#4a5a6a';
+    ctx.fillStyle=gc;ctx.font='bold 8px IBM Plex Mono,monospace';ctx.textAlign='center';
+    ctx.fillText(p.grade,x,y-8);
+  });
+}
+
+/* ═══ HISTORY ═══ */
+async function renderHistory(){
+  const el=document.getElementById('history-content');
+  el.innerHTML=`<div style="padding:20px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim)">Načítám…</div>`;
+  const dates=await fetchAllDates();
+  if(!dates.length){el.innerHTML=`<div class="empty"><div style="font-size:28px;opacity:.2;margin-bottom:8px">📋</div>Žádné sessions nenalezeny.</div>`;return;}
+  const records=(await Promise.all(dates.slice(0,30).map(d=>fetchJSON(`data/${d}.json`)))).filter(Boolean);
+  const rows=records.map(r=>{
+    const b=r.brief,rev=r.review;
+    const sc=b?.overall_sentiment==='bullish'?'var(--green)':b?.overall_sentiment==='bearish'?'var(--red)':'var(--amber)';
+    const sl=b?.overall_sentiment==='bullish'?'▲ BULL':b?.overall_sentiment==='bearish'?'▼ BEAR':'◆ NEU';
+    const ticks=(b?.picks||[]).map(p=>`<span class="hist-tick${rev?' rev':''}">${p.ticker}</span>`).join('');
+    const ps=rev?.portfolio_summary;
+    const pnlUsd=ps?.total_pnl_usd;
+    const right=rev
+      ?`<div style="display:flex;align-items:center;gap:8px">
+          ${pnlUsd!=null?`<span style="font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:700;color:${pnlUsd>=0?'var(--green)':'var(--red)'}">${pnlUsd>=0?'+':''}$${fmt(pnlUsd)}</span>`:''}
+          <div class="grade ${gcls(rev.overall_grade)}" style="width:22px;height:22px;font-size:10px">${rev.overall_grade}</div>
+        </div>`
+      :`<span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);padding:2px 8px;border:1px solid var(--border)">No Review</span>`;
+    return`<div class="hist-row" onclick="showDetail('${r.date}')">
+      <div class="hist-date">${r.date}</div>
+      <div class="hist-sent" style="color:${sc}">${sl}</div>
+      <div class="hist-ticks">${ticks}</div>
+      ${right}
+    </div>`;
+  }).join('');
+  el.innerHTML=`<div class="card"><div class="card-hdr"><div class="card-lbl">All Sessions</div><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim)">${records.length} sessions</span></div><div>${rows}</div></div>`;
+}
+
+async function showDetail(dateKey){
+  const record=await fetchJSON(`data/${dateKey}.json`);
+  if(!record)return;
+  const b=record.brief,rev=record.review;
+  const picks=b?.picks||[];
+  const sc=b?.overall_sentiment==='bullish'?'var(--green)':b?.overall_sentiment==='bearish'?'var(--red)':'var(--amber)';
+  let html=`<div style="display:flex;justify-content:space-between;margin-bottom:12px">
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:700;color:${sc}">${b?.overall_sentiment?.toUpperCase()||''}</span>
+    <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim)">${b?.data_freshness||''}</span>
+  </div>
+  <div style="overflow-x:auto"><table class="pt" style="margin-bottom:14px">
+    <thead><tr><th>#</th><th>Ticker</th><th>Dir</th><th>Entry</th><th>Target</th><th>Stop</th><th>Size</th>${rev?'<th>Exit</th><th>P&L USD</th><th>Grade</th>':''}</tr></thead>
+    <tbody>${picks.map((p,i)=>{
+      const rv=rev?.picks_review?.find(r=>r.ticker===p.ticker);
+      const pc=rv?(rv.pnl_usd>=0?'var(--green)':'var(--red)'):'var(--dim)';
+      return`<tr>
+        <td style="color:var(--dim);font-size:10px">${i+1}</td>
+        <td><div class="ticker" style="font-size:12px">${p.ticker}</div></td>
+        <td>${p.direction==='long'?'<span class="dl">▲</span>':'<span class="ds">▼</span>'}</td>
+        <td class="pe">$${fmt(p.entry_price)}</td>
+        <td class="pt2">$${fmt(p.target_price)}</td>
+        <td class="ps">$${fmt(p.stop_loss)}</td>
+        <td style="color:var(--dim)">$${fmt(p.position_size_usd)}</td>
+        ${rv?`<td>$${fmt(rv.exit_price||rv.actual_close)}</td>
+        <td style="color:${pc};font-weight:700">${rv.pnl_usd>=0?'+':''}$${fmt(rv.pnl_usd)}</td>
+        <td><div class="grade ${gcls(rv.grade)}" style="width:20px;height:20px;font-size:10px">${rv.grade||'?'}</div></td>`:''}
+      </tr>`;
+    }).join('')}</tbody>
+  </table></div>`;
+  if(rev){
+    const ps=rev.portfolio_summary||{};
+    const pnl=ps.total_pnl_usd||0;
+    html+=`<div style="background:var(--surface2);border:1px solid var(--border);padding:12px">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
+        <div class="grade ${gcls(rev.overall_grade)}">${rev.overall_grade}</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bright)">
+          Session P&L: <span style="color:${pnl>=0?'var(--green)':'var(--red)'}">${pnl>=0?'+':''}$${fmt(pnl)}</span>
+          &nbsp;·&nbsp; Hit Rate: ${rev.hit_rate!=null?rev.hit_rate+'%':'—'}
+        </div>
+      </div>
+      <div class="prose" style="font-size:12px">${prose(rev.narrative)}</div>
+    </div>`;
+  }
+  document.getElementById('overlay-title').textContent='Brief: '+dateKey;
+  document.getElementById('overlay-body').innerHTML=html;
+  document.getElementById('overlay').classList.add('show');
+}
+
+function closeOverlay(e){if(!e||e.target===document.getElementById('overlay'))document.getElementById('overlay').classList.remove('show');}
+
+/* ═══ ANALYTICS ═══ */
+async function renderAnalytics(){
+  const el=document.getElementById('analytics-content');
+  el.innerHTML=`<div style="padding:20px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim)">Načítám…</div>`;
+  const dates=await fetchAllDates();
+  if(!dates.length){el.innerHTML=`<div class="empty">Žádné sessions.</div>`;return;}
+  const records=(await Promise.all(dates.slice(0,60).map(d=>fetchJSON(`data/${d}.json`)))).filter(Boolean);
+  const reviewed=records.filter(r=>r.review);
+  if(!reviewed.length){el.innerHTML=`<div class="empty">Žádné evening reviews zatím.</div>`;return;}
+
+  let totalPicks=0,hits=0,stops=0,missed=0,openC=0;
+  let totalPnlUsd=0,totalPnlPct=0,pnlCount=0;
+  const tickerMap={};
+  const sentPerf={bullish:[],bearish:[],neutral:[]};
+  const dayData=[];
+  const dirPerf={long:{hits:0,total:0},short:{hits:0,total:0}};
+
+  // Probability calibration tracking
+  const calibBuckets={};  // bucket key -> {stated, hits, count}
+  let brierSum=0, brierCount=0;
+  let calibOverconfident=0, calibUnderconfident=0, calibrated=0;
+
+  reviewed.forEach(r=>{
+    const rev=r.review,b=r.brief;
+    const pr=rev.picks_review||[];
+    const ps=rev.portfolio_summary||{};
+    dayData.push({date:r.date,score:rev.overall_score||0,hitRate:rev.hit_rate,pnlUsd:ps.total_pnl_usd||0,grade:rev.overall_grade});
+    if(b?.overall_sentiment)sentPerf[b.overall_sentiment]?.push(rev.overall_score||0);
+    pr.forEach(p=>{
+      totalPicks++;
+      const wasHit=p.outcome==='hit_target';
+      if(wasHit)hits++;
+      else if(p.outcome==='stopped_out')stops++;
+      else if(p.outcome==='missed_entry')missed++;
+      else openC++;
+      if(p.pnl_usd!=null){totalPnlUsd+=parseFloat(p.pnl_usd||0);pnlCount++;}
+      if(p.pnl_pct!=null)totalPnlPct+=parseFloat(p.pnl_pct||0);
+      if(p.direction){dirPerf[p.direction].total++;if(wasHit)dirPerf[p.direction].hits++;}
+      if(p.ticker){if(!tickerMap[p.ticker])tickerMap[p.ticker]={count:0,hits:0,totalPnlUsd:0};tickerMap[p.ticker].count++;if(wasHit)tickerMap[p.ticker].hits++;tickerMap[p.ticker].totalPnlUsd+=parseFloat(p.pnl_usd||0);}
+      // Probability calibration
+      if(p.original_probability_pct!=null&&p.outcome!=='held_open'&&p.outcome!=='missed_entry'){
+        const prob=parseFloat(p.original_probability_pct)/100;
+        const outcome=wasHit?1:0;
+        brierSum+=Math.pow(prob-outcome,2);
+        brierCount++;
+        // Bucket by decile (0-9, 10-19, ... 90-100)
+        const bucket=Math.floor(p.original_probability_pct/10)*10;
+        if(!calibBuckets[bucket])calibBuckets[bucket]={stated:bucket+5,hits:0,count:0};
+        calibBuckets[bucket].hits+=outcome;
+        calibBuckets[bucket].count++;
+        // Verdict counts
+        if(p.probability_verdict==='overconfident')calibOverconfident++;
+        else if(p.probability_verdict==='underconfident')calibUnderconfident++;
+        else if(p.probability_verdict==='calibrated')calibrated++;
+      }
+    });
+  });
+
+  const brierScore=brierCount>0?(brierSum/brierCount).toFixed(3):null;
+  // Brier: 0=perfect, 0.25=random, lower is better
+  const brierColor=brierScore!=null?(brierScore<0.15?'var(--green)':brierScore<0.25?'var(--amber)':'var(--red)'):'var(--dim)';
+
+  dayData.sort((a,b)=>a.date.localeCompare(b.date));
+  const hitRate=totalPicks>0?Math.round(hits/totalPicks*100):0;
+  const avgPnlUsd=pnlCount>0?(totalPnlUsd/pnlCount):0;
+  const avgScore=reviewed.length>0?Math.round(dayData.reduce((s,d)=>s+(d.score||0),0)/reviewed.length):0;
+  const longHR=dirPerf.long.total>0?Math.round(dirPerf.long.hits/dirPerf.long.total*100):0;
+  const shortHR=dirPerf.short.total>0?Math.round(dirPerf.short.hits/dirPerf.short.total*100):0;
+  const tickers=Object.entries(tickerMap).sort((a,b)=>b[1].totalPnlUsd-a[1].totalPnlUsd).slice(0,10);
+  const maxP=Math.max(...tickers.map(([,v])=>Math.abs(v.totalPnlUsd)),1);
+  const pct=x=>totalPicks>0?Math.round(x/totalPicks*100):0;
+
+  const sentRows=['bullish','bearish','neutral'].map(s=>{
+    const arr=sentPerf[s];if(!arr.length)return'';
+    const avg=Math.round(arr.reduce((a,b)=>a+b,0)/arr.length);
+    const color=s==='bullish'?'var(--green)':s==='bearish'?'var(--red)':'var(--amber)';
+    return`<div class="sec-row"><div class="sec-name" style="color:${color};text-transform:capitalize">${s==='bullish'?'▲':s==='bearish'?'▼':'◆'} ${s}</div><div class="sec-bar"><div class="sec-fill" style="width:${avg}%;background:${color}"></div></div><div class="sec-sig" style="color:${color}">${avg}/100 (${arr.length}d)</div></div>`;
+  }).join('');
+
+  el.innerHTML=`
+    <div class="kpi-grid fi">
+      <div class="kpi"><div class="kpi-lbl">Sessions</div><div class="kpi-val">${reviewed.length}</div><div class="kpi-sub">of ${records.length} total</div></div>
+      <div class="kpi"><div class="kpi-lbl">Hit Rate</div><div class="kpi-val" style="color:${hitRate>=50?'var(--green)':'var(--red)'}">${hitRate}%</div><div class="kpi-sub">${hits}/${totalPicks} picks</div></div>
+      <div class="kpi"><div class="kpi-lbl">Avg P&L / Pick</div><div class="kpi-val" style="color:${avgPnlUsd>=0?'var(--green)':'var(--red)'}">${avgPnlUsd>=0?'+':''}$${fmt(avgPnlUsd)}</div><div class="kpi-sub">${pnlCount} picks</div></div>
+      <div class="kpi"><div class="kpi-lbl">Avg Score</div><div class="kpi-val">${avgScore}</div><div class="kpi-sub">out of 100</div></div>
+      <div class="kpi"><div class="kpi-lbl">Long HR</div><div class="kpi-val" style="color:var(--green)">${longHR}%</div><div class="kpi-sub">${dirPerf.long.total} picks</div></div>
+      <div class="kpi"><div class="kpi-lbl">Short HR</div><div class="kpi-val" style="color:var(--red)">${shortHR}%</div><div class="kpi-sub">${dirPerf.short.total} picks</div></div>
+    </div>
+    <!-- CALIBRATION KPIs -->
+    ${brierScore!=null?`<div style="background:var(--surface);border:1px solid var(--border);margin-bottom:16px;">
+      <div style="padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green)">Probability Calibration</div>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim)">${brierCount} evaluated picks</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;background:var(--border)">
+        <div style="background:var(--surface);padding:14px 16px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Brier Score</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:700;color:${brierColor}">${brierScore}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px">0=perfect · 0.25=random</div>
+        </div>
+        <div style="background:var(--surface);padding:14px 16px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Calibrated</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:700;color:var(--green)">${calibrated}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px">prob matched outcome</div>
+        </div>
+        <div style="background:var(--surface);padding:14px 16px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Overconfident</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:700;color:var(--red)">${calibOverconfident}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px">high prob → failed</div>
+        </div>
+        <div style="background:var(--surface);padding:14px 16px;">
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Underconfident</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-weight:700;color:var(--blue)">${calibUnderconfident}</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);margin-top:3px">low prob → hit target</div>
+        </div>
+      </div>
+      <!-- Calibration chart (stated vs actual hit rate by bucket) -->
+      ${Object.keys(calibBuckets).length>=2?`<div style="padding:14px"><canvas id="calibChart" style="display:block;width:100%!important;height:140px!important;"></canvas></div>`:''}
+    </div>`:''} 
+
+    <div class="card fi"><div class="card-hdr"><div class="card-lbl">Score Trend</div></div><div class="card-body"><canvas id="scoreChart" class="chart"></canvas></div></div>
+    <div class="card fi"><div class="card-hdr"><div class="card-lbl">Outcome Breakdown</div></div>
+      <div class="card-body">
+        <div style="display:flex;height:18px;width:100%;overflow:hidden">
+          <div style="width:${pct(hits)}%;background:var(--green)"></div>
+          <div style="width:${pct(stops)}%;background:var(--red)"></div>
+          <div style="width:${pct(openC)}%;background:var(--amber)"></div>
+          <div style="width:${pct(missed)}%;background:var(--border2)"></div>
+        </div>
+        <div style="display:flex;gap:16px;margin-top:10px;flex-wrap:wrap;font-family:'IBM Plex Mono',monospace;font-size:10px">
+          <span><span style="color:var(--green)">■</span> Hit: ${hits} (${pct(hits)}%)</span>
+          <span><span style="color:var(--red)">■</span> Stop: ${stops} (${pct(stops)}%)</span>
+          <span><span style="color:var(--amber)">■</span> Held: ${openC} (${pct(openC)}%)</span>
+          <span><span style="color:var(--dim)">■</span> Missed: ${missed} (${pct(missed)}%)</span>
+        </div>
+      </div>
+    </div>
+    ${sentRows?`<div class="card fi"><div class="card-hdr"><div class="card-lbl">Score by Sentiment</div></div><div class="card-body" style="padding:8px 14px">${sentRows}</div></div>`:''}
+    ${tickers.length?`<div class="card fi"><div class="card-hdr"><div class="card-lbl">Ticker P&L Leaderboard</div></div>
+      <div style="overflow-x:auto"><table class="tp">
+        <thead><tr><th>Ticker</th><th>Picks</th><th>Hit%</th><th>Cum. P&L (USD)</th></tr></thead>
+        <tbody>${tickers.map(([tk,v])=>{
+          const pnl=v.totalPnlUsd,hr=Math.round(v.hits/v.count*100),pc=pnl>=0?'var(--green)':'var(--red)',bw=Math.round(Math.abs(pnl)/maxP*80);
+          return`<tr><td style="color:var(--bright);font-weight:700">${tk}</td><td style="color:var(--dim)">${v.count}</td><td>${hr}%</td>
+            <td style="color:${pc};font-weight:600">${pnl>=0?'+':''}$${fmt(pnl)}<span style="display:inline-block;width:80px;height:3px;background:var(--border);vertical-align:middle;margin-left:6px"><span style="display:block;width:${bw}%;height:100%;background:${pc}"></span></span></td></tr>`;
+        }).join('')}</tbody>
+      </table></div></div>`:''}
+    <div class="card fi"><div class="card-hdr"><div class="card-lbl">Session Log</div></div>
+      <div>${[...dayData].reverse().map(d=>{
+        const pc=d.pnlUsd>=0?'var(--green)':'var(--red)',hc=d.hitRate!=null&&d.hitRate>=50?'var(--green)':'var(--red)';
+        return`<div style="display:flex;align-items:center;gap:12px;padding:9px 14px;border-bottom:1px solid var(--border);font-family:'IBM Plex Mono',monospace;font-size:11px">
+          <div style="color:var(--bright);width:100px">${d.date}</div>
+          <div style="color:${hc};width:75px">HR:${d.hitRate!=null?d.hitRate+'%':'—'}</div>
+          <div style="color:${pc};width:90px">${d.pnlUsd>=0?'+':''}$${fmt(d.pnlUsd)}</div>
+          <div style="flex:1;height:3px;background:var(--border)"><div style="height:100%;width:${d.score}%;background:${d.score>=60?'var(--green)':d.score>=40?'var(--amber)':'var(--red)'}"></div></div>
+          <div style="color:var(--dim);width:55px;text-align:right">${d.score}/100</div>
+        </div>`;
+      }).join('')}</div>
+    </div>`;
+
+  drawScoreChart(dayData);
+  if(Object.keys(calibBuckets).length>=2) drawCalibChart(calibBuckets);
+}
+
+function drawCalibChart(buckets){
+  const canvas=document.getElementById('calibChart');
+  if(!canvas) return;
+  const ctx=canvas.getContext('2d');
+  const W=canvas.offsetWidth||600,H=140,dpr=window.devicePixelRatio||1;
+  canvas.width=W*dpr;canvas.height=H*dpr;ctx.scale(dpr,dpr);
+  const sorted=Object.entries(buckets).sort((a,b)=>+a[0]-+b[0]);
+  const pad={t:12,r:14,b:28,l:38};
+  const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
+  const n=sorted.length;
+  const bw=Math.max(8,(cW/n)*0.65);
+  const gap=(cW-(bw*n))/(n+1);
+
+  // Perfect calibration diagonal
+  ctx.strokeStyle='rgba(255,255,255,.1)';ctx.lineWidth=1;ctx.setLineDash([4,4]);
+  ctx.beginPath();ctx.moveTo(pad.l,pad.t+cH);ctx.lineTo(pad.l+cW,pad.t);ctx.stroke();
+  ctx.setLineDash([]);
+
+  // Y axis labels
+  [0,25,50,75,100].forEach(v=>{
+    const y=pad.t+cH-(v/100)*cH;
+    ctx.strokeStyle='rgba(255,255,255,.04)';ctx.lineWidth=1;
+    ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+cW,y);ctx.stroke();
+    ctx.fillStyle='rgba(74,90,106,.8)';ctx.font='8px IBM Plex Mono,monospace';ctx.textAlign='right';
+    ctx.fillText(v+'%',pad.l-4,y+3);
+  });
+
+  sorted.forEach(([bucket,{stated,hits,count}],i)=>{
+    if(!count)return;
+    const actualPct=Math.round(hits/count*100);
+    const x=pad.l+gap+(i*(bw+gap));
+
+    // Stated bar (background, dim)
+    const statedH=(stated/100)*cH;
+    ctx.fillStyle='rgba(255,255,255,.07)';
+    ctx.fillRect(x,pad.t+cH-statedH,bw,statedH);
+
+    // Actual bar
+    const actualH=(actualPct/100)*cH;
+    const barColor=Math.abs(actualPct-stated)<15?'rgba(0,212,170,.8)':actualPct<stated?'rgba(255,64,96,.8)':'rgba(77,166,255,.8)';
+    ctx.fillStyle=barColor;
+    ctx.fillRect(x+2,pad.t+cH-actualH,bw-4,actualH);
+
+    // X label
+    ctx.fillStyle='rgba(74,90,106,.8)';ctx.font='8px IBM Plex Mono,monospace';ctx.textAlign='center';
+    ctx.fillText(stated+'%',x+bw/2,pad.t+cH+14);
+    // Count label
+    ctx.fillStyle='rgba(74,90,106,.6)';ctx.font='7px IBM Plex Mono,monospace';
+    ctx.fillText('n='+count,x+bw/2,pad.t+cH+23);
+  });
+
+  // Legend
+  ctx.fillStyle='rgba(255,255,255,.1)';ctx.fillRect(pad.l,pad.t,10,10);
+  ctx.fillStyle='rgba(74,90,106,.8)';ctx.font='8px IBM Plex Mono,monospace';ctx.textAlign='left';
+  ctx.fillText('Stated',pad.l+14,pad.t+8);
+  ctx.fillStyle='rgba(0,212,170,.8)';ctx.fillRect(pad.l+60,pad.t,10,10);
+  ctx.fillStyle='rgba(74,90,106,.8)';ctx.fillText('Actual hit rate',pad.l+74,pad.t+8);
+}
+
+function drawScoreChart(data){
+  const canvas=document.getElementById('scoreChart');
+  if(!canvas||data.length<2)return;
+  const ctx=canvas.getContext('2d');
+  const W=canvas.offsetWidth||600,H=150,dpr=window.devicePixelRatio||1;
+  canvas.width=W*dpr;canvas.height=H*dpr;ctx.scale(dpr,dpr);
+  const scores=data.map(d=>d.score||0);
+  const pad={t:10,r:10,b:26,l:34};
+  const cW=W-pad.l-pad.r,cH=H-pad.t-pad.b;
+  const xStep=cW/(scores.length-1);
+  const pt=(i,s)=>({x:pad.l+i*xStep,y:pad.t+cH-(s/100)*cH});
+  [25,50,75].forEach(v=>{const y=pad.t+cH-(v/100)*cH;ctx.strokeStyle='rgba(255,255,255,.04)';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(pad.l,y);ctx.lineTo(pad.l+cW,y);ctx.stroke();ctx.fillStyle='rgba(74,90,106,.7)';ctx.font='9px IBM Plex Mono,monospace';ctx.textAlign='right';ctx.fillText(v,pad.l-5,y+3);});
+  ctx.beginPath();scores.forEach((s,i)=>{const p=pt(i,s);i===0?ctx.moveTo(p.x,p.y):ctx.lineTo(p.x,p.y);});ctx.strokeStyle='rgba(0,212,170,.9)';ctx.lineWidth=1.5;ctx.stroke();
+  const grad=ctx.createLinearGradient(0,pad.t,0,pad.t+cH);grad.addColorStop(0,'rgba(0,212,170,.2)');grad.addColorStop(1,'rgba(0,0,0,0)');
+  ctx.lineTo(pad.l+(scores.length-1)*xStep,pad.t+cH);ctx.lineTo(pad.l,pad.t+cH);ctx.closePath();ctx.fillStyle=grad;ctx.fill();
+  scores.forEach((s,i)=>{const p=pt(i,s);ctx.beginPath();ctx.arc(p.x,p.y,3,0,Math.PI*2);ctx.fillStyle=s>=60?'var(--green)':s>=40?'var(--amber)':'var(--red)';ctx.fill();if(i%Math.max(1,Math.floor(scores.length/6))===0){ctx.fillStyle='rgba(74,90,106,.8)';ctx.font='8px IBM Plex Mono,monospace';ctx.textAlign='center';ctx.fillText(data[i].date.slice(5),p.x,pad.t+cH+16);}});
+}
+
+/* ═══ INIT ═══ */
+loadSetupForm();
+loadToday();
+</script>
+</body>
+</html>
