@@ -1,0 +1,72 @@
+name: Market Morning Brief
+
+on:
+  schedule:
+    # 13:15 UTC = 09:15 ET (EDT) — 15 minut před otevřením trhu
+    - cron: '15 13 * * 1-5'
+    # 20:30 UTC = 16:30 ET (EDT) — 30 minut po zavření trhu
+    - cron: '30 20 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Run mode'
+        required: true
+        default: 'morning'
+        type: choice
+        options:
+          - morning
+          - evening
+
+jobs:
+  run-brief:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # potřeba pro git push dat
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install anthropic requests pytz
+
+      - name: Determine run mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
+          else
+            # Automaticky podle hodiny UTC
+            HOUR=$(date -u +%H)
+            MINUTE=$(date -u +%M)
+            if [ "$HOUR" = "13" ]; then
+              echo "mode=morning" >> $GITHUB_OUTPUT
+            else
+              echo "mode=evening" >> $GITHUB_OUTPUT
+            fi
+          fi
+
+      - name: Run Morning Brief
+        if: steps.mode.outputs.mode == 'morning'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/morning_brief.py
+
+      - name: Run Evening Review
+        if: steps.mode.outputs.mode == 'evening'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/evening_review.py
+
+      - name: Commit and push data
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Market Brief Bot"
+          git add data/
+          git diff --staged --quiet || git commit -m "📊 $(date -u '+%Y-%m-%d') - ${{ steps.mode.outputs.mode }}"
+          git push
