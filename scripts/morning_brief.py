@@ -151,7 +151,7 @@ USER_PROMPT = f"Generate morning brief for {DATE_STR}. Search current data. Retu
 print(f"🔍 Generuji morning brief pro {DATE_STR} | Kapitál: ${current_capital:,.2f}")
 
 response = client.messages.create(
-    model="claude-sonnet-4-20250514",
+    model="claude-sonnet-4-5",
     max_tokens=4000,
     system=SYSTEM_PROMPT,
     tools=[{"type": "web_search_20250305", "name": "web_search"}],
