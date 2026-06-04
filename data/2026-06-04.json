@@ -1,0 +1,228 @@
+{
+  "date": "2026-06-04",
+  "brief": {
+    "generated_at": "2026-06-04T06:00:00Z",
+    "market_date": "Thursday, June 04, 2026",
+    "date_key": "2026-06-04",
+    "snapshot": {
+      "sp500_futures": "7,520 (-0.43%)",
+      "nasdaq_futures": "26,700 (-0.57%)",
+      "dow_futures": "50,650 (-0.10%)",
+      "vix": "16.35",
+      "us10y": "4.48%",
+      "dxy": "99.54",
+      "crude_oil": "$96.02",
+      "gold": "$4,485"
+    },
+    "overall_sentiment": "bearish",
+    "sentiment_score": 35,
+    "key_themes": [
+      "Tech earnings disappointment - Broadcom/CrowdStrike miss pressures AI trade",
+      "US-Iran conflict escalation - Fresh strikes drive oil higher, markets lower",
+      "Hawkish Fed expectations - Strong jobs data + inflation push rate hike odds to 85%"
+    ],
+    "macro_summary": "Markets face a triple headwind Thursday morning as tech leadership cracks, geopolitical tensions flare, and Fed tightening expectations surge. After-hours Wednesday, Broadcom plunged 14% on a revenue miss and weak guidance, while CrowdStrike dropped 11% on soft Q2 outlook, triggering a cascade across semiconductors (Intel -2%, AMD -2.9%, Arm -4.3%). This comes after Wednesday's regular session already saw the S&P 500 snap a 9-day win streak, falling 0.74% as the Dow dropped 621 points (-1.21%) and Nasdaq declined 0.89%.\n\nThe macro backdrop is deteriorating rapidly. Wednesday's ADP report showed 122K private jobs added in May (vs 110K est), the strongest since January 2025, while ISM Services PMI price gauge hit a near 4-year high. This reinforces the Fed's hawkish tilt—markets now price 85% odds of a 25bp rate hike by year-end, up from 60% a week ago. The 10-year Treasury yield climbed to 4.48%, with the 30-year approaching 5%, crimping equity valuations. Meanwhile, the DXY dollar index strengthened to 99.54 (highest since April), headwind for multinationals and emerging markets.\n\nGeopolitically, the US-Iran war entered its most dangerous phase yet. Overnight, Iran launched ballistic missiles toward Kuwait and Bahrain, while US forces struck Qeshm Island. Oil spiked above $96/barrel (WTI), with Brent near $98, as the Strait of Hormuz remains effectively closed despite on-and-off peace talk headlines. US crude inventories fell 7.97M barrels last week—the sixth consecutive weekly decline. Gas prices average $4.29/gallon nationally, entering peak summer driving season. This oil shock is pushing core inflation higher (now 3.8% vs Fed's 2% target), killing hopes for rate cuts and instead raising the specter of rate hikes into a slowing economy—a stagflation setup.",
+    "afterhours_summary": "After-hours Wednesday delivered a gut punch to the AI rally that has powered markets to records. Broadcom (AVGO), trading at $2+ trillion market cap before earnings, reported fiscal Q2 revenue below Street estimates and issued cautious guidance, sending shares down 13.8% after-hours. The miss is especially damaging because Broadcom has been viewed as a core AI infrastructure play, and the weakness spread immediately across the semiconductor complex. CrowdStrike (CRWD) compounded the pain, falling 11% on soft Q2 sales guidance despite beating Q1 numbers, raising concerns about enterprise IT spending amid economic uncertainty.\n\nThe contagion was swift: Intel (-2%), AMD (-2.9%), Palantir (-1.5%), Qualcomm (-1.9%), Arm Holdings (-4.3%) all sold off in sympathy. This follows Tuesday's mega-cap tech weakness when Alphabet dropped 4% after announcing an $80 billion stock sale to fund AI buildout, and Wednesday's regular session saw Microsoft (-3%), Oracle (-5%), and Nvidia (-3%+) all decline sharply. The AI concentration trade—which has driven the S&P 500 to 7,600+ despite weak market breadth (only 52% of stocks above their 50-day MA)—is showing cracks at precisely the wrong time, as macro headwinds intensify.\n\nOn a positive note, Palo Alto Networks (PANW) initially surged 10% after-hours on strong Q3 beats and raised guidance, with CrowdStrike and Zscaler rallying in sympathy. However, PANW later reversed to close up only 3%, suggesting exhaustion even in winning names. The bifurcation is clear: defensive cybersecurity is holding up better than offensive AI capex plays. Looking ahead to Thursday, this earnings wreckage sets up a risk-off open, with futures already down 0.4-0.6% across the board.",
+    "geopolitical_summary": "The Iran war escalated dangerously overnight, with the US and Iran exchanging the most serious strikes since the ceasefire began in early May. According to US Central Command, Iran fired ballistic missiles toward Kuwait and Bahrain (both GCC states hosting US forces), while US forces conducted retaliatory strikes on Iran's Qeshm Island. This marks a potential breakdown of the fragile ceasefire, with Trump administration officials acknowledging negotiations remain stalled despite the President's public insistence that talks are 'ongoing.'\n\nThe Strait of Hormuz—through which 27% of global oil trade flows—remains effectively closed despite sporadic reports of reopening progress. Iran has deployed naval mines and threatened any ship attempting transit, while insurance costs have skyrocketed. Oil prices climbed back above $96/barrel for WTI and $98 for Brent, with analysts warning that sustained closure through Q2 could push Brent toward $120+. Global crude inventories are approaching critical operational minimums after three months of this conflict. The economic impact is severe: Vietnam faces fuel shortages, Europe is rerouting jet fuel shipments, and US gasoline prices at $4.29/gallon threaten consumer spending. Markets are increasingly pricing in a prolonged conflict scenario rather than the quick resolution many hoped for in late May.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bearish",
+        "score": 30,
+        "reason": "XLK -1.6% after-hours on Broadcom/CrowdStrike earnings misses. AI concentration trade cracking as mega-caps sold off Wednesday (MSFT -3%, ORCL -5%, NVDA -3%). Sector up 32% YTD but extremely overbought; breadth deteriorating with only 52% of stocks above 50-day MA. Rising yields (10Y at 4.48%)压缩 tech multiples."
+      },
+      {
+        "name": "Financials",
+        "signal": "bearish",
+        "score": 35,
+        "reason": "XLF -1.6% Wednesday as Blackstone (-4%) and KKR (-4%) crashed on Partners Group withdrawal gate concerns—private market liquidity fears resurfacing. Banks face conflicting signals: higher rates boost NIM, but Iran war + oil shock raise recession risk. Credit spreads widening."
+      },
+      {
+        "name": "Energy",
+        "signal": "bullish",
+        "score": 72,
+        "reason": "XLE +26% YTD, strongest sector. WTI above $96, Brent near $98 on Iran escalation and 6th straight week of inventory drawdowns. CVX ~$189, XOM ~$152 both consolidating near highs. Gasoline $4.29/gallon entering summer. Catalyst: Strait of Hormuz closure could push oil to $120+. Risk: peace deal would crater prices."
+      },
+      {
+        "name": "Consumer Discretionary",
+        "signal": "bearish",
+        "score": 32,
+        "reason": "Rising gas prices ($4.29/gal) and inflation (3.8%) crushing discretionary spending. Bifurcation: high-end resilient but middle/low income 'squeezing more life out of every dollar' per Fed Beige Book. Nike, Amazon vulnerable to consumer pullback. XLY lagging."
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "Defensive bid supporting XLV amid market turmoil, but sector not immune to macro slowdown. Eli Lilly and obesity drug plays remain strong, but broader healthcare facing margin pressure from labor costs and potential recession impact on elective procedures."
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 48,
+        "reason": "XLI caught between AI infrastructure buildout (positive) and recession fears (negative). Wednesday saw IBM -7%, Honeywell -5% leading Dow lower. Iran war disrupting global supply chains. Caterpillar +4.6% Tuesday but vulnerable to economic slowdown."
+      },
+      {
+        "name": "Utilities",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "XLU mixed—benefits from defensive flows and AI data center power demand, but higher yields (10Y at 4.48%) pressure utility valuations. Sector underperformed Wednesday as risk-off failed to drive safe-haven rotation."
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR Fund",
+        "direction": "long",
+        "entry_price": 56.3,
+        "target_price": 60.5,
+        "stop_loss": 54.7,
+        "target_pct": 7.5,
+        "stop_pct": -2.8,
+        "position_size_usd": 28000,
+        "holding_days": 3,
+        "risk_reward": "1:2.7",
+        "confidence": "high",
+        "thesis_macro": "Stagflation setup strongly favors energy. Oil above $96 on Iran escalation + 6th weekly inventory draw signals sustained supply shortage. Fed hiking into slowdown (85% odds by year-end) historically bullish for commodities as inflation hedge. Dollar strength (DXY 99.54) offset by physical supply tightness. Gasoline $4.29/gal entering summer driving season—refinery margins expanding.",
+        "thesis_technical": "XLE consolidating at $56 after +26% YTD run, holding above 20-day MA ($55.20). Prior resistance at $57.50 taken out; next target $60.50 (April high). RSI 58—room to run without overbought. Volume expanding on green days. Support layered at $54.70 (50-day MA) provides tight stop. Energy outperforming S&P 500 by widest margin since 2022.",
+        "thesis_catalyst": "Iran missiles hitting Kuwait/Bahrain overnight signals ceasefire breakdown. Strait of Hormuz closure extending = oil to $100+ near-term. Friday NFP report likely beats again, reinforcing Fed hike narrative = inflation hedge bid. OPEC+ meeting June 7 expected to maintain cuts. CVX/XOM holding key levels despite Wednesday selloff.",
+        "thesis_risk": "Peace deal announcement would trigger 10-15% oil crash. SPR release by Biden/Trump to cap prices before election season. China demand weak—Q1 GDP miss. Recession fears override inflation if equities cascade lower.",
+        "entry_logic": "Limit at $56.30 on any pre-market dip below $56.50. Wait for futures to stabilize post-open; if XLE holds $55.80-$56.00 in first 30min, enter on bounce. Avoid chasing above $57—wait for pullback to value zone.",
+        "exit_logic": "Target $60.50 represents April 2026 high and psychological $60 round number + 200-day MA resistance. Achievable in 3 days if oil continues toward $100. Represents strong risk-reward at 1:2.7. Take half at $59.00 to lock profits, trail rest.",
+        "probability_pct": 68,
+        "probability_reasoning": "High conviction based on clear geopolitical catalyst (Iran strikes), technical setup (consolidation above support), and macro tailwind (stagflation + Fed hikes). Lowered from 75% due to peace deal tail risk and broader equity market weakness potentially dragging all risk assets lower despite fundamentals.",
+        "catalysts": [
+          "Iran-US conflict escalation (overnight missiles)",
+          "Oil inventory data (6th weekly draw)",
+          "Friday NFP likely strong = Fed hike odds rise",
+          "OPEC+ June 7 meeting"
+        ]
+      },
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA Corporation",
+        "direction": "short",
+        "entry_price": 223.5,
+        "target_price": 212.0,
+        "stop_loss": 228.0,
+        "target_pct": -5.1,
+        "stop_pct": 2.0,
+        "position_size_usd": 22000,
+        "holding_days": 2,
+        "risk_reward": "1:2.6",
+        "confidence": "medium",
+        "thesis_macro": "AI capex trade rolling over as Broadcom's miss questions AI infrastructure spend sustainability. Rising yields (10Y 4.48%, headed to 5%) compress sky-high tech multiples. Fed shifting hawkish (85% hike odds) removes liquidity pillar supporting growth stocks. Dollar at 99.54 hurts NVDA's international revenue (>60% sales ex-US). Recession risk rising = enterprise IT budgets face scrutiny.",
+        "thesis_technical": "NVDA failed to reclaim $235 all-time high (May 14). Wednesday close $222.82, down 0.7%, breaking below $224 support on heavy volume. After-hours sympathy selling from Broadcom (-14%) and AMD (-2.9%) confirms sector weakness. RSI divergence: price near highs but momentum waning. Next support $212 (21-day EMA), then $205 (50-day MA). Overbought on longer timeframes after 70% YTD gain.",
+        "thesis_catalyst": "Broadcom earnings disaster ($2T market cap down 14% AH) spreads contagion across semis. NVDA reports Aug 26 but forward guidance concerns building. Jensen Huang's Computex comments on Marvell ('next trillion-dollar company') suggests NVDA growth sharing/slowing. Tech wreck accelerates if more mega-cap earnings disappoint. VIX rising to 16.35 from 15.32 signals volatility regime shift.",
+        "thesis_risk": "NVDA remains AI kingpin—any positive data center demand commentary from hyperscalers (MSFT, GOOGL, AMZN) rallies stock. Vera Rubin server ramp (mentioned at Computex) seen as next growth driver. Short squeeze risk if broader market stabilizes. Analyst targets average $298 (33% upside) per 37 Wall Street analysts.",
+        "entry_logic": "Short at $223.50 if NVDA opens below $222 and fails to reclaim $224 in first hour. Wait for dead-cat bounce to $223-224 resistance to initiate short with better risk-reward. Avoid shorting if gaps down >3% (too extended, squeeze risk). Use trailing stop.",
+        "exit_logic": "Cover at $212.00 (21-day EMA support and prior consolidation from May 28-29). Represents clean 5.1% move over 2 days, achievable given current momentum and sector weakness. If breaks $212, next target $205 but don't overstay—NVDA can reverse violently on any positive AI news.",
+        "probability_pct": 62,
+        "probability_reasoning": "Solid setup given Broadcom contagion, rising yields, and technical breakdown, but shorting the AI leader in a secular bull trend carries elevated risk. Probability reduced from 70% because NVDA has repeatedly shrugged off sector weakness, and any positive hyperscaler commentary could spark short squeeze. Two-day holding period limits downside scenario risk.",
+        "catalysts": [
+          "Broadcom earnings miss spreading semiconductor fear",
+          "Rising 10Y yields (4.48%) compressing tech valuations",
+          "Upcoming tech earnings (potential more misses)",
+          "VIX spike + market breadth deterioration"
+        ]
+      },
+      {
+        "ticker": "CVX",
+        "company": "Chevron Corporation",
+        "direction": "long",
+        "entry_price": 189.0,
+        "target_price": 198.0,
+        "stop_loss": 185.5,
+        "target_pct": 4.8,
+        "stop_pct": -1.9,
+        "position_size_usd": 25000,
+        "holding_days": 3,
+        "risk_reward": "1:2.5",
+        "confidence": "high",
+        "thesis_macro": "Oil majors capturing windfall as WTI crosses $96 and heading toward $100+. CVX less exposed to Iran war than XOM (CEO Wirth noted 'relatively less' Middle East ops) but benefits from global price surge. Refining margins expanding as gasoline hits $4.29/gal. CVX yields 3.26% at forward P/E of 14—compelling value vs S&P 500 at 21x with 1.3% yield. Stagflation historically favors integrated majors.",
+        "thesis_technical": "CVX consolidating in $187-192 range after hitting $214 in April (year-high). Currently $189, sitting on 50-day MA support. Wednesday gained 0.78% while S&P fell 0.74%—showing relative strength. Volume uptick on green days signals accumulation. Breakout above $192 targets $198-200 (prior resistance from May), then $205. RSI 56—neutral, room to move higher. Bullish flag pattern forming on daily chart.",
+        "thesis_catalyst": "Iran strikes overnight = oil spike continuation. CVX Q1 beat despite derivative headwinds; Q2 setup stronger with higher realized prices. Vaca Muerta Argentina project ($13.8B) moving forward—production growth story. Analyst targets average $215 (14% upside). June 7 OPEC+ meeting likely extends cuts. Summer driving season demand surge just beginning. Dividend ex-date approaching—institutional bid.",
+        "thesis_risk": "Peace deal tanks oil. XOM at $152 cheaper valuation (forward P/E 14.7 vs CVX 14). Recession kills demand—China GDP already weak. Permian production growth from shale caps upside. Environmental regulations tightening. Hess acquisition integration risk overhang (completed Q1 but synergy realization uncertain).",
+        "entry_logic": "Limit buy at $189.00, current level after Wednesday close $188.88. If gaps up on oil, wait for first pullback to $188-189 zone. Don't chase above $191—be patient for retest of 50-day MA. Scale in with half position if fills $189, add rest if dips to $187.50 (better entry).",
+        "exit_logic": "Target $198.00 represents May resistance and psychological round number below April high of $214. Achievable 4.8% gain in 3 days given oil trajectory and sector momentum. Take 60% profits at $196, trail remaining 40% with $194 stop to let winner run toward $200+ if oil hits $100. Conservative vs full $205+ potential to lock gains.",
+        "probability_pct": 70,
+        "probability_reasoning": "High-conviction setup combining clear catalyst (Iran escalation), technical support (50-day MA), value (P/E 14, 3.3% yield), and sector tailwind (energy +26% YTD). Probability supported by CVX's relative strength vs market Wednesday, strong analyst support (avg target $215), and CEO's confident commentary on limited Iran exposure. Slightly below 75% due to tail risk of surprise peace deal and recession fears.",
+        "catalysts": [
+          "Oil spike above $96 targeting $100",
+          "Iran conflict escalation overnight",
+          "OPEC+ meeting June 7 (likely production cuts extended)",
+          "Gasoline $4.29/gal entering peak summer demand",
+          "Vaca Muerta Argentina project progress"
+        ]
+      },
+      {
+        "ticker": "QQQ",
+        "company": "Invesco QQQ Trust (Nasdaq 100)",
+        "direction": "short",
+        "entry_price": 744.0,
+        "target_price": 725.0,
+        "stop_loss": 752.0,
+        "target_pct": -2.6,
+        "stop_pct": 1.1,
+        "position_size_usd": 18000,
+        "holding_days": 1,
+        "risk_reward": "1:2.4",
+        "confidence": "medium",
+        "thesis_macro": "Nasdaq 100 concentration risk exploding—top 10 holdings ~55% of index, dominated by mega-cap tech (AAPL, MSFT, NVDA, GOOGL, AMZN). Broadcom's AH collapse (-14%) alone drags index -0.7%. Rising yields (10Y 4.48%) and Fed hike pricing (85% odds) kryptonite for growth stocks. VIX rising from 15.32 to 16.35 signals volatility regime change. Risk-off rotation from growth to value/energy accelerating.",
+        "thesis_technical": "QQQ closed Wednesday $742.60 after 0.8% decline, breaking below $745 support. After-hours futures down 0.6% on tech earnings wreck = implied open ~$738-740. Failed to hold 20-day MA ($743). Next support $730 (50-day MA), then $720 (gap fill from May 28). RSI rolled over from 68 to 58—momentum fading. Breadth terrible: only 52% Nasdaq stocks above 50-day MA despite index near highs. Textbook bear flag setup.",
+        "thesis_catalyst": "Broadcom + CrowdStrike after-hours disaster. More tech earnings this week could disappoint (Lululemon tonight, others coming). Friday NFP expected strong = Fed hike odds rise = growth multiple compression. Iran war escalation risk-off = flows out of speculative tech into defensive/value. Market breadth deteriorating—classic late-cycle topping signal. SpaceX IPO June 12 could suck liquidity from other tech names.",
+        "thesis_risk": "QQQ has defied gravity all 2026 (up 35%+). Any positive spin on Broadcom (guidance not THAT bad, AI still strong) reverses selloff. AAPL WWDC June 8 could spark rally if AI features impress. Fed pivot rhetoric (unlikely but possible) would ignite growth rally. Short squeeze if pension/401k bid defends $740 level. One-day hold limits downside risk but also upside capture.",
+        "entry_logic": "Short at $744.00 if QQQ fails to reclaim $746 in first 30 minutes of trading. Wait for any early bounce from futures weakness to get better entry—don't short the open gap down. Look for first rejection at prior support turned resistance. Use tight stop given volatility.",
+        "exit_logic": "Cover at $725.00 (50-day moving average and round psychological support level). Represents clean 2.6% decline achievable in one day given current momentum and volatility (VIX 16.35). Conservative target for day-trade given QQQ's resilience—not trying to catch full move to $720 or lower. Take profit and reassess.",
+        "probability_pct": 58,
+        "probability_reasoning": "Medium conviction short given powerful after-hours weakness and deteriorating macro, but QQQ has been remarkably resilient all year and one-day holding period in volatile conditions creates execution risk. Probability lowered from 65% because mega-cap tech has repeatedly shrugged off selloffs, and Friday NFP upside surprise could actually rally equities on 'strong economy' narrative despite Fed implications. Higher VIX (16.35) increases two-way risk.",
+        "catalysts": [
+          "Broadcom -14% AH cascading across semis",
+          "Tech sector concentration risk + breadth deterioration",
+          "Rising 10Y yields (4.48%) compressing Nasdaq multiples",
+          "Friday NFP likely strong = Fed hike fears spike"
+        ]
+      },
+      {
+        "ticker": "DG",
+        "company": "Dollar General Corporation",
+        "direction": "long",
+        "entry_price": 141.5,
+        "target_price": 148.5,
+        "stop_loss": 138.0,
+        "target_pct": 4.9,
+        "stop_pct": -2.5,
+        "position_size_usd": 7000,
+        "holding_days": 2,
+        "risk_reward": "1:2.0",
+        "confidence": "medium",
+        "thesis_macro": "Recession-resistant defensive play as macro deteriorates. Rising gas prices ($4.29/gal) + inflation (3.8%) drive low/middle income consumers to discount retailers. DG raised 2026 EPS guidance to $7.45 from $7.35 on Tuesday, citing 'essential nature of offering' positioning them well. Fed Beige Book notes consumers 'squeezing more life out of every dollar'—DG's core value prop. Stagflation playbook: avoid discretionary, buy necessities at discount.",
+        "thesis_technical": "DG spiked 5%+ in pre-market Tuesday on earnings beat and raised guidance ($2.00 EPS vs $1.89 est) but faded during session—classic 'buy the rumor, sell the news.' Currently consolidating $140-143 range. Entry at $141.50 above support at $140 (20-day MA). Prior resistance at $148-150 from Q1. RSI 52—neutral. Volume elevated on earnings day but calming—readying for next leg. Relative strength vs S&P solid: +1.2% Tuesday while S&P flat.",
+        "thesis_catalyst": "Consumer spending bifurcation accelerating—lower/middle income cohorts getting squeezed by gas/food inflation while high-end resilient. June retail sales data (mid-month) expected weak for discretionary, strong for value. Walmart earnings June 9 could provide sector tailwind if beats. Gas prices rising weekly = more traffic to DG stores (footprint in low-income rural areas). Back-to-school shopping season approaching (July/Aug) = comp boost.",
+        "thesis_risk": "Revenue miss ($10.78B vs $10.82B est) on Tuesday shows sales growth challenged despite margin expansion. Same-store-sales growth target just 2.7%—not exciting. Recession actually hurts as even DG customers trade down or stockpile less. Competition from Amazon Prime (now targeting low-income with food delivery). Valuation not cheap: P/E ~19x. Small position size reflects moderate conviction.",
+        "entry_logic": "Limit at $141.50 if DG consolidates in $140-142 range Thursday morning. Avoid if gaps above $144 on market weakness (too extended). Ideal entry on any market flush that drags DG to $140-141 despite defensive fundamentals—use market panic to get better price on quality defensive name.",
+        "exit_logic": "Target $148.50 is prior Q1 resistance and represents clean 4.9% move (just under 5% target minimum). Achievable in 2 days if market rebounds or consumer data supports DG's value narrative. Conservative vs full potential to $150-152 (analyst avg target $155) because defensive plays don't move fast—taking high-single-digit gain and redeploying capital makes sense.",
+        "probability_pct": 55,
+        "probability_reasoning": "Moderate conviction based on strong defensive fundamentals (raised guidance, margin expansion, consumer bifurcation) but execution risk from muted sales growth and competitive pressures. Probability reflects that DG is 'doing well in a hard market' but not a screaming buy—more of a portfolio hedge. Two-day holding may not capture full move, but 5% target reasonable. Lower than energy trades due to less clear-cut catalyst.",
+        "catalysts": [
+          "Rising gas prices ($4.29/gal) + inflation driving discount store traffic",
+          "Consumer spending bifurcation (Fed Beige Book confirms)",
+          "Potential Walmart June 9 earnings beat = sector lift",
+          "June retail sales data (mid-month) could highlight DG outperformance"
+        ]
+      }
+    ],
+    "positions_to_close": [],
+    "portfolio_note": "Total deployed: $100,000. Allocation reflects high conviction in energy sector (53% combined: XLE $28K + CVX $25K) given Iran conflict escalation and oil supply dynamics—this is the clearest macro trade setup. Tech shorts (NVDA $22K + QQQ $18K = 40%) hedge against AI concentration risk post-Broadcom disaster, with tight 2-day max holding to limit squeeze risk. Small DG position ($7K, 7%) provides defensive balance without overcommitting to slower-moving value trade. No prior positions to close. Portfolio positioned for risk-off environment: long commodities/defensive, short overvalued growth. Key risk: surprise peace deal craters energy thesis and sparks tech relief rally—manage stops strictly.",
+    "risks": [
+      "Surprise Iran peace deal announcement collapses oil, reverses energy long thesis",
+      "Tech short squeeze if hyperscalers (MSFT, GOOGL, AMZN) provide positive AI spending commentary",
+      "Friday NFP miss (vs strong expectation) triggers Fed pivot hope = growth rally, energy selloff",
+      "Broadcom earnings 'not as bad as feared' narrative emerges, semiconductor bounce",
+      "Broader equity cascade below S&P 7,500 drags all risk assets including energy despite fundamentals"
+    ],
+    "data_freshness": "Data current as of 6:00 AM ET Thursday June 4, 2026. Futures, after-hours prices, and overnight news incorporated. Wednesday session close: S&P 500 7,553.68 (-0.74%), Dow 50,687.07 (-1.21%), Nasdaq 26,853.98 (-0.89%). Pre-market indications: S&P futures -0.43%, Nasdaq futures -0.57%, Dow futures -0.10%. Iran strikes overnight confirmed by US Central Command. Broadcom -13.8% and CrowdStrike -11% in after-hours trading following earnings."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-04T07:16:31.367476"
+}
