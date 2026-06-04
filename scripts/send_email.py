@@ -305,6 +305,8 @@ def build_evening_html():
         </div>"""
 
     lessons_html = ''.join(f'<div style="padding:4px 0;font-size:12px;color:#b8c8d8">→ {l}</div>' for l in review.get('lessons', []))
+    narrative_lines = review.get('narrative', '').split('\n')
+    narrative_html = ''.join(f'<p>{l}</p>' for l in narrative_lines if l.strip())
     tomorrow_html = ''.join(f'<div style="padding:4px 0;font-size:12px;color:#b8c8d8">→ {t}</div>' for t in review.get('tomorrow_watch', []))
 
     return f"""<!DOCTYPE html><html><head><meta charset="UTF-8">
@@ -334,7 +336,7 @@ def build_evening_html():
                         <div style="font-size:12px;color:#4a5a6a;margin-top:4px">{review.get('index_recap','')}</div>
                     </div>
                 </div>
-                <div class="prose">{''.join(f'<p>{l}</p>' for l in review.get('narrative','').split('\n') if l.strip())}</div>
+                <div class="prose">{narrative_html}</div>
             </div>
         </div>
 
