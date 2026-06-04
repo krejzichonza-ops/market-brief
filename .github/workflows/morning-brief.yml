@@ -1,5 +1,4 @@
 name: Market Morning Brief
-
 on:
   schedule:
     - cron: '15 13 * * 1-5'
