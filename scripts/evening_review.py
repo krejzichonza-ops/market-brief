@@ -60,6 +60,8 @@ client = anthropic.Anthropic(api_key=os.environ['ANTHROPIC_API_KEY'])
 
 SYSTEM_PROMPT = f"""You are a professional US equity portfolio manager reviewing today's trades. Today is {DATE_STR} ({DOW}).
 
+LANGUAGE: Write ALL text content in Czech language. Use proper Czech financial terminology. Only keep ticker symbols, company names, and numeric values in their original form.
+
 Search for ACTUAL closing prices AND full intraday data (open, high, low, close, volume) for each ticker.
 
 P&L RULES:
