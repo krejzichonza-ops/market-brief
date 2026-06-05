@@ -1,63 +1,11 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 64559.0,
+  "current_capital": 100000.0,
   "peak_capital": 100000.0,
   "total_trades": 0,
   "winning_trades": 0,
   "losing_trades": 0,
-  "equity_curve": [
-    {
-      "date": "2026-06-05",
-      "value": 100000.0,
-      "note": "Starting capital"
-    },
-    {
-      "date": "2026-06-05",
-      "day_of_week": "Friday",
-      "value": 64559.0,
-      "pnl_usd": -5441.0,
-      "grade": "B",
-      "avg_mae": 10.61,
-      "avg_mfe": 4.57
-    }
-  ],
-  "open_positions": [
-    {
-      "ticker": "UNH",
-      "company": "UnitedHealth Group",
-      "direction": "long",
-      "entry_price": 553.0,
-      "target_price": 570.0,
-      "stop_loss": 545.0,
-      "position_size_usd": 25000.0,
-      "holding_days_remaining": 1,
-      "unrealized_pnl_pct": -28.1,
-      "opened_date": "2026-06-05"
-    },
-    {
-      "ticker": "JPM",
-      "company": "JPMorgan Chase",
-      "direction": "long",
-      "entry_price": 218.5,
-      "target_price": 227.0,
-      "stop_loss": 215.0,
-      "position_size_usd": 23000.0,
-      "holding_days_remaining": 1,
-      "unrealized_pnl_pct": 42.24,
-      "opened_date": "2026-06-05"
-    },
-    {
-      "ticker": "XLE",
-      "company": "Energy Select Sector SPDR Fund",
-      "direction": "long",
-      "entry_price": 92.8,
-      "target_price": 96.5,
-      "stop_loss": 91.2,
-      "position_size_usd": 22000.0,
-      "holding_days_remaining": 2,
-      "unrealized_pnl_pct": -36.96,
-      "opened_date": "2026-06-05"
-    }
-  ],
+  "equity_curve": [],
+  "open_positions": [],
   "closed_trades": []
 }
