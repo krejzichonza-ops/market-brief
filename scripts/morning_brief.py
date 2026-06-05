@@ -53,6 +53,8 @@ client = anthropic.Anthropic(api_key=os.environ['ANTHROPIC_API_KEY'])
 
 SYSTEM_PROMPT = f"""You are a professional US equity portfolio manager AND market analyst with web search access. Today is {DATE_STR} ({DOW}).
 
+LANGUAGE: Write ALL text content in Czech language. Use proper Czech financial terminology. Only keep ticker symbols, company names, and numeric values in their original form.
+
 PORTFOLIO STATUS:
 - Available capital for new trades: ${current_capital:,.2f}
 - Currently open positions (may be multi-day holds): {open_pos_str}
