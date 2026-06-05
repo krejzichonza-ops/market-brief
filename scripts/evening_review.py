@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Evening Review Generator — s portfolio vyhodnocením
+Evening Review Generator v2 — s MAE/MFE tracking
 16:30 ET každý pracovní den via GitHub Actions.
 """
 
@@ -12,12 +12,12 @@ ET = pytz.timezone('America/New_York')
 now_et = datetime.now(ET)
 DATE_KEY = now_et.strftime('%Y-%m-%d')
 DATE_STR = now_et.strftime('%A, %B %d, %Y')
+DOW = now_et.strftime('%A')
 DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
 
-INPUT_FILE  = os.path.join(DATA_DIR, f'{DATE_KEY}.json')
+INPUT_FILE     = os.path.join(DATA_DIR, f'{DATE_KEY}.json')
 PORTFOLIO_FILE = os.path.join(DATA_DIR, 'portfolio.json')
 
-# ── Kontroly ───────────────────────────────────────────────────────────────────
 if not os.path.exists(INPUT_FILE):
     print(f"⚠️  Žádný morning brief pro {DATE_KEY}.")
     sys.exit(0)
@@ -26,7 +26,7 @@ with open(INPUT_FILE) as f:
     record = json.load(f)
 
 if not record.get('brief'):
-    print(f"⚠️  Morning brief pro {DATE_KEY} je prázdný.")
+    print(f"⚠️  Morning brief prázdný.")
     sys.exit(0)
 
 if record.get('reviewed'):
@@ -37,7 +37,6 @@ brief = record['brief']
 picks = brief.get('picks', [])
 picks_json = json.dumps(picks, ensure_ascii=False)
 
-# ── Portfolio stav ─────────────────────────────────────────────────────────────
 def load_portfolio():
     if os.path.exists(PORTFOLIO_FILE):
         with open(PORTFOLIO_FILE) as f:
@@ -55,48 +54,59 @@ def load_portfolio():
     }
 
 portfolio = load_portfolio()
-
-# Spočítej celkový nasazený kapitál z dnešních picků
 total_allocated = sum(p.get('position_size_usd', 0) for p in picks)
 
 client = anthropic.Anthropic(api_key=os.environ['ANTHROPIC_API_KEY'])
 
-SYSTEM_PROMPT = f"""You are a professional US equity portfolio manager reviewing today's trades. Today is {DATE_STR}.
+SYSTEM_PROMPT = f"""You are a professional US equity portfolio manager reviewing today's trades. Today is {DATE_STR} ({DOW}).
 
-Search for ACTUAL closing prices (and intraday high/low) for each ticker. Evaluate each position honestly.
+Search for ACTUAL closing prices AND full intraday data (open, high, low, close, volume) for each ticker.
 
-For each pick, determine:
-- Was the stop loss HIT during the session? (check intraday low for longs, high for shorts)
-- Was the take profit HIT during the session?
-- If neither: position closes at end-of-day price (unless holding_days > 1, then it remains open)
-
-P&L calculation:
+P&L RULES:
 - LONG: pnl_pct = (exit_price - entry_price) / entry_price * 100
 - SHORT: pnl_pct = (entry_price - exit_price) / entry_price * 100
-- If stopped out: use stop_loss price. If target hit: use target_price.
+- Stop hit: use stop_loss price. Target hit: use target_price. Neither: use actual_close.
+- holding_days > 1 and no stop/target hit: outcome = "held_open"
 
-THESIS POST-MORTEM — for every pick you MUST evaluate the original thesis:
-- thesis_macro_verdict: Did the macro thesis play out? What actually happened in the macro environment?
-- thesis_technical_verdict: Did the technical setup trigger as expected? Where did price actually go vs the expected level?
-- thesis_catalyst_verdict: Did the catalyst materialize? If not, what happened instead?
-- thesis_miss_reason: If the trade failed or underperformed, what was the PRIMARY reason? Choose one: wrong_direction | catalyst_delayed | macro_reversal | stop_too_tight | target_too_aggressive | missed_entry | broader_market_drag | sector_specific_news | other
-- what_worked: What part of the original analysis was correct?
-- what_failed: What part was wrong or missing?
+MAE/MFE ANALYSIS — for every pick (critical for trade quality assessment):
+- MAE (Maximum Adverse Excursion): How far did price move AGAINST the position before it resolved?
+  * LONG: MAE = (entry_price - session_low) / entry_price * 100  [how close to stop did we get?]
+  * SHORT: MAE = (session_high - entry_price) / entry_price * 100
+- MFE (Maximum Favorable Excursion): How far did price move IN FAVOR of the position at its best point?
+  * LONG: MFE = (session_high - entry_price) / entry_price * 100  [how close to target did we get?]
+  * SHORT: MFE = (entry_price - session_low) / entry_price * 100
+- mae_pct: the MAE value as positive number
+- mfe_pct: the MFE value as positive number
+- mae_vs_stop: "safe" (MAE < 50% of stop distance) | "close" (MAE 50-90% of stop) | "triggered" (stop was hit)
+- mfe_vs_target: "far" (MFE < 50% of target distance) | "close" (MFE 50-90%) | "reached" (target was hit)
+- trade_quality: Assessment based on MAE/MFE ratio:
+  * "excellent": low MAE, high MFE — clean move in our direction
+  * "good": moderate MAE, reached near target
+  * "scratchy": high MAE but recovered
+  * "poor": high MAE, low MFE — wrong from the start
 
-PROBABILITY CALIBRATION — for every pick:
-- original_probability_pct: copy the probability_pct exactly as stated in the morning pick
-- probability_verdict: evaluate the calibration quality:
-  * "calibrated" — the stated probability matched the outcome reasonably (e.g. 65% and it hit target, or 40% and it failed)
-  * "overconfident" — stated high probability (>60%) but trade failed / was stopped out
-  * "underconfident" — stated low probability (<50%) but trade hit target cleanly
-- probability_comment: 1 honest sentence assessing whether the confidence level was appropriate given what actually happened
+THESIS POST-MORTEM:
+- thesis_macro_verdict: Did macro thesis play out?
+- thesis_technical_verdict: Did technical setup trigger? Where did price go vs expected level?
+- thesis_catalyst_verdict: Did catalyst materialize?
+- thesis_options_verdict: Did the options flow signal prove correct?
+- thesis_volume_verdict: Did volume confirm or contradict the move?
+- thesis_miss_reason: wrong_direction|catalyst_delayed|macro_reversal|stop_too_tight|target_too_aggressive|missed_entry|broader_market_drag|sector_specific_news|low_volume|options_misleading|other|n/a
+- what_worked: What analysis was correct
+- what_failed: What was wrong or missing
+
+PROBABILITY CALIBRATION:
+- original_probability_pct: copy exactly from morning pick
+- probability_verdict: "calibrated"|"overconfident"|"underconfident"
+- probability_comment: 1 honest sentence on calibration quality
 
 Return ONLY valid JSON:
 {{
   "review_time": "ISO timestamp",
+  "day_of_week": "{DOW}",
   "overall_grade": "A|B|C|D|F",
   "overall_score": 0-100,
-  "index_recap": "S&P 500 and Nasdaq actual closing numbers today",
+  "index_recap": "S&P 500 and Nasdaq actual closing numbers with % change",
   "narrative": "2-3 paragraph honest assessment",
   "picks_review": [
     {{
@@ -108,6 +118,7 @@ Return ONLY valid JSON:
       "actual_high": 0.00,
       "actual_low": 0.00,
       "actual_close": 0.00,
+      "actual_volume_vs_avg": "above|below|average",
       "exit_price": 0.00,
       "direction": "long|short",
       "holding_days": 1,
@@ -116,16 +127,23 @@ Return ONLY valid JSON:
       "position_size_usd": 0.00,
       "pnl_usd": 0.00,
       "grade": "A|B|C|D|F",
+      "mae_pct": 0.0,
+      "mfe_pct": 0.0,
+      "mae_vs_stop": "safe|close|triggered",
+      "mfe_vs_target": "far|close|reached",
+      "trade_quality": "excellent|good|scratchy|poor",
       "commentary": "2 sentences on what happened intraday",
-      "thesis_macro_verdict": "Did macro thesis play out? What actually happened?",
-      "thesis_technical_verdict": "Did the technical setup trigger? Where did price go vs expected?",
-      "thesis_catalyst_verdict": "Did the catalyst materialize? What happened instead if not?",
-      "thesis_miss_reason": "wrong_direction|catalyst_delayed|macro_reversal|stop_too_tight|target_too_aggressive|missed_entry|broader_market_drag|sector_specific_news|other|n/a",
-      "what_worked": "What part of the original analysis was correct",
-      "what_failed": "What part was wrong or missing (or 'n/a' if trade succeeded)",
+      "thesis_macro_verdict": "...",
+      "thesis_technical_verdict": "...",
+      "thesis_catalyst_verdict": "...",
+      "thesis_options_verdict": "Did options flow signal prove correct?",
+      "thesis_volume_verdict": "Did volume confirm the move?",
+      "thesis_miss_reason": "...|n/a",
+      "what_worked": "...",
+      "what_failed": "... or n/a",
       "original_probability_pct": 0,
       "probability_verdict": "calibrated|overconfident|underconfident",
-      "probability_comment": "1 sentence: was the confidence level appropriate given what actually happened?"
+      "probability_comment": "..."
     }}
   ],
   "portfolio_summary": {{
@@ -138,23 +156,23 @@ Return ONLY valid JSON:
   }},
   "hit_rate": 0-100,
   "avg_pnl_pct": 0.0,
+  "avg_mae_pct": 0.0,
+  "avg_mfe_pct": 0.0,
   "lessons": ["lesson1","lesson2"],
   "tomorrow_watch": ["item1","item2"]
-}}
-
-For positions with holding_days > 1 that didn't hit stop or target: outcome = "held_open", use actual_close for unrealized pnl, they stay in portfolio."""
+}}"""
 
 USER_PROMPT = f"""Review today's picks ({DATE_STR}):
 {picks_json}
 
 Total allocated: ${total_allocated:,.2f}
-Search actual prices. Calculate P&L in USD per position. Return only JSON."""
+Search actual intraday prices (open/high/low/close/volume). Calculate MAE, MFE, P&L for each. Return only JSON."""
 
-print(f"🔍 Evening review {DATE_STR} | {len(picks)} pozic | Alokováno: ${total_allocated:,.2f}")
+print(f"🔍 Evening review {DATE_STR} ({DOW}) | {len(picks)} pozic | Alokováno: ${total_allocated:,.2f}")
 
 response = client.messages.create(
     model="claude-sonnet-4-5",
-    max_tokens=3500,
+    max_tokens=8000,
     system=SYSTEM_PROMPT,
     tools=[{"type": "web_search_20250305", "name": "web_search"}],
     messages=[{"role": "user", "content": USER_PROMPT}]
@@ -174,36 +192,35 @@ except json.JSONDecodeError as e:
     print(f"❌ Parse error: {e}\n{raw_text[:300]}")
     sys.exit(1)
 
-# ── Aktualizace portfolia ──────────────────────────────────────────────────────
+# ── Portfolio update ───────────────────────────────────────────────────────────
 ps = review_data.get('portfolio_summary', {})
 total_pnl_usd = ps.get('total_pnl_usd', 0.0)
 new_capital = ps.get('new_capital_available', portfolio['current_capital'])
 
-# Zajisti rozumné číslo
 if new_capital <= 0 or new_capital > 10_000_000:
     new_capital = portfolio['current_capital'] + total_pnl_usd
 
 portfolio['current_capital'] = round(new_capital, 2)
 portfolio['peak_capital'] = max(portfolio['peak_capital'], new_capital)
 
-# Statistiky obchodů
 pr = review_data.get('picks_review', [])
 closed_today = [p for p in pr if p.get('outcome') != 'held_open']
-held_open = [p for p in pr if p.get('outcome') == 'held_open']
+held_open    = [p for p in pr if p.get('outcome') == 'held_open']
 
-portfolio['total_trades'] += len(closed_today)
+portfolio['total_trades']   += len(closed_today)
 portfolio['winning_trades'] += sum(1 for p in closed_today if p.get('pnl_usd', 0) > 0)
 portfolio['losing_trades']  += sum(1 for p in closed_today if p.get('pnl_usd', 0) <= 0)
 
-# Equity curve bod
 portfolio['equity_curve'].append({
     "date": DATE_KEY,
+    "day_of_week": DOW,
     "value": round(new_capital, 2),
     "pnl_usd": round(total_pnl_usd, 2),
-    "grade": review_data.get('overall_grade', '?')
+    "grade": review_data.get('overall_grade', '?'),
+    "avg_mae": review_data.get('avg_mae_pct', 0),
+    "avg_mfe": review_data.get('avg_mfe_pct', 0)
 })
 
-# Open positions pro zítra
 portfolio['open_positions'] = []
 for p in held_open:
     original = next((x for x in picks if x['ticker'] == p['ticker']), {})
@@ -220,22 +237,25 @@ for p in held_open:
         "opened_date": DATE_KEY
     })
 
-# Closed trades log
 for p in closed_today:
     portfolio['closed_trades'].append({
         "date": DATE_KEY,
+        "day_of_week": DOW,
         "ticker": p['ticker'],
         "direction": p['direction'],
         "outcome": p['outcome'],
         "pnl_pct": p.get('pnl_pct', 0),
         "pnl_usd": p.get('pnl_usd', 0),
-        "position_size_usd": p.get('position_size_usd', 0)
+        "position_size_usd": p.get('position_size_usd', 0),
+        "mae_pct": p.get('mae_pct', 0),
+        "mfe_pct": p.get('mfe_pct', 0),
+        "trade_quality": p.get('trade_quality', ''),
+        "probability_pct": p.get('original_probability_pct', 0),
+        "probability_verdict": p.get('probability_verdict', '')
     })
 
-# Zachovej jen posledních 200 uzavřených obchodů
 portfolio['closed_trades'] = portfolio['closed_trades'][-200:]
 
-# ── Uložení ────────────────────────────────────────────────────────────────────
 record['review'] = review_data
 record['reviewed'] = True
 record['reviewed_at'] = datetime.utcnow().isoformat()
