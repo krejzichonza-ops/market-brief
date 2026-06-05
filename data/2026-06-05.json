@@ -1,0 +1,200 @@
+{
+  "date": "2026-06-05",
+  "brief": {
+    "generated_at": "2026-06-05T06:00:00Z",
+    "market_date": "Friday, June 05, 2026",
+    "date_key": "2026-06-05",
+    "day_of_week": "Friday",
+    "snapshot": {
+      "sp500_futures": "7565 -0.25%",
+      "nasdaq_futures": "Down -0.65%",
+      "dow_futures": "51584 +0.04%",
+      "vix": "15.40",
+      "us10y": "4.48%",
+      "dxy": "99.40",
+      "crude_oil": "$95.00",
+      "gold": "$4500"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "1.16 (elevated hedging)",
+      "market_volume": "average",
+      "earnings_this_week": [
+        "LULU: June 4 (reported, down -11%)",
+        "AVGO: June 3 (reported, down -13%)",
+        "CRWD: June 5",
+        "COST: June 5",
+        "VEEV: June 5"
+      ],
+      "insider_activity_summary": "Lululemon insiders showed net buying (9,365 shares vs 2,500 sold) with director purchases above $164 and COO buys below $152, suggesting confidence despite 40% YTD decline. Overall insider activity across market remains muted ahead of NFP."
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 52,
+    "key_themes": [
+      "Market rotation out of tech into healthcare, financials, and industrials",
+      "Jobs report (NFP) at 8:30 AM ET - major volatility catalyst",
+      "Iran ceasefire fragility keeping oil elevated, geopolitical premium persists",
+      "Broadcom disappointment triggering AI/chip sector selloff",
+      "Sector divergence: Dow record highs while Nasdaq underperforms"
+    ],
+    "macro_summary": "US equity futures are trading mixed Friday morning as investors await the critical May employment report at 8:30 AM ET. Expectations call for 85K jobs added with unemployment holding at 4.3%, but leading indicators suggest potential upside to 120-160K range. The report will be crucial for Fed policy expectations, with markets currently pricing 85% probability of a rate hike by year-end, up from 60% a week ago due to stronger labor data (ADP +122K, initial claims at 225K highest since February). The dollar index sits near two-month highs at 99.40, supported by hawkish Fed repricing and elevated oil prices from ongoing Iran conflict uncertainty.\n\nThursday's session showcased dramatic sector rotation: the Dow surged 875 points (+1.73%) to a record close of 51,562, led by UnitedHealth (+5.4%), JPMorgan (+3.3%), and Goldman Sachs (+5%), while the Nasdaq fell 0.09% as Broadcom's disappointing AI chip guidance triggered broad semiconductor weakness. The S&P 500 rose 0.41% to 7,584, with healthcare (+3.14%), financials (+2.67%), and real estate (+1.87%) offsetting technology (-1.23%). This rotation signals investor migration from concentrated AI trades toward broader economic exposure.\n\nThe 10-year Treasury yield climbed to 4.48% as stronger labor data reinforces expectations for prolonged higher rates. Oil remains elevated near $95/barrel as the fragile US-Iran ceasefire holds but shipping through the Strait of Hormuz remains disrupted. Gold retreated to $4,500 as hopes for Middle East resolution ease safe-haven demand, though uncertainty persists with Iran rejecting permanent ceasefire terms and demanding reparations.",
+    "afterhours_summary": "After-hours trading Thursday was dominated by Lululemon's earnings disaster, with shares plunging 11% following a severe guidance cut. The athleisure retailer slashed full-year revenue guidance to $11.0-11.15B (from $11.35-11.50B) and EPS to $10.95-11.15 (from $12.10-12.30), citing negative media coverage, underwhelming product launches, and a fifth consecutive quarter of Americas comparable sales declines (-5%). Interim CEO Meghan Frank blamed spikes in negative social media commentary and weak product reception, while tariffs compressed margins by 280 basis points. The stock is down 40% YTD and 63% over the past year, reflecting structural challenges in North American athleisure demand.\n\nBroadcom's Wednesday after-hours report also reverberated through Thursday's session. Despite beating on revenue ($22.19B vs $22.13B est) and EPS ($2.44 vs $2.40 est), shares dropped 12.6% as CEO Hock Tan failed to raise the full-year AI semiconductor revenue target above $100B and Q3 AI chip sales guidance of $16B missed whisper numbers of $17.2B. The disappointment reflects investor recalibration of AI infrastructure spending expectations and signals potential pause in the relentless chip rally. Analysts at Jefferies and Bernstein remain constructive, noting OpenAI and Anthropic chip ramps are backend-loaded toward 2027-2028, suggesting this is timing rather than demand destruction.\n\nOther notable movers included quantum computing IPO Quantinuum, which opened at $68 (above $60 IPO price) for a $17.6B valuation, and various semiconductor names extending losses in sympathy with Broadcom (Micron -7.7%, AMD -3.6%).",
+    "geopolitical_summary": "The fragile US-Iran ceasefire, extended indefinitely by President Trump on April 21, remains the dominant geopolitical risk. While an Israel-Lebanon ceasefire was announced, Iran continues to blockade the Strait of Hormuz (through which 20% of global oil flows), and the US maintains a counter-blockade targeting vessels accessing Iranian ports. Neither side has removed their blockades despite ceasefire conditions. Iran has demanded reparations, release of frozen funds, and permanent security guarantees, while the US insists on complete Strait reopening as a precondition. Recent strikes by both sides (Iran hit Kuwait airport, US struck empty tanker bound for Iran) show the ceasefire is violated routinely.\n\nMarkets are pricing continued disruption: WTI crude trades near $95, down from highs above $117 but well above pre-conflict levels. Shipping volumes through Hormuz remain well below normal despite some vessels operating with US military coordination. The conflict has also triggered global trade rerouting, with Asian LNG demand surging as buyers scramble for alternative energy sources. Congressional resistance to Trump's Iran policy is growing, with the House passing a resolution to block continued military action, though Trump has ignored it. Analysts warn the ceasefire could collapse quickly if negotiations fail, with potential for renewed strikes on Iranian nuclear facilities or oil infrastructure. China and Russia have called for comprehensive settlements while opposing US sanctions, adding multilateral complexity.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bearish",
+        "score": 38,
+        "reason": "Broadcom's AI chip guidance miss triggered -13% selloff, dragging semiconductors lower (MU -7.7%, AMD -3.6%). Rotation out of mega-cap tech continues as earnings growth gap vs broader market narrows. Sector down -1.46% with concentration risk elevated."
+      },
+      {
+        "name": "Financials",
+        "signal": "bullish",
+        "score": 72,
+        "reason": "Strong Thursday performance (+2.67%) led by JPMorgan (+3.3%) and Goldman Sachs (+5%). Banking sector benefiting from higher-for-longer rate environment as 10Y yield hits 4.48%. Rotation into value accelerating."
+      },
+      {
+        "name": "Energy",
+        "signal": "bullish",
+        "score": 78,
+        "reason": "YTD leader (+22%) on elevated oil prices from Iran conflict. WTI holding $95 despite ceasefire hopes. Exxon and Chevron driving sector returns. Downside risk if ceasefire solidifies, but supply disruption persists with Hormuz shipping constrained."
+      },
+      {
+        "name": "Consumer Discretionary",
+        "signal": "bearish",
+        "score": 35,
+        "reason": "Lululemon catastrophic guidance cut (-11% AH) highlights North America consumer weakness. Athleisure competition intense, tariffs squeezing margins. Five Below, Macy's also reporting this week with low expectations. Cautious."
+      },
+      {
+        "name": "Healthcare",
+        "signal": "bullish",
+        "score": 75,
+        "reason": "Standout Thursday leader (+3.14%), topped by UnitedHealth (+5.4%). Defensive rotation benefiting sector as investors seek safety outside tech. Strong earnings support and non-cyclical appeal in uncertain macro environment."
+      },
+      {
+        "name": "Industrials",
+        "signal": "bullish",
+        "score": 70,
+        "reason": "YTD gains >16% driven by Caterpillar (+32%) benefiting from AI data center buildout. Sector capturing 'real economy' rotation theme. Tariff risk remains but infrastructure/defense spending tailwinds strong."
+      },
+      {
+        "name": "Utilities",
+        "signal": "neutral",
+        "score": 48,
+        "reason": "Underperforming (-0.42%) as higher yields pressure bond-proxy sectors. Defensive characteristics offset by rate sensitivity. AI power demand narrative not yet translating to broad sector gains."
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "UNH",
+        "company": "UnitedHealth Group",
+        "direction": "long",
+        "entry_price": 553.0,
+        "target_price": 570.0,
+        "stop_loss": 545.0,
+        "target_pct": 3.1,
+        "stop_pct": -1.4,
+        "position_size_usd": 25000,
+        "holding_days": 2,
+        "risk_reward": "1:2.2",
+        "confidence": "high",
+        "thesis_macro": "Healthcare benefiting from defensive rotation as tech falters and macro uncertainty rises. Sector led Thursday with +3.14%, strongest since Iran conflict began. Higher-for-longer rates support managed care pricing power.",
+        "thesis_technical": "UNH broke out above $550 resistance on volume Thursday, closing $553.60 (+5.4%). Trading above all major MAs (20/50/200). Volume 30% above 20-day average confirms institutional accumulation. Next resistance $570 (pre-conflict high from Feb 2026).",
+        "thesis_catalyst": "Jobs report strength at 8:30 AM supports 'no landing' scenario, bullish for healthcare utilization trends. Sector earnings beat rate >80% this quarter. Medicare Advantage enrollment data due next week likely positive.",
+        "thesis_options": "Put/call ratio on UNH dropped to 0.65 (from 0.85 week ago), signaling bullish options positioning. Unusual call buying in June 21 $560 strikes suggests institutional conviction. Open interest skew favors upside.",
+        "thesis_short_interest": "Short interest only 1.2% of float (lowest in healthcare sector), minimal squeeze risk but also indicates consensus bullish positioning. No significant short resistance to rally.",
+        "thesis_insider": "No recent insider filings for UNH in past 90 days. Board member purchases in Q1 at lower levels ($520-530) remain in the money, suggesting no urgency to sell into strength.",
+        "thesis_volume": "Thursday volume 8.2M vs 20-day average 6.3M (+30%), confirming breakout validity. Institutional money rotating from tech into defensive quality. Accumulation/distribution line trending up 14 days.",
+        "thesis_correlation": "UNH uncorrelated with other picks: it's healthcare (not energy/financials), defensive (vs cyclical JPM), and has zero tech/AI exposure (vs rotation away from NVDA/semis). Low beta to oil prices.",
+        "thesis_risk": "Main risk: NFP massive beat (200K+) triggers rate spike,压迫 all equities including defensives. Also, if Iran ceasefire fully resolves, safe-haven bid collapses and money rotates back to tech growth.",
+        "entry_logic": "Entering at $553 on confirmed Thursday breakout above $550 resistance with expanding volume. Riding momentum from sector rotation that has legs given tech sector's AI recalibration underway.",
+        "exit_logic": "Target $570 is February pre-Iran-war high, representing 3.1% gain. This level is psychologically significant and aligns with prior supply zone. Achievable in 1-2 days given current momentum.",
+        "probability_pct": 68,
+        "probability_reasoning": "VIX at 15.40 (low) supports directional moves. Technical setup is clean with volume confirmation. Sector rotation theme has institutional backing (not retail FOMO). Catalyst-rich (NFP, potential earnings beats). Main uncertainty is NFP surprise magnitude. 68% accounts for execution risk and potential Friday profit-taking.",
+        "catalysts": [
+          "NFP report 8:30 AM - strong data supports no-landing thesis",
+          "Continued tech-to-defensive rotation flow",
+          "Potential positive Medicare data release next week"
+        ]
+      },
+      {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase",
+        "direction": "long",
+        "entry_price": 218.5,
+        "target_price": 227.0,
+        "stop_loss": 215.0,
+        "target_pct": 3.9,
+        "stop_pct": -1.6,
+        "position_size_usd": 23000,
+        "holding_days": 2,
+        "risk_reward": "1:2.4",
+        "confidence": "high",
+        "thesis_macro": "Higher-for-longer rate regime is massive tailwind for money center banks. 10Y at 4.48% and rising, with 85% probability of Fed hike by year-end (up from 60% week ago). Net interest margin expansion accelerating.",
+        "thesis_technical": "JPM rallied 3.3% Thursday to $218.50, breaking above $217 resistance on highest volume in 3 weeks. RSI(14) at 62 (room to run). Trading above rising 20/50 MA. Next resistance $227 (April highs). Uptrend intact.",
+        "thesis_catalyst": "Strong NFP print cements higher rate expectations, directly benefiting JPM's $3.4T balance sheet. CEO Jamie Dimon's recent comments flagged robust trading revenue and M&A pipeline acceleration. Next earnings July 12.",
+        "thesis_options": "JPM options flow showed net call buying Thursday with 1.8M contracts vs put volume 1.1M. Elevated interest in July $225 calls (5K OI added). Put/call ratio 0.61 signals bullish skew.",
+        "thesis_short_interest": "Short interest 0.8% of float (negligible). JPM is consensus long among institutions - no short squeeze needed, just fundamental momentum. Clean tape for rally continuation.",
+        "thesis_insider": "No recent Form 4 filings. CEO Dimon has not sold shares in 18+ months despite stock approaching all-time highs, interpreted as bullish signal by institutional desks. Board stable.",
+        "thesis_volume": "Thursday volume 14.2M vs 20-day average 10.8M (+31%). Volume surge on green day confirms accumulation. Money flow index trending positive for 8 consecutive sessions.",
+        "thesis_correlation": "JPM is financial sector exposure (different from healthcare UNH). It's cyclical (benefits from strong economy/rising rates) while UNH is defensive. No overlap with energy or tech. Diversifies portfolio across market rotation themes.",
+        "thesis_risk": "Risk: Credit concerns if NFP tanks and recession fears resurface. Also, if Iran war escalates dramatically, flight-to-safety could hurt financials. Trump's proposed credit card rate cap remains political wildcard.",
+        "entry_logic": "Entering $218.50 on confirmed breakout above $217 with volume. Riding near-term rate repricing momentum as NFP likely reinforces hawkish Fed narrative. Technical and fundamental alignment strong.",
+        "exit_logic": "Target $227 is April 2026 resistance (pre-Iran-escalation peak), representing 3.9% upside. This is achievable within 2 days given strong momentum and rate tailwinds. Well-defined resistance zone.",
+        "probability_pct": 65,
+        "probability_reasoning": "Clean technical setup, strong fundamental thesis (rates rising = NIM expansion), low VIX environment supports trending. NFP is binary catalyst - strong print = target hit, weak print = stop likely hit. 65% reflects balanced risk/reward with slight edge to bulls given recent dataflow and sector momentum.",
+        "catalysts": [
+          "NFP strong print cementing rate hike pricing",
+          "10Y yield pushing toward 4.5%+ on data",
+          "Continued sector rotation into financials"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR Fund",
+        "direction": "long",
+        "entry_price": 92.8,
+        "target_price": 96.5,
+        "stop_loss": 91.2,
+        "target_pct": 4.0,
+        "stop_pct": -1.7,
+        "position_size_usd": 22000,
+        "holding_days": 3,
+        "risk_reward": "1:2.3",
+        "confidence": "medium",
+        "thesis_macro": "Iran ceasefire remains fragile with both sides violating terms. Strait of Hormuz still disrupted (shipping 40-50% below normal), keeping structural oil supply premium intact. WTI at $95 vs $70 pre-conflict. Geopolitical risk premium not fully resolved.",
+        "thesis_technical": "XLE consolidating in $91-93 range for 2 weeks after pullback from $97 highs. Oversold on hourly RSI (38), forming bull flag pattern. Volume declining on pullback (bullish). 50-day MA support at $91. Breakout above $93.50 targets $96-97.",
+        "thesis_catalyst": "Weekend risk: Iran negotiations resume in Islamabad. Any negative headline (ceasefire collapse, new strikes) sends oil spiking. Also, EIA inventory data showed 6th consecutive weekly draw - supply tightness persists. OPEC+ meeting rumors circulating for mid-June.",
+        "thesis_options": "XLE put/call ratio elevated at 1.35, suggesting hedging activity but not bearish capitulation. Open interest in June $95 calls doubled this week. Implied volatility 28% (elevated vs historical, pricing event risk).",
+        "thesis_short_interest": "XLE short interest minimal for ETF (0.3%). Component stocks like XOM have 1.1% short interest, CVX 0.9% - very low. Energy is consensus overweight, but positioning not extreme. Room for momentum continuation.",
+        "thesis_insider": "Exxon insider (SVP Upstream) bought $1.2M shares at $118 on May 28 (stock now $120). Chevron board member bought $450K at $160 on May 22 (now $165). Rare insider buying in energy majors signals confidence at these levels.",
+        "thesis_volume": "XLE volume trending below average (weakness concern), but component stocks show rotation: XOM volume +15% above avg, CVX +22% above avg. Money flowing into individual names vs ETF, but XLE catches up on breakouts.",
+        "thesis_correlation": "Energy exposure uncorrelated with UNH (healthcare) and JPM (financial). Energy moves on oil/geopolitics, others on rates/economy. XLE provides geopolitical hedge if Iran situation deteriorates. Different volatility profile.",
+        "thesis_risk": "Major risk: Ceasefire solidifies and Iran/US agree to reopen Hormuz. Oil crashes to $80-85, taking XLE down 8-10%. Also, demand concerns if NFP crashes and recession fears spike (energy is economically sensitive).",
+        "entry_logic": "Entering at $92.80 within consolidation range, anticipating breakout above $93.50 resistance. Using tight stop below 50-day MA at $91.20. Geopolitical event risk tilts asymmetric - bigger upside if bad news than downside if good news (Hormuz can't reopen overnight).",
+        "exit_logic": "Target $96.50 is 80% retracement of recent pullback from $97.20 highs. Achievable if oil holds $95+ and no major ceasefire breakthrough. Conservative target given higher risk profile vs other picks.",
+        "probability_pct": 58,
+        "probability_reasoning": "Geopolitical catalysts are unpredictable (lowers probability). Technical setup decent but not clean breakout yet. VIX low doesn't price in Iran risk properly. Energy momentum strong YTD but near-term consolidating. 58% reflects high uncertainty but structural bullish factors (supply disruption) vs near-term consolidation risk.",
+        "catalysts": [
+          "Iran ceasefire violation or negotiation breakdown over weekend",
+          "EIA continued inventory draws (supply tightness)",
+          "OPEC+ potential production cut signals"
+        ]
+      }
+    ],
+    "portfolio_correlation_note": "Today's 3 picks provide true diversification across uncorrelated drivers: UNH (healthcare defensive, sector rotation beneficiary, rate-insensitive), JPM (financial cyclical, direct rate sensitivity, credit cycle exposure), and XLE (energy, pure geopolitical/commodity play). No two picks share same sector or primary thesis. UNH and JPM both benefit from strong NFP but through different mechanisms (confidence vs rates). XLE moves independently on Iran developments. Combined position size $70,000 (70% deployed) leaves $30,000 cash buffer for volatility. Risk-reward profiles balanced: 1:2.2, 1:2.4, 1:2.3.",
+    "positions_to_close": [],
+    "portfolio_note": "Starting fresh with $100K capital. Deploying 70% ($70K) across 3 uncorrelated picks sized by conviction: UNH largest ($25K) given cleanest setup and defensive quality, JPM second ($23K) on rate thesis strength, XLE smallest ($22K) due to geopolitical unpredictability. Holding 30% cash given major catalyst risk (NFP Friday 8:30 AM, potential Iran developments over weekend). All positions 1-3 day holds with defined risk (stops 1.4-1.7%). Friday NFP creates binary outcome risk but also opportunity - if data strong, UNH/JPM likely hit targets same day. If weak, stops protect capital. XLE 3-day hold allows weekend catalyst exposure (Iran talks).",
+    "risks": [
+      "NFP massive surprise (200K+ or <30K) creates violent repricing across all assets",
+      "Iran ceasefire collapses over weekend with major military escalation - oil spike, equity selloff",
+      "Broadcom selloff contagion spreads further into broader tech/market on Friday, overwhelming rotation bid",
+      "Fed speaker (potential Powell comments at 2PM) contradicts market's hawkish repricing",
+      "China retaliates on US trade/Iran policy with unexpected announcement over weekend"
+    ],
+    "data_freshness": "Data current as of Thursday June 4, 2026 market close. Futures levels as of 6:00 AM ET Friday June 5. Oil/gold/DXY as of Asian session Friday. VIX close data Thursday. Put/call ratios from Thursday session. Earnings calendar confirmed for week of June 1-5. Insider data from most recent SEC filings (48-72 hour lag typical). NFP report releases 8:30 AM ET Friday - not yet available."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-05T05:55:27.526580"
+}
