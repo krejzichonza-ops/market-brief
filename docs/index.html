@@ -44,18 +44,6 @@ body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(
 .card-lbl{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--green);}
 .card-body{padding:14px;}
 
-/* PODCAST PLAYER */
-.podcast-player{background:var(--surface2);border:1px solid var(--border2);padding:16px;margin-bottom:16px;}
-.podcast-bar{display:flex;align-items:center;gap:12px;}
-.podcast-btn{width:40px;height:40px;border-radius:50%;border:2px solid var(--green);background:var(--gdim);color:var(--green);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;transition:all .15s;}
-.podcast-btn:hover{background:var(--green);color:var(--bg);}
-.podcast-progress{flex:1;height:4px;background:var(--border);cursor:pointer;position:relative;}
-.podcast-progress-fill{height:100%;background:var(--green);width:0%;transition:width .3s linear;}
-.podcast-time{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);white-space:nowrap;}
-.podcast-title{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--dim);margin-bottom:10px;}
-.podcast-speed{font-family:'IBM Plex Mono',monospace;font-size:9px;padding:3px 8px;border:1px solid var(--border2);background:var(--surface);color:var(--text);cursor:pointer;}
-.podcast-speed:hover{border-color:var(--green);color:var(--green);}
-
 /* BUTTONS */
 .btn{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border:1px solid var(--border2);background:var(--surface);color:var(--text);cursor:pointer;transition:all .15s;}
 .btn:hover{border-color:var(--green);color:var(--green);}
@@ -243,18 +231,6 @@ canvas.chart{display:block;width:100%!important;height:150px!important;}
   </div>
   <div class="status"><div class="sdot" id="sdot2"></div><span id="stext">Initializing…</span></div>
 
-  <!-- PODCAST PLAYER -->
-  <div class="podcast-player" id="podcast-player" style="display:none">
-    <div class="podcast-title" id="podcast-title">▸ MORNING BRIEF · Připravuji přehled…</div>
-    <div class="podcast-bar">
-      <button class="podcast-btn" id="podcast-play-btn" onclick="togglePodcast()">▶</button>
-      <div class="podcast-progress" id="podcast-progress" onclick="seekPodcast(event)">
-        <div class="podcast-progress-fill" id="podcast-progress-fill"></div>
-      </div>
-      <div class="podcast-time" id="podcast-time">0:00</div>
-      <button class="podcast-speed" id="podcast-speed-btn" onclick="cyclePodcastSpeed()">1.0×</button>
-    </div>
-  </div>
 
   <div id="today-content"></div>
   <div class="disclaimer">⚠ AI-generated projections for informational purposes only. NOT investment advice. Simulated portfolio does not represent real trading.</div>
@@ -565,8 +541,6 @@ async function loadToday(){
   }
   if(record.brief)renderMorning(record.brief);
   if(record.review)setTimeout(()=>renderEvening(record.review),100);
-  // Init podcast after brief loads
-  setTimeout(()=>initPodcast(record.brief, record.review||null), 200);
   setStatus(`Načteno z GitHub · ${(record.reviewed_at||record.created_at||'').slice(0,16).replace('T',' ')} UTC`,'done');
 }
 
@@ -1310,222 +1284,6 @@ function drawScoreChart(data){
   const grad=ctx.createLinearGradient(0,pad.t,0,pad.t+cH);grad.addColorStop(0,'rgba(0,212,170,.2)');grad.addColorStop(1,'rgba(0,0,0,0)');
   ctx.lineTo(pad.l+(scores.length-1)*xStep,pad.t+cH);ctx.lineTo(pad.l,pad.t+cH);ctx.closePath();ctx.fillStyle=grad;ctx.fill();
   scores.forEach((s,i)=>{const p=pt(i,s);ctx.beginPath();ctx.arc(p.x,p.y,3,0,Math.PI*2);ctx.fillStyle=s>=60?'var(--green)':s>=40?'var(--amber)':'var(--red)';ctx.fill();if(i%Math.max(1,Math.floor(scores.length/6))===0){ctx.fillStyle='rgba(74,90,106,.8)';ctx.font='8px IBM Plex Mono,monospace';ctx.textAlign='center';ctx.fillText(data[i].date.slice(5),p.x,pad.t+cH+16);}});
-}
-
-/* ═══ PODCAST ENGINE ═══ */
-let podcastUtterance = null;
-let podcastText = '';
-let podcastSentences = [];
-let podcastIdx = 0;
-let podcastPlaying = false;
-let podcastSpeed = 1.0;
-let podcastStartTime = 0;
-let podcastElapsed = 0;
-let podcastTimer = null;
-
-function buildPodcastScript(brief, review) {
-  const snap = brief.snapshot || {};
-  const picks = brief.picks || [];
-  const sent = brief.overall_sentiment || 'neutral';
-  const sentCZ = sent === 'bullish' ? 'býčí' : sent === 'bearish' ? 'medvědí' : 'neutrální';
-  const date = brief.market_date || '';
-
-  let script = `Ranní přehled trhu. ${date}. `;
-  script += `Celkový sentiment trhu je dnes ${sentCZ}. `;
-
-  // Snapshot
-  if (snap.sp500_futures) script += `Futures na S&P 500 jsou na ${snap.sp500_futures}. `;
-  if (snap.nasdaq_futures) script += `Nasdaq futures ${snap.nasdaq_futures}. `;
-  if (snap.vix) script += `Index strachu VIX je na hodnotě ${snap.vix}. `;
-  if (snap.us10y) script += `Výnos desetiletých amerických dluhopisů činí ${snap.us10y}. `;
-
-  // Key themes
-  const themes = brief.key_themes || [];
-  if (themes.length) {
-    script += `Klíčová témata dnešního dne jsou: ${themes.join(', ')}. `;
-  }
-
-  // Macro
-  if (brief.macro_summary) {
-    script += `Makroekonomické pozadí. ${brief.macro_summary} `;
-  }
-
-  // After hours
-  if (brief.afterhours_summary) {
-    script += `Po uzavření trhu a před otevřením. ${brief.afterhours_summary} `;
-  }
-
-  // Geopolitics
-  if (brief.geopolitical_summary) {
-    script += `Geopolitická situace. ${brief.geopolitical_summary} `;
-  }
-
-  // Portfolio picks
-  script += `Portfolio doporučení na dnešní den. Celkem ${picks.length} pozic. `;
-  picks.forEach((p, i) => {
-    const dir = p.direction === 'long' ? 'nákup' : 'short prodej';
-    const prob = p.probability_pct ? `s odhadovanou pravděpodobností dosažení cíle ${p.probability_pct} procent` : '';
-    script += `Pozice číslo ${i + 1}: ${p.company || p.ticker}, ${dir}, vstupní cena ${p.entry_price} dolarů, cílová cena ${p.target_price} dolarů, stop loss ${p.stop_loss} dolarů, horizont ${p.holding_days || 1} den ${prob}. `;
-    if (p.thesis_catalyst) script += `Katalyzátor: ${p.thesis_catalyst} `;
-  });
-
-  // Portfolio note
-  if (brief.portfolio_note) {
-    script += `Poznámka k portfoliu: ${brief.portfolio_note} `;
-  }
-
-  // Risks
-  const risks = brief.risks || [];
-  if (risks.length) {
-    script += `Klíčová rizika: ${risks.join('. ')}. `;
-  }
-
-  // Evening review if available
-  if (review) {
-    const pr = review.picks_review || [];
-    const ps = review.portfolio_summary || {};
-    const pnl = ps.total_pnl_usd || 0;
-    const grade = review.overall_grade || '?';
-    script += `Večerní vyhodnocení. Celkové hodnocení session: ${grade}. `;
-    script += `Celkový zisk nebo ztráta: ${pnl >= 0 ? 'plus' : 'minus'} ${Math.abs(pnl).toFixed(0)} dolarů. `;
-    if (review.narrative) script += `${review.narrative} `;
-    pr.forEach(p => {
-      const outCZ = p.outcome === 'hit_target' ? 'cíl dosažen' : p.outcome === 'stopped_out' ? 'zastaven stop lossem' : p.outcome === 'held_open' ? 'pozice přenášena dál' : 'vstup nenastaven';
-      script += `${p.ticker}: ${outCZ}, výsledek ${p.pnl_pct >= 0 ? 'plus' : ''}${parseFloat(p.pnl_pct || 0).toFixed(1)} procent. `;
-    });
-    const lessons = review.lessons || [];
-    if (lessons.length) script += `Poučení z dnešního dne: ${lessons.join('. ')}. `;
-  }
-
-  script += `Konec přehledu. Přejeme úspěšné obchodování.`;
-  return script;
-}
-
-function initPodcast(brief, review) {
-  podcastText = buildPodcastScript(brief, review);
-  podcastSentences = podcastText.match(/[^.!?]+[.!?]+/g) || [podcastText];
-  podcastIdx = 0;
-  podcastPlaying = false;
-  podcastElapsed = 0;
-
-  const player = document.getElementById('podcast-player');
-  const title = document.getElementById('podcast-title');
-  if (player) player.style.display = 'block';
-  if (title) {
-    const mode = review ? 'MORNING BRIEF + EVENING REVIEW' : 'MORNING BRIEF';
-    title.textContent = `▸ ${mode} · ${brief.market_date || ''} · Klikněte ▶ pro přehrání`;
-  }
-  updatePodcastUI();
-}
-
-function togglePodcast() {
-  if (!window.speechSynthesis) {
-    alert('Váš prohlížeč nepodporuje Text-to-Speech. Zkuste Chrome.');
-    return;
-  }
-  if (podcastPlaying) {
-    pausePodcast();
-  } else {
-    playPodcast();
-  }
-}
-
-function playPodcast() {
-  if (!podcastText) return;
-  podcastPlaying = true;
-  document.getElementById('podcast-play-btn').textContent = '⏸';
-
-  // Pick best Czech voice
-  const voices = window.speechSynthesis.getVoices();
-  const czVoice = voices.find(v => v.lang === 'cs-CZ') ||
-                  voices.find(v => v.lang.startsWith('cs')) ||
-                  voices.find(v => v.lang.startsWith('sk')) ||
-                  null;
-
-  podcastUtterance = new SpeechSynthesisUtterance(podcastText);
-  podcastUtterance.lang = 'cs-CZ';
-  podcastUtterance.rate = podcastSpeed;
-  podcastUtterance.pitch = 1.0;
-  if (czVoice) podcastUtterance.voice = czVoice;
-
-  podcastStartTime = Date.now() - podcastElapsed * 1000;
-
-  podcastUtterance.onend = () => {
-    podcastPlaying = false;
-    podcastElapsed = 0;
-    document.getElementById('podcast-play-btn').textContent = '▶';
-    document.getElementById('podcast-progress-fill').style.width = '0%';
-    document.getElementById('podcast-time').textContent = '0:00';
-    clearInterval(podcastTimer);
-  };
-
-  podcastUtterance.onerror = () => {
-    podcastPlaying = false;
-    document.getElementById('podcast-play-btn').textContent = '▶';
-    clearInterval(podcastTimer);
-  };
-
-  // Estimate total duration for progress bar (words / 140 wpm * rate)
-  const wordCount = podcastText.split(' ').length;
-  const estimatedDuration = (wordCount / 140) * 60 / podcastSpeed;
-
-  podcastTimer = setInterval(() => {
-    if (!podcastPlaying) { clearInterval(podcastTimer); return; }
-    const elapsed = (Date.now() - podcastStartTime) / 1000;
-    const pct = Math.min(elapsed / estimatedDuration * 100, 99);
-    document.getElementById('podcast-progress-fill').style.width = pct + '%';
-    const m = Math.floor(elapsed / 60);
-    const s = Math.floor(elapsed % 60);
-    document.getElementById('podcast-time').textContent = `${m}:${s.toString().padStart(2,'0')}`;
-  }, 500);
-
-  window.speechSynthesis.cancel();
-  window.speechSynthesis.speak(podcastUtterance);
-}
-
-function pausePodcast() {
-  if (window.speechSynthesis.speaking) {
-    window.speechSynthesis.cancel();
-    podcastElapsed = (Date.now() - podcastStartTime) / 1000;
-  }
-  podcastPlaying = false;
-  clearInterval(podcastTimer);
-  document.getElementById('podcast-play-btn').textContent = '▶';
-}
-
-function seekPodcast(e) {
-  const bar = document.getElementById('podcast-progress');
-  const rect = bar.getBoundingClientRect();
-  const pct = (e.clientX - rect.left) / rect.width;
-  const wordCount = podcastText.split(' ').length;
-  const estimatedDuration = (wordCount / 140) * 60 / podcastSpeed;
-  podcastElapsed = pct * estimatedDuration;
-  if (podcastPlaying) {
-    window.speechSynthesis.cancel();
-    podcastStartTime = Date.now() - podcastElapsed * 1000;
-    playPodcast();
-  }
-}
-
-function cyclePodcastSpeed() {
-  const speeds = [0.75, 1.0, 1.25, 1.5, 1.75, 2.0];
-  const idx = speeds.indexOf(podcastSpeed);
-  podcastSpeed = speeds[(idx + 1) % speeds.length];
-  document.getElementById('podcast-speed-btn').textContent = podcastSpeed.toFixed(2).replace('.00','').replace('.50','.5').replace('.75','.75') + '×';
-  if (podcastPlaying) {
-    pausePodcast();
-    setTimeout(playPodcast, 100);
-  }
-}
-
-function updatePodcastUI() {
-  const btn = document.getElementById('podcast-play-btn');
-  if (btn) btn.textContent = podcastPlaying ? '⏸' : '▶';
-}
-
-// Load voices async (Chrome requires this)
-if (window.speechSynthesis) {
-  window.speechSynthesis.onvoiceschanged = () => {};
 }
 
 /* ═══ INIT ═══ */
