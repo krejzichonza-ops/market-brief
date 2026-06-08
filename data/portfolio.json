@@ -1,11 +1,92 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 100000.0,
+  "current_capital": 62619.2,
   "peak_capital": 100000.0,
-  "total_trades": 0,
+  "total_trades": 3,
   "winning_trades": 0,
-  "losing_trades": 0,
-  "equity_curve": [],
-  "open_positions": [],
-  "closed_trades": []
+  "losing_trades": 3,
+  "equity_curve": [
+    {
+      "date": "2026-06-08",
+      "day_of_week": "Monday",
+      "value": 62619.2,
+      "pnl_usd": -7619.2,
+      "grade": "C",
+      "avg_mae": 9.09,
+      "avg_mfe": 1.81
+    }
+  ],
+  "open_positions": [
+    {
+      "ticker": "MRVL",
+      "company": "Marvell Technology",
+      "direction": "long",
+      "entry_price": 287.0,
+      "target_price": 302.0,
+      "stop_loss": 280.0,
+      "position_size_usd": 20000.0,
+      "holding_days_remaining": 2,
+      "unrealized_pnl_pct": 2.79,
+      "opened_date": "2026-06-08"
+    },
+    {
+      "ticker": "AAPL",
+      "company": "Apple Inc.",
+      "direction": "long",
+      "entry_price": 308.0,
+      "target_price": 320.0,
+      "stop_loss": 303.0,
+      "position_size_usd": 15000.0,
+      "holding_days_remaining": 2,
+      "unrealized_pnl_pct": 1.46,
+      "opened_date": "2026-06-08"
+    }
+  ],
+  "closed_trades": [
+    {
+      "date": "2026-06-08",
+      "day_of_week": "Monday",
+      "ticker": "ORCL",
+      "direction": "long",
+      "outcome": "missed_entry",
+      "pnl_pct": 0.0,
+      "pnl_usd": 0.0,
+      "position_size_usd": 25000.0,
+      "mae_pct": 0.0,
+      "mfe_pct": 0.0,
+      "trade_quality": "poor",
+      "probability_pct": 68,
+      "probability_verdict": "underconfident"
+    },
+    {
+      "date": "2026-06-08",
+      "day_of_week": "Monday",
+      "ticker": "XLE",
+      "direction": "long",
+      "outcome": "stopped_out",
+      "pnl_pct": -35.35,
+      "pnl_usd": -7777.0,
+      "position_size_usd": 22000.0,
+      "mae_pct": 35.39,
+      "mfe_pct": 0.89,
+      "trade_quality": "poor",
+      "probability_pct": 62,
+      "probability_verdict": "overconfident"
+    },
+    {
+      "date": "2026-06-08",
+      "day_of_week": "Monday",
+      "ticker": "GLW",
+      "direction": "long",
+      "outcome": "stopped_out",
+      "pnl_pct": -3.44,
+      "pnl_usd": -619.2,
+      "position_size_usd": 18000.0,
+      "mae_pct": 7.44,
+      "mfe_pct": 1.9,
+      "trade_quality": "scratchy",
+      "probability_pct": 65,
+      "probability_verdict": "calibrated"
+    }
+  ]
 }
