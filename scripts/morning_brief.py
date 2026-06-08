@@ -190,10 +190,26 @@ response = client.messages.create(
 raw_text = ''.join(b.text for b in response.content if hasattr(b, 'text'))
 
 def extract_json(text):
-    text = re.sub(r'```json\s*', '', text).replace('```', '').strip()
-    start = min(text.find('{') if '{' in text else len(text),
-                text.find('[') if '[' in text else len(text))
-    return json.loads(text[start:])
+    text = re.sub(r'```json\s*', '', text)
+    text = re.sub(r'```\s*', '', text)
+    text = text.strip()
+    # Remove control characters except newline/tab
+    text = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', text)
+    start = min(
+        text.find('{') if '{' in text else len(text),
+        text.find('[') if '[' in text else len(text)
+    )
+    json_str = text[start:]
+    try:
+        return json.loads(json_str)
+    except json.JSONDecodeError:
+        last_brace = json_str.rfind('}')
+        if last_brace > 0:
+            try:
+                return json.loads(json_str[:last_brace+1])
+            except:
+                pass
+        raise
 
 try:
     brief_data = extract_json(raw_text)
