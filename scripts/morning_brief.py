@@ -158,32 +158,53 @@ response = client.messages.create(
 
 raw_text = ''.join(b.text for b in response.content if hasattr(b, 'text'))
 
-def extract_json(text):
+def clean_text(text):
     text = re.sub(r'```json\s*', '', text)
     text = re.sub(r'```\s*', '', text)
     text = text.strip()
     text = re.sub(r'[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]', '', text)
+    return text
+
+def extract_json(text):
     start = min(
         text.find('{') if '{' in text else len(text),
         text.find('[') if '[' in text else len(text)
     )
     json_str = text[start:]
+    # Pass 1: try full text
     try:
         return json.loads(json_str)
     except json.JSONDecodeError:
-        last_brace = json_str.rfind('}')
-        if last_brace > 0:
-            try:
-                return json.loads(json_str[:last_brace+1])
-            except:
-                pass
-        raise
+        pass
+    # Pass 2: find last valid closing brace
+    last_brace = json_str.rfind('}')
+    if last_brace > 0:
+        try:
+            return json.loads(json_str[:last_brace+1])
+        except:
+            pass
+    # Pass 3: ask Claude to fix the JSON
+    return None
 
-try:
-    brief_data = extract_json(raw_text)
-except json.JSONDecodeError as e:
-    print(f"❌ JSON parse error: {e}\n{raw_text[:300]}")
-    sys.exit(1)
+cleaned = clean_text(raw_text)
+brief_data = extract_json(cleaned)
+
+if brief_data is None:
+    print("⚠️  JSON parse selhal, žádám o opravu...")
+    fix_response = client.messages.create(
+        model="claude-sonnet-4-5",
+        max_tokens=6000,
+        messages=[{
+            "role": "user",
+            "content": f"Následující text obsahuje neúplný nebo poškozený JSON. Oprav ho a vrať POUZE validní JSON bez jakéhokoliv dalšího textu:\n\n{cleaned[:8000]}"
+        }]
+    )
+    fixed_text = clean_text(''.join(b.text for b in fix_response.content if hasattr(b, 'text')))
+    brief_data = extract_json(fixed_text)
+    if brief_data is None:
+        print(f"❌ JSON nelze opravit")
+        sys.exit(1)
+    print("✅ JSON opraven")
 
 record = {
     "date": DATE_KEY,
