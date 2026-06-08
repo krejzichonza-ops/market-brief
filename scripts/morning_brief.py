@@ -99,9 +99,9 @@ Vrať POUZE validní JSON bez markdown:
   "overall_sentiment": "bullish|neutral|bearish",
   "sentiment_score": 0-100,
   "key_themes": ["téma1", "téma2", "téma3"],
-  "macro_summary": "2 odstavce o makro situaci",
-  "afterhours_summary": "1-2 odstavce o pre-market pohybech",
-  "geopolitical_summary": "1 odstavec o geopolitice",
+  "macro_summary": "MAX 3 VĚTY o makro situaci",
+  "afterhours_summary": "MAX 2 VĚTY o pre-market pohybech",
+  "geopolitical_summary": "MAX 2 VĚTY o geopolitice",
   "sectors": [
     {{"name": "Technology", "signal": "bullish|neutral|bearish", "score": 0-100, "reason": "důvod"}},
     {{"name": "Financials", "signal": "bullish|neutral|bearish", "score": 0-100, "reason": ""}},
@@ -123,19 +123,19 @@ Vrať POUZE validní JSON bez markdown:
       "holding_days": 1,
       "risk_reward": "1:2.0",
       "confidence": "high|medium|low",
-      "thesis_macro": "makro kontext pro tento trade",
-      "thesis_technical": "technický setup — pattern, klíčové úrovně",
-      "thesis_catalyst": "konkrétní katalyzátor pohybu",
-      "thesis_options": "put/call ratio a neobvyklý options flow",
-      "thesis_short_interest": "short interest % float",
-      "thesis_insider": "insider filingy nebo Žádné nedávné insider filingy",
-      "thesis_volume": "objem vs 20denní průměr",
-      "thesis_correlation": "proč není korelovaný s ostatními picky",
-      "thesis_risk": "hlavní riziko invalidující tezi",
-      "entry_logic": "proč právě tato vstupní cena",
-      "exit_logic": "proč je target realistický",
+      "thesis_macro": "MAX 15 SLOV — makro kontext",
+      "thesis_technical": "MAX 15 SLOV — technický setup a klíčové úrovně",
+      "thesis_catalyst": "MAX 15 SLOV — konkrétní katalyzátor",
+      "thesis_options": "MAX 10 SLOV — put/call ratio",
+      "thesis_short_interest": "MAX 10 SLOV — short interest %",
+      "thesis_insider": "MAX 10 SLOV — insider aktivita",
+      "thesis_volume": "MAX 10 SLOV — objem vs průměr",
+      "thesis_correlation": "MAX 10 SLOV — proč není korelovaný",
+      "thesis_risk": "MAX 10 SLOV — hlavní riziko",
+      "entry_logic": "MAX 10 SLOV — proč tato vstupní cena",
+      "exit_logic": "MAX 10 SLOV — proč je target realistický",
       "probability_pct": 60,
-      "probability_reasoning": "co ovlivnilo odhad pravděpodobnosti",
+      "probability_reasoning": "MAX 15 SLOV — co ovlivnilo pravděpodobnost",
       "catalysts": ["katalyzátor1"]
     }}
   ],
@@ -190,21 +190,8 @@ cleaned = clean_text(raw_text)
 brief_data = extract_json(cleaned)
 
 if brief_data is None:
-    print("⚠️  JSON parse selhal, žádám o opravu...")
-    fix_response = client.messages.create(
-        model="claude-sonnet-4-5",
-        max_tokens=6000,
-        messages=[{
-            "role": "user",
-            "content": f"Následující text obsahuje neúplný nebo poškozený JSON. Oprav ho a vrať POUZE validní JSON bez jakéhokoliv dalšího textu:\n\n{cleaned[:8000]}"
-        }]
-    )
-    fixed_text = clean_text(''.join(b.text for b in fix_response.content if hasattr(b, 'text')))
-    brief_data = extract_json(fixed_text)
-    if brief_data is None:
-        print(f"❌ JSON nelze opravit")
-        sys.exit(1)
-    print("✅ JSON opraven")
+    print(f"❌ JSON parse selhal — zkrať thesis texty v promptu")
+    sys.exit(1)
 
 record = {
     "date": DATE_KEY,
