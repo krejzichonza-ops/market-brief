@@ -87,7 +87,7 @@ Vrať POUZE validní JSON:
   "overall_grade": "A|B|C|D|F",
   "overall_score": 0-100,
   "index_recap": "S&P 500 a Nasdaq skutečné závěrečné hodnoty s % změnou",
-  "narrative": "2 odstavce — upřímné zhodnocení jak projekce dopadly",
+  "narrative": "MAX 3 VĚTY — upřímné zhodnocení",
   "picks_review": [
     {{
       "ticker": "AAPL",
@@ -111,12 +111,12 @@ Vrať POUZE validní JSON:
       "mae_vs_stop": "safe|close|triggered",
       "mfe_vs_target": "far|close|reached",
       "trade_quality": "excellent|good|scratchy|poor",
-      "commentary": "2 věty co se stalo intraday",
-      "thesis_macro_verdict": "jak makro teze dopadla",
-      "thesis_technical_verdict": "jak technický setup dopadl",
-      "thesis_catalyst_verdict": "zda katalyzátor nastal",
-      "thesis_options_verdict": "zda options flow signál byl správný",
-      "thesis_volume_verdict": "zda objem potvrdil pohyb",
+      "commentary": "MAX 2 VĚTY co se stalo",
+      "thesis_macro_verdict": "MAX 10 SLOV",
+      "thesis_technical_verdict": "MAX 10 SLOV",
+      "thesis_catalyst_verdict": "MAX 10 SLOV",
+      "thesis_options_verdict": "MAX 10 SLOV",
+      "thesis_volume_verdict": "MAX 10 SLOV",
       "thesis_miss_reason": "wrong_direction|catalyst_delayed|macro_reversal|stop_too_tight|target_too_aggressive|missed_entry|broader_market_drag|sector_specific_news|low_volume|options_misleading|other|n/a",
       "what_worked": "co z analýzy bylo správně",
       "what_failed": "co bylo špatně nebo n/a",
@@ -188,21 +188,8 @@ cleaned = clean_text(raw_text)
 review_data = extract_json(cleaned)
 
 if review_data is None:
-    print("⚠️  JSON parse selhal, žádám o opravu...")
-    fix_response = client.messages.create(
-        model="claude-sonnet-4-5",
-        max_tokens=6000,
-        messages=[{
-            "role": "user",
-            "content": f"Následující text obsahuje neúplný nebo poškozený JSON. Oprav ho a vrať POUZE validní JSON bez jakéhokoliv dalšího textu:\n\n{cleaned[:8000]}"
-        }]
-    )
-    fixed_text = clean_text(''.join(b.text for b in fix_response.content if hasattr(b, 'text')))
-    review_data = extract_json(fixed_text)
-    if review_data is None:
-        print(f"❌ JSON nelze opravit")
-        sys.exit(1)
-    print("✅ JSON opraven")
+    print(f"❌ JSON parse selhal")
+    sys.exit(1)
 
 # Portfolio update
 ps = review_data.get('portfolio_summary', {})
