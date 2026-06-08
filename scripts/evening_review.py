@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Evening Review Generator v2 — s MAE/MFE tracking
+Evening Review Generator — optimalizovaná verze
 16:30 ET každý pracovní den via GitHub Actions.
 """
 
@@ -58,58 +58,36 @@ total_allocated = sum(p.get('position_size_usd', 0) for p in picks)
 
 client = anthropic.Anthropic(api_key=os.environ['ANTHROPIC_API_KEY'])
 
-SYSTEM_PROMPT = f"""You are a professional US equity portfolio manager reviewing today's trades. Today is {DATE_STR} ({DOW}).
+SYSTEM_PROMPT = f"""Jsi profesionální portfolio manažer amerických akcií. Dnes je {DATE_STR} ({DOW}).
 
-LANGUAGE: Write ALL text content in Czech language. Use proper Czech financial terminology. Only keep ticker symbols, company names, and numeric values in their original form.
+Piš VEŠKERÝ text v češtině. Ponech tickery, názvy společností a čísla v originále.
 
-Search for ACTUAL closing prices AND full intraday data (open, high, low, close, volume) for each ticker.
+Vyhledej SKUTEČNÉ závěrečné ceny a intraday data (open/high/low/close) pro každý ticker.
 
-P&L RULES:
+VÝPOČET P&L:
 - LONG: pnl_pct = (exit_price - entry_price) / entry_price * 100
 - SHORT: pnl_pct = (entry_price - exit_price) / entry_price * 100
-- Stop hit: use stop_loss price. Target hit: use target_price. Neither: use actual_close.
-- holding_days > 1 and no stop/target hit: outcome = "held_open"
+- Stop zasažen: použij stop_loss cenu. Target zasažen: použij target_price.
+- Holding_days > 1 a stop/target nezasažen: outcome = held_open
 
-MAE/MFE ANALYSIS — for every pick (critical for trade quality assessment):
-- MAE (Maximum Adverse Excursion): How far did price move AGAINST the position before it resolved?
-  * LONG: MAE = (entry_price - session_low) / entry_price * 100  [how close to stop did we get?]
-  * SHORT: MAE = (session_high - entry_price) / entry_price * 100
-- MFE (Maximum Favorable Excursion): How far did price move IN FAVOR of the position at its best point?
-  * LONG: MFE = (session_high - entry_price) / entry_price * 100  [how close to target did we get?]
-  * SHORT: MFE = (entry_price - session_low) / entry_price * 100
-- mae_pct: the MAE value as positive number
-- mfe_pct: the MFE value as positive number
-- mae_vs_stop: "safe" (MAE < 50% of stop distance) | "close" (MAE 50-90% of stop) | "triggered" (stop was hit)
-- mfe_vs_target: "far" (MFE < 50% of target distance) | "close" (MFE 50-90%) | "reached" (target was hit)
-- trade_quality: Assessment based on MAE/MFE ratio:
-  * "excellent": low MAE, high MFE — clean move in our direction
-  * "good": moderate MAE, reached near target
-  * "scratchy": high MAE but recovered
-  * "poor": high MAE, low MFE — wrong from the start
+MAE/MFE:
+- MAE (Max Adverse Excursion): jak daleko šla cena PROTI pozici
+  * LONG: (entry - session_low) / entry * 100
+  * SHORT: (session_high - entry) / entry * 100
+- MFE (Max Favorable Excursion): jak daleko šla cena VE PROSPĚCH
+  * LONG: (session_high - entry) / entry * 100
+  * SHORT: (entry - session_low) / entry * 100
 
-THESIS POST-MORTEM:
-- thesis_macro_verdict: Did macro thesis play out?
-- thesis_technical_verdict: Did technical setup trigger? Where did price go vs expected level?
-- thesis_catalyst_verdict: Did catalyst materialize?
-- thesis_options_verdict: Did the options flow signal prove correct?
-- thesis_volume_verdict: Did volume confirm or contradict the move?
-- thesis_miss_reason: wrong_direction|catalyst_delayed|macro_reversal|stop_too_tight|target_too_aggressive|missed_entry|broader_market_drag|sector_specific_news|low_volume|options_misleading|other|n/a
-- what_worked: What analysis was correct
-- what_failed: What was wrong or missing
+POST-MORTEM THESIS: zhodnoť každou část původní teze.
 
-PROBABILITY CALIBRATION:
-- original_probability_pct: copy exactly from morning pick
-- probability_verdict: "calibrated"|"overconfident"|"underconfident"
-- probability_comment: 1 honest sentence on calibration quality
-
-Return ONLY valid JSON:
+Vrať POUZE validní JSON:
 {{
   "review_time": "ISO timestamp",
   "day_of_week": "{DOW}",
   "overall_grade": "A|B|C|D|F",
   "overall_score": 0-100,
-  "index_recap": "S&P 500 and Nasdaq actual closing numbers with % change",
-  "narrative": "2-3 paragraph honest assessment",
+  "index_recap": "S&P 500 a Nasdaq skutečné závěrečné hodnoty s % změnou",
+  "narrative": "2 odstavce — upřímné zhodnocení jak projekce dopadly",
   "picks_review": [
     {{
       "ticker": "AAPL",
@@ -120,7 +98,6 @@ Return ONLY valid JSON:
       "actual_high": 0.00,
       "actual_low": 0.00,
       "actual_close": 0.00,
-      "actual_volume_vs_avg": "above|below|average",
       "exit_price": 0.00,
       "direction": "long|short",
       "holding_days": 1,
@@ -134,18 +111,18 @@ Return ONLY valid JSON:
       "mae_vs_stop": "safe|close|triggered",
       "mfe_vs_target": "far|close|reached",
       "trade_quality": "excellent|good|scratchy|poor",
-      "commentary": "2 sentences on what happened intraday",
-      "thesis_macro_verdict": "...",
-      "thesis_technical_verdict": "...",
-      "thesis_catalyst_verdict": "...",
-      "thesis_options_verdict": "Did options flow signal prove correct?",
-      "thesis_volume_verdict": "Did volume confirm the move?",
-      "thesis_miss_reason": "...|n/a",
-      "what_worked": "...",
-      "what_failed": "... or n/a",
+      "commentary": "2 věty co se stalo intraday",
+      "thesis_macro_verdict": "jak makro teze dopadla",
+      "thesis_technical_verdict": "jak technický setup dopadl",
+      "thesis_catalyst_verdict": "zda katalyzátor nastal",
+      "thesis_options_verdict": "zda options flow signál byl správný",
+      "thesis_volume_verdict": "zda objem potvrdil pohyb",
+      "thesis_miss_reason": "wrong_direction|catalyst_delayed|macro_reversal|stop_too_tight|target_too_aggressive|missed_entry|broader_market_drag|sector_specific_news|low_volume|options_misleading|other|n/a",
+      "what_worked": "co z analýzy bylo správně",
+      "what_failed": "co bylo špatně nebo n/a",
       "original_probability_pct": 0,
       "probability_verdict": "calibrated|overconfident|underconfident",
-      "probability_comment": "..."
+      "probability_comment": "1 věta o kvalitě odhadu pravděpodobnosti"
     }}
   ],
   "portfolio_summary": {{
@@ -160,21 +137,21 @@ Return ONLY valid JSON:
   "avg_pnl_pct": 0.0,
   "avg_mae_pct": 0.0,
   "avg_mfe_pct": 0.0,
-  "lessons": ["lesson1","lesson2"],
-  "tomorrow_watch": ["item1","item2"]
+  "lessons": ["poučení1", "poučení2"],
+  "tomorrow_watch": ["co sledovat zítra1", "co sledovat zítra2"]
 }}"""
 
-USER_PROMPT = f"""Review today's picks ({DATE_STR}):
+USER_PROMPT = f"""Zhodnoť dnešní picky ({DATE_STR}):
 {picks_json}
 
-Total allocated: ${total_allocated:,.2f}
-Search actual intraday prices (open/high/low/close/volume). Calculate MAE, MFE, P&L for each. Return only JSON."""
+Alokováno: ${total_allocated:,.2f}
+Vyhledej skutečné intraday ceny. Vypočítej MAE, MFE a P&L. Vrať pouze JSON."""
 
 print(f"🔍 Evening review {DATE_STR} ({DOW}) | {len(picks)} pozic | Alokováno: ${total_allocated:,.2f}")
 
 response = client.messages.create(
     model="claude-sonnet-4-5",
-    max_tokens=8000,
+    max_tokens=6000,
     system=SYSTEM_PROMPT,
     tools=[{"type": "web_search_20250305", "name": "web_search"}],
     messages=[{"role": "user", "content": USER_PROMPT}]
@@ -209,7 +186,7 @@ except json.JSONDecodeError as e:
     print(f"❌ Parse error: {e}\n{raw_text[:300]}")
     sys.exit(1)
 
-# ── Portfolio update ───────────────────────────────────────────────────────────
+# Portfolio update
 ps = review_data.get('portfolio_summary', {})
 total_pnl_usd = ps.get('total_pnl_usd', 0.0)
 new_capital = ps.get('new_capital_available', portfolio['current_capital'])
@@ -283,12 +260,4 @@ with open(INPUT_FILE, 'w', encoding='utf-8') as f:
 with open(PORTFOLIO_FILE, 'w', encoding='utf-8') as f:
     json.dump(portfolio, f, ensure_ascii=False, indent=2)
 
-max_dd = 0
-if len(portfolio['equity_curve']) > 1:
-    peak = portfolio['starting_capital']
-    for pt in portfolio['equity_curve']:
-        peak = max(peak, pt['value'])
-        dd = (peak - pt['value']) / peak * 100
-        max_dd = max(max_dd, dd)
-
-print(f"✅ Review uložen | Grade: {review_data.get('overall_grade')} | P&L: ${total_pnl_usd:+,.2f} | Portfolio: ${new_capital:,.2f} | Max DD: {max_dd:.1f}%")
+print(f"✅ Review uložen | Grade: {review_data.get('overall_grade')} | P&L: ${total_pnl_usd:+,.2f} | Portfolio: ${new_capital:,.2f}")
