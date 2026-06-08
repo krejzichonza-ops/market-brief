@@ -1,0 +1,241 @@
+{
+  "date": "2026-06-08",
+  "brief": {
+    "generated_at": "2026-06-08T09:30:00Z",
+    "market_date": "Monday, June 08, 2026",
+    "date_key": "2026-06-08",
+    "day_of_week": "Monday",
+    "snapshot": {
+      "sp500_futures": "+0.8%",
+      "nasdaq_futures": "+1.5%",
+      "dow_futures": "+0.4%",
+      "vix": "18.42",
+      "us10y": "4.57%",
+      "dxy": "100.11",
+      "crude_oil": "$94.00",
+      "gold": "$4366"
+    },
+    "market_context": {
+      "vix_regime": "elevated",
+      "options_pcr": "1.32",
+      "market_volume": "above_average",
+      "earnings_this_week": [
+        "ORCL: June 10",
+        "51 companies: June 8",
+        "24 companies: June 9"
+      ],
+      "insider_activity_summary": "Limitovaná aktivita za víkend, běžné routine filings bez významných cluster buys"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 55,
+    "key_themes": [
+      "Middle East de-escalation attempt — Iran paused strikes, Trump claims ceasefire near",
+      "Fed hawkish shift — May NFP beat 172k vs 85k exp, markets price 70% Dec hike",
+      "Tech rebound post-Broadcom selloff — Nasdaq recovers +1.5%, AI infra names rally"
+    ],
+    "macro_summary": "Trhy reagují na silný NFP (172k vs 85k exp), který posílil sázky na prosincový Fed hike na 70%. Middle East napětí kleslo po íránské pauze útoků. Inflace zůstává elevovaná 3.8% YoY, CPI May reportuje 10. června.",
+    "afterhours_summary": "Corning +9.3% po Amazon fiber dealu, Marvell +9% po S&P 500 inclusion oznámení, Apple +0.36% před WWDC. Futures recovery po páteční -4% Nasdaq kapitulaci.",
+    "geopolitical_summary": "Írán oznámil pauzu vojenských operací proti Izraeli, Trump signalizuje pokrok v jednáních. Strait of Hormuz částečně otevřen, ale Libanon konflikt pokračuje — klíčová překážka pro plnou dohodu.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bullish",
+        "score": 72,
+        "reason": "Recovery po Broadcom selloff, NVDA +2%, Marvell +9% S&P inclusion, ORCL earnings Wed"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "10Y yield 4.57% supportive pro marže, ale rate hike risk omezuje upside"
+      },
+      {
+        "name": "Energy",
+        "signal": "bullish",
+        "score": 68,
+        "reason": "WTI +4% k $94 na Iran tensions, OPEC+ zvýšil July kvóty o 188k bpd"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 48,
+        "reason": "Defenzivní sektor bez významných katalyzátorů, čeká na makro clarity"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 52,
+        "reason": "Smíšené signály — Delta obnovil HKG-LAX lety, ale supply chain risk z ME"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "ORCL",
+        "company": "Oracle Corporation",
+        "direction": "long",
+        "entry_price": 174.5,
+        "target_price": 184.0,
+        "stop_loss": 170.0,
+        "target_pct": 5.4,
+        "stop_pct": -2.6,
+        "position_size_usd": 25000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.1",
+        "confidence": "high",
+        "thesis_macro": "AI infra demand peak, Fed meeting před earnings neutralizuje rate risk",
+        "thesis_technical": "Konsolidace $170-175, breakout nad $176 triggeruje run k $184",
+        "thesis_catalyst": "Q4 earnings Wed AH — OCI growth +20% YoY očekáván",
+        "thesis_options": "PCR 0.85 bullish, unusual call flow v June 180s",
+        "thesis_short_interest": "Short interest 2.1% — minimální squeeze risk",
+        "thesis_insider": "No recent insider activity — neutral signal",
+        "thesis_volume": "Volume +15% pre-earnings, institucionální accumulation pattern",
+        "thesis_correlation": "Nízká korelace s broad market — vlastní earnings cycle",
+        "thesis_risk": "Broadcom guidance memory — jakýkoliv miss = -10%",
+        "entry_logic": "$174.50 = support nad 20D MA, risk-defined entry",
+        "exit_logic": "$184 = measured move z consolidation, confluence s fib 1.618",
+        "probability_pct": 68,
+        "probability_reasoning": "OCI momentum + low bar po Broadcom selloff zvyšuje beat šanci",
+        "catalysts": [
+          "Q4 earnings Wed AH",
+          "OCI growth guidance"
+        ]
+      },
+      {
+        "ticker": "MRVL",
+        "company": "Marvell Technology",
+        "direction": "long",
+        "entry_price": 287.0,
+        "target_price": 302.0,
+        "stop_loss": 280.0,
+        "target_pct": 5.2,
+        "stop_pct": -2.4,
+        "position_size_usd": 20000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.1",
+        "confidence": "high",
+        "thesis_macro": "S&P inclusion June 22 zajistí forced index fund buying flows",
+        "thesis_technical": "Gap up z $263 k $287, consolidation před další leg up",
+        "thesis_catalyst": "S&P 500 addition oznámeno — passive fund buying wave incoming",
+        "thesis_options": "PCR 0.72 bullish, June 300 calls heavy accumulation",
+        "thesis_short_interest": "Short interest 3.8% — moderate squeeze potential",
+        "thesis_insider": "No recent selling — insiders comfortable pre-inclusion",
+        "thesis_volume": "Pre-market +320% volume, $287 holding post-gap",
+        "thesis_correlation": "S&P inclusion event uncorrelated s broad tech sentiment",
+        "thesis_risk": "Profit taking po +9% gap —需 technický pullback",
+        "entry_logic": "$287 = first consolidation level post-announcement gap",
+        "exit_logic": "$302 = measured move + S&P inclusion front-run target",
+        "probability_pct": 72,
+        "probability_reasoning": "S&P inclusion = mechanical buying, historicky +8-12% do add date",
+        "catalysts": [
+          "S&P 500 addition June 22",
+          "Index rebalancing flows"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR Fund",
+        "direction": "long",
+        "entry_price": 89.2,
+        "target_price": 94.5,
+        "stop_loss": 87.0,
+        "target_pct": 5.9,
+        "stop_pct": -2.5,
+        "position_size_usd": 22000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.4",
+        "confidence": "medium",
+        "thesis_macro": "WTI $94 breakout, Iran tensions persist, OPEC+ quota increase supportive",
+        "thesis_technical": "$89 = breakout z 3-week range, RSI 62 room to 70+",
+        "thesis_catalyst": "Middle East volatility premium + Iran ceasefire uncertainty",
+        "thesis_options": "PCR 0.65 bullish, July 92 calls unusual activity",
+        "thesis_short_interest": "ETF short 5.2% — moderate squeeze if oil holds $94",
+        "thesis_insider": "Sector ETF — insider data N/A",
+        "thesis_volume": "Volume +28% Friday, continuation flow Monday morning",
+        "thesis_correlation": "Inverse correlation s tech — diversifikace proti Nasdaq risk",
+        "thesis_risk": "Iran full ceasefire announcement = -5% immediate dump",
+        "entry_logic": "$89.20 = support nad Friday breakout, momentum entry",
+        "exit_logic": "$94.50 = resistance z April highs, WTI $100 proxy",
+        "probability_pct": 62,
+        "probability_reasoning": "ME risk premium holding, ale ceasefire tail risk caps upside",
+        "catalysts": [
+          "Iran-Israel tensions",
+          "OPEC+ meeting July 2"
+        ]
+      },
+      {
+        "ticker": "GLW",
+        "company": "Corning Inc.",
+        "direction": "long",
+        "entry_price": 194.0,
+        "target_price": 205.0,
+        "stop_loss": 189.0,
+        "target_pct": 5.7,
+        "stop_pct": -2.6,
+        "position_size_usd": 18000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.2",
+        "confidence": "medium",
+        "thesis_macro": "AI datacenter infra play via Amazon optical fiber deal announced",
+        "thesis_technical": "Gap z $177 k $194 pre-market, first consolidation entry",
+        "thesis_catalyst": "Multibillion-dollar Amazon contract announced pre-market Monday",
+        "thesis_options": "Options flow +450% Friday, June 200 calls hot",
+        "thesis_short_interest": "Short interest 4.3% — squeeze potential on gap hold",
+        "thesis_insider": "No recent activity — neutral",
+        "thesis_volume": "Pre-market volume 4x normal, institutional FOMO pattern",
+        "thesis_correlation": "Uncorrelated s chipmakers — materials science angle",
+        "thesis_risk": "Gap fill risk if profit takers dominate — potřeba $194 hold",
+        "entry_logic": "$194 = pre-market consolidation after +9.3% gap",
+        "exit_logic": "$205 = measured move + psychological round number resistance",
+        "probability_pct": 65,
+        "probability_reasoning": "Amazon deal validuje AI fiber thesis, ale gap fade risk první den",
+        "catalysts": [
+          "Amazon datacenter deal",
+          "Q2 earnings July 29"
+        ]
+      },
+      {
+        "ticker": "AAPL",
+        "company": "Apple Inc.",
+        "direction": "long",
+        "entry_price": 308.0,
+        "target_price": 320.0,
+        "stop_loss": 303.0,
+        "target_pct": 3.9,
+        "stop_pct": -1.6,
+        "position_size_usd": 15000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.4",
+        "confidence": "medium",
+        "thesis_macro": "WWDC Jun 8-12 — agentic AI roadmap očekáván, BAC $380 PT",
+        "thesis_technical": "$308 = consolidation support, range trade k $320 resistance",
+        "thesis_catalyst": "WWDC AI announcements Mon-Fri — App Store + moat expansion",
+        "thesis_options": "PCR 0.92 neutral, but June 315 calls building position",
+        "thesis_short_interest": "Short interest 0.9% — minimal squeeze factor",
+        "thesis_insider": "No recent insider buys — neutral signal",
+        "thesis_volume": "Volume below average pre-WWDC — wait-and-see mode",
+        "thesis_correlation": "Mega-cap tech — částečně korelovaná s QQQ recovery",
+        "thesis_risk": "AI hype exhausted — if no major announcement, drift lower",
+        "entry_logic": "$308 = support level před WWDC, risk-defined range trade",
+        "exit_logic": "$320 = measured move if AI announcements exceed expectations",
+        "probability_pct": 58,
+        "probability_reasoning": "WWDC katalyzátor, ale expectations vysoké — coin flip execution",
+        "catalysts": [
+          "WWDC June 8-12",
+          "Agentic AI announcements"
+        ]
+      }
+    ],
+    "portfolio_note": "Diverzifikováno 5 pozic: 2x AI infra (ORCL, MRVL), 1x energy hedge (XLE), 1x materials (GLW), 1x mega-cap (AAPL). Total alokace $100k. Průměrný R:R 1:2.2, průměrná hold 2.4 dne. VIX 18.42 = elevated ale ne high — manage position sizing.",
+    "risks": [
+      "Fed June 16-17 meeting — Warsh debut může překvapit hawkish",
+      "CPI May June 10 — if >4% YoY, rate hike odds spike, tech dump",
+      "Iran ceasefire collapse — Strait closure = oil spike, market risk-off",
+      "Broadcom memory — any tech earnings miss = sektor selloff",
+      "WWDC disappointment — if Apple underdelivers AI, drags mega-caps"
+    ],
+    "data_freshness": "Data k 8:30 AM ET Monday June 8, 2026. Pre-market quotes, futures live. Insider data limited weekend coverage. Options flow z June 5 close + pre-market indications."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-08T19:55:43.456164"
+}
