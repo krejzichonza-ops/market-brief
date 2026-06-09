@@ -305,9 +305,9 @@ def build_evening_html():
         </div>"""
 
     lessons_html = ''.join(f'<div style="padding:4px 0;font-size:12px;color:#b8c8d8">→ {l}</div>' for l in review.get('lessons', []))
+    tomorrow_html = ''.join(f'<div style="padding:4px 0;font-size:12px;color:#b8c8d8">→ {t}</div>' for t in review.get('tomorrow_watch', []))
     narrative_lines = review.get('narrative', '').split('\n')
     narrative_html = ''.join(f'<p>{l}</p>' for l in narrative_lines if l.strip())
-    tomorrow_html = ''.join(f'<div style="padding:4px 0;font-size:12px;color:#b8c8d8">→ {t}</div>' for t in review.get('tomorrow_watch', []))
 
     return f"""<!DOCTYPE html><html><head><meta charset="UTF-8">
     <style>{CSS}</style></head><body><div class="wrap">
@@ -377,9 +377,34 @@ def send_email(subject, html_body):
         server.login(GMAIL_ADDRESS, GMAIL_APP_PASSWORD)
         server.sendmail(GMAIL_ADDRESS, GMAIL_ADDRESS, msg.as_string())
 
+# Ochrana proti duplicitním emailům
+SENT_LOG = os.path.join(DATA_DIR, f'email_sent_{DATE_KEY}.json')
+
+def already_sent(mode):
+    if not os.path.exists(SENT_LOG):
+        return False
+    try:
+        return json.load(open(SENT_LOG)).get(mode, False)
+    except:
+        return False
+
+def mark_sent(mode):
+    sent = {}
+    if os.path.exists(SENT_LOG):
+        try:
+            sent = json.load(open(SENT_LOG))
+        except:
+            pass
+    sent[mode] = True
+    with open(SENT_LOG, 'w') as f:
+        json.dump(sent, f)
+
 if RUN_MODE == 'morning':
     if not brief:
         print("⚠️  Žádný brief, email neposlán.")
+        sys.exit(0)
+    if already_sent('morning'):
+        print("⚠️  Morning email dnes již odeslán, přeskakuji.")
         sys.exit(0)
     sentiment = brief.get('overall_sentiment', 'neutral')
     sent_emoji = {'bullish': '🟢', 'bearish': '🔴'}.get(sentiment, '🟡')
@@ -388,11 +413,15 @@ if RUN_MODE == 'morning':
     subject = f"{sent_emoji} Morning Brief {DATE_KEY} · {tickers}"
     html = build_morning_html()
     send_email(subject, html)
+    mark_sent('morning')
     print(f"✅ Morning email odeslán: {subject}")
 
 elif RUN_MODE == 'evening':
     if not review:
         print("⚠️  Žádný review, email neposlán.")
+        sys.exit(0)
+    if already_sent('evening'):
+        print("⚠️  Evening email dnes již odeslán, přeskakuji.")
         sys.exit(0)
     grade = review.get('overall_grade', '?')
     ps = review.get('portfolio_summary', {})
@@ -402,6 +431,7 @@ elif RUN_MODE == 'evening':
     html = build_evening_html()
     if html:
         send_email(subject, html)
+        mark_sent('evening')
         print(f"✅ Evening email odeslán: {subject}")
     else:
         print("⚠️  Nepodařilo se sestavit evening email.")
