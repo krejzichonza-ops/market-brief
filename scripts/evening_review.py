@@ -191,30 +191,108 @@ if review_data is None:
     print(f"❌ JSON parse selhal")
     sys.exit(1)
 
-# Portfolio update
-ps = review_data.get('portfolio_summary', {})
-total_pnl_usd = ps.get('total_pnl_usd', 0.0)
-new_capital = ps.get('new_capital_available', portfolio['current_capital'])
+# ── P&L VALIDACE — oprav nerealistické výsledky ───────────────────────────────
+def validate_and_fix_pick(p, original_pick):
+    """
+    Zkontroluje P&L vůči stop lossu a take profitu z morning briefu.
+    Pokud Claude vrátil nerealistické číslo, oprav ho na stop nebo target cenu.
+    """
+    ticker = p.get('ticker', '?')
+    direction = p.get('direction', 'long')
+    outcome = p.get('outcome', '')
+    pos_size = float(p.get('position_size_usd') or original_pick.get('position_size_usd') or 0)
 
-if new_capital <= 0 or new_capital > 10_000_000:
-    new_capital = portfolio['current_capital'] + total_pnl_usd
+    entry = float(p.get('projected_entry') or original_pick.get('entry_price') or 0)
+    target = float(p.get('projected_target') or original_pick.get('target_price') or 0)
+    stop = float(p.get('projected_stop') or original_pick.get('stop_loss') or 0)
+    exit_price = float(p.get('exit_price') or p.get('actual_close') or 0)
 
-portfolio['current_capital'] = round(new_capital, 2)
-portfolio['peak_capital'] = max(portfolio['peak_capital'], new_capital)
+    if entry <= 0 or pos_size <= 0:
+        return p  # nedostatek dat, neopravuj
 
-pr = review_data.get('picks_review', [])
+    # Maximální povolená ztráta = stop loss distance + 1% buffer
+    if direction == 'long':
+        max_loss_pct = ((entry - stop) / entry * 100) + 1.0 if stop > 0 else 6.0
+        max_gain_pct = ((target - entry) / entry * 100) + 1.0 if target > 0 else 15.0
+    else:
+        max_loss_pct = ((stop - entry) / entry * 100) + 1.0 if stop > 0 else 6.0
+        max_gain_pct = ((entry - target) / entry * 100) + 1.0 if target > 0 else 15.0
+
+    pnl_pct = float(p.get('pnl_pct') or 0)
+    actual_loss = -pnl_pct if pnl_pct < 0 else 0
+    actual_gain = pnl_pct if pnl_pct > 0 else 0
+
+    corrected = False
+
+    # Ztráta větší než stop loss → použij stop loss
+    if actual_loss > max_loss_pct and stop > 0:
+        print(f"⚠️  {ticker}: P&L {pnl_pct:.1f}% překračuje max ztrátu {-max_loss_pct:.1f}% → opravuji na stop loss")
+        if direction == 'long':
+            pnl_pct = (stop - entry) / entry * 100
+        else:
+            pnl_pct = (entry - stop) / entry * 100
+        p['exit_price'] = stop
+        p['outcome'] = 'stopped_out'
+        corrected = True
+
+    # Zisk větší než target → použij target cenu
+    elif actual_gain > max_gain_pct and target > 0:
+        print(f"⚠️  {ticker}: P&L {pnl_pct:.1f}% překračuje max zisk {max_gain_pct:.1f}% → opravuji na target")
+        if direction == 'long':
+            pnl_pct = (target - entry) / entry * 100
+        else:
+            pnl_pct = (entry - target) / entry * 100
+        p['exit_price'] = target
+        p['outcome'] = 'hit_target'
+        corrected = True
+
+    if corrected:
+        pnl_usd = pos_size * (pnl_pct / 100)
+        p['pnl_pct'] = round(pnl_pct, 2)
+        p['pnl_usd'] = round(pnl_usd, 2)
+        p['data_corrected'] = True
+        print(f"   Opraveno: {pnl_pct:.2f}% = ${pnl_usd:.2f}")
+
+    return p
+
+# Aplikuj validaci na každý pick
+pr_raw = review_data.get('picks_review', [])
+picks_by_ticker = {p.get('ticker'): p for p in picks}
+pr = [validate_and_fix_pick(p, picks_by_ticker.get(p.get('ticker'), {})) for p in pr_raw]
+review_data['picks_review'] = pr
+
+# ── Portfolio update ───────────────────────────────────────────────────────────
 closed_today = [p for p in pr if p.get('outcome') != 'held_open']
 held_open    = [p for p in pr if p.get('outcome') == 'held_open']
 
+# Přepočítej portfolio summary z validovaných dat
+real_pnl_usd = sum(float(p.get('pnl_usd') or 0) for p in closed_today)
+# Unrealized z held_open (pouze informativní, nezahrnuj do kapitálu)
+new_capital = round(portfolio['current_capital'] + real_pnl_usd, 2)
+
+if new_capital <= 0 or new_capital > 10_000_000:
+    new_capital = portfolio['current_capital']
+
+# Aktualizuj portfolio_summary ve výstupu
+ps = review_data.get('portfolio_summary', {})
+ps['total_pnl_usd'] = round(real_pnl_usd, 2)
+ps['new_capital_available'] = new_capital
+review_data['portfolio_summary'] = ps
+
+total_pnl_usd = real_pnl_usd
+
+portfolio['current_capital'] = new_capital
+portfolio['peak_capital'] = max(portfolio['peak_capital'], new_capital)
+
 portfolio['total_trades']   += len(closed_today)
-portfolio['winning_trades'] += sum(1 for p in closed_today if p.get('pnl_usd', 0) > 0)
-portfolio['losing_trades']  += sum(1 for p in closed_today if p.get('pnl_usd', 0) <= 0)
+portfolio['winning_trades'] += sum(1 for p in closed_today if float(p.get('pnl_usd') or 0) > 0)
+portfolio['losing_trades']  += sum(1 for p in closed_today if float(p.get('pnl_usd') or 0) <= 0)
 
 portfolio['equity_curve'].append({
     "date": DATE_KEY,
     "day_of_week": DOW,
-    "value": round(new_capital, 2),
-    "pnl_usd": round(total_pnl_usd, 2),
+    "value": new_capital,
+    "pnl_usd": round(real_pnl_usd, 2),
     "grade": review_data.get('overall_grade', '?'),
     "avg_mae": review_data.get('avg_mae_pct', 0),
     "avg_mfe": review_data.get('avg_mfe_pct', 0)
@@ -250,7 +328,8 @@ for p in closed_today:
         "mfe_pct": p.get('mfe_pct', 0),
         "trade_quality": p.get('trade_quality', ''),
         "probability_pct": p.get('original_probability_pct', 0),
-        "probability_verdict": p.get('probability_verdict', '')
+        "probability_verdict": p.get('probability_verdict', ''),
+        "data_corrected": p.get('data_corrected', False)
     })
 
 portfolio['closed_trades'] = portfolio['closed_trades'][-200:]
