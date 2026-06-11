@@ -1,4 +1,5 @@
 name: Market Morning Brief
+
 on:
   schedule:
     - cron: '15 13 * * 1-5'
@@ -15,60 +16,64 @@ on:
           - evening
 
 jobs:
-  run-brief:
+  morning-brief:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-
+    if: >
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'morning') ||
+      (github.event_name == 'schedule' && github.event.schedule == '15 13 * * 1-5')
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install anthropic requests pytz
-
-      - name: Determine run mode
-        id: mode
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "mode=${{ github.event.inputs.mode }}" >> $GITHUB_OUTPUT
-          else
-            HOUR=$(date -u +%H)
-            if [ "$HOUR" = "13" ]; then
-              echo "mode=morning" >> $GITHUB_OUTPUT
-            else
-              echo "mode=evening" >> $GITHUB_OUTPUT
-            fi
-          fi
-
+      - run: pip install anthropic requests pytz
       - name: Run Morning Brief
-        if: steps.mode.outputs.mode == 'morning'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: python scripts/morning_brief.py
-
-      - name: Run Evening Review
-        if: steps.mode.outputs.mode == 'evening'
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-        run: python scripts/evening_review.py
-
-      - name: Commit and push data
+      - name: Commit and push
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "Market Brief Bot"
           git add data/
-          git diff --staged --quiet || git commit -m "📊 $(date -u '+%Y-%m-%d') - ${{ steps.mode.outputs.mode }}"
+          git diff --staged --quiet || git commit -m "📊 $(date -u '+%Y-%m-%d') - morning"
           git push
-
-      - name: Send Email Notification
+      - name: Send Email
         env:
           GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
           GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
-          RUN_MODE: ${{ steps.mode.outputs.mode }}
+          RUN_MODE: morning
+        run: python scripts/send_email.py
+
+  evening-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: >
+      (github.event_name == 'workflow_dispatch' && github.event.inputs.mode == 'evening') ||
+      (github.event_name == 'schedule' && github.event.schedule == '30 20 * * 1-5')
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install anthropic requests pytz
+      - name: Run Evening Review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/evening_review.py
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Market Brief Bot"
+          git add data/
+          git diff --staged --quiet || git commit -m "📊 $(date -u '+%Y-%m-%d') - evening"
+          git push
+      - name: Send Email
+        env:
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          RUN_MODE: evening
         run: python scripts/send_email.py
