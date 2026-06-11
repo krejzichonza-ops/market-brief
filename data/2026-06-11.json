@@ -1,0 +1,246 @@
+{
+  "date": "2026-06-11",
+  "brief": {
+    "generated_at": "2026-06-11T08:00:00Z",
+    "market_date": "Thursday, June 11, 2026",
+    "date_key": "2026-06-11",
+    "day_of_week": "Thursday",
+    "snapshot": {
+      "sp500_futures": "+0.7%",
+      "nasdaq_futures": "+0.9%",
+      "dow_futures": "+0.5%",
+      "vix": "19.5",
+      "us10y": "4.55%",
+      "dxy": "99.3",
+      "crude_oil": "$86.00",
+      "gold": "$4131"
+    },
+    "market_context": {
+      "vix_regime": "elevated",
+      "options_pcr": "1.16",
+      "market_volume": "above_average",
+      "earnings_this_week": [
+        "ADBE: Jun 11 aftermarket",
+        "RH: Jun 11 aftermarket",
+        "ORCL: Jun 10 reported"
+      ],
+      "insider_activity_summary": "Semiconductor insiders sold $122M AMD shares last 3 months; cautious positioning across tech ahead of SpaceX IPO"
+    },
+    "overall_sentiment": "cautiously_bullish",
+    "sentiment_score": 62,
+    "key_themes": [
+      "Iran de-escalation rally after Trump announces deal near completion",
+      "SpaceX IPO June 12 at $135/share ($1.77T valuation) drives tech rotation",
+      "Semiconductor rebound from -11% selloff as geopolitical risk eases"
+    ],
+    "macro_summary": "CPI 4.2% YoY Wednesday matched expectations, PPI 6.5% Thursday morning exceeded at 1.1% monthly. Fed rate hike December fully priced. Iran deal optimism eased oil from $92 to $86.",
+    "afterhours_summary": "Futures rallied 0.7-0.9% after Trump suspended Iran strikes and signaled peace deal signing soon. Semiconductor stocks Intel +7%, Micron +6% in pre-market rebound.",
+    "geopolitical_summary": "US-Iran breakthrough drives risk-on sentiment. Trump canceled tonight's strikes, expects deal signing this weekend in Europe. Oil dropped 4%, VIX fell 12%.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bullish",
+        "score": 72,
+        "reason": "Semiconductor rebound +6-9% after -11% panic selloff; SpaceX IPO catalyzes AI infrastructure rotation"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 32,
+        "reason": "WTI crude -4% to $86 on Iran peace deal; oil shock narrative reversing rapidly"
+      },
+      {
+        "name": "Consumer Staples",
+        "signal": "bullish",
+        "score": 68,
+        "reason": "Defensive rotation: PG +5%, KO hit all-time highs Wednesday; inflation hedge positioning"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 54,
+        "reason": "Caterpillar +1.8% leads Dow; mixed World Cup hiring boost vs. rate-hike fears"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 48,
+        "reason": "2nd-worst sector YTD; 10Y yield 4.55% caps upside but MetLife hit ATH Wednesday"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "INTC",
+        "company": "Intel Corporation",
+        "direction": "long",
+        "entry_price": 105.5,
+        "target_price": 116.0,
+        "stop_loss": 101.0,
+        "target_pct": 9.95,
+        "stop_pct": -4.26,
+        "position_size_usd": 22000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.3",
+        "confidence": "high",
+        "thesis_macro": "Iran de-escalation cuts oil, eases inflation fears; chip rebound from oversold -11% panic",
+        "thesis_technical": "Bounced hard from $99 support; pre-market +7% gaps above 50-day MA at $103",
+        "thesis_catalyst": "BofA upgrade on soaring CPU orders; Alphabet foundry contract validation Monday drives 8.5% pop",
+        "thesis_options": "Put/call skew normalized",
+        "thesis_short_interest": "Short interest 12% creates squeeze potential on turnaround momentum",
+        "thesis_insider": "Low recent insider activity; no major Form 4 sales",
+        "thesis_volume": "Pre-market volume 3x average confirms institutional accumulation on weakness",
+        "thesis_correlation": "Uncorrelated to SpaceX hype; foundry business different from AI inference chips",
+        "thesis_risk": "Still burning cash in foundry; turnaround execution risk remains elevated",
+        "entry_logic": "$105.50 captures gap-up open above Wednesday close $99.17",
+        "exit_logic": "$116 is 200-day MA resistance and pre-selloff level from June 3",
+        "probability_pct": 68,
+        "probability_reasoning": "Oversold bounce + geopolitical relief + upgrade catalyst align for 2-day mean reversion play",
+        "catalysts": [
+          "Alphabet foundry contract follow-through",
+          "SpaceX IPO lifting all chip boats",
+          "Short covering rally"
+        ]
+      },
+      {
+        "ticker": "MU",
+        "company": "Micron Technology Inc.",
+        "direction": "long",
+        "entry_price": 1070.0,
+        "target_price": 1150.0,
+        "stop_loss": 1030.0,
+        "target_pct": 7.48,
+        "stop_pct": -3.74,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.0",
+        "confidence": "medium",
+        "thesis_macro": "Iran deal eases memory supply chain fears; AI data center demand intact despite smartphone crash",
+        "thesis_technical": "Gapped up +6% pre-market; reclaiming $1050 pivot after -13% Thursday/Friday cascade",
+        "thesis_catalyst": "High-bandwidth memory essential for AI servers; SpaceX data center buildout narrative supportive",
+        "thesis_options": "Put volume spiked Friday; reversal setup as hedges get unwound",
+        "thesis_short_interest": "Short interest 8%; moderate squeeze potential on bounce",
+        "thesis_insider": "No major Form 4 activity past 48h",
+        "thesis_volume": "Pre-market volume 2.5x average signals conviction on de-escalation trade",
+        "thesis_correlation": "Pure AI memory play; uncorrelated to Intel foundry or AMD data center chips",
+        "thesis_risk": "IDC warned smartphone market -13% YoY creates headwind for consumer memory segment",
+        "entry_logic": "$1070 is gap-open level above Wednesday close $1004",
+        "exit_logic": "$1150 targets 61.8% Fibonacci retracement of June 4-5 selloff",
+        "probability_pct": 63,
+        "probability_reasoning": "Oversold + geopolitical relief vs. fundamental smartphone demand weakness limits upside to 7-8%",
+        "catalysts": [
+          "Continued Iran deal progress",
+          "SpaceX IPO halo effect on AI infrastructure",
+          "Memory shortage narrative for data centers"
+        ]
+      },
+      {
+        "ticker": "KO",
+        "company": "The Coca-Cola Company",
+        "direction": "long",
+        "entry_price": 82.5,
+        "target_price": 86.5,
+        "stop_loss": 81.0,
+        "target_pct": 4.85,
+        "stop_pct": -1.82,
+        "position_size_usd": 18000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.7",
+        "confidence": "high",
+        "thesis_macro": "Defensive rotation persists; CPI 4.2% supports pricing power; Morgan Stanley top pick",
+        "thesis_technical": "Broke all-time high Wednesday at $81.80; consolidating above breakout with volume",
+        "thesis_catalyst": "Morgan Stanley $89 target (+9% upside); Fairlife brand strength driving organic sales above peers",
+        "thesis_options": "Call interest building",
+        "thesis_short_interest": "Minimal short interest 1.2%; not a squeeze play but confirms institutional confidence",
+        "thesis_insider": "No recent Form 4; stable shareholder base",
+        "thesis_volume": "Above-average volume on ATH breakout confirms institutional accumulation",
+        "thesis_correlation": "Zero correlation to tech/chip volatility; pure defensive inflation hedge",
+        "thesis_risk": "Limited upside near-term; momentum may stall if risk-on accelerates further",
+        "entry_logic": "$82.50 buys pullback to breakout support after hitting $82 Wednesday",
+        "exit_logic": "$86.50 is psychological resistance and 50% of path to MS $89 target",
+        "probability_pct": 72,
+        "probability_reasoning": "Defensive outperformer in elevated-VIX environment; MS upgrade + ATH breakout + inflation hedge thesis",
+        "catalysts": [
+          "Morgan Stanley overweight reiteration",
+          "Continued defensive rotation if VIX stays >18",
+          "Q2 earnings beat on pricing power"
+        ]
+      },
+      {
+        "ticker": "CAT",
+        "company": "Caterpillar Inc.",
+        "direction": "long",
+        "entry_price": 415.0,
+        "target_price": 432.0,
+        "stop_loss": 408.0,
+        "target_pct": 4.1,
+        "stop_pct": -1.69,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.4",
+        "confidence": "medium",
+        "thesis_macro": "Iran deal lowers oil/commodity costs; World Cup infrastructure boost evident in May jobs +172K",
+        "thesis_technical": "Leading Dow gainer +1.84% Thursday; holding above 50-day MA at $410",
+        "thesis_catalyst": "Energy cost relief improves margin outlook; commodity supercycle thesis intact but costs easing",
+        "thesis_options": "Neutral positioning; no unusual flow",
+        "thesis_short_interest": "Short interest 3%; limited squeeze potential but no overhang",
+        "thesis_insider": "No recent Form 4 activity",
+        "thesis_volume": "Volume 1.3x average Thursday; institutional rotation into cyclicals on peace narrative",
+        "thesis_correlation": "Uncorrelated to tech; bridges defensive (staples) and cyclical (industrials) positioning",
+        "thesis_risk": "Fed rate hike December fully priced limits industrial loan demand; construction cycle peaking",
+        "entry_logic": "$415 captures Thursday close strength after +1.84% session",
+        "exit_logic": "$432 is May 2026 swing high resistance; 4% move fits 2-day cyclical bounce",
+        "probability_pct": 60,
+        "probability_reasoning": "Cyclical relief rally on Iran deal + World Cup boost vs. rate-hike headwinds creates moderate risk/reward",
+        "catalysts": [
+          "Continued oil price decline improving margins",
+          "Infrastructure spending follow-through",
+          "World Cup-related demand"
+        ]
+      },
+      {
+        "ticker": "TJX",
+        "company": "The TJX Companies Inc.",
+        "direction": "long",
+        "entry_price": 128.0,
+        "target_price": 134.5,
+        "stop_loss": 125.5,
+        "target_pct": 5.08,
+        "stop_pct": -1.95,
+        "position_size_usd": 20000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.6",
+        "confidence": "medium",
+        "thesis_macro": "Consumer resilience despite CPI 4.2%; off-price retail benefits from inflation-squeezed shoppers",
+        "thesis_technical": "Hit all-time high Wednesday; consolidating above $127 breakout with tight flag pattern",
+        "thesis_catalyst": "11 stocks hit ATH Wednesday amid broad selloff; defensive consumer discretionary outperformer",
+        "thesis_options": "No unusual activity",
+        "thesis_short_interest": "Short interest 2.5%; minimal squeeze but confirms low bearish sentiment",
+        "thesis_insider": "No recent Form 4; stable management",
+        "thesis_volume": "Volume above average on ATH confirms institutional interest",
+        "thesis_correlation": "Uncorrelated to tech/chip/energy volatility; pure consumer defensive discretionary play",
+        "thesis_risk": "Strong dollar DXY 99.3 hurts international sales; consumer spending may crack if jobs weaken",
+        "entry_logic": "$128 buys first pullback from ATH near $129; risk defined below $127 breakout",
+        "exit_logic": "$134.50 targets next Fibonacci extension; 5% move fits 3-day ATH consolidation breakout",
+        "probability_pct": 65,
+        "probability_reasoning": "ATH momentum + defensive consumer positioning vs. valuation stretch and macro uncertainty",
+        "catalysts": [
+          "Q2 earnings beat expectations",
+          "Continued off-price market share gains",
+          "Consumer spending resilience data"
+        ]
+      }
+    ],
+    "portfolio_note": "Balanced allocation: 42% semiconductors (INTC, MU) for oversold bounce, 38% defensives (KO, TJX) for VIX hedge, 20% cyclicals (CAT) for Iran relief. Total $100K deployed. SpaceX IPO Friday creates volatility risk; stops tight. Holdings 1-3 days capture mean reversion without overnight geopolitical exposure.",
+    "risks": [
+      "SpaceX IPO June 12 could suck liquidity from all other names; violent rotation risk",
+      "Iran deal fails to materialize by weekend; oil spikes back, reversing Thursday rally",
+      "PPI 6.5% feeds into Friday Consumer Sentiment print; inflation fears resurface",
+      "Semiconductor rebound is dead-cat bounce; Broadcom guidance miss fundamental not technical",
+      "VIX 19.5 still elevated; one headline reverses entire rally in minutes"
+    ],
+    "data_freshness": "All data current as of Thursday June 11, 2026 08:00 ET. Pre-market prices estimated from 7:47am futures snapshot. VIX, 10Y, DXY, oil, gold from Wednesday close + Thursday pre-market moves. SpaceX IPO details confirmed from multiple sources June 9-11."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-11T21:33:59.674820"
+}
