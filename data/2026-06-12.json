@@ -1,0 +1,247 @@
+{
+  "date": "2026-06-12",
+  "brief": {
+    "generated_at": "2026-06-12T09:30:00Z",
+    "market_date": "Friday, June 12, 2026",
+    "date_key": "2026-06-12",
+    "day_of_week": "Friday",
+    "snapshot": {
+      "sp500_futures": "+0.6%",
+      "nasdaq_futures": "+0.5%",
+      "dow_futures": "+0.6%",
+      "vix": "19.44",
+      "us10y": "4.46%",
+      "dxy": "99.66",
+      "crude_oil": "$85.25",
+      "gold": "$4235"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "1.16",
+      "market_volume": "above_average",
+      "earnings_this_week": [
+        "ADBE: Jun 11 (reported)",
+        "LEN: Jun 11 (reported)",
+        "RH: Jun 11 (reported)",
+        "GLBS: Jun 12"
+      ],
+      "insider_activity_summary": "Routine tax-related sales observed u BMBL (director 22K shares), ZD CFO prodal 18K shares. Většina Form 4 signalizuje běžnou likviditu, ne sentiment shift."
+    },
+    "overall_sentiment": "bullish",
+    "sentiment_score": 72,
+    "key_themes": [
+      "SpaceX $75B IPO debut — největší v historii, SPCX @ $135",
+      "US-Iran peace deal momentum — ropa -4%, VIX -12.5% včera",
+      "Geopolitické riziko klesá, treasury yields klesají, energy deflace"
+    ],
+    "macro_summary": "US-Iran blízko dohody o Hormuz, WTI -4% na $85, VIX klesl na 19.44. Včerejší PPI 6.5% YoY (horší odhad), ale core slabší = energie táhne inflaci. Michigan sentiment dnes 10:00 ET, očekává se další pokles.",
+    "afterhours_summary": "ADBE -6.25% po earnings miss, guidanci. RKLB +7% premarket (Nasdaq-100 add Jun 22). SPCE -10% po včerejším pump. SpaceX IPO absorpce $75B likvidity v centru pozornosti.",
+    "geopolitical_summary": "Írán potvrdil 14-bodový draft mírové dohody, US uvolní polovinu zmrazených fondů, suspenduje ropné sankce, G7 summit příští týden. Trh cení deeskalaci — energy klesá, DXY slabý, zlato +2.5%.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "neutral",
+        "score": 60,
+        "reason": "ADBE táhne dolů, SpaceX IPO absorbuje likviditu. Nvidia +1% premarket, ale rotace z tech do cyclicals."
+      },
+      {
+        "name": "Financials",
+        "signal": "bullish",
+        "score": 68,
+        "reason": "JPM, GS vyšší včera na pokles yields. Peace deal snižuje credit risk, term premium komprimuje."
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 35,
+        "reason": "WTI -4.4%, Brent -4%, Iran deal otevírá Hormuz. XLE pod tlakem, short-term sentiment negativní."
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "DefensiveRotace vázne, consumer staples včera +2%. Healthcare stagnuje na makro noise."
+      },
+      {
+        "name": "Industrials",
+        "signal": "bullish",
+        "score": 70,
+        "reason": "HON +6.4%, BA +5.8% včera. Peace premium, SpaceX supply chain beneficiaries (aerospace)."
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "BA",
+        "company": "Boeing Co.",
+        "direction": "long",
+        "entry_price": 185.5,
+        "target_price": 195.0,
+        "stop_loss": 182.0,
+        "target_pct": 5.1,
+        "stop_pct": -1.9,
+        "position_size_usd": 22000,
+        "holding_days": 2,
+        "risk_reward": "1:2.7",
+        "confidence": "high",
+        "thesis_macro": "US-Iran peace boosts aerospace, defense spending realokace, travel demand nahoru",
+        "thesis_technical": "Breakout z $180 rezistence, volume spike včera +35%, RSI 58",
+        "thesis_catalyst": "SpaceX IPO hype rozlévá do aerospace supply chain, G7 summit optimismus",
+        "thesis_options": "Call volume 2.8x put volume, skew bullish",
+        "thesis_short_interest": "Short interest 8.2%, potenciál na squeeze nad $190",
+        "thesis_insider": "Žádná prodejní aktivita za 7 dní, директора hold",
+        "thesis_volume": "Včerejší objem 2.1x 20D avg, instituce akumulují",
+        "thesis_correlation": "Low korelace s tech (ADBE down, BA up), cyclical play",
+        "thesis_risk": "Delay v Artemis/737 certifikaci, makro reversal Iran",
+        "entry_logic": "Entry blízko včerejšího close, momentum intaktní, gap-up risk minimální",
+        "exit_logic": "$195 psychologická úroveň, 200D MA overhead, profit taking zona",
+        "probability_pct": 68,
+        "probability_reasoning": "Peace deal 70% pravděpodobnost dle betting markets, aerospace historicky citlivý na geopolitiku",
+        "catalysts": [
+          "G7 summit příští týden, formální Iran dohoda",
+          "SpaceX IPO popday sentiment aerospace sector",
+          "Travel demand data next week"
+        ]
+      },
+      {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "direction": "long",
+        "entry_price": 212.0,
+        "target_price": 221.0,
+        "stop_loss": 209.0,
+        "target_pct": 4.2,
+        "stop_pct": -1.4,
+        "position_size_usd": 21000,
+        "holding_days": 2,
+        "risk_reward": "1:3.0",
+        "confidence": "high",
+        "thesis_macro": "10Y yield klesl na 4.46%, curve steepening, credit spreads komprimují na peace news",
+        "thesis_technical": "Support na $210, golden cross 50/200 MA minulý týden, volume confirmation",
+        "thesis_catalyst": "Fed neutne sazby, ale yield curve normalizace bullish pro NIM margin",
+        "thesis_options": "Put/call ratio 0.85, institucionální call buying v červnovém expiry",
+        "thesis_short_interest": "Short interest jen 1.2%, minimální squeeze risk ale čistý long",
+        "thesis_insider": "CFO nakoupil 5K shares 3 dny zpět dle dostupných dat",
+        "thesis_volume": "Volume 1.4x průměr, momentum building bez exhaustion",
+        "thesis_correlation": "Negativní korelace k VIX (-0.78), VIX padá = JPM roste",
+        "thesis_risk": "Reversal Iran narrative, credit event v small/mid banks",
+        "entry_logic": "Entry nad včerejším close, avoid chase, čekat pull-back k $211",
+        "exit_logic": "$221 je Fib 61.8% retracement z květnového sell-off, strong resistance",
+        "probability_pct": 70,
+        "probability_reasoning": "Peace deal stabilizuje rate outlook, financials outperform v klesajících volatility režimech",
+        "catalysts": [
+          "Treasury yield compression pokračuje",
+          "Credit market calm post-Iran deal",
+          "Institutional rebalancing do financials end-Q2"
+        ]
+      },
+      {
+        "ticker": "RKLB",
+        "company": "Rocket Lab USA Inc.",
+        "direction": "long",
+        "entry_price": 115.0,
+        "target_price": 123.0,
+        "stop_loss": 112.0,
+        "target_pct": 7.0,
+        "stop_pct": -2.6,
+        "position_size_usd": 18000,
+        "holding_days": 3,
+        "risk_reward": "1:2.7",
+        "confidence": "medium",
+        "thesis_macro": "SpaceX IPO reflektor na space sector, Nasdaq-100 inclusion Jun 22 = forced buying",
+        "thesis_technical": "Premarket +7%, breakout z $108-112 range, objem exploduje",
+        "thesis_catalyst": "Nasdaq-100 add announcement = passive fund inflows až $800M odhad",
+        "thesis_options": "Call volume 4x put, retail FOMO + institutional front-run indexu",
+        "thesis_short_interest": "Short interest 12%, squeeze potenciál pokud drží nad $115",
+        "thesis_insider": "CEO hold, žádný prodej 30D, bullish alignment",
+        "thesis_volume": "Premarket volume už 3x normál, momentum accelerating",
+        "thesis_correlation": "Space proxy, ale ne direct SpaceX competitor (malé satelity vs. heavy lift)",
+        "thesis_risk": "SpaceX IPO vysává veškerou pozornost a likviditu ze small-cap space",
+        "entry_logic": "$115 je včerejší close + premarket gap, čekat stabilizaci po open",
+        "exit_logic": "$123 Fibonacci extension, profit-taking před Nasdaq inclusion na Jun 22",
+        "probability_pct": 62,
+        "probability_reasoning": "Index inclusion historicky +8-12% average, ale SpaceX noise vytváří unpredictability",
+        "catalysts": [
+          "Nasdaq-100 add Jun 22 (10 dní)",
+          "SpaceX IPO halo efekt na space stocks",
+          "Potential contract announcement pipeline"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR Fund",
+        "direction": "short",
+        "entry_price": 82.5,
+        "target_price": 78.0,
+        "stop_loss": 84.0,
+        "target_pct": -5.5,
+        "stop_pct": -1.8,
+        "position_size_usd": 20000,
+        "holding_days": 2,
+        "risk_reward": "1:3.1",
+        "confidence": "high",
+        "thesis_macro": "Iran deal = Hormuz reopens, supply shock reversal, WTI target $80 short-term",
+        "thesis_technical": "XLE breakdown z $84 support, death cross signalizuje, RSI oversold bounce rizikem",
+        "thesis_catalyst": "G7 summit formalizace Iran, OPEC+ meeting příští týden může zvýšit produkci",
+        "thesis_options": "Put/call ratio 1.45, hedgers nakupují downside protection agresivně",
+        "thesis_short_interest": "ETF short interest 4%, ale underlying holdings heavily shorted",
+        "thesis_insider": "Major energy CEOs prodávají (CVX, XOM insiders lightening up)",
+        "thesis_volume": "Volume spike -15% direction včera, distribution pattern",
+        "thesis_correlation": "Inverzní k peace narrative, direct play na geopolitický risk premium collapse",
+        "thesis_risk": "Iran deal fails, supply disruption unrelated (hurricane season starts)",
+        "entry_logic": "Short na bounce k $82.50 rezistenci, ne na panice",
+        "exit_logic": "$78 support z března, před Iran eskalací level, mean reversion",
+        "probability_pct": 65,
+        "probability_reasoning": "Tržní konsensus peace deal 70%, energy historically overreacts to geopolitical resolution",
+        "catalysts": [
+          "Formal US-Iran agreement announcement",
+          "Hormuz traffic normalization data",
+          "OPEC+ meeting June 18"
+        ]
+      },
+      {
+        "ticker": "GLD",
+        "company": "SPDR Gold Shares",
+        "direction": "long",
+        "entry_price": 387.0,
+        "target_price": 398.0,
+        "stop_loss": 383.0,
+        "target_pct": 2.8,
+        "stop_pct": -1.0,
+        "position_size_usd": 19000,
+        "holding_days": 2,
+        "risk_reward": "1:2.8",
+        "confidence": "medium",
+        "thesis_macro": "Zlato +2.5% včera, DXY slabý 99.66, real yields stagnují, inflation hedge demand",
+        "thesis_technical": "Breakout $385 rezistence, direction $390 next, volume confirmation silná",
+        "thesis_catalyst": "Michigan sentiment dnes = recession fears, Fed pivot expectations building",
+        "thesis_options": "GLD call volume 1.8x put, safe-haven + inflation hedge dually positioned",
+        "thesis_short_interest": "ETF minimal short, underlying gold futures net long positioning ATH",
+        "thesis_insider": "N/A pro ETF, ale central bank buying continues (PBOC data)",
+        "thesis_volume": "Včerejší objem 1.7x avg, ETF inflows $1.2B v týdnu",
+        "thesis_correlation": "Low korelace k equities (0.12), pure diversifier v risk-on environment",
+        "thesis_risk": "DXY bounce na surprise data, real yields spike pokud CPI hot",
+        "entry_logic": "Entry blízko current, momentum strong ale ne extended (RSI 62)",
+        "exit_logic": "$398 round number + Fib 78.6% retracement z sell-off, resistance zone",
+        "probability_pct": 58,
+        "probability_reasoning": "Inflation persistent (PPI 6.5%), recession fears build, ale peace = risk-on může tlačit dolů",
+        "catalysts": [
+          "Michigan sentiment dnes 10:00 ET (očekává se propad)",
+          "Fed rhetoric shift monitoring",
+          "Real yields direction next week"
+        ]
+      }
+    ],
+    "portfolio_note": "Diverzifikace: Industrials (BA), Financials (JPM), Space (RKLB), Energy short (XLE), Safe-haven (GLD). Celková alokace $100K. Risk-reward všude >2:1. Holding 1-3 dny = short-term swing na catalysts. SpaceX IPO hlavní event risk — sledovat likviditu drain.",
+    "risks": [
+      "SpaceX IPO absorpce $75B likvidity — může vytáhnout bid z broad market",
+      "Iran deal může failnout — reversal všech peace trades (XLE short, BA long exposure)",
+      "Michigan sentiment dnes 10:00 ET — pokud horší než 44.8, risk-off panic možný",
+      "VIX na 19.44 = normal ale energy vol elevated, tail risk v commodities",
+      "ADBE earnings miss signalizuje potential tech slowdown — RKLB korelace risk"
+    ],
+    "data_freshness": "Data z web search aktuální k 12.6.2026 9:30 ET. Futures, VIX, yields real-time premarket. Earnings, insider Form 4 z 10-11.6. Short interest data z mid-June settlement. Options flow z včerejšího close. SpaceX IPO potvrzeno $135, trading dnes."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-12T14:03:40.238297"
+}
