@@ -1,11 +1,91 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 100000.0,
+  "current_capital": 99530.43,
   "peak_capital": 100000.0,
-  "total_trades": 0,
+  "total_trades": 2,
   "winning_trades": 0,
-  "losing_trades": 0,
-  "equity_curve": [],
-  "open_positions": [],
-  "closed_trades": []
+  "losing_trades": 2,
+  "equity_curve": [
+    {
+      "date": "2026-06-12",
+      "day_of_week": "Friday",
+      "value": 99530.43,
+      "pnl_usd": -469.57,
+      "grade": "C",
+      "avg_mae": 2.43,
+      "avg_mfe": 2.1
+    }
+  ],
+  "open_positions": [
+    {
+      "ticker": "JPM",
+      "company": "JPMorgan Chase & Co.",
+      "direction": "long",
+      "entry_price": 212.0,
+      "target_price": 221.0,
+      "stop_loss": 209.0,
+      "position_size_usd": 21000.0,
+      "holding_days_remaining": 1,
+      "unrealized_pnl_pct": 1.75,
+      "opened_date": "2026-06-12"
+    },
+    {
+      "ticker": "XLE",
+      "company": "Energy Select Sector SPDR Fund",
+      "direction": "short",
+      "entry_price": 82.5,
+      "target_price": 78.0,
+      "stop_loss": 84.0,
+      "position_size_usd": 20000.0,
+      "holding_days_remaining": 1,
+      "unrealized_pnl_pct": 0.66,
+      "opened_date": "2026-06-12"
+    },
+    {
+      "ticker": "GLD",
+      "company": "SPDR Gold Shares",
+      "direction": "long",
+      "entry_price": 387.0,
+      "target_price": 398.0,
+      "stop_loss": 383.0,
+      "position_size_usd": 19000.0,
+      "holding_days_remaining": 1,
+      "unrealized_pnl_pct": 0.76,
+      "opened_date": "2026-06-12"
+    }
+  ],
+  "closed_trades": [
+    {
+      "date": "2026-06-12",
+      "day_of_week": "Friday",
+      "ticker": "BA",
+      "direction": "long",
+      "outcome": "missed_entry",
+      "pnl_pct": 0.0,
+      "pnl_usd": 0.0,
+      "position_size_usd": 22000.0,
+      "mae_pct": 0.0,
+      "mfe_pct": 0.0,
+      "trade_quality": "poor",
+      "probability_pct": 68,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-06-12",
+      "day_of_week": "Friday",
+      "ticker": "RKLB",
+      "direction": "long",
+      "outcome": "stopped_out",
+      "pnl_pct": -2.61,
+      "pnl_usd": -469.57,
+      "position_size_usd": 18000.0,
+      "mae_pct": 10.22,
+      "mfe_pct": 6.94,
+      "trade_quality": "poor",
+      "probability_pct": 62,
+      "probability_verdict": "overconfident",
+      "data_corrected": true
+    }
+  ]
 }
