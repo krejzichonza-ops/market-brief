@@ -24,8 +24,26 @@ GMAIL_APP_PASSWORD = os.environ.get('GMAIL_APP_PASSWORD', '')
 RUN_MODE          = os.environ.get('RUN_MODE', 'morning')
 
 DATA_DIR  = os.path.join(os.path.dirname(__file__), '..', 'data')
-DATA_FILE = os.path.join(DATA_DIR, f'{DATE_KEY}.json')
 DASHBOARD_URL = f"https://{GMAIL_ADDRESS.split('@')[0].replace('.','-')}.github.io/market-brief"
+
+def find_data_file():
+    """Najde soubor relevantní pro aktuální email mode."""
+    todays_file = os.path.join(DATA_DIR, f'{DATE_KEY}.json')
+    if RUN_MODE == 'morning':
+        return todays_file
+    # evening: najdi nejnovější soubor s review (posledních 5 dní)
+    import glob
+    candidates = sorted(glob.glob(os.path.join(DATA_DIR, '????-??-??.json')), reverse=True)
+    for path in candidates[:5]:
+        try:
+            rec = json.load(open(path))
+        except:
+            continue
+        if rec.get('review'):
+            return path
+    return todays_file
+
+DATA_FILE = find_data_file()
 
 if not GMAIL_ADDRESS or not GMAIL_APP_PASSWORD:
     print("⚠️  GMAIL_ADDRESS nebo GMAIL_APP_PASSWORD není nastaven, přeskakuji email.")
@@ -40,6 +58,11 @@ with open(DATA_FILE, 'r') as f:
 
 brief  = record.get('brief', {})
 review = record.get('review', {})
+
+# Použij skutečné datum z briefu (důležité pro evening, kde DATA_FILE může být z předchozího dne)
+DATE_KEY = brief.get('date_key', os.path.basename(DATA_FILE).replace('.json', ''))
+DATE_STR = brief.get('market_date', DATE_STR)
+SENT_LOG = os.path.join(DATA_DIR, f'email_sent_{DATE_KEY}.json')
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 def fmt_usd(n):
@@ -378,7 +401,6 @@ def send_email(subject, html_body):
         server.sendmail(GMAIL_ADDRESS, GMAIL_ADDRESS, msg.as_string())
 
 # Ochrana proti duplicitním emailům
-SENT_LOG = os.path.join(DATA_DIR, f'email_sent_{DATE_KEY}.json')
 
 def already_sent(mode):
     if not os.path.exists(SENT_LOG):
