@@ -905,7 +905,7 @@ async function showDetail(dateKey){
   if(rev){
     const ps=rev.portfolio_summary||{};
     const pnl=ps.total_pnl_usd||0;
-    html+=`<div style="background:var(--surface2);border:1px solid var(--border);padding:12px">
+    html+=`<div style="background:var(--surface2);border:1px solid var(--border);padding:12px;margin-bottom:14px">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px">
         <div class="grade ${gcls(rev.overall_grade)}">${rev.overall_grade}</div>
         <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--bright)">
@@ -914,6 +914,25 @@ async function showDetail(dateKey){
         </div>
       </div>
       <div class="prose" style="font-size:12px">${prose(rev.narrative)}</div>
+    </div>`;
+  }
+  // Detail per pick — thesis + post-mortem
+  html+=`<div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--dim);text-transform:uppercase;letter-spacing:.1em;margin:14px 0 6px 0">Detail jednotlivých picků</div>`;
+  picks.forEach(p=>{
+    const rv=rev?.picks_review?.find(r=>r.ticker===p.ticker);
+    html+=thesisBlock(p);
+    if(rv) html+=postMortem(rv);
+  });
+  if(rev?.lessons?.length || rev?.tomorrow_watch?.length){
+    html+=`<div style="margin-top:14px;display:grid;grid-template-columns:1fr 1fr;gap:10px">
+      ${rev.lessons?.length?`<div style="border:1px solid var(--border);padding:10px 12px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--green);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Lekce</div>
+        ${rev.lessons.map(l=>`<div style="font-size:12px;color:var(--text);padding:3px 0">→ ${l}</div>`).join('')}
+      </div>`:''}
+      ${rev.tomorrow_watch?.length?`<div style="border:1px solid var(--border);padding:10px 12px">
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px">Sledovat dál</div>
+        ${rev.tomorrow_watch.map(l=>`<div style="font-size:12px;color:var(--text);padding:3px 0">→ ${l}</div>`).join('')}
+      </div>`:''}
     </div>`;
   }
   document.getElementById('overlay-title').textContent='Brief: '+dateKey;
