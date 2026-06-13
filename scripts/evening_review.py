@@ -18,20 +18,38 @@ DATA_DIR = os.path.join(os.path.dirname(__file__), '..', 'data')
 INPUT_FILE     = os.path.join(DATA_DIR, f'{DATE_KEY}.json')
 PORTFOLIO_FILE = os.path.join(DATA_DIR, 'portfolio.json')
 
-if not os.path.exists(INPUT_FILE):
-    print(f"⚠️  Žádný morning brief pro {DATE_KEY}.")
+# Pokud dnešní brief neexistuje nebo je už zhodnocený, najdi nejnovější
+# nezhodnocený brief (řeší případ kdy evening review proběhne se zpožděním
+# přes půlnoc nebo víkend).
+def find_target_file():
+    if os.path.exists(INPUT_FILE):
+        with open(INPUT_FILE) as f:
+            rec = json.load(f)
+        if rec.get('brief') and not rec.get('reviewed'):
+            return INPUT_FILE, rec
+    # Hledej nejnovější nezhodnocený brief mezi posledními 5 dny
+    import glob
+    candidates = sorted(glob.glob(os.path.join(DATA_DIR, '????-??-??.json')), reverse=True)
+    for path in candidates[:5]:
+        with open(path) as f:
+            rec = json.load(f)
+        if rec.get('brief') and not rec.get('reviewed'):
+            return path, rec
+    return None, None
+
+INPUT_FILE, record = find_target_file()
+
+if INPUT_FILE is None:
+    print(f"⚠️  Žádný nezhodnocený morning brief nenalezen (kontrolováno do {DATE_KEY}).")
     sys.exit(0)
 
-with open(INPUT_FILE) as f:
-    record = json.load(f)
+# Přepiš DATE_KEY/DATE_STR/DOW podle skutečně zpracovávaného briefu
+brief_date_key = record['brief'].get('date_key', os.path.basename(INPUT_FILE).replace('.json', ''))
+DATE_KEY = brief_date_key
+DATE_STR = record['brief'].get('market_date', DATE_STR)
+DOW = record['brief'].get('day_of_week', DOW)
 
-if not record.get('brief'):
-    print(f"⚠️  Morning brief prázdný.")
-    sys.exit(0)
-
-if record.get('reviewed'):
-    print(f"✓ Evening review pro {DATE_KEY} již existuje.")
-    sys.exit(0)
+print(f"📄 Zpracovávám brief: {INPUT_FILE} ({DATE_STR})")
 
 brief = record['brief']
 picks = brief.get('picks', [])
