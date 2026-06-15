@@ -1,8 +1,6 @@
 name: Morning Brief
 
 on:
-  schedule:
-    - cron: '15 13 * * 1-5'
   workflow_dispatch:
 
 jobs:
