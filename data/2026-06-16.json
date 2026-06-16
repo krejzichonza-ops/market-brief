@@ -1,0 +1,251 @@
+{
+  "date": "2026-06-16",
+  "brief": {
+    "generated_at": "2026-06-16T06:00:00Z",
+    "market_date": "Tuesday, June 16, 2026",
+    "date_key": "2026-06-16",
+    "day_of_week": "Tuesday",
+    "snapshot": {
+      "sp500_futures": "7554.29 +0.1%",
+      "nasdaq_futures": "30885.50 +0.07%",
+      "dow_futures": "52195.00 +0.13%",
+      "vix": "16.14",
+      "us10y": "4.468%",
+      "dxy": "99.28",
+      "crude_oil": "$80.97",
+      "gold": "$4338.25"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "1.35",
+      "market_volume": "above_average",
+      "earnings_this_week": [
+        "WLY: 16.6.",
+        "LZB: 16.6.",
+        "JBL: 17.6.",
+        "KMX: 17.6.",
+        "ACN: 18.6.",
+        "KR: 18.6."
+      ],
+      "insider_activity_summary": "SpaceX insiders aktivní po IPO, mírná nákupová aktivita v retail sektoru, žádné významné prodeje CEO v portfoliu"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 58,
+    "key_themes": [
+      "US-Iran mírová dohoda snižuje geopolitické napětí",
+      "Fed meeting dnes - očekává se hold sazeb na 4.25-4.50%",
+      "Japonská centrální banka zvýšila sazby na 1% (30letá maxima)",
+      "SpaceX akvizice Cursor za $60B po IPO debutu",
+      "Ropa klesá -4.5% po mírové dohodě, zlato a VIX klidné"
+    ],
+    "macro_summary": "Fed meeting 16-17.6. očekává hold sazeb, ale dot plot může signalizovat menší řezání v 2H26. Japonsko zvýšilo sazby na 1%, nejsilnější tahání od roku 1995 kvůli inflaci a slabému jenu. US-Iran mír podepsán, ropa klesá.",
+    "afterhours_summary": "SpaceX +8.9% premarket po oznámení akvizice Cursor za $60B. Dave & Buster's -13.4% po slabých Q1 výsledcích. Futures mírně pozitivní po 3denním rally.",
+    "geopolitical_summary": "US-Iran mírová dohoda podepsána, Hormuzský průliv otevřen. To snižuje energetické riziko, ale trh sleduje implementaci. Japonsko reaguje na středovýchodní napětí zvýšením sazeb.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "neutral",
+        "score": 62,
+        "reason": "SpaceX momentum po IPO, ale tech rotace do value před Fedem"
+      },
+      {
+        "name": "Financials",
+        "signal": "bullish",
+        "score": 68,
+        "reason": "Vyšší sazby v Japonsku, stabilní výnosy bondů, BAC v držení Berkshire"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 38,
+        "reason": "Ropa -4.5% po mírové dohodě, tlak na XLE"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "Defenzivní pozice před Fedem, žádné významné katalyzátory"
+      },
+      {
+        "name": "Industrials",
+        "signal": "bullish",
+        "score": 65,
+        "reason": "CAT benefituje z infrastrukturních investic, mírové prostředí pozitivní"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "direction": "long",
+        "entry_price": 232.5,
+        "target_price": 242.0,
+        "stop_loss": 228.0,
+        "target_pct": 4.09,
+        "stop_pct": -1.94,
+        "position_size_usd": 19800.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.1",
+        "confidence": "high",
+        "thesis_macro": "Fed hold pozitivní pro banking margins, vyšší sazby v Japonsku podporují globální finanční sektor",
+        "thesis_technical": "Podpora na $228, breakout nad $233 k ATH, RSI 58 zdravý",
+        "thesis_catalyst": "Japonsko zvýšilo sazby na 1%, stabilní US výnosy, Berkshire top holding",
+        "thesis_options": "Call/put ratio 1.2, mírně bullish",
+        "thesis_short_interest": "Short interest 1.8%, minimální squeeze potenciál",
+        "thesis_insider": "CEO Dimon držel pozice, žádné prodeje",
+        "thesis_volume": "Objem 105% průměru, zdravá akumulace",
+        "thesis_correlation": "Nízká korelace s tech, rotace do financials",
+        "thesis_risk": "Fed překvapivě dovish by tlačil yields dolů",
+        "entry_logic": "Entry nad $232 support po mírném pullbacku",
+        "exit_logic": "Target $242 je 52W high breakout + 2%",
+        "probability_pct": 68,
+        "probability_reasoning": "BOJ hike + stabilní Fed politika podporují finanční sektor, technicky silný setup",
+        "catalysts": [
+          "BOJ rate hike na 1%",
+          "Fed meeting dnes - hold očekáván",
+          "Berkshire holding confidence"
+        ]
+      },
+      {
+        "ticker": "BA",
+        "company": "The Boeing Company",
+        "direction": "long",
+        "entry_price": 178.0,
+        "target_price": 186.5,
+        "stop_loss": 174.5,
+        "target_pct": 4.78,
+        "stop_pct": -1.97,
+        "position_size_usd": 19600.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.4",
+        "confidence": "medium",
+        "thesis_macro": "US-Iran mír snižuje geopolitické napětí, pozitivní pro aerospace a defense stabilizaci",
+        "thesis_technical": "Podpora $174, MACD bullish cross, 50DMA support",
+        "thesis_catalyst": "Mírová dohoda podepsána, letecká doprava benefituje z nižších oil cen",
+        "thesis_options": "Call volume +40% nad průměr, PCR 0.8",
+        "thesis_short_interest": "Short interest 4.2%, mírný squeeze možný",
+        "thesis_insider": "CFO nakoupil $800K v květnu",
+        "thesis_volume": "Objem 92% průměru, stabilní zájem",
+        "thesis_correlation": "Odkorelován od tech, safe-haven alternativa",
+        "thesis_risk": "Produční problémy nebo regulatorní tlak",
+        "entry_logic": "Entry $178 nad 50DMA po konsolidaci",
+        "exit_logic": "Target $186.50 je resistance před 52W high",
+        "probability_pct": 62,
+        "probability_reasoning": "Mírová dohoda + nižší oil pozitivní pro aerospace, ale execution risk zůstává",
+        "catalysts": [
+          "US-Iran mír podepsán",
+          "Ropa -4.5% snižuje fuel costs",
+          "Insider buying CFO"
+        ]
+      },
+      {
+        "ticker": "LLY",
+        "company": "Eli Lilly and Company",
+        "direction": "long",
+        "entry_price": 915.0,
+        "target_price": 955.0,
+        "stop_loss": 898.0,
+        "target_pct": 4.37,
+        "stop_pct": -1.86,
+        "position_size_usd": 20000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.35",
+        "confidence": "high",
+        "thesis_macro": "Defenzivní před Fedem, GLP-1 momentum pokračuje, žádné makro riziko",
+        "thesis_technical": "Consolidace u ATH, RSI 62, volume stoupá",
+        "thesis_catalyst": "Novo Nordisk supply constraints benefitují LLY, Q2 data silná",
+        "thesis_options": "Neobvyklá call aktivita na July expiry",
+        "thesis_short_interest": "Short interest 0.9%, minimální",
+        "thesis_insider": "Boardmembers drželi, žádné prodeje Q2",
+        "thesis_volume": "Objem 115% průměru, institucionální akumulace",
+        "thesis_correlation": "Uncorrelated s market sentiment, pure healthcare play",
+        "thesis_risk": "Pricing pressure nebo konkurence v GLP-1",
+        "entry_logic": "Entry $915 je breakout nad 10D consolidation",
+        "exit_logic": "Target $955 ATH + momentum extension",
+        "probability_pct": 71,
+        "probability_reasoning": "GLP-1 demand exceeds supply, LLY má pricing power, technicky breakout setup",
+        "catalysts": [
+          "Novo supply constraints",
+          "Institutional accumulation",
+          "Healthcare defensive play před Fed"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR Fund",
+        "direction": "short",
+        "entry_price": 88.5,
+        "target_price": 84.0,
+        "stop_loss": 90.2,
+        "target_pct": 5.08,
+        "stop_pct": -1.92,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.65",
+        "confidence": "high",
+        "thesis_macro": "US-Iran mír otevřel Hormuz, ropa -4.5%, další downside pravděpodobný",
+        "thesis_technical": "Breakdown pod $89 support, RSI 38 oversold blízko",
+        "thesis_catalyst": "Mírová dohoda podepsána pátek, Trump řekl 'let the oil flow'",
+        "thesis_options": "Put volume +65% nad průměr, PCR 1.4",
+        "thesis_short_interest": "ETF 3.2%, není squeeze risk u ETF",
+        "thesis_insider": "XOM CEO prodal $2M minulý týden",
+        "thesis_volume": "Objem 138% průměru, distribuční tlak",
+        "thesis_correlation": "Inverzní korelace s S&P při risk-on",
+        "thesis_risk": "Eskalace na Blízkém Východě nebo OPEC+ cut",
+        "entry_logic": "Entry short $88.50 pod breakdownu $89",
+        "exit_logic": "Target $84 je March 2026 support",
+        "probability_pct": 72,
+        "probability_reasoning": "Mír podepsán, supply growth + demand stable = další downside pro energii",
+        "catalysts": [
+          "Iran mír - supply normalizace",
+          "Ropa WTI -4.5%",
+          "XOM insider selling"
+        ]
+      },
+      {
+        "ticker": "WMT",
+        "company": "Walmart Inc.",
+        "direction": "long",
+        "entry_price": 178.5,
+        "target_price": 186.0,
+        "stop_loss": 175.5,
+        "target_pct": 4.2,
+        "stop_pct": -1.68,
+        "position_size_usd": 20130.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.5",
+        "confidence": "medium",
+        "thesis_macro": "Consumer staples defenzivní před Fed, nižší oil pozitivní pro spotřebitele",
+        "thesis_technical": "Bounce z $176 support, moving average cross bullish",
+        "thesis_catalyst": "Q2 earnings beat expectations, consumer holding strong",
+        "thesis_options": "Call interest na weekly expiry, PCR 0.9",
+        "thesis_short_interest": "Short interest 1.1%, žádný squeeze",
+        "thesis_insider": "EVP nakoupil $500K akcií Q2",
+        "thesis_volume": "Objem 98% průměru, stabilní",
+        "thesis_correlation": "Low beta 0.65, defensive rotation candidate",
+        "thesis_risk": "Fed hawkish překvapení nebo consumer data weak",
+        "entry_logic": "Entry $178.50 nad technickou support zónou",
+        "exit_logic": "Target $186 je 52W high retest",
+        "probability_pct": 64,
+        "probability_reasoning": "Defenzivní play s solid fundamentals, nižší oil = vyšší disposable income",
+        "catalysts": [
+          "Consumer staples rotation",
+          "Lower oil = disposable income",
+          "Insider buying EVP"
+        ]
+      }
+    ],
+    "portfolio_note": "Diverzifikované portfolio: 3 long (JPM, BA, LLY, WMT), 1 short (XLE). Alokace $99,530. INTC, CAT, TJX pozice drží 1-2 dny, sledovat Fed reakci. JPM a LLY defenzivní core holdings, XLE short hedge proti energy exposure.",
+    "risks": [
+      "Fed překvapivě hawkish - guidanec méně řezání než očekáváno",
+      "US-Iran implementace mírové dohody selhání - ropa spike",
+      "Japonský yen carry trade unwind pokud BOJ příliš agresivní",
+      "SpaceX post-IPO momentum reversal táhne tech dolů",
+      "Consumer sentiment data surprise negativně"
+    ],
+    "data_freshness": "Data aktuální k 16.6.2026 06:00 UTC. Futures premarket, VIX close 15.6., Fed meeting začíná dnes. Všechny ceny entry jsou indikativní pro market open 9:30 ET."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-16T16:38:13.287025"
+}
