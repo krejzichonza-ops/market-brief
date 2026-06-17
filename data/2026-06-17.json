@@ -1,0 +1,242 @@
+{
+  "date": "2026-06-17",
+  "brief": {
+    "generated_at": "2026-06-17T08:00:00Z",
+    "market_date": "Wednesday, June 17, 2026",
+    "date_key": "2026-06-17",
+    "day_of_week": "Wednesday",
+    "snapshot": {
+      "sp500_futures": "7511+0.53%",
+      "nasdaq_futures": "30475+0.53%",
+      "dow_futures": "52463-0.01%",
+      "vix": "16.36",
+      "us10y": "4.47%",
+      "dxy": "99.61",
+      "crude_oil": "$76.56",
+      "gold": "$4348"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "1.15",
+      "market_volume": "above_average",
+      "earnings_this_week": [
+        "JBL: Jun 17 pre-market",
+        "Adobe reportoval Q2",
+        "17 Education Q1: Jun 17"
+      ],
+      "insider_activity_summary": "MP Materials director Connie Duckworth získala 3998 akcií z RSU conversion 15.6., Leon Black prodal Apollo APO akcie za $172.8M, Eli Lilly CEO David Ricks koupil za $35M"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 52,
+    "key_themes": [
+      "Fed meeting dnes - Kevin Warsh první rozhodnutí",
+      "US-Iran mírová dohoda tlačí ropu dolů -5. den poklesu",
+      "SpaceX rally pokračuje po $60B Cursor akvizici"
+    ],
+    "macro_summary": "Fed oznámí rozhodnutí dnes v 14:00 ET, očekává se hold na 3.50-3.75%, May CPI 4.2% YoY ukázalo inflaci stále zvýšenou energií. US-Iran mírová dohoda podepsána v pátek snižuje geopolitické riziko, ale Warsh může eliminovat dot plot.",
+    "afterhours_summary": "SpaceX (SPCX) +10% po potvrzení $60B Cursor merger, Dow včera rekordní close 52000, tech sectory klesly. Nasdaq futures dnes +0.53% pre-market.",
+    "geopolitical_summary": "US-Iran mírový rámec podepsán 15.6., oficiální podpis v pátek 19.6., Hormuz otevřen, ropa WTI -5. den poklesu na $75-76. Geopolitická prémie mizí z komodit.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bullish",
+        "score": 72,
+        "reason": "Semiconductory silné, AI demand táhne sektor, Deloitte očekává $975B tržby 2026, SpaceX momentum"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "Banky rostou mírně, Citigroup +33.4% za 3M, ale median return 4.2% zaostává za S&P"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 38,
+        "reason": "Ropa WTI -5. den poklesu na $76, Iran peace deal snižuje prémii, oversupply riziko"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Stabilní, žádné výrazné katalyzátory dnes"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 53,
+        "reason": "Jabil (JBL) reportuje dnes, očekáván růst, sektor stabilní"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "SPCX",
+        "company": "SpaceX",
+        "direction": "long",
+        "entry_price": 202.5,
+        "target_price": 215.0,
+        "stop_loss": 195.0,
+        "target_pct": 6.2,
+        "stop_pct": -3.7,
+        "position_size_usd": 24000.0,
+        "holding_days": 2,
+        "risk_reward": "1:1.7",
+        "confidence": "medium",
+        "thesis_macro": "Post-IPO momentum, AI enterprise tools růst 12% ročně",
+        "thesis_technical": "Rally nad $200, volume 2x průměr, resistance $220",
+        "thesis_catalyst": "$60B Cursor merger close Q3, xAI integrace",
+        "thesis_options": "Put/call ratio nízký, bullish sentiment",
+        "thesis_short_interest": "Short interest minimální post-IPO",
+        "thesis_insider": "Insideři drželi pozice před IPO",
+        "thesis_volume": "Volume 250% normálu, institucionální zájem",
+        "thesis_correlation": "Aerospace + AI nekorelovano s broad tech",
+        "thesis_risk": "Valuace 3.2x Morningstar fair value přetažená",
+        "entry_logic": "Pullback po včerejším +10%, vstup kolem 202",
+        "exit_logic": "Target před $220 resistance, short-term trade",
+        "probability_pct": 58,
+        "probability_reasoning": "Momentum silné, ale valuace extrémní, proto nižší pravděpodobnost",
+        "catalysts": [
+          "Cursor merger news pokračuje",
+          "AI coding market sentiment"
+        ]
+      },
+      {
+        "ticker": "JBL",
+        "company": "Jabil Inc.",
+        "direction": "long",
+        "entry_price": 288.0,
+        "target_price": 302.0,
+        "stop_loss": 282.0,
+        "target_pct": 4.9,
+        "stop_pct": -2.1,
+        "position_size_usd": 22000.0,
+        "holding_days": 1,
+        "risk_reward": "1:2.3",
+        "confidence": "high",
+        "thesis_macro": "Electronics manufacturing demand stabilní, AI infrastructure komponenty",
+        "thesis_technical": "YTD +65.3%, support $285, break $295 target",
+        "thesis_catalyst": "Q3 earnings dnes pre-market, konsensus $3.10 beat",
+        "thesis_options": "Earnings play, implied move 4-5%",
+        "thesis_short_interest": "Short interest pod 5%, málo tlaků",
+        "thesis_insider": "Management drželo, žádné velké prodeje",
+        "thesis_volume": "Pre-earnings volume spike obvyklý",
+        "thesis_correlation": "Tech supply chain, ale ne FAANG korelace",
+        "thesis_risk": "Miss earnings crush na $275 support",
+        "entry_logic": "Pre-market před earnings, strong guidance očekávána",
+        "exit_logic": "Post-earnings pop na $302, sell během dne",
+        "probability_pct": 68,
+        "probability_reasoning": "Strong track record, 8/10 analytiků Buy, beat expectations pravděpodobné",
+        "catalysts": [
+          "Q3 earnings report dnes AM",
+          "Guidance pro Q4"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR Fund",
+        "direction": "short",
+        "entry_price": 88.5,
+        "target_price": 84.0,
+        "stop_loss": 90.5,
+        "target_pct": 5.1,
+        "stop_pct": -2.3,
+        "position_size_usd": 20000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.2",
+        "confidence": "high",
+        "thesis_macro": "Iran peace deal podepsán, Hormuz otevřen, oversupply risk",
+        "thesis_technical": "WTI -5 dnů streak, XLE breakdown pod $89",
+        "thesis_catalyst": "Iran deal finalizace pátek, další oil drop",
+        "thesis_options": "Put activity rostl, protective buying energií",
+        "thesis_short_interest": "ETF short interest roste 10%+",
+        "thesis_insider": "Energy CEOs selling positions 2Q26",
+        "thesis_volume": "Volume normální, momentum medvědí",
+        "thesis_correlation": "Inverzní korelace s broader market, hedge",
+        "thesis_risk": "OPEC+ surprise cut announcement",
+        "entry_logic": "Short pod $88.50 breakdown, WTI target $72",
+        "exit_logic": "Cover $84 před větší support, 3-day hold",
+        "probability_pct": 72,
+        "probability_reasoning": "Geopolitika podporuje bearish thesis, fundamentals weak, technicals confirm",
+        "catalysts": [
+          "Iran deal signing pátek",
+          "EIA inventory data",
+          "OPEC+ meeting next week"
+        ]
+      },
+      {
+        "ticker": "C",
+        "company": "Citigroup Inc.",
+        "direction": "long",
+        "entry_price": 142.0,
+        "target_price": 148.0,
+        "stop_loss": 139.0,
+        "target_pct": 4.2,
+        "stop_pct": -2.1,
+        "position_size_usd": 18000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.0",
+        "confidence": "medium",
+        "thesis_macro": "Financials benefitují z higher-for-longer rates 3.50-3.75%",
+        "thesis_technical": "+33.4% za 3M, pullback dokončen, RSI 58",
+        "thesis_catalyst": "Fed hold dnes, guidance hawkish pro banky",
+        "thesis_options": "Call volume rostl před Fed",
+        "thesis_short_interest": "Short interest 8%, squeeze potential",
+        "thesis_insider": "Žádná velká aktivita, stabilní",
+        "thesis_volume": "Above average, institucionální accumulation",
+        "thesis_correlation": "Financials nekorelovany s tech selloff",
+        "thesis_risk": "Fed dovish surprise tlačí sazby dolů",
+        "entry_logic": "Vstup po Fed announcement, potvrzení hold",
+        "exit_logic": "Target $148 před $150 psychologická bariéra",
+        "probability_pct": 62,
+        "probability_reasoning": "Fed hold 95% pravděpodobnost, rates podporují, ale valuace již natažená",
+        "catalysts": [
+          "Fed decision 14:00 ET dnes",
+          "Warsh press conference"
+        ]
+      },
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA Corporation",
+        "direction": "long",
+        "entry_price": 211.0,
+        "target_price": 220.0,
+        "stop_loss": 206.5,
+        "target_pct": 4.3,
+        "stop_pct": -2.1,
+        "position_size_usd": 15530.43,
+        "holding_days": 2,
+        "risk_reward": "1:2.0",
+        "confidence": "high",
+        "thesis_macro": "AI infrastructure boom, semiconductor sales $975B 2026",
+        "thesis_technical": "Consolidace dokončena $205-215, breakout setup",
+        "thesis_catalyst": "SpaceX Cursor deal pozitivní pro AI tools/chips",
+        "thesis_options": "Call/put ratio 1.8, silný bullish sentiment",
+        "thesis_short_interest": "Short interest pod 2%, squeeze nelze",
+        "thesis_insider": "Žádné velké transakce poslední týden",
+        "thesis_volume": "Volume normální, čeká na catalyst",
+        "thesis_correlation": "Leader, ne follower tech sectoru",
+        "thesis_risk": "Broader tech selloff táhne dolů",
+        "entry_logic": "Buy breakout nad $211, confirmation volume",
+        "exit_logic": "$220 prior resistance, take profit rychle",
+        "probability_pct": 65,
+        "probability_reasoning": "AI momentum podporuje, technicals strong, ale macro Fed risk snižuje",
+        "catalysts": [
+          "AI coding tools demand (SpaceX news)",
+          "Semiconductor outlook reports"
+        ]
+      }
+    ],
+    "portfolio_note": "Diverzifikace napříč Tech (SPCX, JBL, NVDA), Financials (C), a Energy short (XLE). Celková alokace $99,530.43. Risk management přes stops 2-3%. Fed meeting dnes hlavní event risk - 3 pozice (C, NVDA, SPCX) závislé na outcome. JBL earnings binary event. XLE short hedge proti broad market exposure.",
+    "risks": [
+      "Fed Warsh překvapí hawkish guidance - tlačí tech dolů",
+      "SpaceX valuace extrémní 3.2x fair value - korekce možná",
+      "Iran deal neratifikován - ropa spike zpět",
+      "Earnings season volatility - JBL miss riziko",
+      "VIX 16.36 může exploze při Fed surprise"
+    ],
+    "data_freshness": "Data k 17.6.2026 08:00 ET. Futures live, May CPI finální, Fed decision pending 14:00 ET. Insider data 48h window. Short interest data k 15.6. settlement. Put/call ratio k 15.6. close."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-17T13:17:31.146584"
+}
