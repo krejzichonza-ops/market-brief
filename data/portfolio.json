@@ -1,11 +1,87 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 100000.0,
-  "peak_capital": 100000.0,
-  "total_trades": 0,
-  "winning_trades": 0,
+  "current_capital": 101069.44,
+  "peak_capital": 101069.44,
+  "total_trades": 1,
+  "winning_trades": 1,
   "losing_trades": 0,
-  "equity_curve": [],
-  "open_positions": [],
-  "closed_trades": []
+  "equity_curve": [
+    {
+      "date": "2026-06-17",
+      "day_of_week": "Wednesday",
+      "value": 101069.44,
+      "pnl_usd": 1069.44,
+      "grade": "D",
+      "avg_mae": -1.26,
+      "avg_mfe": 1.67
+    }
+  ],
+  "open_positions": [
+    {
+      "ticker": "SPCX",
+      "company": "SpaceX",
+      "direction": "long",
+      "entry_price": 202.5,
+      "target_price": 215.0,
+      "stop_loss": 195.0,
+      "position_size_usd": 24000.0,
+      "holding_days_remaining": 1,
+      "unrealized_pnl_pct": 1.71,
+      "opened_date": "2026-06-17"
+    },
+    {
+      "ticker": "XLE",
+      "company": "Energy Select Sector SPDR Fund",
+      "direction": "short",
+      "entry_price": 88.5,
+      "target_price": 84.0,
+      "stop_loss": 90.5,
+      "position_size_usd": 20000.0,
+      "holding_days_remaining": 2,
+      "unrealized_pnl_pct": 1.39,
+      "opened_date": "2026-06-17"
+    },
+    {
+      "ticker": "C",
+      "company": "Citigroup Inc.",
+      "direction": "long",
+      "entry_price": 142.0,
+      "target_price": 148.0,
+      "stop_loss": 139.0,
+      "position_size_usd": 18000.0,
+      "holding_days_remaining": 1,
+      "unrealized_pnl_pct": 0.12,
+      "opened_date": "2026-06-17"
+    },
+    {
+      "ticker": "NVDA",
+      "company": "NVIDIA Corporation",
+      "direction": "long",
+      "entry_price": 211.0,
+      "target_price": 220.0,
+      "stop_loss": 206.5,
+      "position_size_usd": 15530.43,
+      "holding_days_remaining": 1,
+      "unrealized_pnl_pct": -1.7,
+      "opened_date": "2026-06-17"
+    }
+  ],
+  "closed_trades": [
+    {
+      "date": "2026-06-17",
+      "day_of_week": "Wednesday",
+      "ticker": "JBL",
+      "direction": "long",
+      "outcome": "hit_target",
+      "pnl_pct": 4.86,
+      "pnl_usd": 1069.44,
+      "position_size_usd": 22000.0,
+      "mae_pct": -0.46,
+      "mfe_pct": 3.61,
+      "trade_quality": "excellent",
+      "probability_pct": 68,
+      "probability_verdict": "underconfident",
+      "data_corrected": true
+    }
+  ]
 }
