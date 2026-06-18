@@ -73,6 +73,13 @@ VÝBĚR PICKŮ (1-5 pozic):
 - Holding 1-3 dny
 - Celková alokace max ${current_capital:,.2f}
 
+KRITICKÉ — CENY MUSÍ BÝT REÁLNÉ:
+Pro KAŽDÝ pick NEJDŘÍV vyhledej aktuální cenu na finance.yahoo.com/quote/TICKER nebo google.com/finance/quote/TICKER:NASDAQ
+- entry_price MUSÍ být v rozsahu ±1% od aktuální tržní ceny
+- target_price a stop_loss se počítají OD skutečné entry_price
+- NIKDY nepoužívej odhadnuté nebo staré ceny — vždy vyhledej
+- Pokud aktuální cenu nemůžeš ověřit, tento ticker NEVYBÍREJ
+
 Vrať POUZE validní JSON bez markdown:
 {{
   "generated_at": "ISO timestamp",
