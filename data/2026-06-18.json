@@ -1,0 +1,248 @@
+{
+  "date": "2026-06-18",
+  "brief": {
+    "generated_at": "2026-06-18T06:30:00Z",
+    "market_date": "Thursday, June 18, 2026",
+    "date_key": "2026-06-18",
+    "day_of_week": "Thursday",
+    "snapshot": {
+      "sp500_futures": "+0.6%",
+      "nasdaq_futures": "+0.9%",
+      "dow_futures": "+0.3%",
+      "vix": "18.44",
+      "us10y": "4.46%",
+      "dxy": "100.75",
+      "crude_oil": "$74.50",
+      "gold": "$4,260"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "unavailable",
+      "market_volume": "above_average",
+      "earnings_this_week": [
+        "ACN: Thursday",
+        "KR: Thursday"
+      ],
+      "insider_activity_summary": "Intel insiders nečinní, SpaceX pozitivní insider sentiment, high short interest v Groupon 46%, Hertz 44%"
+    },
+    "overall_sentiment": "bullish",
+    "sentiment_score": 68,
+    "key_themes": [
+      "Intel-Apple deal catalyst",
+      "Fed hawkish hold aftermath",
+      "US-Iran peace deal stabilizace ropy",
+      "Retail sales beat expectations",
+      "Semiconductor sector recovery"
+    ],
+    "macro_summary": "Fed včera držel sazby beze změny při 3.5-3.75%, ale hawkish tón Kevina Warshe tlačil 10Y výnos na 4.46%. Retail sales v květnu +0.9% MoM vs +0.5% očekávání signalizují silného spotřebitele navzdory válce v Íránu. US-Iran mírová dohoda stabilizuje ropu ($74), ale VIX 18.4 signalizuje zvýšenou volatilitu.",
+    "afterhours_summary": "Intel exploduje +9% pre-market po oznámení Trump-brokered Apple chip deal – největší foundry kontrakt v historii. Chip stocks rebound prudce po týdenní korekci. Accenture -5.7% po miss earnings.",
+    "geopolitical_summary": "US-Iran interim peace deal podepsán, Strait of Hormuz se otevírá za 30 dní, ale ropa stále ~8% nad pre-válečnými úrovněmi. G7 summit ve Francii 15-17 června soustředěn na Ukraine a supply chain resilience.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bullish",
+        "score": 78,
+        "reason": "Intel-Apple deal catalyst, semiconductor ETF SOXX +4.6% recovery, AI infrastructure spending $750B projected"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 52,
+        "reason": "Vyšší výnosy podporují NIM, ale hawkish Fed tlačí valuace, Citigroup flat"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 38,
+        "reason": "Ropa -2% po mírové dohodě, XLE pod tlakem, ale short-term support na $74"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Defenzivní sektor, nízká korelace s macro events"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 48,
+        "reason": "Mixed signals: Boeing benefituje z mírové dohody, ale aerospace supply chain stále napjatý"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "INTC",
+        "company": "Intel Corporation",
+        "direction": "long",
+        "entry_price": 126.5,
+        "target_price": 138.0,
+        "stop_loss": 121.0,
+        "target_pct": 9.1,
+        "stop_pct": -4.3,
+        "position_size_usd": 22000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.1",
+        "confidence": "high",
+        "thesis_macro": "Trump-brokered Apple foundry deal, biggest chip contract in history, validates Intel 18A process",
+        "thesis_technical": "Breakout above $120 resistance, RSI 62, volume 3x average, gap fill setup to $138",
+        "thesis_catalyst": "Apple chip design deal announced today pre-market, NVDA and Tesla foundry deals rumored next",
+        "thesis_options": "Put/call ratio 0.82, bullish call sweeps $130-$135 strikes, implied vol 85%",
+        "thesis_short_interest": "Short interest 12%, squeeze potential na breakout above $128 klíčová rezistence",
+        "thesis_insider": "CEO buying posledních 30 dní, board member accumulation",
+        "thesis_volume": "Pre-market volume 18M vs 5M average, institutional accumulation",
+        "thesis_correlation": "Nízká korelace s NVDA (0.4), diversifikace v chip space",
+        "thesis_risk": "Execution risk na 18A node, TSMC competition, geopolitical Taiwan risk",
+        "entry_logic": "Entry na pull-back po opening gap, $126.50 retest support",
+        "exit_logic": "Target $138 = 200-day MA + Fibonacci 1.618 extension",
+        "probability_pct": 72,
+        "probability_reasoning": "Trump backing, Apple validation, foundry pivot momentum, pre-market gap sustain above $125",
+        "catalysts": [
+          "Apple chip deal announcement",
+          "Potential NVDA/Tesla foundry deals",
+          "18A production milestone"
+        ]
+      },
+      {
+        "ticker": "AMD",
+        "company": "Advanced Micro Devices",
+        "direction": "long",
+        "entry_price": 172.0,
+        "target_price": 184.0,
+        "stop_loss": 167.5,
+        "target_pct": 7.0,
+        "stop_pct": -2.6,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.7",
+        "confidence": "high",
+        "thesis_macro": "MI450 GPU demand exceeds expectations, Meta 6GW deal, hyperscaler capex cycle intact",
+        "thesis_technical": "Bounce z $165 support, MACD bullish cross, 50-day MA test at $172",
+        "thesis_catalyst": "Intel rally lifts entire semiconductor sector, AMD benefituje z foundry capacity relief",
+        "thesis_options": "Put/call 0.68, heavy call flow $175-$180, July expiry positioning",
+        "thesis_short_interest": "Short interest 8.2%, shorts trapped na bounce z $165 bottom",
+        "thesis_insider": "CEO Lisa Su locked v quiet period, ale CFO buying v květnu",
+        "thesis_volume": "Volume +40% above average, institution re-entry po -10% pullback",
+        "thesis_correlation": "Korelace s NVDA 0.72, ale AMD valuace atraktivnější forward P/E 99 vs 179",
+        "thesis_risk": "High valuation P/E 179, hyperscaler capex digestion risk v H2",
+        "entry_logic": "$172 = 50-day MA + volume support, vstup po morning dip",
+        "exit_logic": "$184 target = prior high z 10. června + psychological resistance",
+        "probability_pct": 68,
+        "probability_reasoning": "Sector rotation do chips, Meta deal momentum, technical bounce setup z oversold",
+        "catalysts": [
+          "Semiconductor sector recovery",
+          "MI450 production ramp",
+          "Hyperscaler earnings calls"
+        ]
+      },
+      {
+        "ticker": "KR",
+        "company": "Kroger Co.",
+        "direction": "long",
+        "entry_price": 58.2,
+        "target_price": 61.5,
+        "stop_loss": 56.8,
+        "target_pct": 5.7,
+        "stop_pct": -2.4,
+        "position_size_usd": 18000.0,
+        "holding_days": 1,
+        "risk_reward": "1:2.4",
+        "confidence": "medium",
+        "thesis_macro": "Retail sales +0.9% beat, consumer resilient, defenzivní play v elevated VIX environment",
+        "thesis_technical": "Consolidation breakout setup, $58 pivotal support held, volume spike pre-earnings",
+        "thesis_catalyst": "Earnings report dnes po close, whisper EPS $1.42 vs $1.38 estimate, margin expansion",
+        "thesis_options": "Put/call 1.1, neutral positioning, low implied vol 32%, cheap premium",
+        "thesis_short_interest": "Short interest 6%, nízký zájem shorts, stabilní grocery model",
+        "thesis_insider": "CMO buying 45 days ago, board sentiment neutral",
+        "thesis_volume": "Volume +25% pre-earnings, institutional positioning visible",
+        "thesis_correlation": "Nízká beta 0.6, negatively correlated s tech -0.2, portfolio diversifier",
+        "thesis_risk": "Grocery margin compression, Walmart/Amazon competition, earnings miss selloff",
+        "entry_logic": "$58.20 pre-earnings entry, tight stop pod support $56.80",
+        "exit_logic": "$61.50 post-earnings target = prior resistance + 5% beat scenario",
+        "probability_pct": 62,
+        "probability_reasoning": "Strong retail sales data support, grocery defensive, whisper beat setup, technical breakout",
+        "catalysts": [
+          "Earnings today after close",
+          "Strong May retail sales data",
+          "Margin expansion guidance"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR Fund",
+        "direction": "short",
+        "entry_price": 87.2,
+        "target_price": 83.5,
+        "stop_loss": 89.0,
+        "target_pct": 4.2,
+        "stop_pct": -2.1,
+        "position_size_usd": 19000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.0",
+        "confidence": "medium",
+        "thesis_macro": "US-Iran peace deal otevírá Strait of Hormuz za 30 dní, ropa -8% tento týden",
+        "thesis_technical": "Breakdown pod 50-day MA $87.50, RSI 38 oversold bounce exhausted, resistance $89",
+        "thesis_catalyst": "Peace deal momentum, crude $74 heading k $70 target, supply normalization",
+        "thesis_options": "Put/call 1.3, bearish put flow $85 strike, energy sentiment sour",
+        "thesis_short_interest": "Short interest již 18%, ale momentum negativní převažuje",
+        "thesis_insider": "Exxon/Chevron insiders selling v květnu, sector rotation ven",
+        "thesis_volume": "Vysoký selling volume -2% day, distribution pattern",
+        "thesis_correlation": "Negativní correlation s tech 0.65, short jako hedge long tech exposure",
+        "thesis_risk": "Geopolitical flare-up risk, OPEC production cut surprise, short covering rally",
+        "entry_logic": "$87.20 short entry po dead cat bounce, resistance $89 stop",
+        "exit_logic": "$83.50 target = prior low z 12. června + $74 oil support",
+        "probability_pct": 64,
+        "probability_reasoning": "Peace deal momentum, supply returning, technical breakdown, sector rotation ven z energy",
+        "catalysts": [
+          "Strait of Hormuz reopening",
+          "OPEC meeting June 21",
+          "Crude oil $70 target"
+        ]
+      },
+      {
+        "ticker": "MU",
+        "company": "Micron Technology",
+        "direction": "long",
+        "entry_price": 148.5,
+        "target_price": 158.0,
+        "stop_loss": 144.0,
+        "target_pct": 6.4,
+        "stop_pct": -3.0,
+        "position_size_usd": 22069.44,
+        "holding_days": 3,
+        "risk_reward": "1:2.1",
+        "confidence": "high",
+        "thesis_macro": "AI memory demand exceeding supply, HBM3E pricing power, data center capex $750B",
+        "thesis_technical": "Basing pattern $145-$150, breakout imminent, volume accumulation +50% past week",
+        "thesis_catalyst": "Earnings 24. června, guidance tripled revenue YoY, EPS +10x expected",
+        "thesis_options": "Put/call 0.55 heavily bullish, $150-$155 call sweeps, pre-earnings positioning",
+        "thesis_short_interest": "Short interest 9%, squeeze setup pre-earnings na beat scenario",
+        "thesis_insider": "SVP buying $1.2M worth 45 days ago, bullish board sentiment",
+        "thesis_volume": "Volume surge +60% average, institutional accumulation visible pre-earnings",
+        "thesis_correlation": "Low correlation NVDA 0.52, memory cycle different dynamics než GPU",
+        "thesis_risk": "Memory oversupply risk v H2 2026, China demand slowdown, capex digestion",
+        "entry_logic": "$148.50 entry = consolidation breakout, stop pod $144 support",
+        "exit_logic": "$158 target = post-earnings 1-week avg move +6%, resistance zone",
+        "probability_pct": 74,
+        "probability_reasoning": "Memory shortage acute, earnings beat highly probable, technical breakout, institutional flow",
+        "catalysts": [
+          "Earnings June 24",
+          "HBM3E pricing power",
+          "AI data center buildout",
+          "NVIDIA supply agreements"
+        ]
+      }
+    ],
+    "portfolio_note": "Total allocation $101,069.44. Diverzifikace: 3 long chips (Intel, AMD, Micron) $64,069.44, 1 defenzivní long (Kroger) $18K, 1 energy short hedge (XLE) $19K. Chip sector heavily weighted na Intel-Apple catalyst a semiconductor recovery. Close existing NVDA position (-1.7%) dnes ráno na open pro risk management a realokaci do Intel momentum play.",
+    "risks": [
+      "Fed hawkish surprise — Kevin Warsh může být více hawkish než expected v follow-up commentary",
+      "Iran peace deal collapse — geopolitické riziko persistuje, ropa může spike zpět k $85+",
+      "Semiconductor valuation stretch — SOXX forward P/E 45x, korekce risk pokud earnings miss",
+      "China tensions escalation — export controls na chip equipment, Taiwan geopolitics",
+      "Retail earnings disappointment — Kroger miss by triggers consumer spending concerns"
+    ],
+    "data_freshness": "Data z 18. června 2026, 06:30 UTC. Pre-market futures a Intel price action live. Fed statement z včerejška 17. června 14:00 ET. Retail sales data released 17. června 08:30 ET. Všechny pick levels based on pre-market indication a overnight technicals."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-18T13:17:36.743988"
+}
