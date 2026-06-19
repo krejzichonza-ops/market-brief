@@ -1,0 +1,86 @@
+{
+  "date": "2026-06-19",
+  "brief": {
+    "generated_at": "2026-06-19T08:00:00Z",
+    "market_date": "Friday, June 19, 2026",
+    "date_key": "2026-06-19",
+    "day_of_week": "Friday",
+    "snapshot": {
+      "sp500_futures": "flat (markets closed)",
+      "nasdaq_futures": "flat (markets closed)",
+      "dow_futures": "flat (markets closed)",
+      "vix": "16.40",
+      "us10y": "4.45%",
+      "dxy": "100.75",
+      "crude_oil": "$75.44",
+      "gold": "$4,157"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "1.15",
+      "market_volume": "n/a - market closed",
+      "earnings_this_week": [
+        "INTC: Jun 18 (reported)",
+        "ACN: Jun 18 (reported)",
+        "FDX: Jun 23"
+      ],
+      "insider_activity_summary": "Insider buy/sell ratio 0.28 v červnu - insideři méně kupují. Fiserv CFO koupil 10,060 akcií za $49.70. Aktivita obecně nižší než historický průměr."
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 55,
+    "key_themes": [
+      "US-Iran mírová dohoda snižuje geopolitické riziko",
+      "Fed Kevin Warsh hawkish - možná zvýšení sazeb v 2026",
+      "Ropa a zlato klesají po uklidnění Blízkého východu",
+      "Tech rally pokračuje, Intel +10% po Apple partnerství"
+    ],
+    "macro_summary": "Trhy zavřené v pátek kvůli Juneteenth. Ve čtvrtek Fed držel sazby 3.50-3.75%, ale polovina členů FOMC očekává minimálně 1 zvýšení sazeb v roce 2026. US-Iran mírová dohoda podepsaná - Hormuzský průliv se znovu otevírá.",
+    "afterhours_summary": "Žádný pre-market - trhy zavřené. Ve čtvrtek uzavřely indexy výše: S&P 500 +1.08%, Nasdaq +1.91%, Dow +0.14%. Intel posílil +10.6% po oznámení Apple partnerství na výrobu čipů.",
+    "geopolitical_summary": "US a Írán podepsali 14bodové memorandum o ukončení konfliktu a znovuotevření Hormuzského průlivu bez poplatků. Formální podpis 19. června v Ženevě - ropa prudce klesá, energy sektory pod tlakem.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bullish",
+        "score": 75,
+        "reason": "Intel rally +10% po Apple deal, AI momentum pokračuje, semiconductory silné"
+      },
+      {
+        "name": "Financials",
+        "signal": "bullish",
+        "score": 70,
+        "reason": "JPM na ATH $333, hawkish Fed pozitivní pro banky, vyšší sazby podpoří marže"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 35,
+        "reason": "WTI -2%, Írán deal tlačí ropu dolů, XLE pod tlakem, geopolitická prémie mizí"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Sektor stabilní, obranný charakter během nejistoty, žádné významné katalyzátory"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "FedEx před earnings 23.6., logistics pod tlakem Amazonu, mixed outlook"
+      }
+    ],
+    "picks": [],
+    "portfolio_note": "KRITICKÉ: US trhy jsou ZAVŘENÉ v pátek 19. června 2026 kvůli federálnímu svátku Juneteenth National Independence Day. NYSE, Nasdaq, bondový trh, Fed platební systémy - vše uzavřeno. Žádné nové pozice nelze dnes otevřít. Existující pozice: AMD (-3.18%), KR (+2.46%), XLE short (+0.86%), MU (-1.7%) - všechny drží do pondělí. Settlement posun na pondělí 22.6. Možná zvýšená volatilita při pondělním otevření po 3denní pauze a FOMC digest. Doporučuji vyhodnotit stávající pozice - AMD a MU jsou v mínusu, zvážit stop loss. XLE short profitabilní díky Iran deal - oil nadále slabý.",
+    "risks": [
+      "Trhy zavřené - žádný trading v pátek,延迟 settlement",
+      "Fed hawkish turn - trh nyní cení 100% pravděpodobnost zvýšení sazeb do října",
+      "Gap risk při pondělním otevření po 3denním víkendu",
+      "Oil nadále klesá - geopolitická prémie mizí rychle",
+      "VIX nízký 16.4 - complacency před potenciálně volatilním létem"
+    ],
+    "data_freshness": "Data z večerního 18.6.2026 a raného rána 19.6.2026. Trhy ZAVŘENÉ v pátek - žádné intraday ceny. Futures flat/neaktivní. Další trading session pondělí 22.6.2026 9:30 AM ET."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-19T13:16:49.474206"
+}
