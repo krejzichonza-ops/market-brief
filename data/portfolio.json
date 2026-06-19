@@ -23,58 +23,18 @@
       "grade": "B",
       "avg_mae": -6.19,
       "avg_mfe": 4.68
+    },
+    {
+      "date": "2026-06-19",
+      "day_of_week": "Friday",
+      "value": 100112.44,
+      "pnl_usd": 0,
+      "grade": "N/A",
+      "avg_mae": 0.0,
+      "avg_mfe": 0.0
     }
   ],
-  "open_positions": [
-    {
-      "ticker": "AMD",
-      "company": "Advanced Micro Devices",
-      "direction": "long",
-      "entry_price": 172.0,
-      "target_price": 184.0,
-      "stop_loss": 167.5,
-      "position_size_usd": 20000.0,
-      "holding_days_remaining": 1,
-      "unrealized_pnl_pct": -3.18,
-      "opened_date": "2026-06-18"
-    },
-    {
-      "ticker": "KR",
-      "company": "Kroger Co.",
-      "direction": "long",
-      "entry_price": 58.2,
-      "target_price": 61.5,
-      "stop_loss": 56.8,
-      "position_size_usd": 18000.0,
-      "holding_days_remaining": 1,
-      "unrealized_pnl_pct": 2.46,
-      "opened_date": "2026-06-18"
-    },
-    {
-      "ticker": "XLE",
-      "company": "Energy Select Sector SPDR Fund",
-      "direction": "short",
-      "entry_price": 87.2,
-      "target_price": 83.5,
-      "stop_loss": 89.0,
-      "position_size_usd": 19000.0,
-      "holding_days_remaining": 1,
-      "unrealized_pnl_pct": 0.86,
-      "opened_date": "2026-06-18"
-    },
-    {
-      "ticker": "MU",
-      "company": "Micron Technology",
-      "direction": "long",
-      "entry_price": 148.5,
-      "target_price": 158.0,
-      "stop_loss": 144.0,
-      "position_size_usd": 22069.44,
-      "holding_days_remaining": 2,
-      "unrealized_pnl_pct": -1.7,
-      "opened_date": "2026-06-18"
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "date": "2026-06-17",
