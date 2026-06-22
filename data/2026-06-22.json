@@ -1,0 +1,238 @@
+{
+  "date": "2026-06-22",
+  "brief": {
+    "generated_at": "2026-06-22T09:30:00Z",
+    "market_date": "Monday, June 22, 2026",
+    "date_key": "2026-06-22",
+    "day_of_week": "Monday",
+    "snapshot": {
+      "sp500_futures": "+0.1%",
+      "nasdaq_futures": "+0.3%",
+      "dow_futures": "+0.2%",
+      "vix": "16.78",
+      "us10y": "4.48%",
+      "dxy": "100.76",
+      "crude_oil": "$78.00",
+      "gold": "$4150"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "unavailable",
+      "market_volume": "average",
+      "earnings_this_week": [
+        "FDX: 23.6.",
+        "MU: 24.6."
+      ],
+      "insider_activity_summary": "Nízká aktivita posledních 48h, žádné významné clustery"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 55,
+    "key_themes": [
+      "US-Iran mírové jednání",
+      "PCE inflace čtvrtek",
+      "Fed hawkish stance"
+    ],
+    "macro_summary": "Futures mírně pozitivní po jednání USA-Írán, VIX klidný 16.78. PCE data čtvrtek klíčová po hawkish Fed — 9 ze 19 členů čeká růst sazeb 2026.",
+    "afterhours_summary": "MU +4.3% před středečními earnings, INTC stabilizovaný po +10.6% rally na Apple deal, SPCX -5% třetí den poklesu.",
+    "geopolitical_summary": "Írán oznámil pokrok k 60denní dohodě, ropa klesá. Čína zavedla restrikce dual-use exportu na US firmy.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bullish",
+        "score": 70,
+        "reason": "AI memory demand, semiconductory vedou Nasdaq +1.9% z čtvrtka"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Vyšší sazby podpůrné, ale hawkish Fed strop pro rally"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 35,
+        "reason": "Ropa -10% za týden na mírové signály, XLE -1.6%"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 48,
+        "reason": "Defenzivní rotace nepřichází, stagnace"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 52,
+        "reason": "FDX earnings úterý, logistika pod tlakem na slabou industriální poptávku"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA Corporation",
+        "direction": "long",
+        "entry_price": 210.1,
+        "target_price": 220.0,
+        "stop_loss": 207.0,
+        "target_pct": 4.7,
+        "stop_pct": -1.5,
+        "position_size_usd": 25000.0,
+        "holding_days": 2,
+        "risk_reward": "1:3.1",
+        "confidence": "medium",
+        "thesis_macro": "Low VIX, AI demand stable, memory shortage supportive",
+        "thesis_technical": "Bounce from $200 support, testing $211 resistance",
+        "thesis_catalyst": "MU earnings Wednesday positive read-through for AI infrastructure",
+        "thesis_options": "Put/call skew defensive but not extreme",
+        "thesis_short_interest": "Low short interest 2.1%, no squeeze risk",
+        "thesis_insider": "No material insider sells past 2 weeks",
+        "thesis_volume": "Volume declining but in range, not distressed",
+        "thesis_correlation": "Less correlated to energy, diversified from sector picks",
+        "thesis_risk": "MU miss Wednesday could drag entire semi space",
+        "entry_logic": "Pre-market $210.10, within 1% of Thursday close $210.69",
+        "exit_logic": "$220 achievable on positive MU catalyst, 4.7% realistic",
+        "probability_pct": 58,
+        "probability_reasoning": "Technical setup OK, but MU binary event risk caps confidence",
+        "catalysts": [
+          "MU earnings 24.6.",
+          "AI infrastructure demand"
+        ]
+      },
+      {
+        "ticker": "INTC",
+        "company": "Intel Corporation",
+        "direction": "long",
+        "entry_price": 134.0,
+        "target_price": 141.0,
+        "stop_loss": 130.5,
+        "target_pct": 5.2,
+        "stop_pct": -2.6,
+        "position_size_usd": 20000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.0",
+        "confidence": "medium",
+        "thesis_macro": "Trump-Apple chip deal bullish for foundry thesis",
+        "thesis_technical": "All-time high $135.48, consolidating after +10.6% Thursday",
+        "thesis_catalyst": "Momentum from Apple partnership, foundry validation",
+        "thesis_options": "Calls heavy after Thursday surge, momentum chase",
+        "thesis_short_interest": "Short interest 8.3%, some squeeze potential remains",
+        "thesis_insider": "Lee appointed EVP Intel Foundry, bullish signal",
+        "thesis_volume": "Volume 233M vs avg 151M, interest elevated",
+        "thesis_correlation": "Uncorrelated to energy or memory, foundry angle unique",
+        "thesis_risk": "Overbought RSI, pullback risk after parabolic move",
+        "entry_logic": "$134 near Friday close $133.99, safe entry post-rally",
+        "exit_logic": "$141 retest of weekly high $135.48 +4%, achievable",
+        "probability_pct": 55,
+        "probability_reasoning": "Strong catalyst but extended, need consolidation before next leg",
+        "catalysts": [
+          "Apple partnership",
+          "Foundry momentum"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR ETF",
+        "direction": "short",
+        "entry_price": 54.0,
+        "target_price": 51.5,
+        "stop_loss": 55.2,
+        "target_pct": -4.6,
+        "stop_pct": 2.2,
+        "position_size_usd": 18000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.1",
+        "confidence": "high",
+        "thesis_macro": "US-Iran 60-day roadmap bearish oil, ropa -10% týden",
+        "thesis_technical": "Breakdown below $54.67 support, downtrend confirmed",
+        "thesis_catalyst": "Further Iran peace progress or Hormuz reopening news",
+        "thesis_options": "Sector rotation out of energy into tech",
+        "thesis_short_interest": "ETF no short interest, clean short vehicle",
+        "thesis_insider": "Constituent companies showing insider sells",
+        "thesis_volume": "Volume 35.8M elevated as participants exit",
+        "thesis_correlation": "Inversely correlated to tech longs, hedge diversified",
+        "thesis_risk": "Iran talks collapse, oil spike reverses trade",
+        "entry_logic": "$54 at Monday open, below prev close $54.67",
+        "exit_logic": "$51.50 support from March lows, -4.6% achievable quickly",
+        "probability_pct": 68,
+        "probability_reasoning": "Strong macro tailwind, technical breakdown confirmed, high conviction",
+        "catalysts": [
+          "Iran peace deal",
+          "Hormuz reopening"
+        ]
+      },
+      {
+        "ticker": "FDX",
+        "company": "FedEx Corporation",
+        "direction": "long",
+        "entry_price": 326.0,
+        "target_price": 338.0,
+        "stop_loss": 322.0,
+        "target_pct": 3.7,
+        "stop_pct": -1.2,
+        "position_size_usd": 22000.0,
+        "holding_days": 1,
+        "risk_reward": "1:3.1",
+        "confidence": "medium",
+        "thesis_macro": "Falling oil costs bullish for freight margins",
+        "thesis_technical": "Testing $326 support, oversold after -10.5% month",
+        "thesis_catalyst": "Q4 earnings Tuesday after close, potential beat",
+        "thesis_options": "6.7% implied move, IV elevated but manageable",
+        "thesis_short_interest": "Short interest moderate 4.2%, no squeeze risk",
+        "thesis_insider": "Board approved 5% dividend increase bullish",
+        "thesis_volume": "Volume 1.17M below avg 2.01M, not panic selling",
+        "thesis_correlation": "Inversely benefits from energy weakness, diversified play",
+        "thesis_risk": "Earnings miss on weak industrial demand",
+        "entry_logic": "$326 near Friday close $325.93, pre-earnings entry",
+        "exit_logic": "$338 post-earnings target, 3.7% on beat scenario",
+        "probability_pct": 60,
+        "probability_reasoning": "Oil tailwind strong but industrial demand weak, balanced risk",
+        "catalysts": [
+          "Q4 earnings 23.6.",
+          "Lower fuel costs"
+        ]
+      },
+      {
+        "ticker": "MU",
+        "company": "Micron Technology Inc.",
+        "direction": "long",
+        "entry_price": 1135.0,
+        "target_price": 1190.0,
+        "stop_loss": 1105.0,
+        "target_pct": 4.8,
+        "stop_pct": -2.6,
+        "position_size_usd": 15112.44,
+        "holding_days": 2,
+        "risk_reward": "1:1.8",
+        "confidence": "medium",
+        "thesis_macro": "AI memory shortage, analysts expect 932% EPS growth",
+        "thesis_technical": "Consolidating near $1134, ATH $1149 within reach",
+        "thesis_catalyst": "Q3 earnings Wednesday AMC, $34.5B revenue expected",
+        "thesis_options": "12% implied 4-day move, put/call 1.85 defensive",
+        "thesis_short_interest": "Short interest low 3.8%, no squeeze upside",
+        "thesis_insider": "No material insider activity past week",
+        "thesis_volume": "Volume 46M avg, elevated interest into print",
+        "thesis_correlation": "Unique memory exposure, not correlated to foundry plays",
+        "thesis_risk": "Analysts raised targets aggressively, bar very high",
+        "entry_logic": "$1135 pre-market current, near Thu close $1133.99",
+        "exit_logic": "$1190 post-earnings on beat/raise, 4.8% achievable on guidance",
+        "probability_pct": 62,
+        "probability_reasoning": "Strong fundamentals but valuation stretched, binary event",
+        "catalysts": [
+          "Q3 earnings 24.6.",
+          "HBM4 demand"
+        ]
+      }
+    ],
+    "portfolio_note": "Diverzifikováno: 3 long tech/industrial, 1 short energy hedge, 1 earnings play. Celková alokace $100,112.44 plně využita s váženým R:R 1:2.4.",
+    "risks": [
+      "MU earnings miss Wednesday zničí semi sentiment všechny long pozice",
+      "Iran peace talks kolaps okamžitý short squeeze XLE a ztráta hedge",
+      "Hawkish PCE čtvrtek spike VIX flush všechny risk assets"
+    ],
+    "data_freshness": "Data z 22.6.2026 08:00 ET, ceny ověřeny pre-market. Fed data z 17.6., earnings calendar aktuální, insider data 48h čerstvost."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-22T13:17:17.447212"
+}
