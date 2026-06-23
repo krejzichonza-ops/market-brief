@@ -1,10 +1,10 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 100112.44,
+  "current_capital": 99820.44,
   "peak_capital": 101069.44,
-  "total_trades": 2,
+  "total_trades": 5,
   "winning_trades": 1,
-  "losing_trades": 1,
+  "losing_trades": 4,
   "equity_curve": [
     {
       "date": "2026-06-17",
@@ -41,68 +41,41 @@
       "grade": "C",
       "avg_mae": 3.64,
       "avg_mfe": 3.39
+    },
+    {
+      "date": "2026-06-23",
+      "day_of_week": "Tuesday",
+      "value": 99820.44,
+      "pnl_usd": -292.0,
+      "grade": "D",
+      "avg_mae": -2.01,
+      "avg_mfe": 0.95
     }
   ],
   "open_positions": [
     {
-      "ticker": "NVDA",
-      "company": "NVIDIA Corporation",
+      "ticker": "JPM",
+      "company": "JPMorgan Chase & Co.",
       "direction": "long",
-      "entry_price": 210.1,
-      "target_price": 220.0,
-      "stop_loss": 207.0,
-      "position_size_usd": 25000.0,
-      "holding_days_remaining": 1,
-      "unrealized_pnl_pct": -0.4,
-      "opened_date": "2026-06-22"
-    },
-    {
-      "ticker": "INTC",
-      "company": "Intel Corporation",
-      "direction": "long",
-      "entry_price": 134.0,
-      "target_price": 141.0,
-      "stop_loss": 130.5,
-      "position_size_usd": 20000.0,
-      "holding_days_remaining": 2,
-      "unrealized_pnl_pct": 3.75,
-      "opened_date": "2026-06-22"
-    },
-    {
-      "ticker": "XLE",
-      "company": "Energy Select Sector SPDR ETF",
-      "direction": "short",
-      "entry_price": 54.0,
-      "target_price": 51.5,
-      "stop_loss": 55.2,
-      "position_size_usd": 18000.0,
-      "holding_days_remaining": 1,
-      "unrealized_pnl_pct": 0.43,
-      "opened_date": "2026-06-22"
-    },
-    {
-      "ticker": "FDX",
-      "company": "FedEx Corporation",
-      "direction": "long",
-      "entry_price": 326.0,
-      "target_price": 338.0,
-      "stop_loss": 322.0,
+      "entry_price": 329.0,
+      "target_price": 341.0,
+      "stop_loss": 324.5,
       "position_size_usd": 22000.0,
       "holding_days_remaining": 1,
-      "unrealized_pnl_pct": 0.14,
-      "opened_date": "2026-06-22"
+      "unrealized_pnl_pct": 1.61,
+      "opened_date": "2026-06-23"
     },
     {
-      "ticker": "MU",
-      "company": "Micron Technology Inc.",
+      "ticker": "WM",
+      "company": "Waste Management Inc.",
       "direction": "long",
-      "entry_price": 1135.0,
-      "target_price": 1190.0,
-      "stop_loss": 1105.0,
-      "position_size_usd": 15112.44,
+      "entry_price": 218.0,
+      "target_price": 227.0,
+      "stop_loss": 214.5,
+      "position_size_usd": 20000.0,
       "holding_days_remaining": 1,
-      "unrealized_pnl_pct": 3.41,
-      "opened_date": "2026-06-22"
+      "unrealized_pnl_pct": -1.12,
+      "opened_date": "2026-06-23"
     }
   ],
   "closed_trades": [
@@ -136,6 +109,54 @@
       "trade_quality": "poor",
       "probability_pct": 72,
       "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-06-23",
+      "day_of_week": "Tuesday",
+      "ticker": "PG",
+      "direction": "long",
+      "outcome": "missed_entry",
+      "pnl_pct": 0.0,
+      "pnl_usd": 0.0,
+      "position_size_usd": 20000.0,
+      "mae_pct": 0.0,
+      "mfe_pct": 0.0,
+      "trade_quality": "poor",
+      "probability_pct": 62,
+      "probability_verdict": "n/a",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-06-23",
+      "day_of_week": "Tuesday",
+      "ticker": "CAT",
+      "direction": "long",
+      "outcome": "stopped_out",
+      "pnl_pct": -1.46,
+      "pnl_usd": -292.0,
+      "position_size_usd": 20000.0,
+      "mae_pct": -3.7,
+      "mfe_pct": 0.91,
+      "trade_quality": "poor",
+      "probability_pct": 58,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-06-23",
+      "day_of_week": "Tuesday",
+      "ticker": "XLU",
+      "direction": "long",
+      "outcome": "missed_entry",
+      "pnl_pct": 0.0,
+      "pnl_usd": 0.0,
+      "position_size_usd": 18112.44,
+      "mae_pct": 0.0,
+      "mfe_pct": 0.0,
+      "trade_quality": "poor",
+      "probability_pct": 60,
+      "probability_verdict": "n/a",
       "data_corrected": false
     }
   ]
