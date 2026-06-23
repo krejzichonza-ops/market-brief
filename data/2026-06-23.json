@@ -1,0 +1,245 @@
+{
+  "date": "2026-06-23",
+  "brief": {
+    "generated_at": "2026-06-23T09:00:00Z",
+    "market_date": "Tuesday, June 23, 2026",
+    "date_key": "2026-06-23",
+    "day_of_week": "Tuesday",
+    "snapshot": {
+      "sp500_futures": "7431 -1.46%",
+      "nasdaq_futures": "29748 -2.95%",
+      "dow_futures": "51881 -0.46%",
+      "vix": "20.19",
+      "us10y": "4.51%",
+      "dxy": "101.00",
+      "crude_oil": "$73.67",
+      "gold": "$4136.50"
+    },
+    "market_context": {
+      "vix_regime": "elevated",
+      "options_pcr": "1.32",
+      "market_volume": "above_average",
+      "earnings_this_week": [
+        "MU: 6/24 AMC",
+        "FDX: 6/25"
+      ],
+      "insider_activity_summary": "ADP NER Pulse ukazuje průměr 30 750 pracovních míst týdně za čtyři týdny končící 6. června 2026"
+    },
+    "overall_sentiment": "bearish",
+    "sentiment_score": 28,
+    "key_themes": [
+      "Tech selloff na AI obavách",
+      "Globální memory chip rout SK Hynix/Samsung -12%",
+      "US-Iran mírová dohoda snižuje ropné riziko"
+    ],
+    "macro_summary": "Fed pod Warshem drží sazby 3.5-3.75%, polovina bývalých úředníků očekává růst sazeb v 2026. US-Iran 60denní dohoda uvolňuje Hormuz průliv, ropa -21% za měsíc.",
+    "afterhours_summary": "SpaceX klesá třetí den po IPO, ztratil $600B hodnoty. ORCL -2.6% pre-market po oznámení propuštění 21 000 zaměstnanců kvůli AI.",
+    "geopolitical_summary": "US-Iran podepsaly 60denní příměří v Paříži, Trump potvrdil otevření Hormuz průlivu bez blokády. Írán popírá okamžité IAEA inspekce.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bearish",
+        "score": 22,
+        "reason": "Global chip selloff, MSFT vstoupil do bear marketu -20% od vrcholu, South Korea KOSPI -10% trigger circuit breaker"
+      },
+      {
+        "name": "Financials",
+        "signal": "bullish",
+        "score": 72,
+        "reason": "Rotace do bank od tech, JPM a C silné díky nižšímu ropnému riziku a Fed hawk postoji"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 35,
+        "reason": "XLE pod tlakem z US-Iran deal, ropa $73.67 blízko březnových minim, přílivy milionů barelů z Hormuz"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 58,
+        "reason": "Defensivní rotace možná, ale sektor -4% YTD, valuace elevované relativně k earnings growth"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 62,
+        "reason": "Smíšené signály, FDX dnes reportuje earnings, sektor +9% YTD ale citlivý na global trade"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "direction": "long",
+        "entry_price": 329.0,
+        "target_price": 341.0,
+        "stop_loss": 324.5,
+        "target_pct": 3.65,
+        "stop_pct": -1.37,
+        "position_size_usd": 22000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.67",
+        "confidence": "high",
+        "thesis_macro": "Rotace z tech do financials, Fed hawkish pod Warshem podporuje NIM",
+        "thesis_technical": "Konsolidace u ATH $338, podpora $326, volume normalizovaný po rally",
+        "thesis_catalyst": "Q2 earnings 14. července očekáván beat, Iran deal snižuje geopolitické riziko",
+        "thesis_options": "PCR neutrální, institucionální zájem",
+        "thesis_short_interest": "Short interest minimální sub-2%",
+        "thesis_insider": "Žádné nedávné prodeje insiderů",
+        "thesis_volume": "Daily volume 1.6M, v průměru",
+        "thesis_correlation": "Nekoreluji s tech selloffem, beta 0.78",
+        "thesis_risk": "Překvapivě slabý earnings guidance nebo credit события",
+        "entry_logic": "Vstup blízko support z včerejší konsolidace",
+        "exit_logic": "Target based on technické $341 resistance + 3.6% momentum",
+        "probability_pct": 68,
+        "probability_reasoning": "Silný trend financials rotace, low beta, earnings catalyst příští měsíc",
+        "catalysts": [
+          "Rotace z tech",
+          "Fed hawkish stance",
+          "Iran geopolitical relief"
+        ]
+      },
+      {
+        "ticker": "PG",
+        "company": "Procter & Gamble Co.",
+        "direction": "long",
+        "entry_price": 168.0,
+        "target_price": 174.0,
+        "stop_loss": 165.5,
+        "target_pct": 3.57,
+        "stop_pct": -1.49,
+        "position_size_usd": 20000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.40",
+        "confidence": "medium",
+        "thesis_macro": "Defensivní rotace při VIX 20+, consumer staples outperform v risk-off",
+        "thesis_technical": "Bounce z 50-day MA $166, RSI oversold recovery",
+        "thesis_catalyst": "Safe haven bid při tech volatilitě, steady dividend yield 2.4%",
+        "thesis_options": "Put/call neutrální, nízká implied volatility",
+        "thesis_short_interest": "Short interest pod 1%",
+        "thesis_insider": "Insider buy minulý týden",
+        "thesis_volume": "Volume stabilní, no unusual activity",
+        "thesis_correlation": "Negativní korelace s tech -0.3",
+        "thesis_risk": "Input cost inflation nebo slabá consumer spending data",
+        "entry_logic": "Technický bounce z support, defensivní bid začíná",
+        "exit_logic": "Target resistance $174 z květnového high",
+        "probability_pct": 62,
+        "probability_reasoning": "Defensivní flow silný ale valuace elevated 24x PE, konzervativní target",
+        "catalysts": [
+          "VIX elevated",
+          "Defensive rotation",
+          "Dividend stability"
+        ]
+      },
+      {
+        "ticker": "CAT",
+        "company": "Caterpillar Inc.",
+        "direction": "long",
+        "entry_price": 412.0,
+        "target_price": 428.0,
+        "stop_loss": 406.0,
+        "target_pct": 3.88,
+        "stop_pct": -1.46,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.67",
+        "confidence": "medium",
+        "thesis_macro": "Infrastructure spending cycle, Iran peace boosts construction outlook globálně",
+        "thesis_technical": "Consolidace u $410 support, MACD bullish cross na daily",
+        "thesis_catalyst": "Oil price stabilizace snižuje input costs, Dow outperformance",
+        "thesis_options": "Call OI vyšší než put",
+        "thesis_short_interest": "Short interest 2.5%, low",
+        "thesis_insider": "Žádná nedávná aktivita",
+        "thesis_volume": "Volume average, steady institutional holding",
+        "thesis_correlation": "Low correlation s tech 0.2, industrial cyclical ale mid-cycle",
+        "thesis_risk": "Slabší China PMI nebo global manufacturing data",
+        "entry_logic": "Entry na technickou podporu před možný industrial rally",
+        "exit_logic": "Target $428 based on monthly resistance + 4% move realistic",
+        "probability_pct": 58,
+        "probability_reasoning": "Cyclical s rizikem ale peace dividend + lower oil supportive",
+        "catalysts": [
+          "Iran peace boosts outlook",
+          "Lower oil costs",
+          "Dow rotation"
+        ]
+      },
+      {
+        "ticker": "XLU",
+        "company": "Utilities Select Sector SPDR ETF",
+        "direction": "long",
+        "entry_price": 72.5,
+        "target_price": 75.5,
+        "stop_loss": 71.3,
+        "target_pct": 4.14,
+        "stop_pct": -1.66,
+        "position_size_usd": 18112.44,
+        "holding_days": 3,
+        "risk_reward": "1:2.50",
+        "confidence": "medium",
+        "thesis_macro": "Utilities +3% YTD, defensivní sektor při elevated VIX",
+        "thesis_technical": "XLU bounce z support $72, dividend yield 3.2% attractive",
+        "thesis_catalyst": "Lower rate hike fear short-term boost rate-sensitive utilities",
+        "thesis_options": "Neutrální PCR",
+        "thesis_short_interest": "ETF, minimal short interest",
+        "thesis_insider": "N/A ETF",
+        "thesis_volume": "Volume v průměru pro XLU",
+        "thesis_correlation": "Negative beta -0.1 vs SPX, defensive uncorrelated",
+        "thesis_risk": "Další Fed hawk surprise nebo vyšší dlouhé sazby",
+        "entry_logic": "Defensivní ETF allocation při tech selloff",
+        "exit_logic": "Target 4% historický defensivní rally range",
+        "probability_pct": 60,
+        "probability_reasoning": "Defensivní bid silný ale utilities valuace elevated, konzervativní bet",
+        "catalysts": [
+          "VIX elevated defense",
+          "Dividend yield 3.2%",
+          "Negative tech correlation"
+        ]
+      },
+      {
+        "ticker": "WM",
+        "company": "Waste Management Inc.",
+        "direction": "long",
+        "entry_price": 218.0,
+        "target_price": 227.0,
+        "stop_loss": 214.5,
+        "target_pct": 4.13,
+        "stop_pct": -1.61,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.57",
+        "confidence": "medium",
+        "thesis_macro": "Non-cyclical essential services, recession resistant revenue model",
+        "thesis_technical": "Consolidace u $217 support, weekly uptrend intaktní",
+        "thesis_catalyst": "Steady cash flow, dividend aristocrat status, utility-like model",
+        "thesis_options": "Low options volume, institutional holding",
+        "thesis_short_interest": "Short interest sub-1%",
+        "thesis_insider": "Insider neutral posledních 90 dní",
+        "thesis_volume": "Average volume 1.2M steady",
+        "thesis_correlation": "Low correlation s tech i s cyclicals, pure defensive",
+        "thesis_risk": "Broad market selloff nebo earnings miss (report není blízko)",
+        "entry_logic": "Entry na support před defensivní rotaci continuation",
+        "exit_logic": "Target $227 monthly resistance zone +4% conservative",
+        "probability_pct": 63,
+        "probability_reasoning": "Pure defensive play s steady fundamentals, valuace fair ale ne levná",
+        "catalysts": [
+          "Defensive rotation",
+          "Non-cyclical model",
+          "Dividend aristocrat 2.1% yield"
+        ]
+      }
+    ],
+    "portfolio_note": "Dnešní selloff v tech vytváří příležitost pro diverzifikaci. Zavřel jsem NVDA při -0.4% (blízko stop lossu) a rotoval kapitál do defensivních sektorů. Portfolio nyní má: INTC long (tech ale recovery story), MU long před earnings středu, FDX před earnings, XLE short (ropa slabá). Nové picks jsou 100% defensivní - 2 financials (JPM), 3 defensivní non-cyclicals (PG, XLU, WM) a 1 industrial s low tech correlation (CAT). Celková expozice $100,112.44 plně deployed. Risk management: žádné dva picks ze stejného subsektoru, všechny stop lossy 1.4-1.7%, targets 3.6-4.1%.",
+    "risks": [
+      "Micron earnings středa AMC - beat nebo miss ovlivní celý memory sektor včetně MU long position",
+      "Fed communication z Warshova týmu tento týden - další hawk surprise by hit financials i defensives",
+      "South Korea circuit breaker efekt - pokud Asian tech selloff pokračuje, US pre-market bude horší",
+      "SpaceX IPO collapse risk - další -20% by trigger broader tech panic selling",
+      "Iran deal fragility - jakékoliv zprávy o kolapsujících jednáních by spike oil a reverse peace dividend"
+    ],
+    "data_freshness": "Data z 23. června 2026 9:00 AM ET. Futures jsou live pre-market. NVDA pre-market $202.84 (-2.78%), INTC pre-market $130.50 (-7.41%), MU pre-market $1097 (-9.4%). VIX, commodities a yields jsou real-time. Earnings calendar confirmed pro MU 6/24 AMC."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-23T13:17:52.951206"
+}
