@@ -1,0 +1,247 @@
+{
+  "date": "2026-06-24",
+  "brief": {
+    "generated_at": "2026-06-24T07:00:00Z",
+    "market_date": "Wednesday, June 24, 2026",
+    "date_key": "2026-06-24",
+    "day_of_week": "Wednesday",
+    "snapshot": {
+      "sp500_futures": "7380 +0.43%",
+      "nasdaq_futures": "29792 +0.71%",
+      "dow_futures": "52076 +0.18%",
+      "vix": "19.49",
+      "us10y": "4.49%",
+      "dxy": "101.38",
+      "crude_oil": "$72.06",
+      "gold": "$4082"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "1.16",
+      "market_volume": "above_average",
+      "earnings_this_week": [
+        "MU: Jun 24 after close",
+        "FDX: Jun 23 reported",
+        "PAYX: Jun 26",
+        "CCL: Jun 25"
+      ],
+      "insider_activity_summary": "Insider buy/sell ratio 0.27 v červnu 2026, nižší než měsíční průměr 0.31, insideři méně optimističtí; významná prodejní aktivita u VTEX, TRU, RUN"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 52,
+    "key_themes": [
+      "AI chip selloff rebound",
+      "Fed rate hike pricing 68%",
+      "Iran peace talks easing oil"
+    ],
+    "macro_summary": "PCE inflace vychází ve čtvrtek 25. června, Fed očekává 68% pravděpodobnost růstu sazeb v září. US-Írán dohoda tlačí ropu dolů o 40% z peaku, DXY na 13měsíčním maximu 101.38.",
+    "afterhours_summary": "Nasdaq futures +0.71% po úterním -2.21% propadu. Micron před earnings +4.6% premarket, Wendy's +26.9% na short squeeze, FedEx -6.8% po slabém outlook.",
+    "geopolitical_summary": "US-Írán roadmap k finální dohodě do 60 dní, strait Hormuz se znovu otevírá, ropné dodávky UAE na 85% pre-war úrovně.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "neutral",
+        "score": 48,
+        "reason": "AI selloff ustává, ale obavy z AI ROI přetrvávají; Micron earnings dnes klíčové"
+      },
+      {
+        "name": "Financials",
+        "signal": "bullish",
+        "score": 62,
+        "reason": "Vyšší sazby posilují banky, JPM hold +1.61%, sektor těží z hawkish Fed"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 38,
+        "reason": "Ropa -40% z peaku, WTI $72, US-Írán dohoda tlačí ceny níže"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "bullish",
+        "score": 65,
+        "reason": "Defenzivní sektor v AI výprodeji odolný, CVS +3% na GLP-1 program expansion"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "FedEx zklamal outlook, ale WM stabilní; mixed signály z PMI dat"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "CVS",
+        "company": "CVS Health Corporation",
+        "direction": "long",
+        "entry_price": 101.5,
+        "target_price": 107.5,
+        "stop_loss": 99.0,
+        "target_pct": 5.9,
+        "stop_pct": -2.5,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.4",
+        "confidence": "high",
+        "thesis_macro": "Defenzivní healthcare odolává tech selloff, Fed hikes zvyšují apetit pro stabilní dividendy",
+        "thesis_technical": "Breakout z $58-103 range, support $99-100, target $107-110 analyst consensus",
+        "thesis_catalyst": "GLP-1 program expansion oznámena pondělí, BofA zvýšila PT na $110",
+        "thesis_options": "unavailable",
+        "thesis_short_interest": "Low SI 1.8%, široká institucionální držba 80.9%",
+        "thesis_insider": "Minimal insider sales, stabilní ownership structure",
+        "thesis_volume": "Volume 9.6M vs avg, růst zájmu institucionálních",
+        "thesis_correlation": "Nízká korelace s tech -0.15 beta 0.60",
+        "thesis_risk": "Vysoký P/E 44.8x, earnings volatilita",
+        "entry_logic": "Entry blízko current $101.75, po +3% pondělním rally",
+        "exit_logic": "Target $107.50 conservative vs $110 BofA PT",
+        "probability_pct": 68,
+        "probability_reasoning": "Healthcare rotace pokračuje, GLP-1 katalyzátor fresh, defenzivní positioning silné",
+        "catalysts": [
+          "PCE data Thu",
+          "Month-end rebalance",
+          "Healthcare sector rotation"
+        ]
+      },
+      {
+        "ticker": "RUN",
+        "company": "Sunrun Inc.",
+        "direction": "long",
+        "entry_price": 15.0,
+        "target_price": 17.5,
+        "stop_loss": 14.0,
+        "target_pct": 16.7,
+        "stop_pct": -6.7,
+        "position_size_usd": 18000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.5",
+        "confidence": "medium",
+        "thesis_macro": "Alternative energy benefituje z klesajících oil cen a geopolitické stability",
+        "thesis_technical": "Bounce z $12.50 support, breakout $15 resistance, target $17-18",
+        "thesis_catalyst": "Pre-market +19.1%, momentum z retail short squeeze podobný WEN",
+        "thesis_options": "unavailable",
+        "thesis_short_interest": "Elevated short interest ~15-20%, squeeze potential",
+        "thesis_insider": "Lynn Jurich prodej 50k shares Jun 1, ale P/E pouze 5.99x",
+        "thesis_volume": "Volume 4.1M vs 8.1M avg, pre-market aktivita vysoká",
+        "thesis_correlation": "Negative korelace s oil prices, tech uncorrelated",
+        "thesis_risk": "Vysoká volatilita, negative cash flow concerns",
+        "entry_logic": "Entry $15 po pre-market pump, profit-taking očekáván",
+        "exit_logic": "Target $17.50 před $18.24 analyst consensus",
+        "probability_pct": 55,
+        "probability_reasoning": "Momentum trade riskantní, ale oil weakness + solar tailwinds podporují, insider sales negativní",
+        "catalysts": [
+          "Oil price weakness",
+          "Retail momentum",
+          "Solar policy support"
+        ]
+      },
+      {
+        "ticker": "IBM",
+        "company": "International Business Machines",
+        "direction": "long",
+        "entry_price": 252.0,
+        "target_price": 265.0,
+        "stop_loss": 247.0,
+        "target_pct": 5.2,
+        "stop_pct": -2.0,
+        "position_size_usd": 22000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.6",
+        "confidence": "high",
+        "thesis_macro": "Enterprise AI méně korelovaná s consumer AI hype, defenzivní tech positioning",
+        "thesis_technical": "Po JPM upgrade +5%, support $250, resistance $260-265",
+        "thesis_catalyst": "JPMorgan upgrade to overweight úterý, AI enterprise momentum",
+        "thesis_options": "unavailable",
+        "thesis_short_interest": "SI nízký <2%, institucionální ownership vysoká",
+        "thesis_insider": "Stable insider activity, dlouhodobý management incentive alignment",
+        "thesis_volume": "Above average volume na upgrade news",
+        "thesis_correlation": "Low beta 0.85, nekoreuje s NVDA selloff",
+        "thesis_risk": "Legacy business drag, cloud competition",
+        "entry_logic": "Entry $252 po +5% rally, pullback entry",
+        "exit_logic": "Target $265 konzervativní, analyst PT vyšší",
+        "probability_pct": 72,
+        "probability_reasoning": "JPM upgrade katalyzátor silný, enterprise AI téma izolované od retail AI fears, defenzivní positioning",
+        "catalysts": [
+          "JPM upgrade Jun 23",
+          "Enterprise AI resilience",
+          "Fed rate expectations"
+        ]
+      },
+      {
+        "ticker": "PG",
+        "company": "Procter & Gamble",
+        "direction": "long",
+        "entry_price": 165.0,
+        "target_price": 172.0,
+        "stop_loss": 162.5,
+        "target_pct": 4.2,
+        "stop_pct": -1.5,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.8",
+        "confidence": "high",
+        "thesis_macro": "Staples outperformují v risk-off environment, dividendové aristokraty atraktivní při Fed hikes",
+        "thesis_technical": "Consolidation $162-167, breakout imminent, target $170-175",
+        "thesis_catalyst": "Defensive rotation z tech, Dow outperformance +0.09% vs Nasdaq -2.21%",
+        "thesis_options": "unavailable",
+        "thesis_short_interest": "Minimal SI <1%, high institutional ownership",
+        "thesis_insider": "Stable insider ownership, dividend reinvestment program",
+        "thesis_volume": "Steady volume, defensive flow increasing",
+        "thesis_correlation": "Inverse to VIX, beta 0.45, staple defensive",
+        "thesis_risk": "Low growth, currency headwinds",
+        "entry_logic": "Entry $165 mid-range, pre-breakout positioning",
+        "exit_logic": "Target $172 below $175 resistance, quick 4%",
+        "probability_pct": 70,
+        "probability_reasoning": "Defensive rotation silná, PCE inflace data Thursday support staples, low beta attracts capital",
+        "catalysts": [
+          "PCE inflation data Thu",
+          "Defensive rotation",
+          "Dividend appeal"
+        ]
+      },
+      {
+        "ticker": "KO",
+        "company": "Coca-Cola Company",
+        "direction": "long",
+        "entry_price": 62.5,
+        "target_price": 66.0,
+        "stop_loss": 61.5,
+        "target_pct": 5.6,
+        "stop_pct": -1.6,
+        "position_size_usd": 19820.44,
+        "holding_days": 2,
+        "risk_reward": "1:3.5",
+        "confidence": "medium",
+        "thesis_macro": "Consumer staples benefitují z klesajících energy costs, pricing power intaktní",
+        "thesis_technical": "Support $61-62, resistance $65-67, channel middle",
+        "thesis_catalyst": "Oil price collapse -40% snižuje input costs, consumer spending resilient",
+        "thesis_options": "unavailable",
+        "thesis_short_interest": "Negligible SI, dividend aristocrat status",
+        "thesis_insider": "Minimal activity, long-term stability",
+        "thesis_volume": "Average volume, steady accumulation",
+        "thesis_correlation": "Beta 0.55, uncorrelated with tech selloff",
+        "thesis_risk": "Currency headwinds, volume growth concerns",
+        "entry_logic": "Entry $62.50 support zone, defensive positioning",
+        "exit_logic": "Target $66 pre-resistance, conservative upside",
+        "probability_pct": 65,
+        "probability_reasoning": "Defensive play solid, oil cost tailwind fresh, but limited upside katalyzátor krátkodobě",
+        "catalysts": [
+          "Energy cost decline",
+          "Consumer resilience",
+          "Dividend stability"
+        ]
+      }
+    ],
+    "portfolio_note": "Rotace do defenzivy preferovaná: JPM +1.61%, WM -1.12% hold. CVS a IBM diverzifikují portfolio do healthcare a enterprise tech. PG a KO poskytují downside protection. Vyhnout se čistému semiconductor exposure kvůli AI skepticism. Celková alokace $99,820.44 plně investována.",
+    "risks": [
+      "PCE inflace Thu může překvapit nahoru a spustit další tech selloff",
+      "Micron earnings dnes after close - pokud zklamou guidance, semiconductory klesnou dalších 5-10%",
+      "Fed rate hike pravděpodobnost 68% v září - pokud PCE hot, může jít na 80%+ a trhy reagují negativně",
+      "US-Írán dohoda fragile - jakékoliv narušení vyšle oil zpět nad $100",
+      "Short squeeze u WEN a RUN unsustainable - retail momentum trades rizikové po 1-2 dnech"
+    ],
+    "data_freshness": "Data aktuální k 24. 6. 2026 7:00 AM EDT, pre-market ceny ověřeny z Yahoo Finance a CNBC"
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-24T13:17:26.381377"
+}
