@@ -86,7 +86,10 @@ VÝPOČET P&L:
 - LONG: pnl_pct = (exit_price - entry_price) / entry_price * 100
 - SHORT: pnl_pct = (entry_price - exit_price) / entry_price * 100
 - Stop zasažen: použij stop_loss cenu. Target zasažen: použij target_price.
-- Holding_days > 1 a stop/target nezasažen: outcome = held_open
+- holding_days > 1 a stop/target nezasažen: outcome = held_open
+- missed_entry NEPOUŽÍVEJ — brief se generuje v pre-marketu a vstup nastane při otevření.
+  Pokud navržená entry cena nebyla dosažena, vstup proběhl za actual_open cenu.
+  Přepočítej P&L od actual_open jako entry. outcome = held_open nebo hit_target nebo stopped_out.
 
 MAE/MFE:
 - MAE (Max Adverse Excursion): jak daleko šla cena PROTI pozici
