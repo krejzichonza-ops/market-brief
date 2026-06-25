@@ -1,0 +1,241 @@
+{
+  "date": "2026-06-25",
+  "brief": {
+    "generated_at": "2026-06-25T06:30:00Z",
+    "market_date": "Thursday, June 25, 2026",
+    "date_key": "2026-06-25",
+    "day_of_week": "Thursday",
+    "snapshot": {
+      "sp500_futures": "7397.40 +0.8%",
+      "nasdaq_futures": "30142.25 +2.3%",
+      "dow_futures": "52338.00 +0.3%",
+      "vix": "17.96",
+      "us10y": "4.40%",
+      "dxy": "101.56",
+      "crude_oil": "$69.85",
+      "gold": "$3995.80"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "unavailable",
+      "market_volume": "above_average",
+      "earnings_this_week": [
+        "MU: June 24",
+        "FDX: June 23-26",
+        "CAG: June 25-26"
+      ],
+      "insider_activity_summary": "DELL director prodala 12,022 akcií za $421 podle 10b5-1 plánu. Pozorována standardní aktivita bez významnějších signálů."
+    },
+    "overall_sentiment": "bullish",
+    "sentiment_score": 78,
+    "key_themes": [
+      "AI memory super-cyklus",
+      "Pokles napětí s Íránem",
+      "PCE inflace 4.1%"
+    ],
+    "macro_summary": "PCE inflace dosáhla 4.1% ročně, nejvyšší od dubna 2023. Fed údajně zvažuje zvýšení sazeb, trh nyní počítá s 68% pravděpodobností. Micron a Qualcomm oživily AI rally po blowout výsledcích.",
+    "afterhours_summary": "Micron vyskočil +18% po rekordních Q3 výsledcích ($41.46B vs $35.85B odhad). Qualcomm vzrostl +10% díky zvýšení guidancí. Chip rally táhne futures.",
+    "geopolitical_summary": "Dohoda s Íránem pokračuje — průjezd přes Hormuz se obnovuje, ropa klesla o 40% z vrcholů. Geopolitické riziko pokleslo, ale nadále sledováno.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bullish",
+        "score": 92,
+        "reason": "Micron beat reignited AI chip rally, HBM fully booked through 2027"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 58,
+        "reason": "JPM a banky prošly stress testem, ale Fed hawkish stance tlačí na marže"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 38,
+        "reason": "Ropa pod $70, pokles z peak díky Iran peace progress a obnovení dodávek"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "CVS pod tlakem, konsolidace po rally, žádné velké katalyzátory"
+      },
+      {
+        "name": "Industrials",
+        "signal": "bullish",
+        "score": 85,
+        "reason": "CAT benefituje z AI datacenter power demand, backlog $63B, +60% YTD"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "QCOM",
+        "company": "Qualcomm Inc.",
+        "direction": "long",
+        "entry_price": 197.5,
+        "target_price": 215.0,
+        "stop_loss": 192.0,
+        "target_pct": 8.86,
+        "stop_pct": -2.78,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:3.2",
+        "confidence": "high",
+        "thesis_macro": "Fed hawkish ale AI capex cycle intaktní, datacenter tailwinds",
+        "thesis_technical": "Bounce z 197 HVL support, watch 220 call wall",
+        "thesis_catalyst": "Investor Day zvýšil FY29 non-handset revenue target na $40B",
+        "thesis_options": "Mixed sentiment, dip absorbed rychle",
+        "thesis_short_interest": "Short interest nízký, < 2%",
+        "thesis_insider": "Žádná významná aktivita poslední 48h",
+        "thesis_volume": "16M vs 21M avg — lehce pod",
+        "thesis_correlation": "Nekore lovaný s MU — jiný segment (RF/QCT)",
+        "thesis_risk": "Handsets -13% YoY, Apple modem riziko",
+        "entry_logic": "Entry poblíž 197 support po -3.3% pullbacku",
+        "exit_logic": "215 = confluence s 220 call wall strukturou",
+        "probability_pct": 72,
+        "probability_reasoning": "Datacenter targets konkrétní, Meta/MSFT deals support demand",
+        "catalysts": [
+          "Modular acquisition close H2",
+          "ByteDance chip talks"
+        ]
+      },
+      {
+        "ticker": "WDC",
+        "company": "Western Digital Corporation",
+        "direction": "long",
+        "entry_price": 645.0,
+        "target_price": 690.0,
+        "stop_loss": 625.0,
+        "target_pct": 6.98,
+        "stop_pct": -3.1,
+        "position_size_usd": 19000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.25",
+        "confidence": "medium",
+        "thesis_macro": "AI storage demand růst, HDD pricing power návrat, cloud 89% revenue",
+        "thesis_technical": "Konsolidace po rally, support 612-625 zóna testována",
+        "thesis_catalyst": "Micron beat ukazuje AI storage shortage, Q4 guidance $3.65B",
+        "thesis_options": "Sympathy flow z MU rally viditelný",
+        "thesis_short_interest": "Nízký, float clean po rally",
+        "thesis_insider": "Žádné flagy",
+        "thesis_volume": "228K premarket — sympathy buy zájem",
+        "thesis_correlation": "Tied k MU ale jiný segment — HDD vs DRAM",
+        "thesis_risk": "Up +250% YTD — valuace stretched, profit-taking riziko",
+        "entry_logic": "Entry po -7.5% premarket dip, value 645 mid-range",
+        "exit_logic": "690 prior resistance, record GM 50.5% support",
+        "probability_pct": 65,
+        "probability_reasoning": "Technicky extended ale AI storage demand strukturální, short hold",
+        "catalysts": [
+          "Continued AI datacenter buildout",
+          "HDD supply tight"
+        ]
+      },
+      {
+        "ticker": "CAT",
+        "company": "Caterpillar Inc.",
+        "direction": "long",
+        "entry_price": 985.0,
+        "target_price": 1025.0,
+        "stop_loss": 965.0,
+        "target_pct": 4.06,
+        "stop_pct": -2.03,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.0",
+        "confidence": "medium",
+        "thesis_macro": "AI datacenter power demand, backlog $63B +79% YoY visibility",
+        "thesis_technical": "Přiblížení k ATH $994, minor pullback entry opportunity",
+        "thesis_catalyst": "Power & Energy segment tied k hyperscaler AI capex",
+        "thesis_options": "Elevated premium ale steady, dip buyers active",
+        "thesis_short_interest": "< 1%, minimal short pressure",
+        "thesis_insider": "Heavy selling noted ($87M recent), ale běžné u high valuation",
+        "thesis_volume": "4.16M vs 3.3M avg — above average",
+        "thesis_correlation": "Industrials nekore lované s tech semis",
+        "thesis_risk": "P/E ~49x stretched, tariff headwinds $2.2-2.4B",
+        "entry_logic": "Entry poblíž 985 po -1% dip z $994 ATH",
+        "exit_logic": "1025 breakout z ATH zone, short target pro 2-day hold",
+        "probability_pct": 68,
+        "probability_reasoning": "Datacenter demand support ale valuace vysoce, risk/reward tight",
+        "catalysts": [
+          "Q2 earnings Aug 5",
+          "Dividend raise 8%",
+          "Power backlog visibility"
+        ]
+      },
+      {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "direction": "long",
+        "entry_price": 335.0,
+        "target_price": 348.0,
+        "stop_loss": 328.0,
+        "target_pct": 3.88,
+        "stop_pct": -2.09,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:1.86",
+        "confidence": "medium",
+        "thesis_macro": "Fed stress test passed, dividend hike k $1.65, $50B buyback schválen",
+        "thesis_technical": "Near ATH $338, minor support 329-330 zóna",
+        "thesis_catalyst": "$50B buyback schválen board, capital return optimism",
+        "thesis_options": "Mixed sentiment, no extremes",
+        "thesis_short_interest": "Minimální u large cap bank",
+        "thesis_insider": "Standard aktivita",
+        "thesis_volume": "7.9M vs 10.48M avg — below avg ale stabilní",
+        "thesis_correlation": "Defensive vs tech — diverzifikace portfólia",
+        "thesis_risk": "NIM pressure z Fed hike risk, ekonomický slowdown",
+        "entry_logic": "Entry 335 poblíž current price, dividend announcement boost",
+        "exit_logic": "348 breakout z 338 ATH s buyback tailwind",
+        "probability_pct": 63,
+        "probability_reasoning": "Dividend + buyback support, ale macro headwinds limit upside",
+        "catalysts": [
+          "Q2 earnings July 14",
+          "Buyback start",
+          "Dividend ex-date July 6"
+        ]
+      },
+      {
+        "ticker": "RUN",
+        "company": "Sunrun Inc.",
+        "direction": "short",
+        "entry_price": 16.25,
+        "target_price": 14.8,
+        "stop_loss": 17.0,
+        "target_pct": 8.92,
+        "stop_pct": -4.62,
+        "position_size_usd": 20820.44,
+        "holding_days": 1,
+        "risk_reward": "1:1.93",
+        "confidence": "medium",
+        "thesis_macro": "Energy sell-off z Iran peace progress, ropa -40% z peak tlačí renewables",
+        "thesis_technical": "Rally +8.27% unrealized již, short near resistance 16.5-17",
+        "thesis_catalyst": "Oil price collapse eliminates renewable premium urgency",
+        "thesis_options": "Put interest růst na solar",
+        "thesis_short_interest": "High ~18%, crowded short ale justified",
+        "thesis_insider": "Žádné flagy",
+        "thesis_volume": "Byl elevated, normalizace expected",
+        "thesis_correlation": "Inverzní k energy collapse narrative",
+        "thesis_risk": "Holding 2 days remaining in portfolio — momentum může persist",
+        "entry_logic": "Short entry 16.25 po +8% rally, fade overbought",
+        "exit_logic": "14.80 = gap fill zóna, quick reversal target",
+        "probability_pct": 60,
+        "probability_reasoning": "Makro headwinds (oil collapse) ale momentum risk je reálný short-term",
+        "catalysts": [
+          "Continued oil price decline",
+          "Renewable sentiment shift"
+        ]
+      }
+    ],
+    "portfolio_note": "Micron beat spustil AI rally — rotate z existing positions (CVS, KO, PG likely exit EOD) do semiconductor/AI infrastructure plays. CAT + JPM diverzifikace mimo pure tech. RUN short jako hedge proti macro reversal. Sleduj PCE data 8:30 AM — high volatility expected.",
+    "risks": [
+      "PCE inflace 4.1% může vyvolat Fed hike očekávání — USD strength tlačí equities",
+      "Semiconductor valuace stretched po rally — profit-taking riziko zejména u WDC",
+      "Iran dohoda může selhat — geopolitické riziko rebound zvýší oil, VIX"
+    ],
+    "data_freshness": "Data aktuální k 6:30 AM ET June 25, 2026. Futures live, spot ceny ověřeny z Yahoo Finance a Investing.com. PCE data release 8:30 AM — revize očekávána post-release."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-25T13:17:28.395252"
+}
