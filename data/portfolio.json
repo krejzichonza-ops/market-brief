@@ -68,20 +68,65 @@
       "grade": "B",
       "avg_mae": 0.58,
       "avg_mfe": 7.39
+    },
+    {
+      "date": "2026-06-30",
+      "day_of_week": "Tuesday",
+      "value": 101999.08,
+      "pnl_usd": 0,
+      "grade": "B",
+      "avg_mae": 1.02,
+      "avg_mfe": 0.78
     }
   ],
   "open_positions": [
     {
-      "ticker": "JPM",
-      "company": "JPMorgan Chase & Co.",
+      "ticker": "GOOGL",
+      "company": "Alphabet Inc.",
       "direction": "long",
-      "entry_price": 335.0,
-      "target_price": 348.0,
-      "stop_loss": 328.0,
+      "entry_price": 350.5,
+      "target_price": 368.0,
+      "stop_loss": 343.0,
+      "position_size_usd": 25000.0,
+      "holding_days_remaining": 2,
+      "unrealized_pnl_pct": 0.91,
+      "opened_date": "2026-06-30"
+    },
+    {
+      "ticker": "NKE",
+      "company": "Nike Inc.",
+      "direction": "short",
+      "entry_price": 41.5,
+      "target_price": 38.5,
+      "stop_loss": 43.2,
       "position_size_usd": 20000.0,
       "holding_days_remaining": 1,
-      "unrealized_pnl_pct": 1.77,
-      "opened_date": "2026-06-25"
+      "unrealized_pnl_pct": 0.55,
+      "opened_date": "2026-06-30"
+    },
+    {
+      "ticker": "NVDA",
+      "company": "NVIDIA Corporation",
+      "direction": "long",
+      "entry_price": 195.5,
+      "target_price": 206.0,
+      "stop_loss": 191.0,
+      "position_size_usd": 25000.0,
+      "holding_days_remaining": 1,
+      "unrealized_pnl_pct": 0.55,
+      "opened_date": "2026-06-30"
+    },
+    {
+      "ticker": "CVX",
+      "company": "Chevron Corporation",
+      "direction": "long",
+      "entry_price": 169.0,
+      "target_price": 178.0,
+      "stop_loss": 165.5,
+      "position_size_usd": 20000.0,
+      "holding_days_remaining": 2,
+      "unrealized_pnl_pct": -0.99,
+      "opened_date": "2026-06-30"
     }
   ],
   "closed_trades": [
