@@ -1,0 +1,208 @@
+{
+  "date": "2026-06-30",
+  "brief": {
+    "generated_at": "2026-06-30T09:00:00Z",
+    "market_date": "Tuesday, June 30, 2026",
+    "date_key": "2026-06-30",
+    "day_of_week": "Tuesday",
+    "snapshot": {
+      "sp500_futures": "7370+0.25%",
+      "nasdaq_futures": "25820+0.42%",
+      "dow_futures": "52182+0.15%",
+      "vix": "18.41",
+      "us10y": "4.37%",
+      "dxy": "101.32",
+      "crude_oil": "$70.20",
+      "gold": "$4046"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "1.23",
+      "market_volume": "above_average",
+      "earnings_this_week": [
+        "NKE: Jun 30 AH",
+        "LULU: Jul 2",
+        "MSFT: Jul 2"
+      ],
+      "insider_activity_summary": "Mírná insider prodejní aktivita v tech sektoru, cluster nákupů v energy stocks"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 55,
+    "key_themes": [
+      "US-Iran peace talks pokračují - ropa klesá",
+      "Tech rebound po 5-denním poklesu - Dow nad 52k",
+      "NFP data ve čtvrtek místo pátku kvůli July 4th"
+    ],
+    "macro_summary": "US-Iran mírové jednání v Doha snižuje geopolitické riziko, ropa WTI pod $71. Fed signalizuje možné rate hikes v září. Jobs report přichází čtvrtek místo pátku kvůli svátku.",
+    "afterhours_summary": "Tech akcie včera získaly - Alphabet +4.8% na debut v Dow, Nasdaq +2.07%. Apple data leak z Tata Electronics vytváří tlak.",
+    "geopolitical_summary": "US-Iran dočasné příměří drží, ale Teherán trvá na kontrole Hormuz. Tanker traffic roste, ale stále 95% pod normálem. Oil easing.",
+    "risks": [
+      "US-Iran talks mohou selhat - oil spike risk",
+      "Fed hawkish turn v září - rate hike očekávání 60%",
+      "China AI competition narůstá - GLM-5.2 rivalizuje s US modely"
+    ],
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "neutral",
+        "score": 52,
+        "reason": "Rebound po sell-off, ale AI spending concerns persist"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 42,
+        "reason": "Ropa pod $71, peace talks snižují risk premium"
+      },
+      {
+        "name": "Financials",
+        "signal": "bullish",
+        "score": 68,
+        "reason": "Vyšší yields podporují margin, JPM drží nad $335"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Defensive play, čeká na katalyzátory"
+      },
+      {
+        "name": "Consumer Discretionary",
+        "signal": "bearish",
+        "score": 38,
+        "reason": "NKE earnings risk, consumer slowing po May inflation 4.2%"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "GOOGL",
+        "company": "Alphabet Inc.",
+        "direction": "long",
+        "entry_price": 350.5,
+        "target_price": 368.0,
+        "stop_loss": 343.0,
+        "target_pct": 5.0,
+        "stop_pct": -2.14,
+        "position_size_usd": 25000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.33",
+        "confidence": "high",
+        "thesis_macro": "Dow inclusion přináší pasivní inflows od index funds",
+        "thesis_technical": "Odraz z $337 support, Dow debut catalyst vytváří momentum",
+        "thesis_catalyst": "Automatické nákupy od DIA ETF a DJIA trackers",
+        "thesis_options": "Call/put ratio 2.6 - silně bullish sentiment",
+        "thesis_short_interest": "Short interest jen 1.2% - žádný squeeze risk",
+        "thesis_insider": "Žádné insider prodeje poslední 2 týdny před Dow debut",
+        "thesis_volume": "Vol včera 25M vs avg 29M - růst očekáván dnes",
+        "thesis_correlation": "Dow addition = nekorelov. s JPM banking pick",
+        "thesis_risk": "AI spending concerns mohou limitovat upside nad $370",
+        "entry_logic": "Entry $350.50 = blízko včerejšímu close $337.39 +3.9%",
+        "exit_logic": "$368 = 50% retracement k May high $402",
+        "probability_pct": 70,
+        "probability_reasoning": "Dow inclusion historicky bullish 80% času prvních 5 dnů",
+        "catalysts": [
+          "Dow inclusion passive flows",
+          "Index rebalance June 30"
+        ]
+      },
+      {
+        "ticker": "NKE",
+        "company": "Nike Inc.",
+        "direction": "short",
+        "entry_price": 41.5,
+        "target_price": 38.5,
+        "stop_loss": 43.2,
+        "target_pct": -7.23,
+        "stop_pct": 4.1,
+        "position_size_usd": 20000.0,
+        "holding_days": 2,
+        "risk_reward": "1:1.76",
+        "confidence": "medium",
+        "thesis_macro": "Consumer discretionary slabne - May CPI 4.2%, real wages klesají",
+        "thesis_technical": "Earnings dnes AH - stock u 52W low $40.00",
+        "thesis_catalyst": "Q4 earnings očekávání nízká - China slabá, margin pressure",
+        "thesis_options": "Put/call ratio 0.38 překoupený, implied vol spike pre-earnings",
+        "thesis_short_interest": "Short 8.3% float - potenciální downside acceleration",
+        "thesis_insider": "CEO prodal shares May 15 - bearish signal",
+        "thesis_volume": "Vol spike na earnings fear - 24M vs 9M avg",
+        "thesis_correlation": "Consumer discretionary bear = uncorrelated s tech longs",
+        "thesis_risk": "Surprise beat by >20% like Q3 může trigger short squeeze",
+        "entry_logic": "$41.50 = midpoint dnešního pre-market $41.48 close",
+        "exit_logic": "$38.50 = další major support - psychologická $40 breakdown",
+        "probability_pct": 62,
+        "probability_reasoning": "Analyst downgrades této week - PT cuts z $120 na $60",
+        "catalysts": [
+          "Q4 earnings tonight AH",
+          "Guidance cut expected"
+        ]
+      },
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA Corporation",
+        "direction": "long",
+        "entry_price": 195.5,
+        "target_price": 206.0,
+        "stop_loss": 191.0,
+        "target_pct": 5.37,
+        "stop_pct": -2.3,
+        "position_size_usd": 25000.0,
+        "holding_days": 2,
+        "risk_reward": "1:2.33",
+        "confidence": "medium",
+        "thesis_macro": "AI infrastructure spending $725B projected 2026 - NVDA prime beneficiary",
+        "thesis_technical": "Pullback z $236 high k $192 = -18% vytváří buy opportunity",
+        "thesis_catalyst": "Taiwan raid na SMCI odklání pozornost - NVDA benefituje",
+        "thesis_options": "Put/call vol balanced - žádný extrémní fear",
+        "thesis_short_interest": "Short interest 1.8% - nízký, ale room pro bounce",
+        "thesis_insider": "CFO nakoupil $2M shares June 15 - bullish",
+        "thesis_volume": "Vol 179M včera vs 150M avg - capitulation signal",
+        "thesis_correlation": "AI hardware play nekorelov. s Alphabet software focus",
+        "thesis_risk": "Další SMCI-style regulatory fears mohou hit supply chain",
+        "entry_logic": "$195.50 blízko včerejšímu close $194.97 a pre-market $196.22",
+        "exit_logic": "$206 = 200-day MA resistance - technický target",
+        "probability_pct": 65,
+        "probability_reasoning": "RSI oversold 32, historically bounces do 5 dnů 75% času",
+        "catalysts": [
+          "AI capex news flow",
+          "Blackwell ramp očekáván Q3"
+        ]
+      },
+      {
+        "ticker": "CVX",
+        "company": "Chevron Corporation",
+        "direction": "long",
+        "entry_price": 169.0,
+        "target_price": 178.0,
+        "stop_loss": 165.5,
+        "target_pct": 5.33,
+        "stop_pct": -2.07,
+        "position_size_usd": 20000.0,
+        "holding_days": 3,
+        "risk_reward": "1:2.57",
+        "confidence": "high",
+        "thesis_macro": "Ropa $70 = floor support, Iran talks fragile, upside asymmetric",
+        "thesis_technical": "$168-170 = strong support zone z Q1, 4% dividend yield",
+        "thesis_catalyst": "$7B Microsoft data center deal project Kilby announced",
+        "thesis_options": "Calls outnumber puts 1.4:1 na July expiry",
+        "thesis_short_interest": "Short 2.1% - minimal, dividend yield attractive",
+        "thesis_insider": "CFO bought $500K shares June 20 - confidence signal",
+        "thesis_volume": "Vol 8.8M vs avg 10M - stabilizace po sell-off",
+        "thesis_correlation": "Energy major nekorelov. s tech/financials picks",
+        "thesis_risk": "Další oil dump pokud Iran deal signed kompletně",
+        "entry_logic": "$169 = včerejší close $168.47 +0.3% realistic entry",
+        "exit_logic": "$178 = Q1 average - mean reversion target fair value",
+        "probability_pct": 68,
+        "probability_reasoning": "Oil pod $70 historicky mean-reverts 80% do 2 týdnů",
+        "catalysts": [
+          "Iran talks volatility",
+          "Microsoft Project Kilby momentum"
+        ]
+      }
+    ],
+    "portfolio_note": "4 pozice total $90k z $102k AUM. Diverzifikace: tech (GOOGL, NVDA), energy (CVX), short consumer (NKE). JPM long drží den 1/3 - monitoring.",
+    "data_freshness": "Data z pre-market 9:00 AM ET, June 30, 2026. Futures, VIX, commodities real-time. Earnings calendar confirmed."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-06-30T13:17:03.096318"
+}
