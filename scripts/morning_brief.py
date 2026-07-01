@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """
-Morning Brief Generator — optimalizovaná verze
-09:15 ET každý pracovní den via GitHub Actions.
+Morning Brief Generator — denní režim (vše se uzavře na konci seance)
 """
 
 import anthropic, json, os, re, sys
@@ -29,14 +28,13 @@ def load_portfolio():
         "total_trades": 0,
         "winning_trades": 0,
         "losing_trades": 0,
-        "equity_curve": [{"date": DATE_KEY, "value": 100000.0, "note": "Starting capital"}],
+        "equity_curve": [],
         "open_positions": [],
         "closed_trades": []
     }
 
 portfolio = load_portfolio()
 current_capital = portfolio["current_capital"]
-open_positions = portfolio.get("open_positions", [])
 
 if os.path.exists(OUTPUT_FILE):
     existing = json.load(open(OUTPUT_FILE))
@@ -44,40 +42,38 @@ if os.path.exists(OUTPUT_FILE):
         print(f"✓ Morning brief pro {DATE_KEY} již existuje.")
         sys.exit(0)
 
-open_pos_str = "žádné" if not open_positions else json.dumps(open_positions, ensure_ascii=False)
-
 client = anthropic.Anthropic(api_key=os.environ['ANTHROPIC_API_KEY'])
 
-SYSTEM_PROMPT = f"""Jsi profesionální portfolio manažer amerických akcií s přístupem k web search. Dnes je {DATE_STR} ({DOW}).
+SYSTEM_PROMPT = f"""Jsi profesionální intraday portfolio manažer amerických akcií s přístupem k web search. Dnes je {DATE_STR} ({DOW}).
 
 Piš VEŠKERÝ text v češtině. Ponech tickery, názvy společností a čísla v originále.
 
-STAV PORTFOLIA:
-- Disponibilní kapitál: ${current_capital:,.2f}
-- Otevřené pozice: {open_pos_str}
+DŮLEŽITÉ PRAVIDLO — DENNÍ REŽIM:
+Všechny pozice se otevírají při otevření trhu (9:30 ET) a VŽDY se uzavírají při zavření trhu (16:00 ET).
+Holding days je vždy 1. Žádné overnight pozice.
+Disponibilní kapitál pro dnešek: ${current_capital:,.2f}
 
 ÚKOL — vyhledej a analyzuj:
 1. US futures (S&P 500, Nasdaq, Dow), VIX, 10Y výnos, DXY, ropa, zlato
 2. Klíčové pre-market pohyby a jejich důvody
-3. Makro události dnes a tento týden (Fed, CPI, NFP, PMI)
+3. Makro události dnes (Fed, CPI, NFP, PMI)
 4. Geopolitické faktory ovlivňující trhy
-5. Earnings tento týden — které firmy reportují?
+5. Earnings dnes — které firmy reportují?
 6. Put/call ratio S&P 500 a neobvyklý options flow
-7. Krátkodobý zájem (short interest) u potenciálních picků
+7. Short interest u potenciálních picků
 8. Insider trading — SEC Form 4 za posledních 48h
 
 VÝBĚR PICKŮ (1-5 pozic):
 - Diverzifikuj — nevybírej 2 akcie ze stejného sub-sektoru
-- Target minimálně 3% od entry (ideálně 5%+)
-- Stop loss na technické úrovni, ne těsnější než 1%
-- Holding 1-3 dny
+- Target minimálně 2% od entry (intraday je realističtější než 3%+)
+- Stop loss na technické úrovni, ne těsnější než 0.5%
 - Celková alokace max ${current_capital:,.2f}
 
 KRITICKÉ — CENY MUSÍ BÝT REÁLNÉ:
 Pro KAŽDÝ pick NEJDŘÍV vyhledej aktuální cenu na finance.yahoo.com/quote/TICKER nebo google.com/finance/quote/TICKER:NASDAQ
-- entry_price MUSÍ být v rozsahu ±1% od aktuální tržní ceny
+- entry_price MUSÍ být v rozsahu ±1% od aktuální pre-market nebo včerejší close ceny
 - target_price a stop_loss se počítají OD skutečné entry_price
-- NIKDY nepoužívej odhadnuté nebo staré ceny — vždy vyhledej
+- NIKDY nepoužívej odhadnuté nebo staré ceny — vždy vyhledej aktuální cenu
 - Pokud aktuální cenu nemůžeš ověřit, tento ticker NEVYBÍREJ
 
 Vrať POUZE validní JSON bez markdown:
@@ -86,6 +82,7 @@ Vrať POUZE validní JSON bez markdown:
   "market_date": "{DATE_STR}",
   "date_key": "{DATE_KEY}",
   "day_of_week": "{DOW}",
+  "trading_mode": "intraday",
   "snapshot": {{
     "sp500_futures": "hodnota+%",
     "nasdaq_futures": "hodnota+%",
@@ -100,7 +97,7 @@ Vrať POUZE validní JSON bez markdown:
     "vix_regime": "low|normal|elevated|high",
     "options_pcr": "hodnota nebo unavailable",
     "market_volume": "above_average|average|below_average",
-    "earnings_this_week": ["TICKER: datum"],
+    "earnings_today": ["TICKER: čas reportu"],
     "insider_activity_summary": "shrnutí insider aktivity"
   }},
   "overall_sentiment": "bullish|neutral|bearish",
@@ -120,6 +117,8 @@ Vrať POUZE validní JSON bez markdown:
     {{
       "ticker": "AAPL",
       "company": "Apple Inc.",
+      "current_price_verified": 0.00,
+      "price_source": "Yahoo Finance / Google Finance",
       "direction": "long|short",
       "entry_price": 0.00,
       "target_price": 0.00,
@@ -132,15 +131,15 @@ Vrať POUZE validní JSON bez markdown:
       "confidence": "high|medium|low",
       "thesis_macro": "MAX 15 SLOV — makro kontext",
       "thesis_technical": "MAX 15 SLOV — technický setup a klíčové úrovně",
-      "thesis_catalyst": "MAX 15 SLOV — konkrétní katalyzátor",
+      "thesis_catalyst": "MAX 15 SLOV — konkrétní intraday katalyzátor",
       "thesis_options": "MAX 10 SLOV — put/call ratio",
       "thesis_short_interest": "MAX 10 SLOV — short interest %",
       "thesis_insider": "MAX 10 SLOV — insider aktivita",
       "thesis_volume": "MAX 10 SLOV — objem vs průměr",
       "thesis_correlation": "MAX 10 SLOV — proč není korelovaný",
-      "thesis_risk": "MAX 10 SLOV — hlavní riziko",
+      "thesis_risk": "MAX 10 SLOV — hlavní intraday riziko",
       "entry_logic": "MAX 10 SLOV — proč tato vstupní cena",
-      "exit_logic": "MAX 10 SLOV — proč je target realistický",
+      "exit_logic": "MAX 10 SLOV — proč je target realistický intraday",
       "probability_pct": 60,
       "probability_reasoning": "MAX 15 SLOV — co ovlivnilo pravděpodobnost",
       "catalysts": ["katalyzátor1"]
@@ -151,7 +150,7 @@ Vrať POUZE validní JSON bez markdown:
   "data_freshness": "poznámka o aktuálnosti dat"
 }}"""
 
-USER_PROMPT = f"Vygeneruj morning brief pro {DATE_STR}. Vyhledej aktuální data. Vrať pouze JSON."
+USER_PROMPT = f"Vygeneruj morning brief pro {DATE_STR}. Vyhledej aktuální ceny pro každý pick na Yahoo Finance. Vrať pouze JSON."
 
 print(f"🔍 Generuji morning brief pro {DATE_STR} ({DOW}) | Kapitál: ${current_capital:,.2f}")
 
@@ -178,26 +177,23 @@ def extract_json(text):
         text.find('[') if '[' in text else len(text)
     )
     json_str = text[start:]
-    # Pass 1: try full text
     try:
         return json.loads(json_str)
     except json.JSONDecodeError:
         pass
-    # Pass 2: find last valid closing brace
     last_brace = json_str.rfind('}')
     if last_brace > 0:
         try:
             return json.loads(json_str[:last_brace+1])
         except:
             pass
-    # Pass 3: ask Claude to fix the JSON
     return None
 
 cleaned = clean_text(raw_text)
 brief_data = extract_json(cleaned)
 
 if brief_data is None:
-    print(f"❌ JSON parse selhal — zkrať thesis texty v promptu")
+    print(f"❌ JSON parse selhal")
     sys.exit(1)
 
 record = {
