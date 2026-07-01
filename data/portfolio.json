@@ -1,10 +1,10 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 101999.08,
+  "current_capital": 99916.63,
   "peak_capital": 101999.08,
-  "total_trades": 9,
+  "total_trades": 13,
   "winning_trades": 4,
-  "losing_trades": 5,
+  "losing_trades": 9,
   "equity_curve": [
     {
       "date": "2026-06-17",
@@ -77,58 +77,18 @@
       "grade": "B",
       "avg_mae": 1.02,
       "avg_mfe": 0.78
+    },
+    {
+      "date": "2026-07-01",
+      "day_of_week": "Wednesday",
+      "value": 99916.63,
+      "pnl_usd": -2082.45,
+      "grade": "D",
+      "avg_mae": -4.34,
+      "avg_mfe": 1.32
     }
   ],
-  "open_positions": [
-    {
-      "ticker": "GOOGL",
-      "company": "Alphabet Inc.",
-      "direction": "long",
-      "entry_price": 350.5,
-      "target_price": 368.0,
-      "stop_loss": 343.0,
-      "position_size_usd": 25000.0,
-      "holding_days_remaining": 2,
-      "unrealized_pnl_pct": 0.91,
-      "opened_date": "2026-06-30"
-    },
-    {
-      "ticker": "NKE",
-      "company": "Nike Inc.",
-      "direction": "short",
-      "entry_price": 41.5,
-      "target_price": 38.5,
-      "stop_loss": 43.2,
-      "position_size_usd": 20000.0,
-      "holding_days_remaining": 1,
-      "unrealized_pnl_pct": 0.55,
-      "opened_date": "2026-06-30"
-    },
-    {
-      "ticker": "NVDA",
-      "company": "NVIDIA Corporation",
-      "direction": "long",
-      "entry_price": 195.5,
-      "target_price": 206.0,
-      "stop_loss": 191.0,
-      "position_size_usd": 25000.0,
-      "holding_days_remaining": 1,
-      "unrealized_pnl_pct": 0.55,
-      "opened_date": "2026-06-30"
-    },
-    {
-      "ticker": "CVX",
-      "company": "Chevron Corporation",
-      "direction": "long",
-      "entry_price": 169.0,
-      "target_price": 178.0,
-      "stop_loss": 165.5,
-      "position_size_usd": 20000.0,
-      "holding_days_remaining": 2,
-      "unrealized_pnl_pct": -0.99,
-      "opened_date": "2026-06-30"
-    }
-  ],
+  "open_positions": [],
   "closed_trades": [
     {
       "date": "2026-06-17",
@@ -273,6 +233,70 @@
       "probability_pct": 60,
       "probability_verdict": "overconfident",
       "data_corrected": true
+    },
+    {
+      "date": "2026-07-01",
+      "day_of_week": "Wednesday",
+      "ticker": "MU",
+      "direction": "long",
+      "outcome": "stopped_out",
+      "pnl_pct": -1.21,
+      "pnl_usd": -303.45,
+      "position_size_usd": 25000.0,
+      "mae_pct": -9.31,
+      "mfe_pct": 1.78,
+      "trade_quality": "poor",
+      "probability_pct": 68,
+      "probability_verdict": "overconfident",
+      "data_corrected": true
+    },
+    {
+      "date": "2026-07-01",
+      "day_of_week": "Wednesday",
+      "ticker": "JPM",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": -0.55,
+      "pnl_usd": -121.0,
+      "position_size_usd": 22000.0,
+      "mae_pct": -0.87,
+      "mfe_pct": 0.0,
+      "trade_quality": "scratchy",
+      "probability_pct": 65,
+      "probability_verdict": "calibrated",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-01",
+      "day_of_week": "Wednesday",
+      "ticker": "BA",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": -4.95,
+      "pnl_usd": -990.0,
+      "position_size_usd": 20000.0,
+      "mae_pct": -3.35,
+      "mfe_pct": 0.54,
+      "trade_quality": "poor",
+      "probability_pct": 60,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-01",
+      "day_of_week": "Wednesday",
+      "ticker": "TSLA",
+      "direction": "short",
+      "outcome": "closed_eod",
+      "pnl_pct": -3.71,
+      "pnl_usd": -668.0,
+      "position_size_usd": 18000.0,
+      "mae_pct": -3.82,
+      "mfe_pct": 2.96,
+      "trade_quality": "poor",
+      "probability_pct": 58,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
     }
   ]
 }
