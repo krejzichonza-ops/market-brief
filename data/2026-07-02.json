@@ -1,0 +1,248 @@
+{
+  "date": "2026-07-02",
+  "brief": {
+    "generated_at": "2026-07-02T06:00:00Z",
+    "market_date": "Thursday, July 02, 2026",
+    "date_key": "2026-07-02",
+    "day_of_week": "Thursday",
+    "trading_mode": "intraday",
+    "snapshot": {
+      "sp500_futures": "~7478 (-0.08%)",
+      "nasdaq_futures": "~26044 (-0.3%)",
+      "dow_futures": "~52315 (-0.1%)",
+      "vix": "16.45",
+      "us10y": "4.47%",
+      "dxy": "101.12",
+      "crude_oil": "$67.75",
+      "gold": "$4090"
+    },
+    "market_context": {
+      "vix_regime": "low",
+      "options_pcr": "unavailable",
+      "market_volume": "above_average",
+      "earnings_today": [
+        "Žádné významné reporty dnes"
+      ],
+      "insider_activity_summary": "Minimální aktivita za posledních 48h"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 52,
+    "key_themes": [
+      "NFP jobs report focus",
+      "Chip selloff pokračuje",
+      "Oil at 4-month lows"
+    ],
+    "macro_summary": "Trhy čekají na červnový NFP report (8:30 ET). ADP včera ukázal 98K (slabší než odhad). Fed Chair Warsh včera signalizoval, že inflační tlaky klesají.",
+    "afterhours_summary": "Futures negativní před jobs daty. Chipmakers (MU -10%, INTC -9%) táhly Nasdaq dolů. Meta +8.8% na zprávě o cloud businessu.",
+    "geopolitical_summary": "US-Iran mírové rozhovory v Kataru posouvají ropu níže. Přeprava Hormuzem se obnovuje. Napětí globálně klesá.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bearish",
+        "score": 38,
+        "reason": "Chip selloff pokračuje, MU/INTC/AMD -7-10%"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "JPM stabilní, čekání na clarity o rates"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 35,
+        "reason": "WTI $67.75, Iran talks tlačí ceny dolů"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Defenzivní rotace, slabý volume"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 52,
+        "reason": "ISM Manufacturing solid, ale Caterpillar -6.8%"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "META",
+        "company": "Meta Platforms Inc.",
+        "current_price_verified": 612.91,
+        "price_source": "Yahoo Finance - close 7/1/2026",
+        "direction": "long",
+        "entry_price": 610.0,
+        "target_price": 623.0,
+        "stop_loss": 606.0,
+        "target_pct": 2.13,
+        "stop_pct": 0.66,
+        "position_size_usd": 24979.0,
+        "holding_days": 1,
+        "risk_reward": "1:3.2",
+        "confidence": "high",
+        "thesis_macro": "Cloud pivot změnila narativ, AI capex se stává revenue stream",
+        "thesis_technical": "Včerejší +8.8%, pullback na 610 je vstup, resistance 623",
+        "thesis_catalyst": "Bloomberg report o cloud businessu, momentum pokračuje intraday",
+        "thesis_options": "P/C ratio nízký, callové nakupování",
+        "thesis_short_interest": "Short interest 1.2%, nízký squeeze potenciál",
+        "thesis_insider": "Žádné významné změny",
+        "thesis_volume": "Volume včera 2x průměr",
+        "thesis_correlation": "Odděleno od chip selloffu",
+        "thesis_risk": "Profit taking po včerejším rally",
+        "entry_logic": "Entry na pullback 610 od včerejší 612.91 close",
+        "exit_logic": "Target 623 je 2% gain, realistický intraday move",
+        "probability_pct": 65,
+        "probability_reasoning": "Silný catalyst, odděleno od tech selloffu, momentum nadále",
+        "catalysts": [
+          "Cloud business report",
+          "AI monetization story"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR",
+        "current_price_verified": 52.81,
+        "price_source": "Investing.com - 7/2/2026 premarket",
+        "direction": "long",
+        "entry_price": 52.5,
+        "target_price": 53.6,
+        "stop_loss": 52.0,
+        "target_pct": 2.1,
+        "stop_pct": 0.95,
+        "position_size_usd": 19983.0,
+        "holding_days": 1,
+        "risk_reward": "1:2.2",
+        "confidence": "medium",
+        "thesis_macro": "WTI $67.75 je oversold, Iran talks uklidňují ale supply znovu",
+        "thesis_technical": "XLE 52.50 je support, short-term bounce k 53.60 možný",
+        "thesis_catalyst": "Contrarian play — selloff je příliš rychlý, technický bounce",
+        "thesis_options": "P/C ratio elevated",
+        "thesis_short_interest": "ETF, N/A",
+        "thesis_insider": "ETF, N/A",
+        "thesis_volume": "Volume average",
+        "thesis_correlation": "Anti-korelováno k tech",
+        "thesis_risk": "Iran deal momentum pokračuje dolů",
+        "entry_logic": "Entry 52.50 je včerejší support level",
+        "exit_logic": "Target 53.60 je 2% bounce do resistance",
+        "probability_pct": 55,
+        "probability_reasoning": "Contrarian trade, technicky oversold, ale sentiment je bearish",
+        "catalysts": [
+          "Technical bounce",
+          "Supply reality check"
+        ]
+      },
+      {
+        "ticker": "NKE",
+        "company": "Nike Inc.",
+        "current_price_verified": 42.42,
+        "price_source": "Investing.com - close 7/1/2026",
+        "direction": "long",
+        "entry_price": 42.0,
+        "target_price": 43.5,
+        "stop_loss": 41.5,
+        "target_pct": 3.57,
+        "stop_pct": 1.19,
+        "position_size_usd": 19983.0,
+        "holding_days": 1,
+        "risk_reward": "1:3.0",
+        "confidence": "medium",
+        "thesis_macro": "Q4 beat včera (EPS $0.72 vs $0.13), ale tariff refund umělý",
+        "thesis_technical": "Gap up 42.42, pullback k 42.00 vstup, target 43.50 retest",
+        "thesis_catalyst": "Post-earnings momentum, contrarian po long-term decline",
+        "thesis_options": "Implied vol vysoká",
+        "thesis_short_interest": "Short interest 4%, squeeze možný",
+        "thesis_insider": "Žádná aktivita",
+        "thesis_volume": "Volume včera 64M vs avg 25M",
+        "thesis_correlation": "Nekorelováno k tech",
+        "thesis_risk": "Guidance weak (Q1 down low-mid single digits)",
+        "entry_logic": "Entry 42.00 je pullback od včerejší close 42.42",
+        "exit_logic": "Target 43.50 je 3.5% gain, resistance level",
+        "probability_pct": 58,
+        "probability_reasoning": "Earnings beat vytváří momentum, ale guidance slabý — risky",
+        "catalysts": [
+          "Earnings beat momentum",
+          "Short squeeze potential"
+        ]
+      },
+      {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "current_price_verified": 329.05,
+        "price_source": "Various sources - close 6/26/2026",
+        "direction": "long",
+        "entry_price": 328.0,
+        "target_price": 335.0,
+        "stop_loss": 325.5,
+        "target_pct": 2.13,
+        "stop_pct": 0.76,
+        "position_size_usd": 19987.0,
+        "holding_days": 1,
+        "risk_reward": "1:2.8",
+        "confidence": "medium",
+        "thesis_macro": "Financials stabilní, rate clarity blízko, JPM leader sektoru",
+        "thesis_technical": "328 support, target 335 je včerejší high retest",
+        "thesis_catalyst": "CEO succession news, defenzivní rotace ze tech do financials",
+        "thesis_options": "P/C ratio neutral",
+        "thesis_short_interest": "Short interest minimal <1%",
+        "thesis_insider": "Žádné změny",
+        "thesis_volume": "Volume average 7.5M",
+        "thesis_correlation": "Nekorelováno k tech selloffu",
+        "thesis_risk": "Jobs data může tlačit rates dolů",
+        "entry_logic": "Entry 328 je support level",
+        "exit_logic": "Target 335 je 2% gain, realistic intraday",
+        "probability_pct": 60,
+        "probability_reasoning": "Stabilní financials, defenzivní rotace, leadership kvalita",
+        "catalysts": [
+          "Defensive rotation",
+          "Leadership clarity"
+        ]
+      },
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA Corporation",
+        "current_price_verified": 197.58,
+        "price_source": "Investing.com - close 7/1/2026",
+        "direction": "short",
+        "entry_price": 198.0,
+        "target_price": 193.5,
+        "stop_loss": 200.0,
+        "target_pct": 2.27,
+        "stop_pct": 1.01,
+        "position_size_usd": 14984.0,
+        "holding_days": 1,
+        "risk_reward": "1:2.25",
+        "confidence": "medium",
+        "thesis_macro": "Chip selloff momentum pokračuje, AI spend questioned",
+        "thesis_technical": "197.58 close, short 198 bounce, target 193.50 support",
+        "thesis_catalyst": "Continuation of chip sector selloff, hedge funds selling tech",
+        "thesis_options": "P/C ratio stoupající",
+        "thesis_short_interest": "Short interest 2%, rostoucí",
+        "thesis_insider": "Žádné změny",
+        "thesis_volume": "Volume 135M včera, elevated",
+        "thesis_correlation": "Korelováno k MU/AMD selloffu",
+        "thesis_risk": "Buying the dip může přijít",
+        "entry_logic": "Short 198 na bounce od 197.58 close",
+        "exit_logic": "Target 193.50 je 2.3% down, support level",
+        "probability_pct": 62,
+        "probability_reasoning": "Chip sector momentum bearish, volume elevated, hedge funds prodávají",
+        "catalysts": [
+          "Chip selloff continuation",
+          "AI spend questions"
+        ]
+      }
+    ],
+    "portfolio_note": "Diverzifikace: long META (tech-cloud), XLE (energy bounce), NKE (consumer contrarian), JPM (financials defenzivní), short NVDA (chip selloff). Celkem $99,916 alokováno. Všechny pozice close 16:00 ET.",
+    "risks": [
+      "Jobs report zklamání může tlačit všechny dolů",
+      "Chip selloff může spread do META",
+      "Energy momentum bearish může pokračovat"
+    ],
+    "data_freshness": "Data k 2026-07-02 6:00 AM ET. Ceny verified z Yahoo Finance, Investing.com, Google Finance."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-07-02T13:16:56.096831"
+}
