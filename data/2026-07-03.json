@@ -1,0 +1,85 @@
+{
+  "date": "2026-07-03",
+  "brief": {
+    "generated_at": "2026-07-03T08:00:00Z",
+    "market_date": "Friday, July 03, 2026",
+    "date_key": "2026-07-03",
+    "day_of_week": "Friday",
+    "trading_mode": "MARKET CLOSED",
+    "market_status": "US stock market (NYSE, Nasdaq) je dnes uzavřen kvůli svátku Independence Day (observed). Trhy se znovu otevřou v pondělí 6. července 2026 v 9:30 ET.",
+    "reason": "Independence Day připadá na sobotu 4. července 2026, proto se svátek slaví v pátek 3. července 2026. NYSE a Nasdaq jsou celý den uzavřeny.",
+    "snapshot": {
+      "sp500_futures": "nedostupné (trh uzavřen)",
+      "nasdaq_futures": "nedostupné (trh uzavřen)",
+      "dow_futures": "nedostupné (trh uzavřen)",
+      "vix": "15.95 (poslední close čtvrtek)",
+      "us10y": "~4.46%",
+      "dxy": "100.78",
+      "crude_oil": "$68.56",
+      "gold": "$4,185+"
+    },
+    "market_context": {
+      "vix_regime": "low",
+      "options_pcr": "unavailable",
+      "market_volume": "N/A (market closed)",
+      "earnings_today": [],
+      "insider_activity_summary": "Rutinní prodeje insiderů v rámci 10b5-1 plánů (JFrog CFO, Snap-on VP) za poslední 48h"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 50,
+    "key_themes": [
+      "Trhy uzavřeny kvůli svátku Independence Day",
+      "Čtvrteční slabá data z trhu práce (NFP 57K)",
+      "Fed řeč Warsh naznačuje zmírnění inflačních tlaků",
+      "Pokračující jednání USA-Írán o ropných dodávkách přes Hormuz",
+      "Technologické akcie pod tlakem, zejména čipy (Micron -10%)"
+    ],
+    "macro_summary": "Čtvrteční NFP data ukázala přírůstek pouze 57K pracovních míst, což vedlo k poklesu pravděpodobnosti zvýšení sazeb Fedem v září na ~50%. Fed předseda Warsh naznačil zmírnění inflačních očekávání.",
+    "afterhours_summary": "Trh zavřel ve čtvrtek smíšeně - Dow na rekordu +595 bodů, S&P 500 flat, Nasdaq -0.8% kvůli poklesu čipů. Dnes žádné pre-market aktivum kvůli uzavření burzy.",
+    "geopolitical_summary": "Pokračuje křehké příměří mezi USA a Íránem; průtok ropy skrz Hormuz se postupně obnovuje (~90% pre-konfliktních úrovní). Ropa klesla pod $69, což tlumí inflační obavy.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bearish",
+        "score": 35,
+        "reason": "Čipy pod tlakem - Micron -10%, AMD -4%, Applied Materials -7% kvůli otázkám ohledně AI valuací"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Nižší výnosy z dluhopisů po slabých datech z trhu práce poskytují smíšený signál"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 40,
+        "reason": "Ropa pod $69, obnovení dodávek přes Hormuz snižuje napětí"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "Defenzivní sektor, stabilní v době volatility tech"
+      },
+      {
+        "name": "Industrials",
+        "signal": "bullish",
+        "score": 65,
+        "reason": "Dow na rekordu, tradiční průmyslové sektory těží z rotace z tech"
+      }
+    ],
+    "picks": [],
+    "portfolio_note": "NELZE OBCHODOVAT DNES - trhy uzavřeny. Doporučení: Připravit watchlist pro pondělní open (6. července). Sledovat: ISM Services PMI (pondělí), Fed minutes, pokračování rotace z tech do tradičních sektorů.",
+    "risks": [
+      "Trhy uzavřeny - žádné intraday obchodování možné",
+      "Po víkendovém volnu může být volatilita v pondělí zvýšená",
+      "Geopolitická rizika (Írán) mohou eskalovat během víkendu",
+      "Tech sektor zůstává pod tlakem kvůli valuačním obavám"
+    ],
+    "data_freshness": "Data z čtvrtečního close 2. července 2026. NYSE a Nasdaq uzavřeny 3. července kvůli Independence Day. Obchodování pokračuje v pondělí 6. července v 9:30 ET."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-07-03T13:16:30.261879"
+}
