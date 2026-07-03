@@ -95,6 +95,15 @@
       "grade": "C",
       "avg_mae": -1.08,
       "avg_mfe": 2.07
+    },
+    {
+      "date": "2026-07-03",
+      "day_of_week": "Friday",
+      "value": 100273.81,
+      "pnl_usd": 0,
+      "grade": "N/A",
+      "avg_mae": 0.0,
+      "avg_mfe": 0.0
     }
   ],
   "open_positions": [],
