@@ -1,0 +1,222 @@
+{
+  "date": "2026-07-06",
+  "brief": {
+    "generated_at": "2026-07-06T08:30:00Z",
+    "market_date": "Monday, July 06, 2026",
+    "date_key": "2026-07-06",
+    "day_of_week": "Monday",
+    "trading_mode": "intraday",
+    "snapshot": {
+      "sp500_futures": "5500+0.4%",
+      "nasdaq_futures": "19500+1.1%",
+      "dow_futures": "52900-0.16%",
+      "vix": "15.81",
+      "us10y": "4.48%",
+      "dxy": "100.86",
+      "crude_oil": "$68.25",
+      "gold": "$4,163"
+    },
+    "market_context": {
+      "vix_regime": "low",
+      "options_pcr": "unavailable",
+      "market_volume": "above_average",
+      "earnings_today": [
+        "Žádné významné reporty dnes"
+      ],
+      "insider_activity_summary": "Nízká aktivita během prázdninového týdne, standardní Form 4 filings u velkých společností"
+    },
+    "overall_sentiment": "bullish",
+    "sentiment_score": 68,
+    "key_themes": [
+      "Tech recovery po červnovém propadu",
+      "Klesající ropa podporuje disinflaci",
+      "Geopolitika kolem Íránu stabilizovaná",
+      "AI demand momentum pokračuje"
+    ],
+    "macro_summary": "Slabší NFP data z pátku snížila pravděpodobnost zářijového zvýšení sazeb na 50%. Ropa na 4měsíčních minimech díky stabilizaci dopravy přes Hormuz. Dow dosáhl nových ATH minulý týden.",
+    "afterhours_summary": "Tech silný v pre-marketu, semiconductory vedou s VanEck SMH +2.4%. Foxconn reportoval silná čísla podporující AI demand.",
+    "geopolitical_summary": "US-Írán jednání pokračují, doprava přes Hormuz se normalizuje. NATO summit tento týden. Rizika klesají ale nejsou eliminována.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bullish",
+        "score": 75,
+        "reason": "Recovery po červnovém propadu, AI demand neoslabuje, Foxconn čísla pozitivní pro Nvidia supply chain"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 35,
+        "reason": "WTI pod $69, normalizace Hormuz dopravy, OPEC+ může zvýšit produkci, XLE u supportu"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "Čeká se na CPI 14. července a FOMC 28.-29. července, yield curve stabilní, Dow v ATH"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 52,
+        "reason": "Defenzivní rotace možná pokud tech nadhodnocený, ale zatím bez katalyzátoru"
+      },
+      {
+        "name": "Industrials",
+        "signal": "bullish",
+        "score": 62,
+        "reason": "Dow strong performance, AI capex $400-425B pro rok 2026 podporuje industrials"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA Corporation",
+        "current_price_verified": 194.83,
+        "price_source": "Yahoo Finance closing 2.7.2026",
+        "direction": "long",
+        "entry_price": 196.5,
+        "target_price": 202.0,
+        "stop_loss": 193.0,
+        "target_pct": 2.8,
+        "stop_pct": -1.78,
+        "position_size_usd": 25000.0,
+        "holding_days": 1,
+        "risk_reward": "1:1.57",
+        "confidence": "medium",
+        "thesis_macro": "Slabší NFP snižuje riziko Fed hawkishness, tech favorable",
+        "thesis_technical": "Bounce od $195 support, VWAP reclaim možný dnes",
+        "thesis_catalyst": "Foxconn AI supply beat support sentiment, SMH +2.4% premarket",
+        "thesis_options": "Elevated call volume na July strikes",
+        "thesis_short_interest": "Nízký short interest 2%",
+        "thesis_insider": "Žádná nedávná aktivita",
+        "thesis_volume": "Nadprůměrný premarket volume",
+        "thesis_correlation": "Hedged proti XLE short pozici",
+        "thesis_risk": "Již +70% YTD, valuation extended risk",
+        "entry_logic": "Entry nad $196.50 potvrzuje momentum break",
+        "exit_logic": "$202 je 50-day MA resistance a psychologický level",
+        "probability_pct": 62,
+        "probability_reasoning": "Technická reakce pravděpodobná, ale headwinds z valuace",
+        "catalysts": [
+          "Tech sector rotation",
+          "AI demand continuation",
+          "Weak USD support"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR ETF",
+        "current_price_verified": 53.18,
+        "price_source": "Robinhood 5.7.2026",
+        "direction": "short",
+        "entry_price": 53.0,
+        "target_price": 51.5,
+        "stop_loss": 53.8,
+        "target_pct": -2.83,
+        "stop_pct": 1.51,
+        "position_size_usd": 20000.0,
+        "holding_days": 1,
+        "risk_reward": "1:1.88",
+        "confidence": "high",
+        "thesis_macro": "Ropa WTI $68, Hormuz normalizace pokračuje, disinflační trend",
+        "thesis_technical": "XLE u $53 resistance, RSI overbought na rebound",
+        "thesis_catalyst": "Continued oil weakness na normalizaci Middle East supply",
+        "thesis_options": "Put interest u $52 strikes",
+        "thesis_short_interest": "ETF short dostupný",
+        "thesis_insider": "N/A pro ETF",
+        "thesis_volume": "Volume pokles na price gains divergence",
+        "thesis_correlation": "Inverse k tech rally, hedges NVDA long",
+        "thesis_risk": "Surprise geopolitika může spike oil",
+        "entry_logic": "Short pod $53 resistance s tight stop",
+        "exit_logic": "$51.50 je 20-day support, realistický intraday",
+        "probability_pct": 65,
+        "probability_reasoning": "Oil trend clearly down, supply overhang real",
+        "catalysts": [
+          "Continued oil decline",
+          "Iran talks progress",
+          "OPEC+ supply increase"
+        ]
+      },
+      {
+        "ticker": "AAPL",
+        "company": "Apple Inc.",
+        "current_price_verified": 308.45,
+        "price_source": "Robinhood 6.7.2026",
+        "direction": "long",
+        "entry_price": 309.0,
+        "target_price": 315.0,
+        "stop_loss": 306.0,
+        "target_pct": 1.94,
+        "stop_pct": -0.97,
+        "position_size_usd": 22000.0,
+        "holding_days": 1,
+        "risk_reward": "1:2.00",
+        "confidence": "medium",
+        "thesis_macro": "Dow v ATH, large caps rotace pokračuje",
+        "thesis_technical": "Above 50-day MA $305, momentum bullish",
+        "thesis_catalyst": "iPhone foldable hype building pro late 2026, earnings 30.7.",
+        "thesis_options": "Call volume elevated",
+        "thesis_short_interest": "Minimal 1%",
+        "thesis_insider": "Žádná nedávná aktivita",
+        "thesis_volume": "Volume 75M vs 86M avg, room to expand",
+        "thesis_correlation": "Non-correlated k semis, safe mega-cap play",
+        "thesis_risk": "Memory cost pressure headlines могут weigh",
+        "entry_logic": "Break nad $309 potvrzuje continuation",
+        "exit_logic": "$315 je psychological a blízko ATH $317.40",
+        "probability_pct": 60,
+        "probability_reasoning": "Safer mega-cap play, momentum positive ale gains limited",
+        "catalysts": [
+          "Dow strength",
+          "Foldable iPhone hype",
+          "Earnings preview coverage"
+        ]
+      },
+      {
+        "ticker": "GLD",
+        "company": "SPDR Gold Trust ETF",
+        "current_price_verified": 378.13,
+        "price_source": "Investing.com 4.7.2026",
+        "direction": "long",
+        "entry_price": 378.5,
+        "target_price": 386.0,
+        "stop_loss": 375.0,
+        "target_pct": 1.98,
+        "stop_pct": -0.92,
+        "position_size_usd": 18000.0,
+        "holding_days": 1,
+        "risk_reward": "1:2.14",
+        "confidence": "medium",
+        "thesis_macro": "Gold $4,100+, weaker Fed hike bets support",
+        "thesis_technical": "Bounce od $370 low, MACD buy signal",
+        "thesis_catalyst": "Safe haven bid pokračuje s geopolitickou uncertainty",
+        "thesis_options": "N/A pro ETF",
+        "thesis_short_interest": "N/A",
+        "thesis_insider": "N/A",
+        "thesis_volume": "Volume 7M, falling on price rise - watch",
+        "thesis_correlation": "Hedge proti equity risk, dollar weakening",
+        "thesis_risk": "Falling volume divergence, trend krátkodobě down",
+        "entry_logic": "Entry nad $378 na pivot bottom signal",
+        "exit_logic": "$386 je technická resistance z června",
+        "probability_pct": 58,
+        "probability_reasoning": "Gold mixed signals, ale macro supportive",
+        "catalysts": [
+          "Weaker dollar",
+          "Fed rate hike odds declining",
+          "Geopolitical premium"
+        ]
+      }
+    ],
+    "portfolio_note": "4-pozice portfolio s $85,000 alokací (85% kapitálu). Tech long + energy short hedge. Gold pro safe haven diverzifikaci. AAPL jako stabilní mega-cap anchor. VIX low umožňuje agresivnější sizing.",
+    "risks": [
+      "Geopolitické překvapení z Íránu/NATO summitu",
+      "Unexpected hawkish Fed členové mluví před CPI",
+      "Tech valuation concerns mohou trigger profit taking",
+      "Holiday-shortened volume může zvýšit volatilitu",
+      "Všechny pozice intraday - musí být uzavřeny do 16:00 ET"
+    ],
+    "data_freshness": "Data z 2.-6. července 2026, pre-market ceny ověřeny z Yahoo Finance, Robinhood, Investing.com. Futures live. Macro data aktuální k 8:30 AM ET Monday 6.7.2026."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-07-06T13:17:53.201676"
+}
