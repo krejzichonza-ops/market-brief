@@ -1,9 +1,9 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 100273.81,
+  "current_capital": 101312.1,
   "peak_capital": 101999.08,
-  "total_trades": 18,
-  "winning_trades": 7,
+  "total_trades": 22,
+  "winning_trades": 11,
   "losing_trades": 11,
   "equity_curve": [
     {
@@ -104,6 +104,15 @@
       "grade": "N/A",
       "avg_mae": 0.0,
       "avg_mfe": 0.0
+    },
+    {
+      "date": "2026-07-06",
+      "day_of_week": "Monday",
+      "value": 101312.1,
+      "pnl_usd": 1038.29,
+      "grade": "C",
+      "avg_mae": -0.36,
+      "avg_mfe": 1.86
     }
   ],
   "open_positions": [],
@@ -393,6 +402,70 @@
       "mfe_pct": 1.78,
       "trade_quality": "scratchy",
       "probability_pct": 62,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-06",
+      "day_of_week": "Monday",
+      "ticker": "NVDA",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": 0.7,
+      "pnl_usd": 175.0,
+      "position_size_usd": 25000.0,
+      "mae_pct": -0.25,
+      "mfe_pct": 1.58,
+      "trade_quality": "scratchy",
+      "probability_pct": 62,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-06",
+      "day_of_week": "Monday",
+      "ticker": "XLE",
+      "direction": "short",
+      "outcome": "closed_eod",
+      "pnl_pct": 1.44,
+      "pnl_usd": 288.89,
+      "position_size_usd": 20000.0,
+      "mae_pct": -1.2,
+      "mfe_pct": 2.02,
+      "trade_quality": "good",
+      "probability_pct": 65,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-06",
+      "day_of_week": "Monday",
+      "ticker": "AAPL",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": 2.21,
+      "pnl_usd": 486.2,
+      "position_size_usd": 22000.0,
+      "mae_pct": 0.0,
+      "mfe_pct": 2.76,
+      "trade_quality": "excellent",
+      "probability_pct": 60,
+      "probability_verdict": "calibrated",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-06",
+      "day_of_week": "Monday",
+      "ticker": "GLD",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": 0.49,
+      "pnl_usd": 88.2,
+      "position_size_usd": 18000.0,
+      "mae_pct": 0.0,
+      "mfe_pct": 1.06,
+      "trade_quality": "poor",
+      "probability_pct": 58,
       "probability_verdict": "overconfident",
       "data_corrected": false
     }
