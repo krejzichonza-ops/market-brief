@@ -1,10 +1,10 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 101312.1,
-  "peak_capital": 101999.08,
-  "total_trades": 22,
-  "winning_trades": 11,
-  "losing_trades": 11,
+  "current_capital": 103249.74,
+  "peak_capital": 103249.74,
+  "total_trades": 26,
+  "winning_trades": 14,
+  "losing_trades": 12,
   "equity_curve": [
     {
       "date": "2026-06-17",
@@ -113,6 +113,15 @@
       "grade": "C",
       "avg_mae": -0.36,
       "avg_mfe": 1.86
+    },
+    {
+      "date": "2026-07-07",
+      "day_of_week": "Tuesday",
+      "value": 103249.74,
+      "pnl_usd": 1937.64,
+      "grade": "D",
+      "avg_mae": -0.11,
+      "avg_mfe": -0.75
     }
   ],
   "open_positions": [],
@@ -468,6 +477,70 @@
       "probability_pct": 58,
       "probability_verdict": "overconfident",
       "data_corrected": false
+    },
+    {
+      "date": "2026-07-07",
+      "day_of_week": "Tuesday",
+      "ticker": "BA",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": 0.65,
+      "pnl_usd": 129.31,
+      "position_size_usd": 20000.0,
+      "mae_pct": -0.66,
+      "mfe_pct": 2.24,
+      "trade_quality": "good",
+      "probability_pct": 58,
+      "probability_verdict": "calibrated",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-07",
+      "day_of_week": "Tuesday",
+      "ticker": "GOOGL",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": -0.83,
+      "pnl_usd": -166.47,
+      "position_size_usd": 20000.0,
+      "mae_pct": -0.97,
+      "mfe_pct": 1.11,
+      "trade_quality": "poor",
+      "probability_pct": 55,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-07",
+      "day_of_week": "Tuesday",
+      "ticker": "AMD",
+      "direction": "long",
+      "outcome": "stopped_out",
+      "pnl_pct": 4.28,
+      "pnl_usd": 899.59,
+      "position_size_usd": 21000.0,
+      "mae_pct": -1.14,
+      "mfe_pct": 2.73,
+      "trade_quality": "poor",
+      "probability_pct": 54,
+      "probability_verdict": "overconfident",
+      "data_corrected": true
+    },
+    {
+      "date": "2026-07-07",
+      "day_of_week": "Tuesday",
+      "ticker": "TSLA",
+      "direction": "short",
+      "outcome": "stopped_out",
+      "pnl_pct": 5.38,
+      "pnl_usd": 1075.21,
+      "position_size_usd": 20000.0,
+      "mae_pct": 2.33,
+      "mfe_pct": -9.05,
+      "trade_quality": "poor",
+      "probability_pct": 48,
+      "probability_verdict": "overconfident",
+      "data_corrected": true
     }
   ]
 }
