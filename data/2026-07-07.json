@@ -1,0 +1,216 @@
+{
+  "date": "2026-07-07",
+  "brief": {
+    "generated_at": "2026-07-07T07:30:00Z",
+    "market_date": "Tuesday, July 07, 2026",
+    "date_key": "2026-07-07",
+    "day_of_week": "Tuesday",
+    "trading_mode": "intraday",
+    "snapshot": {
+      "sp500_futures": "7530+0.1%",
+      "nasdaq_futures": "29680-0.87%",
+      "dow_futures": "53540+0.31%",
+      "vix": "15.97",
+      "us10y": "4.494%",
+      "dxy": "100.70",
+      "crude_oil": "$69.00",
+      "gold": "$4150"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "unavailable",
+      "market_volume": "above_average",
+      "earnings_today": [
+        "PENG: after hours"
+      ],
+      "insider_activity_summary": "Nízká aktivita, žádné významné SEC Form 4 filingy za poslední 48h"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 52,
+    "key_themes": [
+      "Chipový sektor pod tlakem po Samsung earnings",
+      "Obavy z AI valuací po June slumpu",
+      "Fed Minutes dnes — trh čeká signály o rate path"
+    ],
+    "macro_summary": "Futures smíšené po včerejším zisku S&P 500 +0.7%. Samsung zklamal guidance, čipy pod tlakem. Fed Minutes dnes afternoon.",
+    "afterhours_summary": "Nasdaq futures -0.9% na Samsungu. NVDA -2.5% pre-market. Chipový selloff pokračuje.",
+    "geopolitical_summary": "US-Iran ceasefire holding, Hormuz traffic 5% normálu. Ropný trh stabilizován pod $70.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bearish",
+        "score": 38,
+        "reason": "Semiconductor selloff po Samsung. Nvidia, AMD, Micron pod tlakem."
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Čekání na Fed Minutes. 10Y yield 4.49%, stabilní."
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 42,
+        "reason": "Ropa $69, lowest 4M. Hormuz recovery tlačí ceny dolů."
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 53,
+        "reason": "Defensivní rotace pokračuje, stabilní outperformance."
+      },
+      {
+        "name": "Industrials",
+        "signal": "bullish",
+        "score": 62,
+        "reason": "Boeing +3.6% včera na delivery beat. Defense tech síla."
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "BA",
+        "company": "The Boeing Company",
+        "current_price_verified": 230.52,
+        "price_source": "Robinhood/Yahoo Finance July 6 close + pre-market",
+        "direction": "long",
+        "entry_price": 231.0,
+        "target_price": 236.5,
+        "stop_loss": 228.5,
+        "target_pct": 2.38,
+        "stop_pct": -1.08,
+        "position_size_usd": 20000,
+        "holding_days": 1,
+        "risk_reward": "1:2.2",
+        "confidence": "medium",
+        "thesis_macro": "Defense spending roste, Industrial momentum strong, 10Y yield stabilní",
+        "thesis_technical": "Break above $230, 4th assembly line bullish, blízko 52w high $254",
+        "thesis_catalyst": "June delivery ~60 letadel beat estimate, Baird bullish note",
+        "thesis_options": "Call volume elevated včera, directionally bullish sentiment",
+        "thesis_short_interest": "Short interest nízký, institucionální podpora",
+        "thesis_insider": "Žádná významná aktivita, stabilní ownership",
+        "thesis_volume": "3.6M včera vs 6M avg, momentum buy",
+        "thesis_correlation": "Non-tech play, industrial, uncorrelated s chip slumpem",
+        "thesis_risk": "Union talks start, FAA directive overhang možný",
+        "entry_logic": "Morning gap fill $231, včerejší close support",
+        "exit_logic": "$236.50 = +2.4%, near-term resistance, realistic intraday",
+        "probability_pct": 58,
+        "probability_reasoning": "Industrial strength, delivery beat, ale union risk a broader sentiment slabší",
+        "catalysts": [
+          "737 MAX 4th line ramp-up pokračuje",
+          "Q2 delivery beat narrative"
+        ]
+      },
+      {
+        "ticker": "GOOGL",
+        "company": "Alphabet Inc. Class A",
+        "current_price_verified": 366.5,
+        "price_source": "Yahoo Finance/INDmoney July 6 close",
+        "direction": "long",
+        "entry_price": 367.0,
+        "target_price": 374.5,
+        "stop_loss": 364.0,
+        "target_pct": 2.04,
+        "stop_pct": -0.82,
+        "position_size_usd": 20000,
+        "holding_days": 1,
+        "risk_reward": "1:2.5",
+        "confidence": "medium",
+        "thesis_macro": "Mega-cap safety play, AI story intaktní, earnings 7/29 ahead",
+        "thesis_technical": "Support $357 held, RSI neutral 50, bounce zone",
+        "thesis_catalyst": "Waymo vs Tesla robotaxi competition heating up Miami",
+        "thesis_options": "P/C ratio balanced, IV moderate, no extreme positioning",
+        "thesis_short_interest": "Minimální, mega-cap liquidity",
+        "thesis_insider": "Žádná významná aktivita, insider quiet period",
+        "thesis_volume": "Below average včera, quiet accumulation možné",
+        "thesis_correlation": "Tech mega-cap, ale AI infrastructure play vs pure chips",
+        "thesis_risk": "Nasdaq futures -0.9%, chip selloff může táhnout tech dolů",
+        "entry_logic": "$367 = včerejší close area, no gap risk",
+        "exit_logic": "$374.50 = +2%, near $375 psychological, realistický intraday na volume",
+        "probability_pct": 55,
+        "probability_reasoning": "Strong fundamentals, ale tech sentiment dnes slabý. Mega-cap quality offset.",
+        "catalysts": [
+          "Waymo autonomy progress vs Tesla",
+          "Earnings 7/29 positioning starts"
+        ]
+      },
+      {
+        "ticker": "AMD",
+        "company": "Advanced Micro Devices Inc.",
+        "current_price_verified": 549.09,
+        "price_source": "Robinhood/Yahoo Finance July 6 close",
+        "direction": "long",
+        "entry_price": 545.0,
+        "target_price": 560.0,
+        "stop_loss": 538.0,
+        "target_pct": 2.75,
+        "stop_pct": -1.28,
+        "position_size_usd": 21000,
+        "holding_days": 1,
+        "risk_reward": "1:2.15",
+        "confidence": "medium",
+        "thesis_macro": "AI chip demand roste, Goldman $640 PT včera, AI infra tailwind",
+        "thesis_technical": "Včera +6.6%, pullback entry $545, support $538",
+        "thesis_catalyst": "Goldman raised PT $450→$640, Turing autonomous deal announced",
+        "thesis_options": "Call volume včera elevated, bullish sentiment",
+        "thesis_short_interest": "Short interest nízký, rally momentum",
+        "thesis_insider": "AMD Ventures investoval do Turing, strategic buy",
+        "thesis_volume": "30M včera vs 31M avg, in-line, steady",
+        "thesis_correlation": "AI chip, ale NVDA competitor, různá exposure",
+        "thesis_risk": "Semiconductor selloff dnes, Samsung earnings overhang, correlation risk",
+        "entry_logic": "$545 = pullback z $549 close, dip buy",
+        "exit_logic": "$560 = psychological, +2.75%, resistance zone",
+        "probability_pct": 54,
+        "probability_reasoning": "Strong yesterday, Goldman bullish, ale chip sector bearish dnes. Risky contrarian.",
+        "catalysts": [
+          "Goldman Sachs $640 PT včera",
+          "Turing autonomous AI GPU deal"
+        ]
+      },
+      {
+        "ticker": "TSLA",
+        "company": "Tesla Inc.",
+        "current_price_verified": 398.97,
+        "price_source": "Robinhood July 7 pre-market",
+        "direction": "short",
+        "entry_price": 400.0,
+        "target_price": 390.0,
+        "stop_loss": 405.0,
+        "target_pct": -2.5,
+        "stop_pct": 1.25,
+        "position_size_usd": 20000,
+        "holding_days": 1,
+        "risk_reward": "1:2.0",
+        "confidence": "low",
+        "thesis_macro": "P/E 359x, valuace extrémní, robotaxi hype fade možný",
+        "thesis_technical": "Včera +6.7% spike na Miami robotaxi, overbought RSI >70",
+        "thesis_catalyst": "Miami robotaxi launch relief rally, ale delivery už priced",
+        "thesis_options": "High vol spike, potential IV crush intraday",
+        "thesis_short_interest": "High short interest, squeeze risk exists",
+        "thesis_insider": "Žádná aktivita, Musk quiet period",
+        "thesis_volume": "73M včera vs 49M avg, +48% spike fade možný",
+        "thesis_correlation": "Uncorrelated EV play, autonomous story独立",
+        "thesis_risk": "Giga Texas teaser 7/7, positive surprise risk. Squeeze risk high.",
+        "entry_logic": "$400 psychological resistance, gap up fade",
+        "exit_logic": "$390 support from range, -2.5% realistic fade",
+        "probability_pct": 48,
+        "probability_reasoning": "Rally overbought, ale Giga Texas catalyst risk + short squeeze možnost. Nízká confidence.",
+        "catalysts": [
+          "Giga Texas reveal 7/7 - risk pozitivního překvapení",
+          "Robotaxi hype fade možný"
+        ]
+      }
+    ],
+    "portfolio_note": "Diverzifikace: Industrial (BA), Mega-cap tech (GOOGL), AI chip (AMD), contrarian short (TSLA). Total alokace $81,000 / $101,312 disponibilní. Conservative sizing pro volatilní tape. Všechny pozice intraday close 16:00 ET.",
+    "risks": [
+      "Fed Minutes 14:00 ET - hawkish surprise risk",
+      "Chip selloff momentum může spread do broader tech",
+      "Geopolitical - Iran ceasefire fragile, oil spike risk",
+      "TSLA short squeeze risk na Giga Texas news"
+    ],
+    "data_freshness": "Data aktuální k 7:30 AM ET July 7, 2026. Ceny verifikovány z Yahoo Finance, Robinhood, Investing.com. Pre-market aktuální. VIX, futures, makro data live."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-07-07T13:17:06.510849"
+}
