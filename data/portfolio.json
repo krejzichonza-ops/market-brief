@@ -1,10 +1,10 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 103249.74,
+  "current_capital": 101484.47,
   "peak_capital": 103249.74,
-  "total_trades": 26,
-  "winning_trades": 14,
-  "losing_trades": 12,
+  "total_trades": 31,
+  "winning_trades": 15,
+  "losing_trades": 16,
   "equity_curve": [
     {
       "date": "2026-06-17",
@@ -122,6 +122,15 @@
       "grade": "D",
       "avg_mae": -0.11,
       "avg_mfe": -0.75
+    },
+    {
+      "date": "2026-07-08",
+      "day_of_week": "Wednesday",
+      "value": 101484.47,
+      "pnl_usd": -1765.27,
+      "grade": "C",
+      "avg_mae": -0.13,
+      "avg_mfe": 0.65
     }
   ],
   "open_positions": [],
@@ -541,6 +550,86 @@
       "probability_pct": 48,
       "probability_verdict": "overconfident",
       "data_corrected": true
+    },
+    {
+      "date": "2026-07-08",
+      "day_of_week": "Wednesday",
+      "ticker": "OXY",
+      "direction": "long",
+      "outcome": "hit_target",
+      "pnl_pct": -6.72,
+      "pnl_usd": -1680.83,
+      "position_size_usd": 25000.0,
+      "mae_pct": -0.5,
+      "mfe_pct": 1.22,
+      "trade_quality": "scratchy",
+      "probability_pct": 68,
+      "probability_verdict": "underconfident",
+      "data_corrected": true
+    },
+    {
+      "date": "2026-07-08",
+      "day_of_week": "Wednesday",
+      "ticker": "XOM",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": -0.04,
+      "pnl_usd": -9.2,
+      "position_size_usd": 23000.0,
+      "mae_pct": -0.6,
+      "mfe_pct": 1.45,
+      "trade_quality": "poor",
+      "probability_pct": 65,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-08",
+      "day_of_week": "Wednesday",
+      "ticker": "AAPL",
+      "direction": "short",
+      "outcome": "stopped_out",
+      "pnl_pct": 0.48,
+      "pnl_usd": 95.24,
+      "position_size_usd": 20000.0,
+      "mae_pct": 0.15,
+      "mfe_pct": -1.54,
+      "trade_quality": "poor",
+      "probability_pct": 58,
+      "probability_verdict": "overconfident",
+      "data_corrected": true
+    },
+    {
+      "date": "2026-07-08",
+      "day_of_week": "Wednesday",
+      "ticker": "NVDA",
+      "direction": "short",
+      "outcome": "stopped_out",
+      "pnl_pct": -0.85,
+      "pnl_usd": -170.48,
+      "position_size_usd": 20000.0,
+      "mae_pct": 3.15,
+      "mfe_pct": -0.17,
+      "trade_quality": "poor",
+      "probability_pct": 55,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-08",
+      "day_of_week": "Wednesday",
+      "ticker": "XLE",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": 0.0,
+      "pnl_usd": 0.0,
+      "position_size_usd": 15249.74,
+      "mae_pct": -0.15,
+      "mfe_pct": 1.33,
+      "trade_quality": "good",
+      "probability_pct": 70,
+      "probability_verdict": "calibrated",
+      "data_corrected": false
     }
   ]
 }
