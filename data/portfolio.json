@@ -1,10 +1,10 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 101484.47,
-  "peak_capital": 103249.74,
-  "total_trades": 31,
-  "winning_trades": 15,
-  "losing_trades": 16,
+  "current_capital": 104201.95,
+  "peak_capital": 104201.95,
+  "total_trades": 35,
+  "winning_trades": 17,
+  "losing_trades": 18,
   "equity_curve": [
     {
       "date": "2026-06-17",
@@ -131,6 +131,15 @@
       "grade": "C",
       "avg_mae": -0.13,
       "avg_mfe": 0.65
+    },
+    {
+      "date": "2026-07-09",
+      "day_of_week": "Thursday",
+      "value": 104201.95,
+      "pnl_usd": 2717.48,
+      "grade": "B",
+      "avg_mae": -2.49,
+      "avg_mfe": 3.66
     }
   ],
   "open_positions": [],
@@ -629,6 +638,70 @@
       "trade_quality": "good",
       "probability_pct": 70,
       "probability_verdict": "calibrated",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-09",
+      "day_of_week": "Thursday",
+      "ticker": "MU",
+      "direction": "long",
+      "outcome": "hit_target",
+      "pnl_pct": 9.86,
+      "pnl_usd": 2958.0,
+      "position_size_usd": 30000.0,
+      "mae_pct": -5.74,
+      "mfe_pct": 12.19,
+      "trade_quality": "excellent",
+      "probability_pct": 58,
+      "probability_verdict": "underconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-09",
+      "day_of_week": "Thursday",
+      "ticker": "BABA",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": 0.21,
+      "pnl_usd": 52.5,
+      "position_size_usd": 25000.0,
+      "mae_pct": -1.2,
+      "mfe_pct": 1.2,
+      "trade_quality": "scratchy",
+      "probability_pct": 55,
+      "probability_verdict": "calibrated",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-09",
+      "day_of_week": "Thursday",
+      "ticker": "XLE",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": -0.11,
+      "pnl_usd": -25.3,
+      "position_size_usd": 23000.0,
+      "mae_pct": -0.4,
+      "mfe_pct": 1.18,
+      "trade_quality": "scratchy",
+      "probability_pct": 70,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-09",
+      "day_of_week": "Thursday",
+      "ticker": "NVDA",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": -1.14,
+      "pnl_usd": -267.72,
+      "position_size_usd": 23484.47,
+      "mae_pct": -2.63,
+      "mfe_pct": 0.05,
+      "trade_quality": "poor",
+      "probability_pct": 60,
+      "probability_verdict": "overconfident",
       "data_corrected": false
     }
   ]
