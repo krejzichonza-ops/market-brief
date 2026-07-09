@@ -1,0 +1,223 @@
+{
+  "date": "2026-07-09",
+  "brief": {
+    "generated_at": "2026-07-09T09:00:00Z",
+    "market_date": "Thursday, July 09, 2026",
+    "date_key": "2026-07-09",
+    "day_of_week": "Thursday",
+    "trading_mode": "intraday",
+    "snapshot": {
+      "sp500_futures": "+0.1%",
+      "nasdaq_futures": "+0.9%",
+      "dow_futures": "-0.1%",
+      "vix": "16.81",
+      "us10y": "4.58%",
+      "dxy": "101.07",
+      "crude_oil": "$74.04",
+      "gold": "$4122"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "0.25",
+      "market_volume": "above_average",
+      "earnings_today": [
+        "PEP: Pre-market (před 9:30 ET)",
+        "WD-40 (WDFC): Po zavření",
+        "Delta Air Lines (DAL): Friday 12:30 PM"
+      ],
+      "insider_activity_summary": "Minimální aktivita — rutinní tax withholding a malé nákupy v energetických titulech. Žádné významné insider buy signály v tech."
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 52,
+    "key_themes": [
+      "USA-Írán napětí eskaluje — trh přechází z ropy do AI semi",
+      "SK Hynix Nasdaq debut zítra (10.7.) — konkurenční riziko pro MU",
+      "VIX pod 17 ale 10Y výnos 4.58% — inflační tlak z ropy"
+    ],
+    "macro_summary": "USA a Írán obnovily útoky po Trumpově prohlášení, že příměří je 'over'. Ropa +5% na $74, 10Y výnos 4.58% (4-week high), trh nyní cení 70% pravděpodobnost růstu sazeb v září.",
+    "afterhours_summary": "Nasdaq futures +0.9% vedou rebound v semi — MU, NVDA, SMH všechny up pre-market. Alibaba +11% včera na DOJ deal a AI optimismus pokračuje dnes.",
+    "geopolitical_summary": "USA zasáhly 90 íránských cílů ve středu, Írán odpověděl na základny v Bahrajnu a Kuvajtu. Strait of Hormuz zůstává pod tlakem, což tlačí ropu nahoru.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bullish",
+        "score": 68,
+        "reason": "Semiconductor rebound — Nasdaq futures +0.9%, chipmakers bounce po 16% SOX drawdown. SK Hynix debut zítra přitahuje pozornost k HBM."
+      },
+      {
+        "name": "Energy",
+        "signal": "bullish",
+        "score": 75,
+        "reason": "Ropa +5% na USA-Írán eskalaci. XLE stále -5% pod June high, ale intraday momentum silné. Short squeeze territory."
+      },
+      {
+        "name": "Financials",
+        "signal": "bearish",
+        "score": 38,
+        "reason": "Vyšší výnosy (4.58%) škodí bankám — JPM -2.5% včera. Credit-sensitive jména slabá. Earnings až 14.7."
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Defensive rotace částečně podporuje, ale žádný konkrétní katalyzátor. PepsiCo dnes reportuje, ale to je staples."
+      },
+      {
+        "name": "Consumer Discretionary",
+        "signal": "neutral",
+        "score": 48,
+        "reason": "Alibaba +11% včera anomálie. Domácí retail slabý na inflační obavy z ropy. Existing home sales dnes."
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "MU",
+        "company": "Micron Technology Inc.",
+        "current_price_verified": 948.8,
+        "price_source": "Yahoo Finance historical close 7/8/2026",
+        "direction": "long",
+        "entry_price": 950.0,
+        "target_price": 1014.0,
+        "stop_loss": 920.0,
+        "target_pct": 6.7,
+        "stop_pct": -3.2,
+        "position_size_usd": 30000.0,
+        "holding_days": 1,
+        "risk_reward": "1:2.1",
+        "confidence": "medium",
+        "thesis_macro": "HBM demand strukturální, SK Hynix IPO zítra přitáhne pozornost k memory segmentu celkově",
+        "thesis_technical": "Ascending trendline support $984, RSI 38 oversold, divergence po -22% pullbacku z peak",
+        "thesis_catalyst": "SK Hynix $28B Nasdaq listing zítra vytváří sector spotlight, MU jako cheaper play",
+        "thesis_options": "Put/call neutrální, institucionální akumulace",
+        "thesis_short_interest": "Michael Burry short, ale 45 analytiků Buy $1486 avg target",
+        "thesis_insider": "EVP prodeje v červnu, ale rutinní kompenzační disposal",
+        "thesis_volume": "40M včera vs 51M avg — nízká ale stabilní",
+        "thesis_correlation": "Memory play, ne direct chip designer — jiný segment než NVDA/AMD",
+        "thesis_risk": "SK Hynix listing může odtáhnout capital z MU intraday, watch pre-market flow",
+        "entry_logic": "$950 blízko včerejší close, trendline test",
+        "exit_logic": "$1014 channel resistance, 6.7% intraday realistické na sector momentum",
+        "probability_pct": 58,
+        "probability_reasoning": "Technický setup silný, ale SK Hynix overhang + Burry short snižují confidence na medium",
+        "catalysts": [
+          "SK Hynix Nasdaq debut zítra — sector attention",
+          "HBM supply shortage narrative",
+          "Oversold bounce po -22% pullback"
+        ]
+      },
+      {
+        "ticker": "BABA",
+        "company": "Alibaba Group Holding Ltd",
+        "current_price_verified": 108.78,
+        "price_source": "Investing.com close 7/8/2026",
+        "direction": "long",
+        "entry_price": 109.0,
+        "target_price": 114.0,
+        "stop_loss": 106.0,
+        "target_pct": 4.6,
+        "stop_pct": -2.8,
+        "position_size_usd": 25000.0,
+        "holding_days": 1,
+        "risk_reward": "1:1.6",
+        "confidence": "medium",
+        "thesis_macro": "China AI rotation trade — levnější expozice než US chips po jejich rally",
+        "thesis_technical": "$108 držel whole session včera, +11% jump vytvořil nový support, RSI resetován",
+        "thesis_catalyst": "DOJ $600M settlement uzavřen, Pentagon lobbying reprieve dočasný win, continuation trade",
+        "thesis_options": "Mixed sentiment dle Cboe, ale volumen vysoký — momentum pozitivní",
+        "thesis_short_interest": "Cathie Wood dumping (sold $54M), ale 38 analytiků Buy $190 target",
+        "thesis_insider": "Insider prodeje v červnu, ale to normální u Chinese ADRs",
+        "thesis_volume": "Objem včera spike — potvrzuje breakout momentum",
+        "thesis_correlation": "Chinese tech, e-commerce — zero korelace s US semi nebo energy",
+        "thesis_risk": "Chinese regulatory risk persistent, Wood dumping negativní signal, intraday fade možný",
+        "entry_logic": "$109 blízko včerejší zavření, momentum trade",
+        "exit_logic": "$114 je +4.6% round level, intraday profit taking pravděpodobný tam",
+        "probability_pct": 55,
+        "probability_reasoning": "Včerejší momentum silné, ale Cathie Wood exit a Chinese regulatory uncertainty tlačí dolů",
+        "catalysts": [
+          "Pentagon lobbying reprieve",
+          "DOJ settlement uzavřen",
+          "China AI rotation trade pokračuje"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR ETF",
+        "current_price_verified": 55.59,
+        "price_source": "Investing.com 7/8/2026",
+        "direction": "long",
+        "entry_price": 56.0,
+        "target_price": 58.5,
+        "stop_loss": 54.5,
+        "target_pct": 4.5,
+        "stop_pct": -2.7,
+        "position_size_usd": 23000.0,
+        "holding_days": 1,
+        "risk_reward": "1:1.7",
+        "confidence": "high",
+        "thesis_macro": "Ropa $74 na USA-Írán eskalaci, Strait of Hormuz riziko perzistuje, inflační tlak na Fed",
+        "thesis_technical": "XLE -5% pod June high $59.04, range $54.87-$56.04 včera, support $54.50 drží",
+        "thesis_catalyst": "Trump řekl 'ceasefire over', další US strikes možné dnes, ropa intraday strength",
+        "thesis_options": "Energy options activity pozitivní, call flow zvýšený",
+        "thesis_short_interest": "Sector underowned YTD vs tech — catch-up potential",
+        "thesis_insider": "YPF insider buy včera v oil ADRs — sector confidence",
+        "thesis_volume": "Objem včera 6M vs 31M avg nízký, ale today pre-market pickup",
+        "thesis_correlation": "Pure energy play — inverzní k tech, hedge against geopolitical risk",
+        "thesis_risk": "Rychlá Iran deeskalace crashes ropu intraday, ale low probability dnes",
+        "entry_logic": "$56 včerejší close area, momentum vstup",
+        "exit_logic": "$58.50 je +4.5%, blízko $59 June resistance — realistic intraday target",
+        "probability_pct": 70,
+        "probability_reasoning": "Geopolitický katalyzátor jasný, ropa momentum silné, technický setup čistý — highest confidence pick",
+        "catalysts": [
+          "USA-Írán strikes pokračují",
+          "Ropa $74 breakout",
+          "10Y yield 4.58% inflační tlak"
+        ]
+      },
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA Corporation",
+        "current_price_verified": 200.78,
+        "price_source": "Yahoo Finance 7/8/2026 midday quote",
+        "direction": "long",
+        "entry_price": 201.0,
+        "target_price": 207.0,
+        "stop_loss": 197.0,
+        "target_pct": 3.0,
+        "stop_pct": -2.0,
+        "position_size_usd": 23484.47,
+        "holding_days": 1,
+        "risk_reward": "1:1.5",
+        "confidence": "medium",
+        "thesis_macro": "China H200 conditional approval leak včera, AI trade rebound den 2, Nasdaq futures +0.9%",
+        "thesis_technical": "$200 psychological level hold včera, +3.6% bounce na China news, 50-day MA test",
+        "thesis_catalyst": "Pre-market +0.6%, chipmakers rebound koordinovaný, SK Hynix buzz pozitivní pro AI chips",
+        "thesis_options": "P/E 22.22 lowest since 2019 — value entry for AI leader",
+        "thesis_short_interest": "Crowd short efter -10% pullback, squeeze potential",
+        "thesis_insider": "Žádná recent Form 4 aktivita — neutrální",
+        "thesis_volume": "Volume včera normální, dnes pre-market pickup",
+        "thesis_correlation": "AI chip leader — partial semi correlation, ale vlastní momentum",
+        "thesis_risk": "DeepSeek building vlastní chip news včera stlačil -2%, další negative AI news risk",
+        "entry_logic": "$201 blízko včerejší close, psychological $200 držel",
+        "exit_logic": "$207 je +3% — konzervativní intraday target, watch pre-market",
+        "probability_pct": 60,
+        "probability_reasoning": "China H200 news pozitivní, ale DeepSeek risk persistuje, semi sector volatile — medium confidence",
+        "catalysts": [
+          "China H200 approval leak",
+          "SK Hynix debut zítra spotlight AI",
+          "Nasdaq futures +0.9% momentum"
+        ]
+      }
+    ],
+    "portfolio_note": "Celková alokace $101,484.47 diverzifikována napříč 4 pozicemi: 2x technology (MU, NVDA), 1x energy (XLE), 1x China tech (BABA). XLE highest conviction na geopolitický katalyzátor. MU a NVDA semi exposure, ale různé sub-segmenty (memory vs GPU). BABA jako China uncorrelated play. Všechny pozice close 16:00 ET — žádné overnight exposure. Risk management: žádný pick přes 30% kapitálu, stop lossy technicky nastaveny.",
+    "risks": [
+      "USA-Írán situace může rychle de-eskalovat — crashes ropu intraday a hurt XLE",
+      "SK Hynix $28B Nasdaq listing zítra může odtáhnout capital z MU během dne",
+      "VIX 16.81 relativně nízko ale může spike na další geopolitické headline",
+      "Fed hawkish sentiment (70% Sept hike priced) může hit growth stocks mid-session",
+      "PepsiCo earnings dnes pre-market — pokud miss, consumer sentiment negativní pro BABA"
+    ],
+    "data_freshness": "Data aktuální k 9:00 AM ET, July 9, 2026. Futures quotes aktuální, akcie verified prices z Yahoo Finance/Investing.com včerejší close + overnight session. Všechny katalyzátory a news z posledních 24h."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-07-09T13:18:12.914920"
+}
