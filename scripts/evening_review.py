@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Evening Review Generator — denní režim (všechny pozice se uzavírají na konci dne)
+Evening Review Generator — denní režim s opravou P&L validace pro SHORT pozice
 """
 
 import anthropic, json, os, re, sys, glob
@@ -77,18 +77,23 @@ Všechny pozice se VŽDY uzavírají na konci obchodního dne (16:00 ET) za clos
 - outcome = "hit_target" pokud intraday high (long) nebo low (short) dosáhl target price
 - outcome = "stopped_out" pokud intraday low (long) nebo high (short) dosáhl stop loss
 - outcome = "closed_eod" pokud ani target ani stop nebyl zasažen — pozice se uzavře za closing cenu
-- outcome "held_open" a "missed_entry" NEEXISTUJÍ v denním režimu
-- Vstup vždy proběhl za actual_open cenu (ne projected entry)
+- Vstup vždy proběhl za actual_open cenu
 
-VÝPOČET P&L:
+VÝPOČET P&L — KRITICKY DŮLEŽITÉ:
 - LONG: pnl_pct = (exit_price - actual_open) / actual_open * 100
+  * exit > actual_open = ZISK (kladné číslo)
+  * exit < actual_open = ZTRÁTA (záporné číslo)
 - SHORT: pnl_pct = (actual_open - exit_price) / actual_open * 100
-- exit_price = target_price (hit_target) | stop_loss (stopped_out) | actual_close (closed_eod)
-- Vstupní cena je vždy actual_open, ne projected entry
+  * exit < actual_open = ZISK (kladné číslo)
+  * exit > actual_open = ZTRÁTA (záporné číslo)
 
-MAE/MFE:
-- MAE: jak daleko šla cena PROTI pozici od actual_open
-- MFE: jak daleko šla cena VE PROSPĚCH od actual_open
+PÍKLAD SHORT:
+- TSLA SHORT, actual_open=$400, exit=$405 (stop zasažen)
+- pnl_pct = (400 - 405) / 400 * 100 = -1.25% → ZTRÁTA → pnl_usd záporné
+
+PÍKLAD LONG:
+- BA LONG, actual_open=$231, exit=$233.50
+- pnl_pct = (233.50 - 231) / 231 * 100 = +1.08% → ZISK → pnl_usd kladné
 
 Vrať POUZE validní JSON:
 {{
@@ -152,7 +157,10 @@ USER_PROMPT = f"""Zhodnoť dnešní intraday picky ({DATE_STR}):
 {picks_json}
 
 Alokováno: ${total_allocated:,.2f}
-Vyhledej skutečné intraday ceny (open/high/low/close). Vstup byl za actual_open. Uzavření za closing cenu pokud nedosažen target/stop. Vrať pouze JSON."""
+Vyhledej skutečné intraday ceny (open/high/low/close).
+Vstup byl za actual_open. Uzavření za closing cenu pokud nedosažen target/stop.
+POZOR: SHORT pozice mají ZISK když cena KLESÁ a ZTRÁTU když cena ROSTE.
+Vrať pouze JSON."""
 
 print(f"🔍 Evening review {DATE_STR} ({DOW}) | {len(picks)} pozic | Alokováno: ${total_allocated:,.2f}")
 
@@ -198,17 +206,37 @@ if review_data is None:
     print(f"❌ JSON parse selhal")
     sys.exit(1)
 
-# P&L validace
+# ── P&L VALIDACE ───────────────────────────────────────────────────────────────
 def validate_pick(p, original_pick):
     direction = p.get('direction', 'long')
     pos_size = float(p.get('position_size_usd') or original_pick.get('position_size_usd') or 0)
     entry = float(p.get('actual_open') or original_pick.get('entry_price') or 0)
+    exit_price = float(p.get('exit_price') or p.get('actual_close') or 0)
     target = float(p.get('projected_target') or original_pick.get('target_price') or 0)
     stop = float(p.get('projected_stop') or original_pick.get('stop_loss') or 0)
+    ticker = p.get('ticker', '?')
 
-    if entry <= 0 or pos_size <= 0:
+    if entry <= 0 or exit_price <= 0 or pos_size <= 0:
         return p
 
+    # Přepočítej P&L správně podle direction — Python vždy počítá správně
+    if direction == 'long':
+        correct_pnl_pct = (exit_price - entry) / entry * 100
+    else:  # short
+        correct_pnl_pct = (entry - exit_price) / entry * 100
+
+    correct_pnl_usd = pos_size * (correct_pnl_pct / 100)
+    reported_pnl_pct = float(p.get('pnl_pct') or 0)
+
+    # Oprav pokud Claude spočítal špatně
+    if abs(correct_pnl_pct - reported_pnl_pct) > 0.1:
+        print(f"⚠️  {ticker} ({direction.upper()}): P&L opraven z {reported_pnl_pct:.2f}% na {correct_pnl_pct:.2f}%")
+        p['data_corrected'] = True
+
+    p['pnl_pct'] = round(correct_pnl_pct, 2)
+    p['pnl_usd'] = round(correct_pnl_usd, 2)
+
+    # Validace max ztráta/zisk vůči stop/target
     if direction == 'long':
         max_loss_pct = ((entry - stop) / entry * 100 + 1.0) if stop > 0 else 8.0
         max_gain_pct = ((target - entry) / entry * 100 + 1.0) if target > 0 else 15.0
@@ -216,25 +244,21 @@ def validate_pick(p, original_pick):
         max_loss_pct = ((stop - entry) / entry * 100 + 1.0) if stop > 0 else 8.0
         max_gain_pct = ((entry - target) / entry * 100 + 1.0) if target > 0 else 15.0
 
-    pnl_pct = float(p.get('pnl_pct') or 0)
-    corrected = False
-
-    if pnl_pct < 0 and abs(pnl_pct) > max_loss_pct and stop > 0:
-        print(f"⚠️  {p.get('ticker')}: P&L {pnl_pct:.1f}% > max ztráta {-max_loss_pct:.1f}% → opravuji na stop")
-        pnl_pct = (stop - entry) / entry * 100 if direction == 'long' else (entry - stop) / entry * 100
+    if correct_pnl_pct < 0 and abs(correct_pnl_pct) > max_loss_pct and stop > 0:
+        print(f"⚠️  {ticker}: Ztráta {correct_pnl_pct:.1f}% > max {-max_loss_pct:.1f}% → stop")
+        forced = (stop - entry) / entry * 100 if direction == 'long' else (entry - stop) / entry * 100
+        p['pnl_pct'] = round(forced, 2)
+        p['pnl_usd'] = round(pos_size * (forced / 100), 2)
         p['exit_price'] = stop
         p['outcome'] = 'stopped_out'
-        corrected = True
-    elif pnl_pct > 0 and pnl_pct > max_gain_pct and target > 0:
-        print(f"⚠️  {p.get('ticker')}: P&L {pnl_pct:.1f}% > max zisk {max_gain_pct:.1f}% → opravuji na target")
-        pnl_pct = (target - entry) / entry * 100 if direction == 'long' else (entry - target) / entry * 100
+        p['data_corrected'] = True
+    elif correct_pnl_pct > 0 and correct_pnl_pct > max_gain_pct and target > 0:
+        print(f"⚠️  {ticker}: Zisk {correct_pnl_pct:.1f}% > max {max_gain_pct:.1f}% → target")
+        forced = (target - entry) / entry * 100 if direction == 'long' else (entry - target) / entry * 100
+        p['pnl_pct'] = round(forced, 2)
+        p['pnl_usd'] = round(pos_size * (forced / 100), 2)
         p['exit_price'] = target
         p['outcome'] = 'hit_target'
-        corrected = True
-
-    if corrected:
-        p['pnl_pct'] = round(pnl_pct, 2)
-        p['pnl_usd'] = round(pos_size * (pnl_pct / 100), 2)
         p['data_corrected'] = True
 
     return p
@@ -243,7 +267,7 @@ picks_by_ticker = {p.get('ticker'): p for p in picks}
 pr = [validate_pick(p, picks_by_ticker.get(p.get('ticker'), {})) for p in review_data.get('picks_review', [])]
 review_data['picks_review'] = pr
 
-# Portfolio update — denní režim, žádné open_positions
+# Portfolio update — vždy čisté open_positions
 real_pnl_usd = sum(float(p.get('pnl_usd') or 0) for p in pr)
 new_capital = round(portfolio['current_capital'] + real_pnl_usd, 2)
 if new_capital <= 0 or new_capital > 10_000_000:
@@ -259,8 +283,6 @@ portfolio['peak_capital'] = max(portfolio['peak_capital'], new_capital)
 portfolio['total_trades'] += len(pr)
 portfolio['winning_trades'] += sum(1 for p in pr if float(p.get('pnl_usd') or 0) > 0)
 portfolio['losing_trades'] += sum(1 for p in pr if float(p.get('pnl_usd') or 0) <= 0)
-
-# Vždy prázdné open_positions v denním režimu
 portfolio['open_positions'] = []
 
 portfolio['equity_curve'].append({
