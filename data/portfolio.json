@@ -1,10 +1,10 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 104201.95,
+  "current_capital": 103757.92,
   "peak_capital": 104201.95,
-  "total_trades": 35,
-  "winning_trades": 17,
-  "losing_trades": 18,
+  "total_trades": 38,
+  "winning_trades": 18,
+  "losing_trades": 20,
   "equity_curve": [
     {
       "date": "2026-06-17",
@@ -140,6 +140,15 @@
       "grade": "B",
       "avg_mae": -2.49,
       "avg_mfe": 3.66
+    },
+    {
+      "date": "2026-07-10",
+      "day_of_week": "Friday",
+      "value": 103757.92,
+      "pnl_usd": -444.03,
+      "grade": "D",
+      "avg_mae": -1.16,
+      "avg_mfe": 1.81
     }
   ],
   "open_positions": [],
@@ -703,6 +712,54 @@
       "probability_pct": 60,
       "probability_verdict": "overconfident",
       "data_corrected": false
+    },
+    {
+      "date": "2026-07-10",
+      "day_of_week": "Friday",
+      "ticker": "MU",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": -1.81,
+      "pnl_usd": -470.37,
+      "position_size_usd": 26000.0,
+      "mae_pct": -1.56,
+      "mfe_pct": 4.42,
+      "trade_quality": "poor",
+      "probability_pct": 58,
+      "probability_verdict": "overconfident",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-10",
+      "day_of_week": "Friday",
+      "ticker": "XOM",
+      "direction": "short",
+      "outcome": "closed_eod",
+      "pnl_pct": -0.44,
+      "pnl_usd": -88.95,
+      "position_size_usd": 20000.0,
+      "mae_pct": -1.17,
+      "mfe_pct": 0.25,
+      "trade_quality": "scratchy",
+      "probability_pct": 55,
+      "probability_verdict": "calibrated",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-10",
+      "day_of_week": "Friday",
+      "ticker": "CVX",
+      "direction": "short",
+      "outcome": "closed_eod",
+      "pnl_pct": 0.58,
+      "pnl_usd": 115.29,
+      "position_size_usd": 20000.0,
+      "mae_pct": -0.75,
+      "mfe_pct": 0.75,
+      "trade_quality": "scratchy",
+      "probability_pct": 52,
+      "probability_verdict": "calibrated",
+      "data_corrected": true
     }
   ]
 }
