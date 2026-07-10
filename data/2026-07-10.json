@@ -1,0 +1,182 @@
+{
+  "date": "2026-07-10",
+  "brief": {
+    "generated_at": "2026-07-10T06:15:00Z",
+    "market_date": "Friday, July 10, 2026",
+    "date_key": "2026-07-10",
+    "day_of_week": "Friday",
+    "trading_mode": "intraday",
+    "snapshot": {
+      "sp500_futures": "7543.64 +0.03%",
+      "nasdaq_futures": "26206.89 -0.2%",
+      "dow_futures": "52487.41 +0.2%",
+      "vix": "15.84",
+      "us10y": "4.6%",
+      "dxy": "unavailable",
+      "crude_oil": "$72.14 WTI",
+      "gold": "$4115"
+    },
+    "market_context": {
+      "vix_regime": "low",
+      "options_pcr": "unavailable",
+      "market_volume": "below_average",
+      "earnings_today": [
+        "DAL: pre-market"
+      ],
+      "insider_activity_summary": "Smíšená aktivita, IBEX CEO tax-withholding 4511 akcií, obecně nízká aktivita poslední 2 dny"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 52,
+    "key_themes": [
+      "SK Hynix IPO debut",
+      "Chip sector volatility",
+      "Iran-US tensions easing"
+    ],
+    "macro_summary": "US-Iran memo podepsáno 18.6., Strait Hormuz se otevírá. Fed drží sazby, trh čeká September hike 63%. Oil klesl z $85 na $72.",
+    "afterhours_summary": "Chip stocks odrazily včera +2.5% SMH, Micron +4.5%, Meta +4% na AI chipy. SK Hynix IPO dnes největší zahraniční listing.",
+    "geopolitical_summary": "Hormuz partial reopen, Trump říká Iran ceasefire over. Oil prices stabilizují kolem $72-76 po peak $117 v dubnu.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "Chip stocks volatile, SK Hynix IPO test"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Vyšší yieldy tlačí ocenění"
+      },
+      {
+        "name": "Energy",
+        "signal": "bearish",
+        "score": 35,
+        "reason": "Oil pullback z peaks, Iran deal progress"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "bullish",
+        "score": 65,
+        "reason": "Sector breakout, rotace z tech"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 48,
+        "reason": "Delta earnings focus, fuel costs"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "MU",
+        "company": "Micron Technology Inc.",
+        "current_price_verified": 973.7,
+        "price_source": "Robinhood/TradingView verified July 10 2026",
+        "direction": "long",
+        "entry_price": 975.0,
+        "target_price": 995.0,
+        "stop_loss": 965.0,
+        "target_pct": 2.05,
+        "stop_pct": -1.03,
+        "position_size_usd": 26000.0,
+        "holding_days": 1,
+        "risk_reward": "1:2.0",
+        "confidence": "medium",
+        "thesis_macro": "HBM demand shortage, AI memory kritický bottleneck supply secured",
+        "thesis_technical": "Bounce z $976 support, zkouší retest $1000 úrovně denní",
+        "thesis_catalyst": "SK Hynix IPO dnes spotlight na memory sector shortage",
+        "thesis_options": "Vysoká volatilita implied na earnings, call bias",
+        "thesis_short_interest": "Short interest 3.2%, SK Hynix fear overblown",
+        "thesis_insider": "CEO prodal $45M ale stock commitment agreements secured",
+        "thesis_volume": "41M vs avg 55M, bottom fishing institutional",
+        "thesis_correlation": "Memory sub-sector odlišný od GPU/AI chip majors",
+        "thesis_risk": "SK Hynix pricing competition, HBM oversupply fears",
+        "entry_logic": "Near support $973-976, bounce pattern confirmed yesterday",
+        "exit_logic": "$995 intraday resistance, 2% realistický na volatility bounce",
+        "probability_pct": 58,
+        "probability_reasoning": "Memory shortage real, SK Hynix IPO spotlight catalyst pozitivní",
+        "catalysts": [
+          "SK Hynix IPO",
+          "Memory shortage narrative"
+        ]
+      },
+      {
+        "ticker": "XOM",
+        "company": "ExxonMobil Holdings Corp.",
+        "current_price_verified": 137.46,
+        "price_source": "Investing.com verified July 10 2026",
+        "direction": "short",
+        "entry_price": 138.0,
+        "target_price": 135.0,
+        "stop_loss": 140.0,
+        "target_pct": -2.17,
+        "stop_pct": 1.45,
+        "position_size_usd": 20000.0,
+        "holding_days": 1,
+        "risk_reward": "1:1.5",
+        "confidence": "medium",
+        "thesis_macro": "Oil $72 vs peak $117, Iran deal progressing negatively pro oil majors",
+        "thesis_technical": "Breakdown z $141 support, testing $137 intraday low",
+        "thesis_catalyst": "Další pokles oil price očekáván, Hormuz partial reopening news",
+        "thesis_options": "Put/call ratio elevated, bearish sentiment on energy",
+        "thesis_short_interest": "Short interest low 1.8%, room pro downside acceleration",
+        "thesis_insider": "No significant activity, neutral to weak",
+        "thesis_volume": "6.44M vs avg 17.5M, low conviction bounce",
+        "thesis_correlation": "Energy sector general weakness, oil price direct correlation",
+        "thesis_risk": "Další Iran escalace náhlá, oil price spike",
+        "entry_logic": "$138 resistance now, failed bounce z $137.12 low",
+        "exit_logic": "$135 technická úroveň near-term realistic intraday target",
+        "probability_pct": 55,
+        "probability_reasoning": "Oil price trend down, pero geopolitical risk vysoký",
+        "catalysts": [
+          "Oil price decline",
+          "Iran peace deal progress"
+        ]
+      },
+      {
+        "ticker": "CVX",
+        "company": "Chevron Corporation",
+        "current_price_verified": 174.05,
+        "price_source": "CNN Markets verified July 9 2026 close",
+        "direction": "short",
+        "entry_price": 174.5,
+        "target_price": 171.0,
+        "stop_loss": 177.0,
+        "target_pct": -2.01,
+        "stop_pct": 1.43,
+        "position_size_usd": 20000.0,
+        "holding_days": 1,
+        "risk_reward": "1:1.4",
+        "confidence": "low",
+        "thesis_macro": "Oil major weakness na falling crude, Iran tensions easing",
+        "thesis_technical": "Lost $175 support, testing $172-174 range downside",
+        "thesis_catalyst": "Sector wide energy weakness, oil inventory builds expected",
+        "thesis_options": "Analysts downgrading targets, $197 TD Cowen from $205",
+        "thesis_short_interest": "Short interest 2.1%, modest bearish positioning",
+        "thesis_insider": "Minimal activity, no strong signal",
+        "thesis_volume": "Below average, lack of buy conviction",
+        "thesis_correlation": "Korelovaný s XOM ale Venezuela exposure diferenciace",
+        "thesis_risk": "Wolfie upgrade to Outperform včera, short squeeze risk",
+        "entry_logic": "$174.50 failed rally zone, resistance established",
+        "exit_logic": "$171 psychological support near $170 range test intraday",
+        "probability_pct": 52,
+        "probability_reasoning": "Oil trend bearish, ale recent analyst upgrade risk kontraindikátor",
+        "catalysts": [
+          "Oil price decline",
+          "Energy sector rotation out"
+        ]
+      }
+    ],
+    "portfolio_note": "Diverzifikace: 1 long semiconductor memory, 2 short energy majors. Celková alokace $66,000 z $104,201.95 available = 63% deployed, hedged risk oil vs tech. Energy shorts exploit oil pullback, MU long catches SK Hynix IPO spotlight memory bounce.",
+    "risks": [
+      "SK Hynix IPO zklamání může stáhnout MU dolů",
+      "Náhlá Iran escalace vrátí oil $80+ destroyí energy shorts",
+      "General market selloff na Friday profit-taking pre-weekend"
+    ],
+    "data_freshness": "Ceny ověřeny July 10 2026 pre-market a July 9 close data. Futures, VIX a commodities aktuální k 6:00 AM ET July 10."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-07-10T13:16:56.825544"
+}
