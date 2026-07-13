@@ -1,0 +1,24 @@
+name: Recalculate PnL
+
+on:
+  workflow_dispatch:
+
+jobs:
+  recalculate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Run recalculation
+        run: python scripts/recalculate_pnl.py
+      - name: Commit and push
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "Market Brief Bot"
+          git add data/
+          git diff --staged --quiet || git commit -m "Recalculate P&L for SHORT positions"
+          git push
