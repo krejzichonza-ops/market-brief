@@ -263,9 +263,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "stopped_out",
-        "pnl_pct": -4.35,
+        "pnl_pct": -8.33,
         "position_size_usd": 22000.0,
-        "pnl_usd": -957.0,
+        "pnl_usd": -1833.33,
         "grade": "D",
         "mae_pct": -10.58,
         "mfe_pct": 7.1,
@@ -283,7 +283,8 @@
         "what_failed": "Market sold news hard despite positive catalyst, stop příliš těsně pod entry při extreme volatility, nepočítal jsem s profit-taking po 505% yearly gain",
         "original_probability_pct": 72,
         "probability_verdict": "overconfident",
-        "probability_comment": "72% confidence neodrážela extreme profit-taking risk po masivní rally a volatility spike post-gap"
+        "probability_comment": "72% confidence neodrážela extreme profit-taking risk po masivní rally a volatility spike post-gap",
+        "data_corrected": true
       },
       {
         "ticker": "AMD",
@@ -333,9 +334,9 @@
         "direction": "long",
         "holding_days": 1,
         "outcome": "held_open",
-        "pnl_pct": 2.46,
+        "pnl_pct": -7.13,
         "position_size_usd": 18000.0,
-        "pnl_usd": 442.8,
+        "pnl_usd": -1283.91,
         "grade": "C",
         "mae_pct": -11.7,
         "mfe_pct": 11.27,
@@ -353,7 +354,8 @@
         "what_failed": "<cite index=\"22-1\">Stock dropped -8.3% k $56.70 na earnings</cite>, <cite index=\"23-3,23-6\">operating margin 1.3%, margin pressure z rising costs</cite>, whisper beat se nepotvrdil",
         "original_probability_pct": 62,
         "probability_verdict": "calibrated",
-        "probability_comment": "62% confidence adekvátní pro earnings gamble s mixed outcome - přežili jsme miss díky recovery"
+        "probability_comment": "62% confidence adekvátní pro earnings gamble s mixed outcome - přežili jsme miss díky recovery",
+        "data_corrected": true
       },
       {
         "ticker": "XLE",
@@ -368,9 +370,9 @@
         "direction": "short",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": 0.86,
+        "pnl_pct": 1.28,
         "position_size_usd": 19000.0,
-        "pnl_usd": 163.4,
+        "pnl_usd": 243.94,
         "grade": "F",
         "mae_pct": 0.11,
         "mfe_pct": 1.34,
@@ -388,7 +390,8 @@
         "what_failed": "Projected entry $87.20 vs actual trading ~$55 = catastrophic data error, všechny technické úrovně irelevantní, fundamentální failure v research process",
         "original_probability_pct": 64,
         "probability_verdict": "overconfident",
-        "probability_comment": "Jakákoliv confidence meaningless když entry price o 60% od reality - systémový failure v data validation"
+        "probability_comment": "Jakákoliv confidence meaningless když entry price o 60% od reality - systémový failure v data validation",
+        "data_corrected": true
       },
       {
         "ticker": "MU",
@@ -428,7 +431,7 @@
     ],
     "portfolio_summary": {
       "capital_deployed": 101069.44,
-      "total_pnl_usd": -957.0,
+      "total_pnl_usd": -3884.48,
       "total_pnl_pct": -1.35,
       "positions_closed_today": [
         "INTC"

@@ -256,9 +256,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "missed_entry",
-        "pnl_pct": 0.0,
+        "pnl_pct": -3.57,
         "position_size_usd": 25000.0,
-        "pnl_usd": 0.0,
+        "pnl_usd": -892.08,
         "grade": "F",
         "mae_pct": 0.0,
         "mfe_pct": 0.0,
@@ -276,7 +276,8 @@
         "what_failed": "Entry level nerealisticky low, pre-positioning úplně minul rally timing",
         "original_probability_pct": 68,
         "probability_verdict": "underconfident",
-        "probability_comment": "68% bylo konzervativní — rally byl silnější, ale entry fail = moot point"
+        "probability_comment": "68% bylo konzervativní — rally byl silnější, ale entry fail = moot point",
+        "data_corrected": true
       },
       {
         "ticker": "MRVL",
@@ -291,9 +292,9 @@
         "direction": "long",
         "holding_days": 3,
         "outcome": "held_open",
-        "pnl_pct": 2.79,
+        "pnl_pct": -8.67,
         "position_size_usd": 20000.0,
-        "pnl_usd": 558.0,
+        "pnl_usd": -1733.75,
         "grade": "B",
         "mae_pct": 2.44,
         "mfe_pct": 4.18,
@@ -311,7 +312,8 @@
         "what_failed": "Holding přes víkend risk vysoký — target $302 těsně missed, profit nezajištěn",
         "original_probability_pct": 72,
         "probability_verdict": "calibrated",
-        "probability_comment": "72% bylo realistické — event-driven setup delivered, ale execution mohla být čistší"
+        "probability_comment": "72% bylo realistické — event-driven setup delivered, ale execution mohla být čistší",
+        "data_corrected": true
       },
       {
         "ticker": "XLE",
@@ -326,9 +328,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "stopped_out",
-        "pnl_pct": -35.35,
+        "pnl_pct": -1.42,
         "position_size_usd": 22000.0,
-        "pnl_usd": -7777.0,
+        "pnl_usd": -312.14,
         "grade": "F",
         "mae_pct": 35.39,
         "mfe_pct": 0.89,
@@ -346,7 +348,8 @@
         "what_failed": "Data validation failure — $89 entry vs $58 actual = neproveditelné",
         "original_probability_pct": 62,
         "probability_verdict": "overconfident",
-        "probability_comment": "62% irelevantní když entry pricing úplně špatně — data hygiene selhání"
+        "probability_comment": "62% irelevantní když entry pricing úplně špatně — data hygiene selhání",
+        "data_corrected": true
       },
       {
         "ticker": "GLW",
@@ -361,9 +364,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "stopped_out",
-        "pnl_pct": -3.44,
+        "pnl_pct": -1.08,
         "position_size_usd": 18000.0,
-        "pnl_usd": -619.2,
+        "pnl_usd": -194.85,
         "grade": "C",
         "mae_pct": 7.44,
         "mfe_pct": 1.9,
@@ -379,7 +382,8 @@
         "what_failed": "Gap fade risk underestimovaný — profit takers vyhráli, stop př příliš těsný",
         "original_probability_pct": 65,
         "probability_verdict": "calibrated",
-        "probability_comment": "65% bylo fair — deal delivered ale gap fade risk = coin flip, stop hit je v rámci"
+        "probability_comment": "65% bylo fair — deal delivered ale gap fade risk = coin flip, stop hit je v rámci",
+        "data_corrected": true
       },
       {
         "ticker": "AAPL",
@@ -394,9 +398,9 @@
         "direction": "long",
         "holding_days": 3,
         "outcome": "held_open",
-        "pnl_pct": 1.46,
+        "pnl_pct": 1.17,
         "position_size_usd": 15000.0,
-        "pnl_usd": 219.0,
+        "pnl_usd": 175.8,
         "grade": "B",
         "mae_pct": 0.17,
         "mfe_pct": 2.1,
@@ -412,12 +416,13 @@
         "what_failed": "Target $320 ještě nedosažen — holding přes event risk volatilní",
         "original_probability_pct": 58,
         "probability_verdict": "calibrated",
-        "probability_comment": "58% coin flip byla realistická — WWDC je binary event, zatím holding tepid"
+        "probability_comment": "58% coin flip byla realistická — WWDC je binary event, zatím holding tepid",
+        "data_corrected": true
       }
     ],
     "portfolio_summary": {
       "capital_deployed": 55000.0,
-      "total_pnl_usd": -7619.2,
+      "total_pnl_usd": -2957.02,
       "total_pnl_pct": -13.85,
       "positions_closed_today": [
         "GLW",

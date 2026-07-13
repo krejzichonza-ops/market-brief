@@ -260,9 +260,9 @@
         "direction": "long",
         "holding_days": 1,
         "outcome": "held_open",
-        "pnl_pct": 1.61,
+        "pnl_pct": 1.4,
         "position_size_usd": 22000.0,
-        "pnl_usd": 354.2,
+        "pnl_usd": 306.95,
         "grade": "B",
         "mae_pct": -0.54,
         "mfe_pct": 1.94,
@@ -280,7 +280,8 @@
         "what_failed": "n/a — holding_days=2 nezavřeno",
         "original_probability_pct": 68,
         "probability_verdict": "calibrated",
-        "probability_comment": "68% confidence a +1.6% první den = přiměřené očekávání"
+        "probability_comment": "68% confidence a +1.6% první den = přiměřené očekávání",
+        "data_corrected": true
       },
       {
         "ticker": "PG",
@@ -295,9 +296,9 @@
         "direction": "long",
         "holding_days": 1,
         "outcome": "missed_entry",
-        "pnl_pct": 0.0,
+        "pnl_pct": -1.07,
         "position_size_usd": 20000.0,
-        "pnl_usd": 0.0,
+        "pnl_usd": -213.19,
         "grade": "F",
         "mae_pct": 0.0,
         "mfe_pct": 0.0,
@@ -315,7 +316,8 @@
         "what_failed": "Fundamentální selhání přípravy — entry $168 vs skutečný $150 = -$18 miss",
         "original_probability_pct": 62,
         "probability_verdict": "n/a",
-        "probability_comment": "Nemožné hodnotit — obchod nenastal kvůli špatné entry"
+        "probability_comment": "Nemožné hodnotit — obchod nenastal kvůli špatné entry",
+        "data_corrected": true
       },
       {
         "ticker": "CAT",
@@ -330,9 +332,9 @@
         "direction": "long",
         "holding_days": 1,
         "outcome": "stopped_out",
-        "pnl_pct": -1.46,
+        "pnl_pct": -58.84,
         "position_size_usd": 20000.0,
-        "pnl_usd": -292.0,
+        "pnl_usd": -11768.88,
         "grade": "F",
         "mae_pct": -3.7,
         "mfe_pct": 0.91,
@@ -350,7 +352,8 @@
         "what_failed": "Kompletní selhání přípravy — CAT obchoduje $985 ne $412, <cite index=\"91-5,91-9\">stretched valuace 49x PE a AI rally vyčerpání</cite>",
         "original_probability_pct": 58,
         "probability_verdict": "overconfident",
-        "probability_comment": "58% confidence ignorovalo stretched valuaci a $573 miss v entry"
+        "probability_comment": "58% confidence ignorovalo stretched valuaci a $573 miss v entry",
+        "data_corrected": true
       },
       {
         "ticker": "XLU",
@@ -365,9 +368,9 @@
         "direction": "long",
         "holding_days": 1,
         "outcome": "missed_entry",
-        "pnl_pct": 0.0,
+        "pnl_pct": 0.16,
         "position_size_usd": 18112.44,
-        "pnl_usd": 0.0,
+        "pnl_usd": 28.29,
         "grade": "F",
         "mae_pct": 0.0,
         "mfe_pct": 0.0,
@@ -385,7 +388,8 @@
         "what_failed": "Zásadní přípravná chyba — XLU entry $72.5 vs real $44.88 = -$27.62 miss",
         "original_probability_pct": 60,
         "probability_verdict": "n/a",
-        "probability_comment": "Nemožné hodnotit — missed entry kvůli špatným datům"
+        "probability_comment": "Nemožné hodnotit — missed entry kvůli špatným datům",
+        "data_corrected": true
       },
       {
         "ticker": "WM",
@@ -400,9 +404,9 @@
         "direction": "long",
         "holding_days": 1,
         "outcome": "held_open",
-        "pnl_pct": -1.12,
+        "pnl_pct": -0.43,
         "position_size_usd": 20000.0,
-        "pnl_usd": -224.0,
+        "pnl_usd": -85.91,
         "grade": "D",
         "mae_pct": -1.78,
         "mfe_pct": 0.0,
@@ -420,12 +424,13 @@
         "what_failed": "Defensivní premise podcenila tech sell-off dopad, MAE -1.78% málem hit stop",
         "original_probability_pct": 63,
         "probability_verdict": "overconfident",
-        "probability_comment": "63% confidence ignorovalo broad market risk — defensivní stock -1.12%"
+        "probability_comment": "63% confidence ignorovalo broad market risk — defensivní stock -1.12%",
+        "data_corrected": true
       }
     ],
     "portfolio_summary": {
       "capital_deployed": 62000.0,
-      "total_pnl_usd": -292.0,
+      "total_pnl_usd": -11732.74,
       "total_pnl_pct": -0.26,
       "positions_closed_today": [],
       "positions_held_open": [

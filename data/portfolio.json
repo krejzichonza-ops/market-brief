@@ -1,7 +1,7 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 103757.92,
-  "peak_capital": 104201.95,
+  "current_capital": 85507.06,
+  "peak_capital": 100000.0,
   "total_trades": 38,
   "winning_trades": 18,
   "losing_trades": 20,
@@ -9,8 +9,8 @@
     {
       "date": "2026-06-17",
       "day_of_week": "Wednesday",
-      "value": 101069.44,
-      "pnl_usd": 1069.44,
+      "value": 96082.36,
+      "pnl_usd": -3917.64,
       "grade": "D",
       "avg_mae": -1.26,
       "avg_mfe": 1.67
@@ -18,8 +18,8 @@
     {
       "date": "2026-06-18",
       "day_of_week": "Thursday",
-      "value": 100112.44,
-      "pnl_usd": -957.0,
+      "value": 92197.88,
+      "pnl_usd": -3884.48,
       "grade": "B",
       "avg_mae": -6.19,
       "avg_mfe": 4.68
@@ -27,8 +27,8 @@
     {
       "date": "2026-06-19",
       "day_of_week": "Friday",
-      "value": 100112.44,
-      "pnl_usd": 0,
+      "value": 92197.88,
+      "pnl_usd": 0.0,
       "grade": "N/A",
       "avg_mae": 0.0,
       "avg_mfe": 0.0
@@ -36,8 +36,8 @@
     {
       "date": "2026-06-22",
       "day_of_week": "Monday",
-      "value": 100112.44,
-      "pnl_usd": 0,
+      "value": 93806.34,
+      "pnl_usd": 1608.46,
       "grade": "C",
       "avg_mae": 3.64,
       "avg_mfe": 3.39
@@ -45,8 +45,8 @@
     {
       "date": "2026-06-23",
       "day_of_week": "Tuesday",
-      "value": 99820.44,
-      "pnl_usd": -292.0,
+      "value": 82073.6,
+      "pnl_usd": -11732.74,
       "grade": "D",
       "avg_mae": -2.01,
       "avg_mfe": 0.95
@@ -54,8 +54,8 @@
     {
       "date": "2026-06-24",
       "day_of_week": "Wednesday",
-      "value": 99820.44,
-      "pnl_usd": 0,
+      "value": 82712.24,
+      "pnl_usd": 638.64,
       "grade": "B",
       "avg_mae": 3.81,
       "avg_mfe": 3.09
@@ -63,8 +63,8 @@
     {
       "date": "2026-06-25",
       "day_of_week": "Thursday",
-      "value": 101999.08,
-      "pnl_usd": 2178.64,
+      "value": 83713.56,
+      "pnl_usd": 1001.32,
       "grade": "B",
       "avg_mae": 0.58,
       "avg_mfe": 7.39
@@ -72,8 +72,8 @@
     {
       "date": "2026-06-30",
       "day_of_week": "Tuesday",
-      "value": 101999.08,
-      "pnl_usd": 0,
+      "value": 83748.22,
+      "pnl_usd": 34.66,
       "grade": "B",
       "avg_mae": 1.02,
       "avg_mfe": 0.78
@@ -81,7 +81,7 @@
     {
       "date": "2026-07-01",
       "day_of_week": "Wednesday",
-      "value": 99916.63,
+      "value": 81665.77,
       "pnl_usd": -2082.45,
       "grade": "D",
       "avg_mae": -4.34,
@@ -90,7 +90,7 @@
     {
       "date": "2026-07-02",
       "day_of_week": "Thursday",
-      "value": 100273.81,
+      "value": 82022.95,
       "pnl_usd": 357.18,
       "grade": "C",
       "avg_mae": -1.08,
@@ -99,8 +99,8 @@
     {
       "date": "2026-07-03",
       "day_of_week": "Friday",
-      "value": 100273.81,
-      "pnl_usd": 0,
+      "value": 82022.95,
+      "pnl_usd": 0.0,
       "grade": "N/A",
       "avg_mae": 0.0,
       "avg_mfe": 0.0
@@ -108,7 +108,7 @@
     {
       "date": "2026-07-06",
       "day_of_week": "Monday",
-      "value": 101312.1,
+      "value": 83061.24,
       "pnl_usd": 1038.29,
       "grade": "C",
       "avg_mae": -0.36,
@@ -117,7 +117,7 @@
     {
       "date": "2026-07-07",
       "day_of_week": "Tuesday",
-      "value": 103249.74,
+      "value": 84998.88,
       "pnl_usd": 1937.64,
       "grade": "D",
       "avg_mae": -0.11,
@@ -126,7 +126,7 @@
     {
       "date": "2026-07-08",
       "day_of_week": "Wednesday",
-      "value": 101484.47,
+      "value": 83233.61,
       "pnl_usd": -1765.27,
       "grade": "C",
       "avg_mae": -0.13,
@@ -135,7 +135,7 @@
     {
       "date": "2026-07-09",
       "day_of_week": "Thursday",
-      "value": 104201.95,
+      "value": 85951.09,
       "pnl_usd": 2717.48,
       "grade": "B",
       "avg_mae": -2.49,
@@ -144,7 +144,7 @@
     {
       "date": "2026-07-10",
       "day_of_week": "Friday",
-      "value": 103757.92,
+      "value": 85507.06,
       "pnl_usd": -444.03,
       "grade": "D",
       "avg_mae": -1.16,

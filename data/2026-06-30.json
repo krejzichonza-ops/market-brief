@@ -223,9 +223,9 @@
         "direction": "long",
         "holding_days": 1,
         "outcome": "held_open",
-        "pnl_pct": 0.91,
+        "pnl_pct": -0.06,
         "position_size_usd": 25000.0,
-        "pnl_usd": 227.5,
+        "pnl_usd": -14.84,
         "grade": "B",
         "mae_pct": 0.98,
         "mfe_pct": 0.29,
@@ -243,7 +243,8 @@
         "what_failed": "Intraday volatilita lower než expected, volume 11M vs. 25M projected – možná profit-taking",
         "original_probability_pct": 70,
         "probability_verdict": "calibrated",
-        "probability_comment": "70% confidence byla adekvátní – catalyst fungoval, ale full target nebyl dosažen"
+        "probability_comment": "70% confidence byla adekvátní – catalyst fungoval, ale full target nebyl dosažen",
+        "data_corrected": true
       },
       {
         "ticker": "NKE",
@@ -353,7 +354,7 @@
     ],
     "portfolio_summary": {
       "capital_deployed": 90000.0,
-      "total_pnl_usd": 0,
+      "total_pnl_usd": 34.66,
       "total_pnl_pct": 0.31,
       "positions_closed_today": [],
       "positions_held_open": [

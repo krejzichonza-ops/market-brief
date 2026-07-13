@@ -216,9 +216,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": -28.1,
+        "pnl_pct": 5.47,
         "position_size_usd": 25000.0,
-        "pnl_usd": -7025.0,
+        "pnl_usd": 1368.7,
         "grade": "F",
         "mae_pct": 31.82,
         "mfe_pct": 8.23,
@@ -236,7 +236,8 @@
         "what_failed": "Vstupní cena $553 je zcela chybná – akcie nikdy neobchodovala na této úrovni v tomto období. Data error způsobil nesprávné P&L tracking.",
         "original_probability_pct": 68,
         "probability_verdict": "underconfident",
-        "probability_comment": "68% bylo příliš konzervativní – setup byl čistší a rotace silnější než očekáváno, 75-80% by bylo přesnější."
+        "probability_comment": "68% bylo příliš konzervativní – setup byl čistší a rotace silnější než očekáváno, 75-80% by bylo přesnější.",
+        "data_corrected": true
       },
       {
         "ticker": "JPM",
@@ -252,9 +253,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": 42.24,
+        "pnl_pct": 3.33,
         "position_size_usd": 23000.0,
-        "pnl_usd": 9715.2,
+        "pnl_usd": 766.03,
         "grade": "F",
         "mae_pct": 0.0,
         "mfe_pct": 4.01,
@@ -272,7 +273,8 @@
         "what_failed": "Vstupní cena $218.50 je chybná – JPM obchodoval mnohem výše ~$301. Data inconsistency zkreslila P&L výpočet.",
         "original_probability_pct": 65,
         "probability_verdict": "underconfident",
-        "probability_comment": "65% bylo příliš nízké – všechny konfluence se sešly (tech rotation, rates up, NFP strong, volume confirming), 72-75% by bylo přesnější."
+        "probability_comment": "65% bylo příliš nízké – všechny konfluence se sešly (tech rotation, rates up, NFP strong, volume confirming), 72-75% by bylo přesnější.",
+        "data_corrected": true
       },
       {
         "ticker": "XLE",
@@ -288,9 +290,9 @@
         "direction": "long",
         "holding_days": 3,
         "outcome": "held_open",
-        "pnl_pct": -36.96,
+        "pnl_pct": 0.57,
         "position_size_usd": 22000.0,
-        "pnl_usd": -8131.2,
+        "pnl_usd": 124.81,
         "grade": "D",
         "mae_pct": 0.0,
         "mfe_pct": 1.48,
@@ -308,12 +310,13 @@
         "what_failed": "Timing byl špatný – ceasefire momentum překonal supply concerns near-term. Technický setup neposkytl confirmation přede vstupem. Low conviction volume byl red flag.",
         "original_probability_pct": 58,
         "probability_verdict": "calibrated",
-        "probability_comment": "58% bylo férové – vysoká uncertainty kolem geopolitiky a technický setup nebyl čistý. Toto byl správně nižší conviction trade."
+        "probability_comment": "58% bylo férové – vysoká uncertainty kolem geopolitiky a technický setup nebyl čistý. Toto byl správně nižší conviction trade.",
+        "data_corrected": true
       }
     ],
     "portfolio_summary": {
       "capital_deployed": 70000.0,
-      "total_pnl_usd": -5441.0,
+      "total_pnl_usd": 2259.54,
       "total_pnl_pct": -7.77,
       "positions_closed_today": [],
       "positions_held_open": [

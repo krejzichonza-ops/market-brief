@@ -261,9 +261,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": 0.0,
+        "pnl_pct": 4.68,
         "position_size_usd": 22000.0,
-        "pnl_usd": 0.0,
+        "pnl_usd": 1029.07,
         "grade": "A",
         "mae_pct": -2.65,
         "mfe_pct": 4.89,
@@ -281,7 +281,8 @@
         "what_failed": "Entry $105.50 kompletně minuta — gap +14.5% vytvoril chase dilemma; target $116 byl příliš konservativní (+9.95% vs. skutečný intraday +13%)",
         "original_probability_pct": 68,
         "probability_verdict": "underconfident",
-        "probability_comment": "68% bylo příliš opatrné — kombinace upgrade + foundry zpráv + macro relief měla warranted 75%+ confidence"
+        "probability_comment": "68% bylo příliš opatrné — kombinace upgrade + foundry zpráv + macro relief měla warranted 75%+ confidence",
+        "data_corrected": true
       },
       {
         "ticker": "MU",
@@ -296,9 +297,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "missed_entry",
-        "pnl_pct": 0.0,
+        "pnl_pct": 2.48,
         "position_size_usd": 20000.0,
-        "pnl_usd": 0.0,
+        "pnl_usd": 495.16,
         "grade": "C",
         "mae_pct": 0.0,
         "mfe_pct": 0.0,
@@ -316,7 +317,8 @@
         "what_failed": "Fundamentální chyba v entry pricing — stock už byl -6.9% pod $1070 na opening bell kvůli pokračující korekci z ATH $1089 (June 3); technická analýza ignorovala realitu Wednesday close $891.88",
         "original_probability_pct": 63,
         "probability_verdict": "overconfident",
-        "probability_comment": "63% bylo příliš optimistické — entry $1070 měla být adjusted dolů po Wednesday close $891.88; smartphone demand headwinds podceněny"
+        "probability_comment": "63% bylo příliš optimistické — entry $1070 měla být adjusted dolů po Wednesday close $891.88; smartphone demand headwinds podceněny",
+        "data_corrected": true
       },
       {
         "ticker": "KO",
@@ -331,9 +333,9 @@
         "direction": "long",
         "holding_days": 3,
         "outcome": "missed_entry",
-        "pnl_pct": 0.0,
+        "pnl_pct": -0.37,
         "position_size_usd": 18000.0,
-        "pnl_usd": 0.0,
+        "pnl_usd": -66.49,
         "grade": "B",
         "mae_pct": 0.0,
         "mfe_pct": 0.0,
@@ -351,7 +353,8 @@
         "what_failed": "Entry $82.50 příliš greedy — měla být $83.00-83.50 range order po Wednesday close $83.59; defensive rotation teze podkopána risk-on rally",
         "original_probability_pct": 72,
         "probability_verdict": "calibrated",
-        "probability_comment": "72% korektní pro directional call, ale execution risk (tight entry) nebyl faktored do probability"
+        "probability_comment": "72% korektní pro directional call, ale execution risk (tight entry) nebyl faktored do probability",
+        "data_corrected": true
       },
       {
         "ticker": "CAT",
@@ -366,9 +369,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": 0.0,
+        "pnl_pct": -0.84,
         "position_size_usd": 20000.0,
-        "pnl_usd": 0.0,
+        "pnl_usd": -168.13,
         "grade": "A",
         "mae_pct": -0.65,
         "mfe_pct": 1.52,
@@ -386,7 +389,8 @@
         "what_failed": "Fundamentální DATA ERROR v projected entry $415 vs. skutečný price ~$900 —nemožné hodnotit trade setup; target $432 (+4.1%) také irelevantní",
         "original_probability_pct": 60,
         "probability_verdict": "calibrated",
-        "probability_comment": "60% reasonable pro cyclical bounce, ale entry price error znemožňuje skutečné probability assessment"
+        "probability_comment": "60% reasonable pro cyclical bounce, ale entry price error znemožňuje skutečné probability assessment",
+        "data_corrected": true
       },
       {
         "ticker": "TJX",
@@ -401,9 +405,9 @@
         "direction": "long",
         "holding_days": 3,
         "outcome": "held_open",
-        "pnl_pct": 0.0,
+        "pnl_pct": 0.35,
         "position_size_usd": 20000.0,
-        "pnl_usd": 0.0,
+        "pnl_usd": 70.34,
         "grade": "A",
         "mae_pct": -0.25,
         "mfe_pct": 1.34,
@@ -421,12 +425,13 @@
         "what_failed": "Fundamentální DATA ERROR v projected entry $128 vs. skutečný price ~$168 — nemožné hodnotit setup; insider sell $168.595 (director) může signalizovat near-term top",
         "original_probability_pct": 65,
         "probability_verdict": "calibrated",
-        "probability_comment": "65% reasonable pro ATH consolidation breakout, ale entry price error + insider sell warning flag podceněny"
+        "probability_comment": "65% reasonable pro ATH consolidation breakout, ale entry price error + insider sell warning flag podceněny",
+        "data_corrected": true
       }
     ],
     "portfolio_summary": {
       "capital_deployed": 22000.0,
-      "total_pnl_usd": 0.0,
+      "total_pnl_usd": 1359.95,
       "total_pnl_pct": 0.0,
       "positions_closed_today": [],
       "positions_held_open": [

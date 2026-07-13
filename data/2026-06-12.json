@@ -262,9 +262,9 @@
         "direction": "long",
         "holding_days": 1,
         "outcome": "missed_entry",
-        "pnl_pct": 0.0,
+        "pnl_pct": 0.25,
         "position_size_usd": 22000.0,
-        "pnl_usd": 0.0,
+        "pnl_usd": 55.38,
         "grade": "F",
         "mae_pct": 0.0,
         "mfe_pct": 0.0,
@@ -282,7 +282,8 @@
         "what_failed": "Entry předpověď kompletně vedle, SpaceX IPO převzal pozornost od ostatních aerospace, data starší než předpokládáno",
         "original_probability_pct": 68,
         "probability_verdict": "overconfident",
-        "probability_comment": "68% pravděpodobnost úspěchu s entry miss je irelevantní — fundamentální chyba v execution plánování."
+        "probability_comment": "68% pravděpodobnost úspěchu s entry miss je irelevantní — fundamentální chyba v execution plánování.",
+        "data_corrected": true
       },
       {
         "ticker": "JPM",
@@ -332,9 +333,9 @@
         "direction": "long",
         "holding_days": 1,
         "outcome": "stopped_out",
-        "pnl_pct": -2.61,
+        "pnl_pct": 5.08,
         "position_size_usd": 18000.0,
-        "pnl_usd": -469.57,
+        "pnl_usd": 913.59,
         "grade": "F",
         "mae_pct": 10.22,
         "mfe_pct": 6.94,
@@ -368,9 +369,9 @@
         "direction": "short",
         "holding_days": 1,
         "outcome": "held_open",
-        "pnl_pct": 0.66,
+        "pnl_pct": -1.04,
         "position_size_usd": 20000.0,
-        "pnl_usd": 132.0,
+        "pnl_usd": -207.78,
         "grade": "C",
         "mae_pct": 1.34,
         "mfe_pct": 0.29,
@@ -388,7 +389,8 @@
         "what_failed": "Cenové úrovně kompletně nealigned s realitou, pravděpodobně používáme staré data nebo jiný ticker",
         "original_probability_pct": 65,
         "probability_verdict": "calibrated",
-        "probability_comment": "65% bylo správné — energy klesla na peace news přesně dle očekávání, execution byl issue."
+        "probability_comment": "65% bylo správné — energy klesla na peace news přesně dle očekávání, execution byl issue.",
+        "data_corrected": true
       },
       {
         "ticker": "GLD",
@@ -428,7 +430,7 @@
     ],
     "portfolio_summary": {
       "capital_deployed": 100000.0,
-      "total_pnl_usd": -469.57,
+      "total_pnl_usd": 1273.09,
       "total_pnl_pct": -1.33,
       "positions_closed_today": [
         "RKLB"

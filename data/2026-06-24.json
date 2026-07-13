@@ -262,9 +262,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": -0.37,
+        "pnl_pct": -0.88,
         "position_size_usd": 20000.0,
-        "pnl_usd": -74.0,
+        "pnl_usd": -176.7,
         "grade": "B",
         "mae_pct": 1.66,
         "mfe_pct": 0.31,
@@ -282,7 +282,8 @@
         "what_failed": "BofA upgrade nedodal dostatečný momentum, Florida AG probe negative surprise, low volume signál slabé důvěry",
         "original_probability_pct": 68,
         "probability_verdict": "calibrated",
-        "probability_comment": "68% pravděpodobnost odpovídá scratchy performance, regulatory riziko podcenilo"
+        "probability_comment": "68% pravděpodobnost odpovídá scratchy performance, regulatory riziko podcenilo",
+        "data_corrected": true
       },
       {
         "ticker": "RUN",
@@ -297,9 +298,9 @@
         "direction": "long",
         "holding_days": 3,
         "outcome": "held_open",
-        "pnl_pct": 8.27,
+        "pnl_pct": 4.84,
         "position_size_usd": 18000.0,
-        "pnl_usd": 1488.6,
+        "pnl_usd": 871.53,
         "grade": "A",
         "mae_pct": 13.87,
         "mfe_pct": 11.93,
@@ -317,7 +318,8 @@
         "what_failed": "Entry $15.49 mírně vysoko, low $12.92 znamená stop by byl zasažen kdyby se držel přísně",
         "original_probability_pct": 55,
         "probability_verdict": "underconfident",
-        "probability_comment": "55% bylo příliš konzervativní, fundamenty solar + AI datacenter power silnější než očekáváno"
+        "probability_comment": "55% bylo příliš konzervativní, fundamenty solar + AI datacenter power silnější než očekáváno",
+        "data_corrected": true
       },
       {
         "ticker": "IBM",
@@ -332,9 +334,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": 3.67,
+        "pnl_pct": -0.23,
         "position_size_usd": 22000.0,
-        "pnl_usd": 807.4,
+        "pnl_usd": -49.57,
         "grade": "A",
         "mae_pct": 2.16,
         "mfe_pct": 1.23,
@@ -352,7 +354,8 @@
         "what_failed": "Entry missed at $252, actual open $261.84 snížilo upside, ale trade pořád profitable",
         "original_probability_pct": 72,
         "probability_verdict": "calibrated",
-        "probability_comment": "72% pravděpodobnost správně odrážela silný setup, target hit potvrzuje kvalitu analýzy"
+        "probability_comment": "72% pravděpodobnost správně odrážela silný setup, target hit potvrzuje kvalitu analýzy",
+        "data_corrected": true
       },
       {
         "ticker": "PG",
@@ -367,9 +370,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": 1.05,
+        "pnl_pct": 0.37,
         "position_size_usd": 20000.0,
-        "pnl_usd": 210.0,
+        "pnl_usd": 74.64,
         "grade": "B",
         "mae_pct": 0.5,
         "mfe_pct": 1.04,
@@ -387,7 +390,8 @@
         "what_failed": "Upside limitovaný, momentum slabý, žádný catalyst pro breakout k $172 target",
         "original_probability_pct": 70,
         "probability_verdict": "calibrated",
-        "probability_comment": "70% odpovídá solidnímu ale ne výraznému výkonu, defensive setup funguje podle plánu"
+        "probability_comment": "70% odpovídá solidnímu ale ne výraznému výkonu, defensive setup funguje podle plánu",
+        "data_corrected": true
       },
       {
         "ticker": "KO",
@@ -427,7 +431,7 @@
     ],
     "portfolio_summary": {
       "capital_deployed": 99820.44,
-      "total_pnl_usd": 0,
+      "total_pnl_usd": 638.64,
       "total_pnl_pct": 2.36,
       "positions_closed_today": [],
       "positions_held_open": [

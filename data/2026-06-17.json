@@ -257,9 +257,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": 1.71,
+        "pnl_pct": 2.57,
         "position_size_usd": 24000.0,
-        "pnl_usd": 410.4,
+        "pnl_usd": 616.73,
         "grade": "C",
         "mae_pct": -2.82,
         "mfe_pct": 2.41,
@@ -277,7 +277,8 @@
         "what_failed": "Tech selloff a low free float způsobily high volatility, stop téměř zasažen",
         "original_probability_pct": 58,
         "probability_verdict": "calibrated",
-        "probability_comment": "58% odhad byl realistický — pozice přežila ale extrémně těsně"
+        "probability_comment": "58% odhad byl realistický — pozice přežila ale extrémně těsně",
+        "data_corrected": true
       },
       {
         "ticker": "JBL",
@@ -292,9 +293,9 @@
         "direction": "long",
         "holding_days": 1,
         "outcome": "hit_target",
-        "pnl_pct": 4.86,
+        "pnl_pct": -19.77,
         "position_size_usd": 22000.0,
-        "pnl_usd": 1069.44,
+        "pnl_usd": -4348.57,
         "grade": "A",
         "mae_pct": -0.46,
         "mfe_pct": 3.61,
@@ -328,9 +329,9 @@
         "direction": "short",
         "holding_days": 3,
         "outcome": "held_open",
-        "pnl_pct": 1.39,
+        "pnl_pct": 1.0,
         "position_size_usd": 20000.0,
-        "pnl_usd": 278.0,
+        "pnl_usd": 199.49,
         "grade": "B",
         "mae_pct": -0.61,
         "mfe_pct": 1.05,
@@ -348,7 +349,8 @@
         "what_failed": "Projected entry 88.50 byla špatně — aktuální ceny mnohem nižší",
         "original_probability_pct": 72,
         "probability_verdict": "calibrated",
-        "probability_comment": "72% bylo přesné — trade funguje, ale geopolitika volatilní"
+        "probability_comment": "72% bylo přesné — trade funguje, ale geopolitika volatilní",
+        "data_corrected": true
       },
       {
         "ticker": "C",
@@ -363,9 +365,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": 0.12,
+        "pnl_pct": -0.61,
         "position_size_usd": 18000.0,
-        "pnl_usd": 21.6,
+        "pnl_usd": -109.48,
         "grade": "D",
         "mae_pct": -0.67,
         "mfe_pct": 1.04,
@@ -382,7 +384,8 @@
         "what_failed": "Hawkish tón a bond yield surge shodily financials",
         "original_probability_pct": 62,
         "probability_verdict": "overconfident",
-        "probability_comment": "62% bylo moc — Warsh first meeting riziko nedoceněno"
+        "probability_comment": "62% bylo moc — Warsh first meeting riziko nedoceněno",
+        "data_corrected": true
       },
       {
         "ticker": "NVDA",
@@ -397,9 +400,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": -1.7,
+        "pnl_pct": -1.78,
         "position_size_usd": 15530.43,
-        "pnl_usd": -264.02,
+        "pnl_usd": -275.81,
         "grade": "D",
         "mae_pct": -1.73,
         "mfe_pct": 0.23,
@@ -417,12 +420,13 @@
         "what_failed": "Fed meeting a broader tech selloff zničily short-term momentum",
         "original_probability_pct": 65,
         "probability_verdict": "overconfident",
-        "probability_comment": "65% ignorovalo Fed meeting risk a broader market vulnerability"
+        "probability_comment": "65% ignorovalo Fed meeting risk a broader market vulnerability",
+        "data_corrected": true
       }
     ],
     "portfolio_summary": {
       "capital_deployed": 99530.43,
-      "total_pnl_usd": 1069.44,
+      "total_pnl_usd": -3917.64,
       "total_pnl_pct": 8.28,
       "positions_closed_today": [
         "JBL"

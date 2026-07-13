@@ -253,9 +253,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": -0.4,
+        "pnl_pct": 0.93,
         "position_size_usd": 25000.0,
-        "pnl_usd": -100.0,
+        "pnl_usd": 231.51,
         "grade": "C",
         "mae_pct": 1.71,
         "mfe_pct": 1.85,
@@ -273,7 +273,8 @@
         "what_failed": "Entry missed o $2.77, resistance $211 bránila",
         "original_probability_pct": 58,
         "probability_verdict": "calibrated",
-        "probability_comment": "58% bylo fair pro 2-day hold před MU binary, lehce underwater OK"
+        "probability_comment": "58% bylo fair pro 2-day hold před MU binary, lehce underwater OK",
+        "data_corrected": true
       },
       {
         "ticker": "INTC",
@@ -288,9 +289,9 @@
         "direction": "long",
         "holding_days": 3,
         "outcome": "held_open",
-        "pnl_pct": 3.75,
+        "pnl_pct": -0.34,
         "position_size_usd": 20000.0,
-        "pnl_usd": 750.0,
+        "pnl_usd": -68.82,
         "grade": "B",
         "mae_pct": 3.71,
         "mfe_pct": 5.33,
@@ -308,7 +309,8 @@
         "what_failed": "Entry $5.50 vyšší než plánováno (gap up)",
         "original_probability_pct": 55,
         "probability_verdict": "underconfident",
-        "probability_comment": "55% bylo konzervativní, katalyzátor byl silnější než čekáno"
+        "probability_comment": "55% bylo konzervativní, katalyzátor byl silnější než čekáno",
+        "data_corrected": true
       },
       {
         "ticker": "XLE",
@@ -358,9 +360,9 @@
         "direction": "long",
         "holding_days": 1,
         "outcome": "held_open",
-        "pnl_pct": 0.14,
+        "pnl_pct": -1.05,
         "position_size_usd": 22000.0,
-        "pnl_usd": 31.0,
+        "pnl_usd": -232.04,
         "grade": "C",
         "commentary": "Gapped up $4 nad entry, volatilní intraday swing $6.63. Drženo do Tuesday AMC earnings, oil tailwind intaktní.",
         "thesis_macro_verdict": "Oil costs falling confirmed, bullish margin",
@@ -378,7 +380,8 @@
         "what_failed": "Gap up $4 znemožnil clean entry na $326",
         "original_probability_pct": 60,
         "probability_verdict": "calibrated",
-        "probability_comment": "60% fair pro pre-earnings binary s execution risk"
+        "probability_comment": "60% fair pro pre-earnings binary s execution risk",
+        "data_corrected": true
       },
       {
         "ticker": "MU",
@@ -393,9 +396,9 @@
         "direction": "long",
         "holding_days": 2,
         "outcome": "held_open",
-        "pnl_pct": 3.41,
+        "pnl_pct": 10.59,
         "position_size_usd": 15112.44,
-        "pnl_usd": 515.0,
+        "pnl_usd": 1600.81,
         "grade": "A",
         "mae_pct": 10.65,
         "mfe_pct": 6.94,
@@ -413,12 +416,13 @@
         "what_failed": "Gap down -6% tested nervy, MAE -10.65% brutal",
         "original_probability_pct": 62,
         "probability_verdict": "underconfident",
-        "probability_comment": "62% bylo příliš nízko, fundamentals+katalyzátor silnější než očekáváno"
+        "probability_comment": "62% bylo příliš nízko, fundamentals+katalyzátor silnější než očekáváno",
+        "data_corrected": true
       }
     ],
     "portfolio_summary": {
       "capital_deployed": 100112.44,
-      "total_pnl_usd": 0,
+      "total_pnl_usd": 1608.46,
       "total_pnl_pct": 1.27,
       "positions_closed_today": [],
       "positions_held_open": [
