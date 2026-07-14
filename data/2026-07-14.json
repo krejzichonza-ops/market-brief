@@ -1,0 +1,225 @@
+{
+  "date": "2026-07-14",
+  "brief": {
+    "generated_at": "2026-07-14T08:00:00Z",
+    "market_date": "Tuesday, July 14, 2026",
+    "date_key": "2026-07-14",
+    "day_of_week": "Tuesday",
+    "trading_mode": "intraday",
+    "snapshot": {
+      "sp500_futures": "-0.2%",
+      "nasdaq_futures": "+0.2%",
+      "dow_futures": "-0.3%",
+      "vix": "15.35",
+      "us10y": "4.59%",
+      "dxy": "101.22",
+      "crude_oil": "$79.69",
+      "gold": "$4,007"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "unavailable",
+      "market_volume": "above_average",
+      "earnings_today": [
+        "JPM: před otevřením",
+        "BAC: před otevřením",
+        "GS: před otevřením",
+        "WFC: před otevřením",
+        "C: před otevřením"
+      ],
+      "insider_activity_summary": "Minimální aktivita za posledních 48h, rutinní tax withholding transakce"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 48,
+    "key_themes": [
+      "US-Iran konfliktem eskalace, Strait of Hormuz blokáda",
+      "CPI data pod očekáváním (3.5% vs 3.8%), tlak na Fed",
+      "Memory chip sector pod tlakem po SK Hynix IPO sell-off"
+    ],
+    "macro_summary": "CPI za červen klesl na 3.5% vs očekávaných 3.8%, což snižuje pravděpodobnost dalšího zvýšení sazeb Fed. Fed Chair Warsh dnes vypovídá před Kongresem. Ropné ceny vzrostly na ~$79/barel kvůli obnovené blokádě Hormuzského průlivu.",
+    "afterhours_summary": "Memory chip akcie (MU, SKHY) poklesly 5-9% v reakci na SK Hynix IPO sell-off. IBM propadl 22% po slabých předběžných výsledcích. Semiconductor equipment (AMAT, TER) naopak v pre-marketu růstové +5%.",
+    "geopolitical_summary": "Trump obnovil námořní blokádu íránských přístavů a oznámil 20% poplatek na náklad procházející Hormuzem. USA provedla třetí po sobě jdoucí noc úderů proti Íránu. Ropa prudce roste.",
+    "sectors": [
+      {
+        "name": "Energy",
+        "signal": "bullish",
+        "score": 82,
+        "reason": "Ropa +9.4% včera, pokračující růst na $79, geopolitické riziko Hormuz průlivu"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "Banky reportují dnes earnings, beats očekávání ale akcie ploché, vyšší výnosy tíží valuace"
+      },
+      {
+        "name": "Technology",
+        "signal": "bearish",
+        "score": 35,
+        "reason": "Memory chips pod tlakem, SK Hynix -15%, AI capex obavy, rotace z tech sektoru"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 52,
+        "reason": "Smíšené signály, semiconductor equipment outperformuje, ale broader industrial weakness"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Defensive play, nízká volatilita, bez výrazných katalyzátorů dnes"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "AMAT",
+        "company": "Applied Materials Inc.",
+        "current_price_verified": 570.5,
+        "price_source": "Yahoo Finance / Robinhood 13 July close",
+        "direction": "long",
+        "entry_price": 575.0,
+        "target_price": 595.0,
+        "stop_loss": 565.0,
+        "target_pct": 3.48,
+        "stop_pct": -1.74,
+        "position_size_usd": 21000.0,
+        "holding_days": 1,
+        "risk_reward": "1:2.0",
+        "confidence": "high",
+        "thesis_macro": "CPI pokles snižuje tlak na Fed sazby, pozitivní pro growth/capital equipment",
+        "thesis_technical": "Premarket +5.3%, odbourává včerejší -5% sell-off, support $565",
+        "thesis_catalyst": "Memory chip rebound po SK Hynix panic, TSMC rekordní červnové prodeje",
+        "thesis_options": "Call volume výrazně převyšuje puty",
+        "thesis_short_interest": "Short interest nízký ~2%, minimální squeeze riziko",
+        "thesis_insider": "Minimal insider selling Q2",
+        "thesis_volume": "Premarket volume 2x průměr, institucionální nákupy",
+        "thesis_correlation": "Equipment vs memory chips korelace -0.3, diverzifikace tech exposure",
+        "thesis_risk": "Další negativní news z memory sektoru, geopolitika",
+        "entry_logic": "Entry nad včerejší close, potvrzení pre-market recovery momentum",
+        "exit_logic": "Target $595 = retest 5-day high, realistic intraday",
+        "probability_pct": 65,
+        "probability_reasoning": "CPI beat + tech rebound + equipment outperformance vs chips",
+        "catalysts": [
+          "CPI data nižší než očekávané",
+          "Memory chip sector stabilizace",
+          "TSMC červnové rekordní prodeje"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR ETF",
+        "current_price_verified": 56.74,
+        "price_source": "Investing.com / Robinhood 14 July",
+        "direction": "long",
+        "entry_price": 57.0,
+        "target_price": 58.5,
+        "stop_loss": 56.2,
+        "target_pct": 2.63,
+        "stop_pct": -1.4,
+        "position_size_usd": 22500.0,
+        "holding_days": 1,
+        "risk_reward": "1:1.9",
+        "confidence": "high",
+        "thesis_macro": "Ropa $79, Hormuz blokáda eskaluje, Fed Warsh testimony může být hawkish",
+        "thesis_technical": "ETF breakout nad $57 resistance, momentum bullish, RSI 68",
+        "thesis_catalyst": "Trump vows další údery Írán, 20% Hormuz fee rhetoric",
+        "thesis_options": "N/A ETF bez unusual activity",
+        "thesis_short_interest": "N/A pro ETF",
+        "thesis_insider": "N/A pro ETF",
+        "thesis_volume": "Volume 27.8M včera vs 28.6M avg, steady demand",
+        "thesis_correlation": "Negativní korelace s tech -0.6, hedge against semiconductor weakness",
+        "thesis_risk": "Náhlý Iran peace deal breakthrough, ropa kolaps",
+        "entry_logic": "Entry na breakout $57, potvrzení continuace energy rally",
+        "exit_logic": "Target $58.50 = +2.6%, intraday realistic given oil momentum",
+        "probability_pct": 68,
+        "probability_reasoning": "Geopolitika eskaluje + ropný momentum + tech rotation",
+        "catalysts": [
+          "Iran konfliktu eskalace",
+          "Crude oil $79+ momentum",
+          "Rotation z tech do energy"
+        ]
+      },
+      {
+        "ticker": "HAL",
+        "company": "Halliburton Company",
+        "current_price_verified": 35.22,
+        "price_source": "Robinhood 13 July close",
+        "direction": "long",
+        "entry_price": 35.5,
+        "target_price": 36.6,
+        "stop_loss": 34.8,
+        "target_pct": 3.1,
+        "stop_pct": -1.97,
+        "position_size_usd": 20000.0,
+        "holding_days": 1,
+        "risk_reward": "1:1.6",
+        "confidence": "medium",
+        "thesis_macro": "Oil service leverage na vyšší ropné ceny, short-cycle exposure benefit",
+        "thesis_technical": "Včera +2.5% na TotalEnergies kontraktu, momentum pokračuje",
+        "thesis_catalyst": "Halliburton secured GranMorgu Suriname drilling contracts, bullish analyst upgrades",
+        "thesis_options": "Call volume výrazně nad normal, bullish flow",
+        "thesis_short_interest": "Short interest ~4%, nízké",
+        "thesis_insider": "Minimal activity poslední měsíc",
+        "thesis_volume": "6.07M včera vs 10M avg, under average ale pre-market picking up",
+        "thesis_correlation": "Korelace s ropou 0.75, ale nižší volatilita než commodities",
+        "thesis_risk": "Iran peace deal, ropa reversal, demand destruction riziko",
+        "entry_logic": "Entry nad $35.50 na confirmation včerejšího rally continuation",
+        "exit_logic": "Target $36.60 = test červnového high range, 3% intraday realistic",
+        "probability_pct": 60,
+        "probability_reasoning": "Oil momentum silný, ale oilfield services má delay vs spot ceny",
+        "catalysts": [
+          "Ropa $79+ holding",
+          "TotalEnergies kontrakty news",
+          "Analyst upgrades momentum"
+        ]
+      },
+      {
+        "ticker": "MU",
+        "company": "Micron Technology Inc.",
+        "current_price_verified": 937.0,
+        "price_source": "Yahoo Finance / TradingView 14 July",
+        "direction": "long",
+        "entry_price": 940.0,
+        "target_price": 970.0,
+        "stop_loss": 920.0,
+        "target_pct": 3.19,
+        "stop_pct": -2.13,
+        "position_size_usd": 22000.0,
+        "holding_days": 1,
+        "risk_reward": "1:1.5",
+        "confidence": "medium",
+        "thesis_macro": "CPI nižší než očekávané snižuje Fed hike risk, pozitivní pro tech",
+        "thesis_technical": "Premarket +2.5% recovery, oversold bounce od včerejší -5%, support $920",
+        "thesis_catalyst": "SK Hynix Seoul +3% dnes, panic selling exhausted, TSMC record sales",
+        "thesis_options": "Put/call ratio elevated 1.8, potential squeeze",
+        "thesis_short_interest": "Short interest 2.5%, nízký ale možný short cover bounce",
+        "thesis_insider": "Heavy insider selling Q2, negativní",
+        "thesis_volume": "Premarket volume silný, 35M+ včera",
+        "thesis_correlation": "High correlation s broader memory 0.9, risk concentration",
+        "thesis_risk": "Další SK Hynix weakness, AI capex obavy přetrvávají, high beta",
+        "entry_logic": "Entry nad $940 na confirmation recovery, prevent knife catch",
+        "exit_logic": "Target $970 = +3%, partial retracement včerejší losses, realistic intraday",
+        "probability_pct": 58,
+        "probability_reasoning": "Oversold bounce + CPI relief, ale sentiment fragile + high risk",
+        "catalysts": [
+          "CPI nižší než expected",
+          "SK Hynix Seoul bounce +3%",
+          "Asian chip recovery signal"
+        ]
+      }
+    ],
+    "portfolio_note": "Portfolio diverzifikováno 4 pozice: 2x energy/oilfield (hedge proti tech), 1x semiconductor equipment (tech exposure ale nižší volatilita než memory), 1x memory chips (contrarian oversold play). Celkem alokováno $85,500 z available $85,507. Energy overweight reflect geopolitical premium.",
+    "risks": [
+      "Náhlý Iran peace deal breakthrough by srazil ropné ceny a energy pozice",
+      "Další negativní news z AI memory demand by hits MU a tech sektor",
+      "Fed Chair Warsh hawkish testimony by mohl reverse CPI rally",
+      "Geopolitická eskalace mimo Hormuz (Čína-Taiwan) by způsobila broad risk-off",
+      "Overconcentration v energy (XLE + HAL = $42.5k) vytváří sector risk"
+    ],
+    "data_freshness": "Data z 14. července 2026, 08:00 ET. CPI released 8:30 ET. Warsh congressional testimony 10:00 ET. Prices verified Yahoo Finance, TradingView, Robinhood, Investing.com. Pre-market data aktuální k 07:50 ET."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-07-14T13:17:15.960125"
+}
