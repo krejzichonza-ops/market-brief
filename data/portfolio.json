@@ -1,10 +1,10 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 85507.06,
+  "current_capital": 85381.0,
   "peak_capital": 100000.0,
-  "total_trades": 38,
-  "winning_trades": 18,
-  "losing_trades": 20,
+  "total_trades": 42,
+  "winning_trades": 21,
+  "losing_trades": 21,
   "equity_curve": [
     {
       "date": "2026-06-17",
@@ -149,6 +149,15 @@
       "grade": "D",
       "avg_mae": -1.16,
       "avg_mfe": 1.81
+    },
+    {
+      "date": "2026-07-14",
+      "day_of_week": "Tuesday",
+      "value": 85381.0,
+      "pnl_usd": -126.06,
+      "grade": "B",
+      "avg_mae": -0.98,
+      "avg_mfe": 2.39
     }
   ],
   "open_positions": [],
@@ -760,6 +769,70 @@
       "probability_pct": 52,
       "probability_verdict": "calibrated",
       "data_corrected": true
+    },
+    {
+      "date": "2026-07-14",
+      "day_of_week": "Tuesday",
+      "ticker": "AMAT",
+      "direction": "long",
+      "outcome": "hit_target",
+      "pnl_pct": -4.42,
+      "pnl_usd": -928.36,
+      "position_size_usd": 21000.0,
+      "mae_pct": -1.61,
+      "mfe_pct": 2.63,
+      "trade_quality": "good",
+      "probability_pct": 65,
+      "probability_verdict": "calibrated",
+      "data_corrected": true
+    },
+    {
+      "date": "2026-07-14",
+      "day_of_week": "Tuesday",
+      "ticker": "XLE",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": 1.1,
+      "pnl_usd": 248.57,
+      "position_size_usd": 22500.0,
+      "mae_pct": -0.46,
+      "mfe_pct": 1.51,
+      "trade_quality": "good",
+      "probability_pct": 68,
+      "probability_verdict": "calibrated",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-14",
+      "day_of_week": "Tuesday",
+      "ticker": "HAL",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": 1.42,
+      "pnl_usd": 284.25,
+      "position_size_usd": 20000.0,
+      "mae_pct": -0.74,
+      "mfe_pct": 1.99,
+      "trade_quality": "good",
+      "probability_pct": 60,
+      "probability_verdict": "calibrated",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-14",
+      "day_of_week": "Tuesday",
+      "ticker": "MU",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": 1.22,
+      "pnl_usd": 269.48,
+      "position_size_usd": 22000.0,
+      "mae_pct": -1.12,
+      "mfe_pct": 3.42,
+      "trade_quality": "scratchy",
+      "probability_pct": 58,
+      "probability_verdict": "underconfident",
+      "data_corrected": false
     }
   ]
 }
