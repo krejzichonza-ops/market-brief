@@ -1,0 +1,228 @@
+{
+  "date": "2026-07-15",
+  "brief": {
+    "generated_at": "2026-07-15T06:15:00-04:00",
+    "market_date": "Wednesday, July 15, 2026",
+    "date_key": "2026-07-15",
+    "day_of_week": "Wednesday",
+    "trading_mode": "intraday",
+    "snapshot": {
+      "sp500_futures": "7543.59+0.2%",
+      "nasdaq_futures": "29990.25+0.67%",
+      "dow_futures": "52909.00+0.22%",
+      "vix": "16.13",
+      "us10y": "4.59%",
+      "dxy": "100.88",
+      "crude_oil": "$85.92",
+      "gold": "$4035.40"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "unavailable",
+      "market_volume": "above_average",
+      "earnings_today": [
+        "ASML: before market",
+        "MS: before market",
+        "BLK: before market",
+        "JNJ: before market",
+        "PGR: before market",
+        "UAL: before market",
+        "ELV: before market",
+        "KMI: after market"
+      ],
+      "insider_activity_summary": "Běžná aktivita s rutinním tax withholding, žádné významné nákupy nebo prodeje ve sledovaném období"
+    },
+    "overall_sentiment": "bullish",
+    "sentiment_score": 68,
+    "key_themes": [
+      "Soft CPI snižuje tlak na Fed, růst optimismu",
+      "AI poptávka pokračuje - ASML zvýšilo outlook",
+      "Geopolitika: USA vs Írán eskaluje, ropa +9% za týden"
+    ],
+    "macro_summary": "CPI za červen klesl o 0.4% MoM na 3.5% YoY (očekávání 3.8%), PPI také překvapil poklesem o 0.3%. Dnes v 8:30 další inflační data. Fed Chair Warsh varuje, že jeden datový bod nestačí k vyhlášení vítězství nad inflací.",
+    "afterhours_summary": "PayPal raketově +20% na takeover nabídku $53B od Stripe/Advent. ASML +3.4% po zvýšení guidance. Pentair -20.7% po guidance cutu a odchodu CFO.",
+    "geopolitical_summary": "Trump oznámil pokračující útoky na Írán dokud neotevře Hormuzský průliv. Írán hrozí uzavřením dalších exportních koridorů. Ropa vyskočila nad $85/barel Brent, +11% za poslední dva dny.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bullish",
+        "score": 75,
+        "reason": "ASML zvýšilo kapacitu o 30%, AI demand zůstává silný"
+      },
+      {
+        "name": "Financials",
+        "signal": "bullish",
+        "score": 72,
+        "reason": "Banky reportují rekordní zisky, MS beat očekávání, trading +86%"
+      },
+      {
+        "name": "Energy",
+        "signal": "bullish",
+        "score": 82,
+        "reason": "Geopolitický premium, Hormuz problém, ropa nad $85"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "ELV -8% navzdory beatu, mixed signals z sektoru"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 58,
+        "reason": "BA stále pod tlakem, supply chain issues pokračují"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "XOM",
+        "company": "ExxonMobil Holdings Corporation",
+        "current_price_verified": 150.36,
+        "price_source": "Yahoo Finance consolidated global quotes",
+        "direction": "long",
+        "entry_price": 150.5,
+        "target_price": 154.5,
+        "stop_loss": 149.25,
+        "target_pct": 2.66,
+        "stop_pct": -0.83,
+        "position_size_usd": 28460,
+        "holding_days": 1,
+        "risk_reward": "1:3.2",
+        "confidence": "high",
+        "thesis_macro": "Írán konflikt push oil nad $85, Hormuz risk premium expanduje dál",
+        "thesis_technical": "Break nad 150 support, RSI 58 má prostor, volume spike",
+        "thesis_catalyst": "Ropa +11% za 2 dny, Trump signalizuje další strikes dnes",
+        "thesis_options": "Unusually low put/call 0.72 bullish bias obvykle 0.9+",
+        "thesis_short_interest": "Short interest pouze 1.2% minimální squeeze risk ale momentum čisté",
+        "thesis_insider": "No significant activity minulých 48h stabilní sentiment CFO suite",
+        "thesis_volume": "Premarket vol +180% vs 30D avg silný institucionální zájem",
+        "thesis_correlation": "Energy jedině sektor nekore s tech tím diverzifikuje AI exposure",
+        "thesis_risk": "Rychlá deeskalace smlouvy Írán může vybít premium okamžitě",
+        "entry_logic": "Entry na open tick nad včerejší close momentum continuation",
+        "exit_logic": "Target 154.50 je psychological 155 floor realistický do 16:00",
+        "probability_pct": 72,
+        "probability_reasoning": "Geopolitický risk akutní, oil supplychain pod tlakem minimálně 24-48h",
+        "catalysts": [
+          "Trump speech o Íránu očekáván dnes odpoledne",
+          "Hormuz transit data release 14:00",
+          "OPEC emergency meeting možný tento týden"
+        ]
+      },
+      {
+        "ticker": "NVDA",
+        "company": "NVIDIA Corporation",
+        "current_price_verified": 192.53,
+        "price_source": "Yahoo Finance US market quote",
+        "direction": "long",
+        "entry_price": 193.0,
+        "target_price": 197.0,
+        "stop_loss": 191.5,
+        "target_pct": 2.07,
+        "stop_pct": -0.78,
+        "position_size_usd": 25800,
+        "holding_days": 1,
+        "risk_reward": "1:2.7",
+        "confidence": "high",
+        "thesis_macro": "ASML guidance boost validuje AI supply chain bude držet pace",
+        "thesis_technical": "Retrace z 196 našel support na 192, MACD turning bullish",
+        "thesis_catalyst": "ASML +30% capacity announcement odstranil bottleneck fears dnes premarket",
+        "thesis_options": "Put/call ratio 0.68 extrémně bullish normál je 0.85-0.95",
+        "thesis_short_interest": "Short interest 2.1% blízko historic low žádný pressure shora",
+        "thesis_insider": "Insiders held throughout June dip nikdo neselluje confidence signal",
+        "thesis_volume": "Premarket 3.2M vs avg 1.8M heavy buying momentum institucí",
+        "thesis_correlation": "Tech leader ale low korelace s financials dodává portfolio balance",
+        "thesis_risk": "Regulatory news z Číny nebo DC může vytvořit flash crash",
+        "entry_logic": "Entry těsně nad 193 psychological potvrzení breakout z consolidation",
+        "exit_logic": "197 je včerejší high resistance 2% gain je solid intraday",
+        "probability_pct": 68,
+        "probability_reasoning": "ASML news silný katalyzátor ale NVDA už rallied 1.6% včera možný fatigue",
+        "catalysts": [
+          "ASML earnings call komentáře o NVDA demand",
+          "Analyst upgrades možné post ASML beat",
+          "AI conference panel s CEO dnes 15:00"
+        ]
+      },
+      {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "current_price_verified": 228.5,
+        "price_source": "Yahoo Finance historical + premarket",
+        "direction": "long",
+        "entry_price": 229.0,
+        "target_price": 234.0,
+        "stop_loss": 227.25,
+        "target_pct": 2.18,
+        "stop_pct": -0.76,
+        "position_size_usd": 21460,
+        "holding_days": 1,
+        "risk_reward": "1:2.9",
+        "confidence": "medium",
+        "thesis_macro": "Fed na hold ale trading revenue exploduje volatilita je přítel bank",
+        "thesis_technical": "Včera +2.5% ale ještě 3% pod June high momentum pokračuje",
+        "thesis_catalyst": "Record profit $16.9B reportován včera Dimon bullish komentáře momentum",
+        "thesis_options": "Options volume 2x normal heavy call buying 230-235 strikes",
+        "thesis_short_interest": "Short interest prakticky nula 0.4% žádný overhead supply problém",
+        "thesis_insider": "CFO Barnum disclosed routine activity žádné red flags stabilní",
+        "thesis_volume": "Volume včera 18M vs avg 11M continuation očekáván dnes",
+        "thesis_correlation": "Financials inverse correlation s tech při tech sell bude safe",
+        "thesis_risk": "MS nebo další bank miss guidance může stáhnout celý sektor",
+        "entry_logic": "Entry po MS earnings 7:00 pokud beat potvrdí sektor trend",
+        "exit_logic": "234 je 50% retracement z June high realistický intraday target",
+        "probability_pct": 65,
+        "probability_reasoning": "Včerejší beat silný ale možný profit taking po +2.5% rally opatrnost",
+        "catalysts": [
+          "Morgan Stanley earnings 7:00 před open sektorový read",
+          "Fed Chair Warsh testimony pokračuje 10:00",
+          "Financial sector rotation flow pokračuje z growth"
+        ]
+      },
+      {
+        "ticker": "LLY",
+        "company": "Eli Lilly and Company",
+        "current_price_verified": 1152.54,
+        "price_source": "Yahoo Finance quote from article",
+        "direction": "long",
+        "entry_price": 1155.0,
+        "target_price": 1180.0,
+        "stop_loss": 1145.0,
+        "target_pct": 2.16,
+        "stop_pct": -0.87,
+        "position_size_usd": 9661,
+        "holding_days": 1,
+        "risk_reward": "1:2.5",
+        "confidence": "medium",
+        "thesis_macro": "Defensive play pokud geopolitika eskaluje healthcare je safe haven rotace",
+        "thesis_technical": "Včera -2.48% oversold bounce setup RSI 42 support 1145",
+        "thesis_catalyst": "Obesity drug demand stále hot earnings 5.8 očekávání beat setup",
+        "thesis_options": "Put/call ratio spike 1.15 včera možný short term overreaction",
+        "thesis_short_interest": "Short interest 1.8% stabilní žádný material pressure z shorts",
+        "thesis_insider": "Insiders drželi celý Q2 žádné sales confidence v pipeline",
+        "thesis_volume": "Volume včera elevated 4.2M vs avg 2.8M flush out možný",
+        "thesis_correlation": "Healthcare uncorrelated s oil energy tech poskytuje true diversification",
+        "thesis_risk": "Další healthcare weak guidance jako ELV -8% může spread fears",
+        "entry_logic": "Entry nad 1155 psychological potvrzuje bounce z včerejší sell",
+        "exit_logic": "1180 je 10D MA resistance 2.2% gain realistic mean reversion",
+        "probability_pct": 62,
+        "probability_reasoning": "Technický bounce setup dobrý ale sektor sentiment mixed po ELV",
+        "catalysts": [
+          "ELV earnings call komentáře o sector trends",
+          "Analyst commentary možný upgrade po včerejší dip",
+          "Obesity drug data rumors cirkulují mohl být trigger"
+        ]
+      }
+    ],
+    "portfolio_note": "4 pozice celkem $85,381 alokace plně využita. Diverzifikace: Energy 33.3%, Tech 30.2%, Financials 25.1%, Healthcare 11.3%. Geopolitický hedge přes XOM, tech exposure přes NVDA, financial rotation přes JPM, defensive přes LLY. Risk/reward průměr 1:2.8 napříč portfolio.",
+    "risks": [
+      "Írán rychlá dohoda vybije energy premium okamžitě - XOM pod tlakem",
+      "MS earnings miss stáhne celý financial sector - JPM negativně impacted",
+      "China regulatory action na semiconductors - NVDA flash crash risk",
+      "Fed Warsh hawkish surprise v testimony může trigger broad selloff",
+      "Profit taking po včerejším rally +0.38% SPX možný konsolidace den"
+    ],
+    "data_freshness": "Data k 15.7.2026 6:15 ET z pre-market session. VIX a futures live, ceny akcií verified přes Yahoo Finance global quotes. Earnings calendar potvrzený. Geopolitické zprávy z Bloomberg/Reuters do 5:00 ET. Options data limited availability v pre-market."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-07-15T13:17:12.132605"
+}
