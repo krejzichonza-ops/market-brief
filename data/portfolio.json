@@ -1,10 +1,10 @@
 {
   "starting_capital": 100000.0,
-  "current_capital": 77901.79,
+  "current_capital": 78238.19,
   "peak_capital": 100000.0,
-  "total_trades": 46,
-  "winning_trades": 22,
-  "losing_trades": 24,
+  "total_trades": 50,
+  "winning_trades": 24,
+  "losing_trades": 26,
   "equity_curve": [
     {
       "date": "2026-06-17",
@@ -167,6 +167,15 @@
       "grade": "C",
       "avg_mae": -1.01,
       "avg_mfe": 1.01
+    },
+    {
+      "date": "2026-07-16",
+      "day_of_week": "Thursday",
+      "value": 78238.19,
+      "pnl_usd": 336.4,
+      "grade": "D",
+      "avg_mae": -4.75,
+      "avg_mfe": 0.57
     }
   ],
   "open_positions": [],
@@ -906,6 +915,70 @@
       "probability_pct": 62,
       "probability_verdict": "overconfident",
       "data_corrected": false
+    },
+    {
+      "date": "2026-07-16",
+      "day_of_week": "Thursday",
+      "ticker": "UAL",
+      "direction": "long",
+      "outcome": "stopped_out",
+      "pnl_pct": -1.07,
+      "pnl_usd": -198.43,
+      "position_size_usd": 18500.0,
+      "mae_pct": -15.9,
+      "mfe_pct": 0.38,
+      "trade_quality": "poor",
+      "probability_pct": 62,
+      "probability_verdict": "overconfident",
+      "data_corrected": true
+    },
+    {
+      "date": "2026-07-16",
+      "day_of_week": "Thursday",
+      "ticker": "CVX",
+      "direction": "long",
+      "outcome": "stopped_out",
+      "pnl_pct": 2.73,
+      "pnl_usd": 533.1,
+      "position_size_usd": 19500.0,
+      "mae_pct": -1.48,
+      "mfe_pct": 0.16,
+      "trade_quality": "scratchy",
+      "probability_pct": 58,
+      "probability_verdict": "calibrated",
+      "data_corrected": true
+    },
+    {
+      "date": "2026-07-16",
+      "day_of_week": "Thursday",
+      "ticker": "JPM",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": 0.01,
+      "pnl_usd": 1.73,
+      "position_size_usd": 20000.0,
+      "mae_pct": -1.13,
+      "mfe_pct": 1.19,
+      "trade_quality": "scratchy",
+      "probability_pct": 65,
+      "probability_verdict": "calibrated",
+      "data_corrected": false
+    },
+    {
+      "date": "2026-07-16",
+      "day_of_week": "Thursday",
+      "ticker": "LMT",
+      "direction": "long",
+      "outcome": "closed_eod",
+      "pnl_pct": 0.0,
+      "pnl_usd": 0.0,
+      "position_size_usd": 19900.0,
+      "mae_pct": -0.49,
+      "mfe_pct": 0.54,
+      "trade_quality": "scratchy",
+      "probability_pct": 60,
+      "probability_verdict": "calibrated",
+      "data_corrected": true
     }
   ]
 }
