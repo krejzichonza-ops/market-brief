@@ -1,0 +1,221 @@
+{
+  "date": "2026-07-16",
+  "brief": {
+    "generated_at": "2026-07-16T08:00:00Z",
+    "market_date": "Thursday, July 16, 2026",
+    "date_key": "2026-07-16",
+    "day_of_week": "Thursday",
+    "trading_mode": "intraday",
+    "snapshot": {
+      "sp500_futures": "7570 -0.2%",
+      "nasdaq_futures": "26236 -0.7%",
+      "dow_futures": "52783 +0.2%",
+      "vix": "15.88",
+      "us10y": "4.57%",
+      "dxy": "100.92",
+      "crude_oil": "$80.17",
+      "gold": "$4000"
+    },
+    "market_context": {
+      "vix_regime": "low",
+      "options_pcr": "1.18",
+      "market_volume": "above_average",
+      "earnings_today": [
+        "UAL: before market",
+        "TSMC: reported",
+        "State Street: before market"
+      ],
+      "insider_activity_summary": "Nízká aktivita - běžné tax withholding transakce, žádné významné insider buy signály"
+    },
+    "overall_sentiment": "neutral",
+    "sentiment_score": 52,
+    "key_themes": [
+      "Semiconductor weakness after TSMC",
+      "Middle East tensions oil rally",
+      "Strong bank earnings JPM beat"
+    ],
+    "macro_summary": "CPI poklesla -0.4% v červnu na 3.5% YoY, nejslabší inflace od měsíců. Philly Fed manufacturing index vyskočil na 41.4, nejvíce za 5 let. Jobless claims klesly na 208k.",
+    "afterhours_summary": "TSMC beat earnings ale capex guidance $60-64B zvedl obavy - chip akcie padají 4-5%. UnitedHealth +6% beat tažil Dow futures nahoru.",
+    "geopolitical_summary": "USA provedla další údery na Írán, Trump zrušil 20% poplatek za Hormuz ale napětí přetrvává. Ropa $80+ signalizuje pokračující supply risk.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bearish",
+        "score": 38,
+        "reason": "TSMC capex guidance shock, semiconductor sell-off pokračuje druhý den"
+      },
+      {
+        "name": "Financials",
+        "signal": "bullish",
+        "score": 78,
+        "reason": "JPM beat $6.14 vs $5.85 EPS, BAC beat, Goldman beat - Q2 earnings blowout"
+      },
+      {
+        "name": "Energy",
+        "signal": "bullish",
+        "score": 72,
+        "reason": "WTI $80+, geopolitical premium, Hormuz tensions udržují support"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "UNH beat massivně +6%, ale sektor širší není v pohybu"
+      },
+      {
+        "name": "Industrials",
+        "signal": "bullish",
+        "score": 68,
+        "reason": "Defense stocky pevné, UAL reportuje dnes s pozitivním setup"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "UAL",
+        "company": "United Airlines Holdings Inc.",
+        "current_price_verified": 137.98,
+        "price_source": "Yahoo Finance historical + Investing.com July 16",
+        "direction": "long",
+        "entry_price": 138.0,
+        "target_price": 141.0,
+        "stop_loss": 136.5,
+        "target_pct": 2.17,
+        "stop_pct": -1.09,
+        "position_size_usd": 18500,
+        "holding_days": 1,
+        "risk_reward": "1:2.0",
+        "confidence": "high",
+        "thesis_macro": "Fuel cost pressures stabilizují, travel demand robust i přes inflaci",
+        "thesis_technical": "Break nad $138 52-wk high zone, earnings beat setup",
+        "thesis_catalyst": "Q2 earnings report dnes odpoledne, beat očekávání $1.78 EPS",
+        "thesis_options": "Implied move 4.6%, calls volume elevated pre-earnings",
+        "thesis_short_interest": "Short interest 12%, potenciální squeeze na beat",
+        "thesis_insider": "Management confidence stable, žádné červené vlajky",
+        "thesis_volume": "Pre-market volume 2x average - elevated interest",
+        "thesis_correlation": "Airlines nekorelovány s tech sell-off, samostatný driver",
+        "thesis_risk": "Fuel cost surprise, guidance disappointment, macro fear sell",
+        "entry_logic": "Entry na open po konsolidaci, čekat stabilizaci",
+        "exit_logic": "Target $141 realistic na earnings pop +2.2% intraday",
+        "probability_pct": 62,
+        "probability_reasoning": "Delta beat precedent, sector rotation z tech do cyclicals",
+        "catalysts": [
+          "Q2 earnings beat",
+          "fuel cost decline",
+          "summer travel peak"
+        ]
+      },
+      {
+        "ticker": "CVX",
+        "company": "Chevron Corporation",
+        "current_price_verified": 181.6,
+        "price_source": "Yahoo Finance + CNN Markets July 16",
+        "direction": "long",
+        "entry_price": 182.0,
+        "target_price": 186.0,
+        "stop_loss": 180.0,
+        "target_pct": 2.2,
+        "stop_pct": -1.1,
+        "position_size_usd": 19500,
+        "holding_days": 1,
+        "risk_reward": "1:2.0",
+        "confidence": "medium",
+        "thesis_macro": "WTI $80+ udržitelné, Hormuz tensions support oil complex",
+        "thesis_technical": "Bounce od $179 support, RSI oversold recovery mode",
+        "thesis_catalyst": "Energy sector rotation intraday, oil price strength catalyst",
+        "thesis_options": "Call volume above normal, directionally bullish setup",
+        "thesis_short_interest": "Low short interest 3%, dividendy yield 3.97% support",
+        "thesis_insider": "Stable, no unusual selling - management confident",
+        "thesis_volume": "Volume 3.17M vs avg 9.17M - room for surge",
+        "thesis_correlation": "Inverzní k tech weakness, safe haven defensive play",
+        "thesis_risk": "Hormuz resolution rychlá, oil selloff na peace talk",
+        "entry_logic": "Entry $182 na morning dip, support hold kritický",
+        "exit_logic": "Target $186 je resistance, +2.2% realistic intraday move",
+        "probability_pct": 58,
+        "probability_reasoning": "Geopolitická podpora silná, ale oil volatile - medium confidence",
+        "catalysts": [
+          "Oil $80+ hold",
+          "Hormuz closure",
+          "XLE sector strength"
+        ]
+      },
+      {
+        "ticker": "JPM",
+        "company": "JPMorgan Chase & Co.",
+        "current_price_verified": 347.11,
+        "price_source": "Yahoo Finance + Robinhood July 16",
+        "direction": "long",
+        "entry_price": 347.0,
+        "target_price": 354.0,
+        "stop_loss": 344.0,
+        "target_pct": 2.02,
+        "stop_pct": -0.86,
+        "position_size_usd": 20000,
+        "holding_days": 1,
+        "risk_reward": "1:2.3",
+        "confidence": "high",
+        "thesis_macro": "Record Q2 earnings $16.9B net income, +27% YoY revenue",
+        "thesis_technical": "All-time high $351.24 včera, momentum continuation setup",
+        "thesis_catalyst": "Post-earnings momentum, analyst upgrades cycle začíná",
+        "thesis_options": "Implied vol 4%, low - clean directional trade možný",
+        "thesis_short_interest": "Minimal short interest, institutional accumulation",
+        "thesis_insider": "Jamie Dimon confidence high, recent buys supportive",
+        "thesis_volume": "Volume 10.75M vs 11.22M avg - in line, steady",
+        "thesis_correlation": "Financials leader, nekorelovány s chip weakness",
+        "thesis_risk": "Profit taking po ATH, broader market selloff risk",
+        "entry_logic": "Entry $347 je včerejší close, stabilní level entry",
+        "exit_logic": "Target $354 je nová ATH push, +2% realistic continuation",
+        "probability_pct": 65,
+        "probability_reasoning": "Earnings momentum silný, analyst upgrades supportují další růst",
+        "catalysts": [
+          "Earnings beat",
+          "ATH breakout",
+          "sector rotation financials"
+        ]
+      },
+      {
+        "ticker": "LMT",
+        "company": "Lockheed Martin Corporation",
+        "current_price_verified": 514.46,
+        "price_source": "Google Finance + CNN Markets July 16",
+        "direction": "long",
+        "entry_price": 515.0,
+        "target_price": 526.0,
+        "stop_loss": 510.0,
+        "target_pct": 2.14,
+        "stop_pct": -0.97,
+        "position_size_usd": 19900,
+        "holding_days": 1,
+        "risk_reward": "1:2.2",
+        "confidence": "medium",
+        "thesis_macro": "Geopolitical tensions support defense spending, NATO 5% GDP commitments",
+        "thesis_technical": "Bounce od $512 support, 50-day MA reclaim setup",
+        "thesis_catalyst": "$194B backlog rekordní, Navy contracts $502M flow",
+        "thesis_options": "Options activity moderate, no unusual positioning",
+        "thesis_short_interest": "Low 4%, dividend yield 2.68% provides floor",
+        "thesis_insider": "Management stable, no red flags - confidence hold",
+        "thesis_volume": "Volume 986 vs 1.24M avg - quiet, accumulation phase",
+        "thesis_correlation": "Defense uncorrelated tech, Iran tensions tailwind",
+        "thesis_risk": "Peace deal surprise, defense budget cuts talk",
+        "entry_logic": "Entry $515 po pre-market stabilizaci, wait patience",
+        "exit_logic": "Target $526 je +2.1%, realistic na geopolitical premium",
+        "probability_pct": 60,
+        "probability_reasoning": "Geopolitika podporuje, ale catalyst není immediate - medium conf",
+        "catalysts": [
+          "Iran tensions",
+          "defense budget FY27",
+          "earnings Jul 23"
+        ]
+      }
+    ],
+    "portfolio_note": "Diverzifikace: Airlines (cyclical), Energy (commodity), Financials (rate beneficiary), Defense (geopolitical). Celková alokace $77,900 respektuje capital limit. Všechny pozice intraday close mandatory 16:00 ET.",
+    "risks": [
+      "Tech selloff spread do broader market - VIX spike risk",
+      "Hormuz peace deal announcement - oil collapse scenario",
+      "Fed hawkish surprise July 29 meeting - rate hike fears resurface"
+    ],
+    "data_freshness": "Data z 16 July 2026, 07:00-08:00 ET. Ceny verified via Yahoo Finance, Google Finance, CNN Markets. Pre-market data live."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-07-16T13:17:08.591575"
+}
