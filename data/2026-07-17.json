@@ -1,0 +1,218 @@
+{
+  "date": "2026-07-17",
+  "brief": {
+    "generated_at": "2026-07-17T08:00:00Z",
+    "market_date": "Friday, July 17, 2026",
+    "date_key": "2026-07-17",
+    "day_of_week": "Friday",
+    "trading_mode": "intraday",
+    "snapshot": {
+      "sp500_futures": "-0.8%",
+      "nasdaq_futures": "-1.6%",
+      "dow_futures": "-0.6%",
+      "vix": "18.35",
+      "us10y": "4.60%",
+      "dxy": "100.54",
+      "crude_oil": "$79.63",
+      "gold": "$3983.86"
+    },
+    "market_context": {
+      "vix_regime": "normal",
+      "options_pcr": "unavailable",
+      "market_volume": "above_average",
+      "earnings_today": [
+        "TRV: before market open",
+        "FITB: before market open",
+        "TFC: before market open"
+      ],
+      "insider_activity_summary": "Nízká aktivita za posledních 48h, žádné významné cluster buys"
+    },
+    "overall_sentiment": "bearish",
+    "sentiment_score": 35,
+    "key_themes": [
+      "Chipový sektor v korekci - SOX -4.3%, AI spending obavy",
+      "Netflix disappointed - Q3 guidance slabý, akcie -10% premarket",
+      "US-Iran konflikt eskaluje - ropa blízko $80, strategické ropné rezervy na multidekádových minimech"
+    ],
+    "macro_summary": "Futures klesají po čtvrtečním sell-offu v techách. Chipový sektor pod tlakem navzdory silným výsledkům TSM. US-Iran napětí pokračuje, shipping přes Hormuz stále omezený, což udržuje ropné ceny elevované a živí inflační tlaky.",
+    "afterhours_summary": "Netflix -10% po slabé Q3 guidance navzdory inline Q2. Alphabet pokračuje v poklesu (-1.5%) po zpoždění Gemini AI. Intuitive Surgical -11% po Q2 výsledcích.",
+    "geopolitical_summary": "US strikes na Írán pokračují 6. noc, přístup přes Hormuz omezený (7 tankerů vs. 13 před týdnem). Írán hrozí uzavřením Bab el-Mandeb. Inflační riziko pro energii roste.",
+    "sectors": [
+      {
+        "name": "Technology",
+        "signal": "bearish",
+        "score": 25,
+        "reason": "SOX -4.3%, AI spending concerns, Alphabet delayed Gemini, Netflix guidance slabá"
+      },
+      {
+        "name": "Financials",
+        "signal": "neutral",
+        "score": 55,
+        "reason": "Earnings dnes (TRV, FITB, TFC), vyšší yields podpora marží, ale tech slabost váží"
+      },
+      {
+        "name": "Energy",
+        "signal": "bullish",
+        "score": 75,
+        "reason": "Ropa $79.63, Hormuz shipping omezený, strategic reserves nízké, XLE +35% YTD"
+      },
+      {
+        "name": "Healthcare",
+        "signal": "bullish",
+        "score": 70,
+        "reason": "ABT beat Q2 +11%, defensivní rotace pokračuje, solidní earnings momentum"
+      },
+      {
+        "name": "Industrials",
+        "signal": "neutral",
+        "score": 50,
+        "reason": "Smíšené signály - housing data dnes, energy costs tlak na marže"
+      }
+    ],
+    "picks": [
+      {
+        "ticker": "ABT",
+        "company": "Abbott Laboratories",
+        "current_price_verified": 100.01,
+        "price_source": "Yahoo Finance - July 17, 2026 premarket",
+        "direction": "long",
+        "entry_price": 100.5,
+        "target_price": 103.0,
+        "stop_loss": 99.0,
+        "target_pct": 2.49,
+        "stop_pct": -1.49,
+        "position_size_usd": 19500.0,
+        "holding_days": 1,
+        "risk_reward": "1:1.67",
+        "confidence": "high",
+        "thesis_macro": "Defensivní rotace z techů, healthcare outperformance v elevated VIX režimu",
+        "thesis_technical": "Včerejší +11% gap hold, consolidation nad $100, VWAP support",
+        "thesis_catalyst": "Q2 beat momentum, raised guidance $5.45-5.60, diagnostics +42% surprise",
+        "thesis_options": "Call volume dominantní, OI supporting continuation",
+        "thesis_short_interest": "Nízký SI 1.2%, minimal short pressure",
+        "thesis_insider": "Insider buy activity za poslední měsíc pozitivní",
+        "thesis_volume": "Včera 3x avg volume, dnes očekáváno 2x",
+        "thesis_correlation": "Healthcare nekoreluje s chip selloff, safe haven",
+        "thesis_risk": "Profit taking po gap, macro headwinds",
+        "entry_logic": "Entry nad včerejším close $100.01, confirmation gap hold",
+        "exit_logic": "Target $103 = pre-earnings resistance, intraday achievable po continuation",
+        "probability_pct": 68,
+        "probability_reasoning": "Silný beat+raise kombinace, momentum intaktní, sector tailwind",
+        "catalysts": [
+          "Q2 beat momentum continuation",
+          "Defensivní rotace z tech selloff"
+        ]
+      },
+      {
+        "ticker": "XLE",
+        "company": "Energy Select Sector SPDR ETF",
+        "current_price_verified": 56.97,
+        "price_source": "Yahoo Finance / Investing.com - July 16, 2026 close",
+        "direction": "long",
+        "entry_price": 57.2,
+        "target_price": 58.6,
+        "stop_loss": 56.5,
+        "target_pct": 2.45,
+        "stop_pct": -1.22,
+        "position_size_usd": 19500.0,
+        "holding_days": 1,
+        "risk_reward": "1:2.0",
+        "confidence": "high",
+        "thesis_macro": "Iran konflikt eskalace, strategic reserves multidekádová minima, inflační tlak roste",
+        "thesis_technical": "Breakout nad $57 resistance, strong buy signál všechny timeframes",
+        "thesis_catalyst": "Housing starts dnes 8:30am může ukázat energy demand, shipping disruption pokračuje",
+        "thesis_options": "Bullish flow dominantní, 11.82 P/E atraktivní valuace",
+        "thesis_short_interest": "ETF minimal SI, strukturální long bias",
+        "thesis_insider": "N/A - ETF",
+        "thesis_volume": "20M daily avg, likvidní intraday scaling",
+        "thesis_correlation": "Negativní korelace s Nasdaq, hedge proti tech",
+        "thesis_risk": "Iran peace deal headlines, ropa profit-taking",
+        "entry_logic": "$57.20 breakout confirmation nad včerejšího high",
+        "exit_logic": "$58.60 = Fibonacci 1.272 extension, realistické při oil momentum",
+        "probability_pct": 65,
+        "probability_reasoning": "Geopolitika supportivní, tech weakness = safe haven bid, YTD +35% trend intact",
+        "catalysts": [
+          "Iran konflikt escalation headlines",
+          "Strategic reserve data support"
+        ]
+      },
+      {
+        "ticker": "FITB",
+        "company": "Fifth Third Bancorp",
+        "current_price_verified": 59.37,
+        "price_source": "Yahoo Finance - July 16, 2026 close + premarket $59.99",
+        "direction": "long",
+        "entry_price": 59.8,
+        "target_price": 61.2,
+        "stop_loss": 59.0,
+        "target_pct": 2.34,
+        "stop_pct": -1.34,
+        "position_size_usd": 19500.0,
+        "holding_days": 1,
+        "risk_reward": "1:1.75",
+        "confidence": "medium",
+        "thesis_macro": "Q2 earnings dnes before open, 44.8% revenue growth expected, Comerica integrace",
+        "thesis_technical": "52-week high territory $59.50, strong buy technicals, uptrend intakt",
+        "thesis_catalyst": "Earnings beat probability vysoká, peer TFC reportuje také, sector momentum",
+        "thesis_options": "Elevated IV pre-earnings, directional bias bullish",
+        "thesis_short_interest": "Nízký, institutional ownership vysoký",
+        "thesis_insider": "Treasury awards positive catalyst recent",
+        "thesis_volume": "Pre-earnings volume spike očekáván",
+        "thesis_correlation": "Regional bank play, nekoreluje s megacap tech",
+        "thesis_risk": "Earnings miss, guidance cut, NIM compression talk",
+        "entry_logic": "Premarket $59.99, entry po open nad VWAP confirmation",
+        "exit_logic": "$61.20 = +2.3%, achievable při beat scenario intraday pop",
+        "probability_pct": 62,
+        "probability_reasoning": "Earnings beat setup strong, peer results solidní, ale execution risk pre-earnings",
+        "catalysts": [
+          "Q2 earnings report 7:00am",
+          "Comerica synergy update potential"
+        ]
+      },
+      {
+        "ticker": "TRV",
+        "company": "The Travelers Companies Inc.",
+        "current_price_verified": 329.19,
+        "price_source": "Yahoo Finance - July 16, 2026 close",
+        "direction": "short",
+        "entry_price": 329.0,
+        "target_price": 323.0,
+        "stop_loss": 331.5,
+        "target_pct": -1.82,
+        "stop_pct": 0.76,
+        "position_size_usd": 19743.19,
+        "holding_days": 1,
+        "risk_reward": "1:2.4",
+        "confidence": "medium",
+        "thesis_macro": "Earnings dnes, -21% EPS decline expected, cost pressure environm",
+        "thesis_technical": "Overbought RSI, near 52w high $349, downgrade TD Cowen na Sell",
+        "thesis_catalyst": "Q2 earnings risk - negative surprises možné, guidance pressure",
+        "thesis_options": "Put activity elevated, July 17 $205 puts high volume",
+        "thesis_short_interest": "Nízký SI, ale analyst downgrades accumulating",
+        "thesis_insider": "No significant recent activity",
+        "thesis_volume": "Earnings volatility spike expected",
+        "thesis_correlation": "Insurance sector vulnerable při market stress",
+        "thesis_risk": "Earnings beat surprise, cat loss better than expected",
+        "entry_logic": "Short near open $329, fade včerejší strength",
+        "exit_logic": "$323 = support level, -1.8% achievable při disappointment",
+        "probability_pct": 58,
+        "probability_reasoning": "Downgrade momentum, -21% EPS decline setup negativní, ale execution risk vysoký",
+        "catalysts": [
+          "Q2 earnings pre-market"
+        ]
+      }
+    ],
+    "portfolio_note": "Celková alokace $78,238.19 diversifikována: Healthcare defensive (ABT), Energy geopolitical play (XLE), Regional bank earnings (FITB), Insurance short hedge (TRV). Žádné dva picks ze stejného sub-sektoru. Risk balanced 1.5:1.9 ratios.",
+    "risks": [
+      "Iran peace deal headline risk - immediate ropa selloff dopad XLE",
+      "Earnings execution - FITB/TRV binary events, gap risk",
+      "Chipový sektor contagion - může táhnout broad market dolů navzdory sector picks",
+      "VIX spike nad 20 - likvidita deterioration, wider spreads",
+      "Fed blackout period končí - Warsh commentary risk next week"
+    ],
+    "data_freshness": "Data z 17.7.2026 7:00-8:00 AM ET. Futures live, ceny ověřeny Yahoo/Google Finance. Options flow z včerejšího close. Insider data 48h lookback."
+  },
+  "review": null,
+  "reviewed": false,
+  "created_at": "2026-07-17T13:17:18.073777"
+}
